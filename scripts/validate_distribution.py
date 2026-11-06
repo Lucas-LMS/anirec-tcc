@@ -2,7 +2,7 @@
 import hashlib,json,re,sqlite3
 from pathlib import Path
 root=Path(__file__).resolve().parents[1];site=root/'site'
-for file in ['index.html','dataset.html','laboratorio.html','catalog.json','assets/app.js','assets/ir-core.js','lab/models.json','lab/corpus.sqlite3','lab/chart.umd.js']:assert (site/file).is_file(),file
+for file in ['index.html','dataset.html','laboratorio.html','avaliacao.html','experimentos.html','assets/evaluation-core.js','lab/evaluation.js','lab/benchmark.js','lab/retrieval-benchmark.json','catalog.json','assets/app.js','assets/ir-core.js','lab/models.json','lab/corpus.sqlite3','lab/chart.umd.js']:assert (site/file).is_file(),file
 catalog=json.loads((site/'catalog.json').read_text(encoding='utf-8'));manifest=json.loads((site/'lab/models.json').read_text(encoding='utf-8'))
 assert manifest['row_keys']==[r['key'] for r in catalog['records']]
 for model in manifest['models']:assert hashlib.sha256((site/model['file']).read_bytes()).hexdigest()==model['sha256']

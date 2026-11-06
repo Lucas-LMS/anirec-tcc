@@ -5,7 +5,7 @@
       "sql": "SELECT COUNT(*) AS works, SUM(word_count=0) AS missing_synopsis FROM works;",
       "results": [
         {
-          "works": 2495,
+          "works": 3053,
           "missing_synopsis": 3
         }
       ]
@@ -16,51 +16,51 @@
       "results": [
         {
           "genre": "Comedy",
-          "works": 1266
+          "works": 1527
         },
         {
           "genre": "Action",
-          "works": 888
-        },
-        {
-          "genre": "Slice of Life",
-          "works": 826
-        },
-        {
-          "genre": "Fantasy",
-          "works": 749
+          "works": 1195
         },
         {
           "genre": "Drama",
-          "works": 742
+          "works": 1001
+        },
+        {
+          "genre": "Fantasy",
+          "works": 962
+        },
+        {
+          "genre": "Slice of Life",
+          "works": 936
         },
         {
           "genre": "Romance",
-          "works": 686
-        },
-        {
-          "genre": "Supernatural",
-          "works": 444
+          "works": 855
         },
         {
           "genre": "Adventure",
-          "works": 426
+          "works": 652
+        },
+        {
+          "genre": "Supernatural",
+          "works": 570
         },
         {
           "genre": "Sci-Fi",
-          "works": 410
+          "works": 510
         },
         {
           "genre": "Ecchi",
-          "works": 348
+          "works": 409
         },
         {
           "genre": "Mystery",
-          "works": 262
+          "works": 323
         },
         {
           "genre": "Psychological",
-          "works": 217
+          "works": 259
         }
       ]
     },
@@ -82,22 +82,34 @@
         {
           "model": "cbow",
           "dimensions": 100,
-          "vectors": 2495
+          "vectors": 3053
         },
         {
           "model": "fasttext",
           "dimensions": 100,
-          "vectors": 2495
+          "vectors": 3053
         },
         {
           "model": "glove",
           "dimensions": 50,
-          "vectors": 2495
+          "vectors": 3053
         },
         {
           "model": "skipgram",
           "dimensions": 100,
-          "vectors": 2495
+          "vectors": 3053
+        }
+      ]
+    },
+    {
+      "label": "Cobertura comunitária",
+      "sql": "SELECT COUNT(average_score) AS weighted_scores,COUNT(mean_score) AS mean_scores,COUNT(popularity) AS popularity,COUNT(community_favourites) AS favourites FROM works;",
+      "results": [
+        {
+          "weighted_scores": 3052,
+          "mean_scores": 3052,
+          "popularity": 3053,
+          "favourites": 3053
         }
       ]
     },
@@ -111,6 +123,6 @@
       ]
     }
   ],
-  "database_sha256": "8777572b8abcc22b9d3fcfcbe4eb96fff3409d1bd915769366c8ab8f31193b5a",
-  "snapshot_sha256": "f25cf7d9f97c71ec53b18fc38fc61bc5a3615107a52cc535865eb8ada91f44a9"
+  "database_sha256": "a217136edf812f10cd8a09c32b5e8eeb11b62bf7e9bcb8559e4bd5d233213256",
+  "snapshot_sha256": "c409cb0926b73af4ac367265561eed6ab882412e647ac6e32b0a4c010e0d3b06"
 }

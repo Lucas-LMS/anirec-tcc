@@ -1,8 +1,8 @@
 {
   "source": "AniList GraphQL",
   "selection": "Frozen research work-metadata snapshot from application usage, popularity sample and queries; selection bias, not the full catalogue",
-  "count": 2495,
+  "count": 3053,
   "personal_ratings_included": false,
   "usernames_included": false,
-  "source_metadata_sha256": "827ba7f3953d451da376014d210658e672565cf2c9872504bcd088b9ee521396"
+  "source_metadata_sha256": "f451806507d93358681a09ffbd76c7e6d1241e33d21960c730dd934acce952e9"
 }

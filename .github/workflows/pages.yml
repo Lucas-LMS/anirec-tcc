@@ -27,6 +27,9 @@ jobs:
       - run: python recomendador/prepare_parity_fixture.py
       - run: node recomendador/test_ir_core.js tmp/parity-v7.json
       - run: node recomendador/test_pure.js tmp/parity-v7.json
+      - run: python recomendador/prepare_experiment_fixtures.py
+      - run: node recomendador/test_experiments.js tmp/experiments-fixtures.json
+      - run: node scripts/check_javascript.js
       - run: python scripts/validate_distribution.py
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

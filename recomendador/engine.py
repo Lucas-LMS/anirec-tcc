@@ -27,7 +27,7 @@ def topics(media,include_spoilers=False):
     return result
 def jaccard(a,b):return len(set(a)&set(b))/len(set(a)|set(b)) if a and b else 0.
 def public(media):
-    return {k:media.get(k) for k in ['key','title','romaji','text','genres','tags','cover','url','source','anilist_id','mal_id','status','synopsis_source','synopsis_complete']}
+    return {k:media.get(k) for k in ['key','title','romaji','text','genres','tags','cover','url','source','anilist_id','mal_id','status','synopsis_source','synopsis_complete','average_score','mean_score','popularity','community_favourites','rating_count','statistics_fetched_at']}
 
 class Engine:
     def __init__(self,client=None,data_dir=None):
@@ -39,7 +39,8 @@ class Engine:
         self.profile=json.loads(self.profile_path.read_text(encoding='utf-8')) if self.profile_path.exists() else dict(username=None,entries=[],user=None,manual_favorites=[],preferred=[],avoided=[],rejected=[],updated_at=None,truncated=False)
         seed=json.loads((Path(__file__).parent/'data/anilist-seed.json').read_text(encoding='utf-8'))
         self.base_media={}
-        self.repository.put_many('AniList',[(r['id'],r.get('idMal'),self.materialize(r)['title'],r,self.materialize(r)['text']) for r in seed])
+        with self.repository.connect() as db:existing_ids={int(row[0]) for row in db.execute("SELECT source_id FROM media WHERE source='AniList'")}
+        self.repository.put_many('AniList',[(r['id'],r.get('idMal'),self.materialize(r)['title'],r,self.materialize(r)['text']) for r in seed if r['id'] not in existing_ids])
         # Only AniList records enter the current application dataset.
         snapshot=self.dir/'catalog-snapshot.json'
         if snapshot.exists():
@@ -81,10 +82,10 @@ class Engine:
         self.profile_media={}
         for entry in self.profile.get('entries',[]):
             if (entry.get('media') or {}).get('title'):
-                item=self.materialize(entry['media']);self.profile_media[item['key']]=item
+                item=self.materialize(entry['media']);self.profile_media[item['key']]=self.base_media.get(item['key'],item).copy()
         for row in self.profile.get('favorite_media',[]):
-            item=self.materialize(row);self.profile_media[item['key']]=item
-        for item in self.profile.get('manual_favorites',[]):self.profile_media[item['key']]=item
+            item=self.materialize(row);self.profile_media[item['key']]=self.base_media.get(item['key'],item).copy()
+        for item in self.profile.get('manual_favorites',[]):self.profile_media[item['key']]=self.base_media.get(item['key'],item).copy()
         self.prune()
 
     def key_for(self,row):
@@ -95,6 +96,7 @@ class Engine:
         key=self.key_for(row)
         previous=self.base_media.get(key,{})
         item=dict(key=key,mal_id=row.get('idMal'),anilist_id=row['id'],title=title.get('english') or title.get('romaji') or str(row['id']),romaji=title.get('romaji') or '',text=text or previous.get('text',''),synopsis_source='AniList description' if text else previous.get('synopsis_source'),synopsis_complete=True if text else previous.get('synopsis_complete',False),genres=row.get('genres') or [],tags=row.get('tags') or [],cover=(row.get('coverImage') or {}).get('large'),url=row.get('siteUrl'),source='AniList (consulta sob demanda)',status=row.get('status'),media_type=row.get('type','ANIME'))
+        item.update(average_score=row.get('averageScore',previous.get('average_score')),mean_score=row.get('meanScore',previous.get('mean_score')),popularity=row.get('popularity',previous.get('popularity')),community_favourites=row.get('favourites',previous.get('community_favourites')),rating_count=sum(v.get('amount',0) for v in (row.get('stats') or {}).get('scoreDistribution',[])) if (row.get('stats') or {}).get('scoreDistribution') is not None else previous.get('rating_count'),statistics_fetched_at=row.get('statisticsFetchedAt',previous.get('statistics_fetched_at')))
         return item
 
     def add_anilist(self,row):

@@ -16,3 +16,6 @@ tmp/
 .openai/
 .DS_Store
 Thumbs.db
+
+# Local ETL summaries and private runtime diagnostics
+output/prototipo/

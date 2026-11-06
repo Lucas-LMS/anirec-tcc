@@ -1,7 +1,7 @@
 'use strict';
 let frozenEncoder = null, apiLast = 0, apiQueue = Promise.resolve();
 const apiCache = new Map(), wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-const ANI_FIELDS = 'id idMal type status format seasonYear countryOfOrigin title{english romaji} description(asHtml:false) genres tags{name rank isGeneralSpoiler isMediaSpoiler} coverImage{large} siteUrl isAdult';
+const ANI_FIELDS = 'id idMal type status format seasonYear countryOfOrigin title{english romaji} description(asHtml:false) genres tags{name rank isGeneralSpoiler isMediaSpoiler} coverImage{large} siteUrl averageScore meanScore popularity favourites stats{scoreDistribution{score amount}} isAdult';
 function aniQuery(query, variables) {
   const cacheKey = JSON.stringify([query, variables]), cached = apiCache.get(cacheKey);
   if (cached && Date.now() - cached.at < 3600000) return Promise.resolve(cached.data);
@@ -21,7 +21,8 @@ function aniQuery(query, variables) {
 async function loadFrozenEncoder(progress = () => {}) {
   if (frozenEncoder) return frozenEncoder;
   progress('Carregando o vocabulário estático para novas sinopses (primeira vez: cerca de 30 MB)…');
-  const [manifest, vocabulary, idf] = await Promise.all(['model-manifest.json', 'vocabulary.json', 'idf.json'].map(async file => { const response = await fetch(file); if (!response.ok) throw Error('Modelo estático indisponível.'); return response.json(); }));
+  const [manifest, vocabulary, idf] = await Promise.all(['model-manifest.json', 'vocabulary.json', 'idf.json'].map(async file => { const response = await fetch(file,{cache:'no-cache'}); if (!response.ok) throw Error('Modelo estático indisponível.'); return response.json(); }));
+  if(idf.corpus_id!==window.AniRecEncodingId)throw Error('Modelo e catálogo de versões diferentes. Recarregue a página.');
   const shards = [];
   for (const [i, part] of manifest.shards.entries()) { progress(`Carregando vetores fixos: ${i + 1}/${manifest.shards.length} blocos…`); const response = await fetch(part.file); if (!response.ok) throw Error('Não foi possível carregar os vetores.'); const buffer = await response.arrayBuffer(); if (buffer.byteLength !== part.bytes) throw Error('Bloco incompleto.'); shards.push({ start: part.start, end: part.start + part.count, values: new Float32Array(buffer) }); }
   frozenEncoder = { manifest, index: new Map(vocabulary.map((word, i) => [word, i])), shards, idf }; return frozenEncoder;
@@ -39,7 +40,7 @@ async function materializeAniRows(raws, existing, progress) {
     if (!sameText && !encoder) encoder = await loadFrozenEncoder(progress);
     records.push({ key: old?.key || 'anilist:' + raw.id, anilist_id: raw.id, mal_id: raw.idMal, title: raw.title.english || raw.title.romaji,
       romaji: raw.title.romaji, text, genres: raw.genres || [], tags: raw.tags || [], cover: raw.coverImage?.large, url: raw.siteUrl,
-      status: raw.status, is_adult: !!raw.isAdult, source: 'AniList · consulta pública', synopsis_source: 'AniList description', synopsis_complete: true,
+      statistics_fetched_at: new Date().toISOString(), average_score: raw.averageScore ?? null, mean_score: raw.meanScore ?? null, popularity: raw.popularity ?? null, community_favourites: raw.favourites ?? null, rating_count: raw.stats?.scoreDistribution?.reduce((sum,row)=>sum+row.amount,0) ?? null, status: raw.status, is_adult: !!raw.isAdult, source: 'AniList · consulta pública', synopsis_source: 'AniList description', synopsis_complete: true,
       encoding_id: window.AniRecEncodingId, metadata_fetched_at: new Date().toISOString(), vector: sameText ? old.vector : encodeFullSynopsis(text, encoder) });
   }
   return records;

@@ -38,6 +38,10 @@ CREATE TABLE IF NOT EXISTS dataset_vectors (
  dimensions INTEGER NOT NULL, dtype TEXT NOT NULL, text_sha256 TEXT NOT NULL,
  corpus_sha256 TEXT NOT NULL, vector BLOB NOT NULL,
  PRIMARY KEY(version,anilist_id,model));
+CREATE TABLE IF NOT EXISTS dataset_community (
+ version TEXT NOT NULL,anilist_id INTEGER NOT NULL,average_score INTEGER,mean_score INTEGER,
+ popularity INTEGER,favourites INTEGER,rating_count INTEGER,statistics_fetched_at TEXT,
+ PRIMARY KEY(version,anilist_id));
 '''
 
 def build(path=None):
@@ -46,7 +50,7 @@ def build(path=None):
     if not rows:raise ValueError('Não há registros AniList coletados. Nenhum download implícito será feito.')
     digest=hashlib.sha256(''.join(f'{key}:{sha}\n' for key,_,_,sha in rows).encode()).hexdigest()
     version='anilist-etl-v1-'+digest[:12]
-    works=[];genres=[];tags=set();links=[];raws=[];ids=set();mal=collections.Counter();texts=collections.Counter();invalid=0
+    works=[];genres=[];tags=set();links=[];raws=[];community=[];ids=set();mal=collections.Counter();texts=collections.Counter();invalid=0
     for key,raw,stamp,sha in rows:
         item=json.loads(raw)
         if item.get('type','ANIME')!='ANIME':invalid+=1;continue
@@ -58,6 +62,8 @@ def build(path=None):
         if item.get('idMal'):mal[item['idMal']]+=1
         work_tags={t['name']:t for t in item.get('tags') or [] if t and t.get('name')}
         raws.append((identity,sha,raw,stamp))
+        distribution=(item.get('stats') or {}).get('scoreDistribution')
+        community.append((version,identity,item.get('averageScore'),item.get('meanScore'),item.get('popularity'),item.get('favourites'),sum(row.get('amount',0) for row in distribution) if distribution is not None else None,stamp))
         works.append((version,identity,item.get('idMal'),title.get('english') or title.get('romaji') or str(identity),title.get('romaji'),title.get('english'),item.get('format'),item.get('seasonYear'),item.get('countryOfOrigin'),item.get('status'),text,text_hash,sha,len(tokenize(text)),len(work_tags)))
         genres.extend((version,identity,g) for g in sorted(set(item.get('genres') or [])))
         for name,t in work_tags.items():
@@ -69,6 +75,7 @@ def build(path=None):
         db.executemany('INSERT OR IGNORE INTO dataset_raw VALUES(?,?,?,?)',raws)
         db.execute('INSERT OR IGNORE INTO dataset_runs VALUES(?,?,?,?,?)',(version,datetime.datetime.now(datetime.timezone.utc).isoformat(),protocol,digest,json.dumps(quality)))
         db.executemany('INSERT OR IGNORE INTO dataset_works VALUES('+','.join('?'*15)+')',works)
+        db.executemany('INSERT OR IGNORE INTO dataset_community VALUES(?,?,?,?,?,?,?,?)',community)
         db.executemany('INSERT OR IGNORE INTO dataset_genres VALUES(?,?,?)',genres)
         db.executemany('INSERT OR IGNORE INTO dataset_tags VALUES(?,?)',[(version,t) for t in sorted(tags)])
         db.executemany('INSERT OR IGNORE INTO dataset_work_tags VALUES(?,?,?,?,?,?)',links)

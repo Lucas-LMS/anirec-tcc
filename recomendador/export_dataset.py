@@ -14,7 +14,7 @@ def main():
     target=root/(version+'.sqlite3')
     destination=sqlite3.connect(target);destination.executescript(SCHEMA)
     counts={}
-    tables=['dataset_runs','dataset_works','dataset_genres','dataset_tags','dataset_work_tags','dataset_vectors']
+    tables=['dataset_runs','dataset_works','dataset_genres','dataset_tags','dataset_work_tags','dataset_vectors','dataset_community']
     with destination:
         for table in tables:
             rows=source.execute(f'SELECT * FROM {table} WHERE version=?',(version,)).fetchall()

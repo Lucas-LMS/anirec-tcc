@@ -1,7 +1,7 @@
 window.AniRecAdapter = (() => {
   let data, records = [], notes = {}, favorites = [], preferred = [], avoided = [], hidden = [], metadata = {}, idf, profileSnapshots=[], favoriteSnapshots=[];
   const neutralKeys=new Set();
-  const byKey = new Map(), byAni = new Map(), publicKeys = new Set();
+  const byKey = new Map(), byAni = new Map(), publicKeys = new Set(),frozenByAni=new Map();
   const readJSON = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } };
   function merge(rows, preferPublic = false) {
     for (const row of rows) {
@@ -20,7 +20,7 @@ window.AniRecAdapter = (() => {
   function seenIds() {
     return metadata.seenIds || Object.keys(notes).map(key => byKey.get(key)?.anilist_id).filter(Boolean);
   }
-  function referenceRecords(){return [...new Map([...data.records,...profileSnapshots,...favoriteSnapshots].map(row=>[byAni.get(row.anilist_id)?.key||row.key,{...row,key:byAni.get(row.anilist_id)?.key||row.key}])).values()];}
+  function referenceRecords(){return [...new Map([...data.records,...profileSnapshots,...favoriteSnapshots].map(row=>{const frozen=frozenByAni.get(row.anilist_id),key=frozen?.key||byAni.get(row.anilist_id)?.key||row.key;return [key,frozen||{...row,key}];})).values()];}
   function summary() {
     const state = window.AniRecIR.profile(referenceRecords(), notes, favorites, preferred);
     return { ...state.info, username: metadata.username || null, import_count: metadata.entries || Object.keys(notes).length,
@@ -42,7 +42,24 @@ window.AniRecAdapter = (() => {
     const found = (await aniQuery('query($genre:String,$tag:String,$excluded:[Int]){Page(page:1,perPage:50){media(type:ANIME,genre:$genre,tag:$tag,id_not_in:$excluded,status_not:NOT_YET_RELEASED,isAdult:false,sort:POPULARITY_DESC){' + ANI_FIELDS + '}}}', { genre: tag ? null : anchor.genres[0] || null, tag, excluded })).Page.media;
     await ensureRows([...new Map([...related, ...found].map(row => [row.id, row])).values()], progress, pure);
   }
+  async function ensureProfileEncoding(progress){
+    const cached=[...profileSnapshots,...favoriteSnapshots],stale=[...new Map(cached.filter(row=>!frozenByAni.has(row.anilist_id)&&row.text&&row.encoding_id!==data.encoding_id).map(row=>[row.anilist_id,row])).values()];
+    if(!stale.length)return;
+    progress('Atualizando vetores do histórico para o IDF deste snapshot…');
+    const raw=stale.map(row=>({id:row.anilist_id,idMal:row.mal_id,type:'ANIME',isAdult:!!row.is_adult,title:{english:row.title,romaji:row.romaji},description:row.text,genres:row.genres,tags:row.tags,coverImage:{large:row.cover},siteUrl:row.url,status:row.status,averageScore:row.average_score,meanScore:row.mean_score,popularity:row.popularity,favourites:row.community_favourites}));
+    const encoded=await materializeAniRows(raw,records,progress),old=new Map(stale.map(row=>[row.anilist_id,row]));
+    for(const row of encoded){row.metadata_fetched_at=old.get(row.anilist_id).metadata_fetched_at;row.statistics_fetched_at=old.get(row.anilist_id).statistics_fetched_at;row.rating_count=old.get(row.anilist_id).rating_count;}
+    merge(encoded);const map=new Map(encoded.map(row=>[row.anilist_id,row]));profileSnapshots=profileSnapshots.map(row=>map.get(row.anilist_id)||row);favoriteSnapshots=favoriteSnapshots.map(row=>map.get(row.anilist_id)||row);await saveImportedWorks(profileSnapshots);await writeBrowserValue('favorite-works',favoriteSnapshots);
+  }
   return {
+    async study(options){
+      if(!options.pure)await ensureProfileEncoding(()=>{});
+      const anchor=byKey.get(options.key);if(!anchor)throw Error('Escolha a referência novamente.');
+      const rows=options.pure?records.filter(row=>neutralKeys.has(row.key)):records;
+      const value=window.AniRecIR.study({...options,records:rows,profile_records:options.pure?[]:referenceRecords(),anchor,ratings:notes,favorites,preferred,avoided,seenIds:seenIds(),hidden,params:data.params,topic_idf:idf});
+      if(!options.pure){const bytes=new TextEncoder().encode(JSON.stringify({notes,favorites,preferred,avoided}));value.profile_fingerprint=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');}
+      value.encoding_id=data.encoding_id;return value;
+    },
     async moreDiscoveries(anchor, progress) {
       for(const genre of (anchor.genres||[]).slice(0,2)) {
         progress('Buscando novos candidatos de '+genre+'…');
@@ -52,11 +69,11 @@ window.AniRecAdapter = (() => {
       }
     },
     async init() {
-      const response = await fetch('catalog.json'); if (!response.ok) throw Error('Catálogo indisponível.'); data = await response.json(); window.AniRecEncodingId = data.encoding_id;
+      const response = await fetch('catalog.json',{cache:'no-cache'}); if (!response.ok) throw Error('Catálogo indisponível.'); data = await response.json(); window.AniRecEncodingId = data.encoding_id;
       notes = readJSON('anirec-demo-notes', {}); const prefs = readJSON('anirec-demo-preferences', {});
       preferred = (prefs.preferred || '').split(',').map(x => x.trim()).filter(Boolean); avoided = (prefs.avoided || '').split(',').map(x => x.trim()).filter(Boolean);
       favorites = readJSON('anirec-demo-favorites', []); hidden = readJSON('anirec-hidden', []);
-      merge(data.records); for (const item of data.records){publicKeys.add(item.key);neutralKeys.add(item.key);}
+      merge(data.records); for (const item of data.records){publicKeys.add(item.key);neutralKeys.add(item.key);frozenByAni.set(item.anilist_id,item);}
       try { metadata = await readBrowserValue('profile-meta') || {}; profileSnapshots=await restoreImportedWorks();favoriteSnapshots=await readBrowserValue('favorite-works') || [];merge(profileSnapshots,true);merge(favoriteSnapshots,true);profileSnapshots=profileSnapshots.map(row=>publicKeys.has(byAni.get(row.anilist_id)?.key)?byAni.get(row.anilist_id):row); } catch { metadata.storageWarning = true; }
     },
     async config() { return { mode: 'browser', profile: summary(), params: data.params, catalog_size: records.length }; },
@@ -88,6 +105,7 @@ window.AniRecAdapter = (() => {
     async clearImport() { await saveImportedWorks([]); await writeBrowserValue('profile-meta', {}); notes = {}; metadata = {};profileSnapshots=[];persist(); return summary(); },
     async exportProfile() { return { format: 'anirec-browser-profile-v2', notes, favorites, preferred, avoided, metadata }; },
     async recommend(options, progress) {
+      if(!options.pure)await ensureProfileEncoding(progress);
       const anchor = byKey.get(options.key); if (!anchor) throw Error('Pesquise novamente a obra.'); let warning;
       if (options.online) try { await expansion(anchor, progress,options.pure); } catch (e) { warning = 'A ampliação AniList falhou; usando o catálogo disponível. ' + e.message; }
       const result = window.AniRecIR.rank({ ...options, records:options.pure?records.filter(row=>neutralKeys.has(row.key)):records,profile_records:options.pure?[]:referenceRecords(), anchor, ratings: notes, favorites, preferred, avoided, seenIds: seenIds(), hidden, params: data.params, topic_idf: idf });

@@ -1,0 +1,3876 @@
+{
+  "protocol": "bm25-community-eight-anchors-v1",
+  "created_at": "2026-11-06T22:37:12.991Z",
+  "corpus_sha256": "c409cb0926b73af4ac367265561eed6ab882412e647ac6e32b0a4c010e0d3b06",
+  "count": 3053,
+  "mode": "pure; no personal profile",
+  "bm25": {
+    "k1": 1.2,
+    "b": 0.75,
+    "query": "all distinct non-stopword synopsis tokens with document frequency > 1",
+    "normalization": "raw / ((k1+1)*sum(query IDF))"
+  },
+  "limitations": [
+    "Timings are local Node medians of 3 warm executions, not universal latency.",
+    "Overlap is not precision. Human metrics remain null until judgments exist.",
+    "No fitted weights; beta=.2, gamma=.05 are declared experimental choices."
+  ],
+  "queries": [
+    {
+      "anchor": "Lycoris Recoil",
+      "anilist_id": 143270,
+      "systems": [
+        {
+          "id": "vectors",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "vectors",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0,
+            "community_weight": 0
+          },
+          "median_ms": 247.1929,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:53411",
+              "title": "Buddy Daddies",
+              "score": 0.7652798416740796,
+              "baseline_score": 0.7652798416740796,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:50265",
+              "title": "SPY x FAMILY",
+              "score": 0.7394420599122272,
+              "baseline_score": 0.7394420599122272,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:59027",
+              "title": "SPY x FAMILY Season 3",
+              "score": 0.7344241841526973,
+              "baseline_score": 0.7344241841526973,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:50602",
+              "title": "SPY x FAMILY Cour 2",
+              "score": 0.6923439141708522,
+              "baseline_score": 0.6923439141708522,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:3231",
+              "title": "Gunslinger Girl -Il Teatrino-",
+              "score": 0.6908064034097786,
+              "baseline_score": 0.6908064034097786,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:53888",
+              "title": "SPY x FAMILY CODE: White",
+              "score": 0.6872272528357197,
+              "baseline_score": 0.6872272528357197,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:59369",
+              "title": "Lycoris Recoil -Friends are thieves of time.-",
+              "score": 0.6821149278811686,
+              "baseline_score": 0.6821149278811686,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:13331",
+              "title": "Jormungand: Perfect Order",
+              "score": 0.6809713960569779,
+              "baseline_score": 0.6809713960569779,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:53587",
+              "title": "THE MARGINAL SERVICE",
+              "score": 0.6781668572889135,
+              "baseline_score": 0.6781668572889135,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:41140",
+              "title": "Princess Principal: ~Crown Handler~ 2",
+              "score": 0.6744537535130065,
+              "baseline_score": 0.6744537535130065,
+              "bm25": 0,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "bm25",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "bm25",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 1,
+            "community_weight": 0
+          },
+          "median_ms": 247.69790000000012,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:16417",
+              "title": "Tamako Market",
+              "score": 0.040253666093296545,
+              "baseline_score": 0.5747973234236398,
+              "bm25": 0.040253666093296545,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37982",
+              "title": "Domestic Girlfriend",
+              "score": 0.0388112837006541,
+              "baseline_score": 0.49466892880678875,
+              "bm25": 0.0388112837006541,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:55358",
+              "title": "BUCCHIGIRI?!",
+              "score": 0.03403515643567797,
+              "baseline_score": 0.5146068138356359,
+              "bm25": 0.03403515643567797,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:61990",
+              "title": "Cyberpunk: Edgerunners 2",
+              "score": 0.03375033496804186,
+              "baseline_score": 0.6309774322621623,
+              "bm25": 0.03375033496804186,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:8795",
+              "title": "Panty & Stocking with Garterbelt",
+              "score": 0.032308812989267265,
+              "baseline_score": 0.5355590105687219,
+              "bm25": 0.032308812989267265,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:49470",
+              "title": "My Stepmom's Daughter is My Ex",
+              "score": 0.032251897565931255,
+              "baseline_score": 0.4962198511410334,
+              "bm25": 0.032251897565931255,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:51680",
+              "title": "Play It Cool, Guys",
+              "score": 0.03167828469824638,
+              "baseline_score": 0.5632324953694438,
+              "bm25": 0.03167828469824638,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:42385",
+              "title": "THE IDOLM@STER Million Live!",
+              "score": 0.031060800062795237,
+              "baseline_score": 0.5362855446703438,
+              "bm25": 0.031060800062795237,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:11785",
+              "title": "Nyaruko: Crawling with Love!",
+              "score": 0.03091734706181405,
+              "baseline_score": 0.49143815196915624,
+              "bm25": 0.03091734706181405,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37426",
+              "title": "Sarazanmai",
+              "score": 0.030902035392816767,
+              "baseline_score": 0.5301304416601822,
+              "bm25": 0.030902035392816767,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0
+        },
+        {
+          "id": "hybrid",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0
+          },
+          "median_ms": 305.9766999999997,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:53411",
+              "title": "Buddy Daddies",
+              "score": 0.612870820515119,
+              "baseline_score": 0.7652798416740796,
+              "bm25": 0.00323473587927599,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:50265",
+              "title": "SPY x FAMILY",
+              "score": 0.5931394762173696,
+              "baseline_score": 0.7394420599122272,
+              "bm25": 0.00792914143793884,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:59027",
+              "title": "SPY x FAMILY Season 3",
+              "score": 0.5890567150862528,
+              "baseline_score": 0.7344241841526973,
+              "bm25": 0.0075868388204748255,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:50602",
+              "title": "SPY x FAMILY Cour 2",
+              "score": 0.5549864284131457,
+              "baseline_score": 0.6923439141708522,
+              "bm25": 0.005556485382319799,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:3231",
+              "title": "Gunslinger Girl -Il Teatrino-",
+              "score": 0.5527275576844358,
+              "baseline_score": 0.6908064034097786,
+              "bm25": 0.00041217478306464694,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:53888",
+              "title": "SPY x FAMILY CODE: White",
+              "score": 0.5501497143379559,
+              "baseline_score": 0.6872272528357197,
+              "bm25": 0.0018395603469000981,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:59369",
+              "title": "Lycoris Recoil -Friends are thieves of time.-",
+              "score": 0.5487651121036554,
+              "baseline_score": 0.6821149278811686,
+              "bm25": 0.015365848993602327,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:13331",
+              "title": "Jormungand: Perfect Order",
+              "score": 0.5451296756246292,
+              "baseline_score": 0.6809713960569779,
+              "bm25": 0.0017627938952338945,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:53587",
+              "title": "THE MARGINAL SERVICE",
+              "score": 0.5440009289336214,
+              "baseline_score": 0.6781668572889135,
+              "bm25": 0.007337215512453161,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:52193",
+              "title": "Akiba Maid War",
+              "score": 0.5412274748851427,
+              "baseline_score": 0.672087109396769,
+              "bm25": 0.017788936838637123,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.9
+        },
+        {
+          "id": "hybrid_community",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0.05
+          },
+          "median_ms": 239.7889,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:53411",
+              "title": "Buddy Daddies",
+              "score": 0.6283559876945142,
+              "baseline_score": 0.7652798416740796,
+              "bm25": 0.00323473587927599,
+              "community_bonus": 0.015485167179395243
+            },
+            {
+              "key": "mal:50265",
+              "title": "SPY x FAMILY",
+              "score": 0.6100241879543488,
+              "baseline_score": 0.7394420599122272,
+              "bm25": 0.00792914143793884,
+              "community_bonus": 0.016884711736979162
+            },
+            {
+              "key": "mal:59027",
+              "title": "SPY x FAMILY Season 3",
+              "score": 0.6059053897677165,
+              "baseline_score": 0.7344241841526973,
+              "bm25": 0.0075868388204748255,
+              "community_bonus": 0.016848674681463637
+            },
+            {
+              "key": "mal:50602",
+              "title": "SPY x FAMILY Cour 2",
+              "score": 0.5730094780624133,
+              "baseline_score": 0.6923439141708522,
+              "bm25": 0.005556485382319799,
+              "community_bonus": 0.0180230496492676
+            },
+            {
+              "key": "mal:53888",
+              "title": "SPY x FAMILY CODE: White",
+              "score": 0.5683686509072687,
+              "baseline_score": 0.6872272528357197,
+              "bm25": 0.0018395603469000981,
+              "community_bonus": 0.01821893656931279
+            },
+            {
+              "key": "mal:3231",
+              "title": "Gunslinger Girl -Il Teatrino-",
+              "score": 0.5681584569443228,
+              "baseline_score": 0.6908064034097786,
+              "bm25": 0.00041217478306464694,
+              "community_bonus": 0.015430899259886962
+            },
+            {
+              "key": "mal:59369",
+              "title": "Lycoris Recoil -Friends are thieves of time.-",
+              "score": 0.5661376552876647,
+              "baseline_score": 0.6821149278811686,
+              "bm25": 0.015365848993602327,
+              "community_bonus": 0.01737254318400927
+            },
+            {
+              "key": "mal:13331",
+              "title": "Jormungand: Perfect Order",
+              "score": 0.5624147479508933,
+              "baseline_score": 0.6809713960569779,
+              "bm25": 0.0017627938952338945,
+              "community_bonus": 0.017285072326264094
+            },
+            {
+              "key": "mal:52193",
+              "title": "Akiba Maid War",
+              "score": 0.5582020583143924,
+              "baseline_score": 0.672087109396769,
+              "bm25": 0.017788936838637123,
+              "community_bonus": 0.01697458342924972
+            },
+            {
+              "key": "mal:55911",
+              "title": "The Fable",
+              "score": 0.5577021399122548,
+              "baseline_score": 0.6702952687993927,
+              "bm25": 0.0175813593094777,
+              "community_bonus": 0.017949653010845022
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.8
+        }
+      ]
+    },
+    {
+      "anchor": "Steins;Gate",
+      "anilist_id": 9253,
+      "systems": [
+        {
+          "id": "vectors",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "vectors",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0,
+            "community_weight": 0
+          },
+          "median_ms": 270.83230000000003,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:30484",
+              "title": "Steins;Gate 0",
+              "score": 0.7739416246961243,
+              "baseline_score": 0.7739416246961243,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:11577",
+              "title": "Steins;Gate The Movie – Load Region of Déjà Vu",
+              "score": 0.7535027846962472,
+              "baseline_score": 0.7535027846962472,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32188",
+              "title": "Steins;Gate 0: 23β -Divide by Zero-",
+              "score": 0.7417477570528763,
+              "baseline_score": 0.7417477570528763,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:60427",
+              "title": "GNOSIA",
+              "score": 0.683151100034636,
+              "baseline_score": 0.683151100034636,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:52741",
+              "title": "Undead Unluck",
+              "score": 0.6819385597054819,
+              "baseline_score": 0.6819385597054819,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37450",
+              "title": "Rascal Does Not Dream of Bunny Girl Senpai",
+              "score": 0.6784018314773552,
+              "baseline_score": 0.6784018314773552,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:9756",
+              "title": "Puella Magi Madoka Magica",
+              "score": 0.6732940179541265,
+              "baseline_score": 0.6732940179541265,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:47194",
+              "title": "Summer Time Rendering",
+              "score": 0.6698488491261998,
+              "baseline_score": 0.6698488491261998,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:46095",
+              "title": "Vivy -Fluorite Eye's Song-",
+              "score": 0.661008249174767,
+              "baseline_score": 0.661008249174767,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:61316",
+              "title": "Re:ZERO -Starting Life in Another World- Season 4",
+              "score": 0.6603052851352587,
+              "baseline_score": 0.6603052851352587,
+              "bm25": 0,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "bm25",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "bm25",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 1,
+            "community_weight": 0
+          },
+          "median_ms": 327.2392999999993,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:30484",
+              "title": "Steins;Gate 0",
+              "score": 0.06981570248461351,
+              "baseline_score": 0.7739416246961243,
+              "bm25": 0.06981570248461351,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:11577",
+              "title": "Steins;Gate The Movie – Load Region of Déjà Vu",
+              "score": 0.06769277290672712,
+              "baseline_score": 0.7535027846962472,
+              "bm25": 0.06769277290672712,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32188",
+              "title": "Steins;Gate 0: 23β -Divide by Zero-",
+              "score": 0.06640553241778538,
+              "baseline_score": 0.7417477570528763,
+              "bm25": 0.06640553241778538,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:10863",
+              "title": "Steins;Gate: Egoistic Poriomania",
+              "score": 0.04772447379122501,
+              "baseline_score": 0.6497284596598001,
+              "bm25": 0.04772447379122501,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:2236",
+              "title": "The Girl Who Leapt Through Time",
+              "score": 0.03893564701055225,
+              "baseline_score": 0.5907474901704708,
+              "bm25": 0.03893564701055225,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:50306",
+              "title": "Seirei Gensouki: Spirit Chronicles Season 2",
+              "score": 0.033724292867585284,
+              "baseline_score": 0.504955636891491,
+              "bm25": 0.033724292867585284,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:29093",
+              "title": "The Labyrinth of Grisaia",
+              "score": 0.031084162986984208,
+              "baseline_score": 0.5383033455011891,
+              "bm25": 0.031084162986984208,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37492",
+              "title": "Steins;Gate 0: Valentine's of Crystal Polymorphism -Bittersweet Intermedio-",
+              "score": 0.029766824171178388,
+              "baseline_score": 0.5349291602932835,
+              "bm25": 0.029766824171178388,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:35673",
+              "title": "Encouragement of Climb Season 3 OVA",
+              "score": 0.028791125666716336,
+              "baseline_score": 0.48018564467456526,
+              "bm25": 0.028791125666716336,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:60732",
+              "title": "The Water Magician",
+              "score": 0.028464835622699105,
+              "baseline_score": 0.5053046196988555,
+              "bm25": 0.028464835622699105,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.3
+        },
+        {
+          "id": "hybrid",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0
+          },
+          "median_ms": 279.1413999999995,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:30484",
+              "title": "Steins;Gate 0",
+              "score": 0.6331164402538222,
+              "baseline_score": 0.7739416246961243,
+              "bm25": 0.06981570248461351,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:11577",
+              "title": "Steins;Gate The Movie – Load Region of Déjà Vu",
+              "score": 0.6163407823383432,
+              "baseline_score": 0.7535027846962472,
+              "bm25": 0.06769277290672712,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32188",
+              "title": "Steins;Gate 0: 23β -Divide by Zero-",
+              "score": 0.6066793121258581,
+              "baseline_score": 0.7417477570528763,
+              "bm25": 0.06640553241778538,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:60427",
+              "title": "GNOSIA",
+              "score": 0.549337441061346,
+              "baseline_score": 0.683151100034636,
+              "bm25": 0.014082805168186214,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:52741",
+              "title": "Undead Unluck",
+              "score": 0.5455508477643854,
+              "baseline_score": 0.6819385597054819,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37450",
+              "title": "Rascal Does Not Dream of Bunny Girl Senpai",
+              "score": 0.5439044046581798,
+              "baseline_score": 0.6784018314773552,
+              "bm25": 0.0059146973814778675,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:9756",
+              "title": "Puella Magi Madoka Magica",
+              "score": 0.5405167385886308,
+              "baseline_score": 0.6732940179541265,
+              "bm25": 0.009407621126648055,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:47194",
+              "title": "Summer Time Rendering",
+              "score": 0.5402158297961499,
+              "baseline_score": 0.6698488491261998,
+              "bm25": 0.021683752475950144,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:46095",
+              "title": "Vivy -Fluorite Eye's Song-",
+              "score": 0.5303002544027852,
+              "baseline_score": 0.661008249174767,
+              "bm25": 0.007468275314857996,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:10863",
+              "title": "Steins;Gate: Egoistic Poriomania",
+              "score": 0.5293276624860851,
+              "baseline_score": 0.6497284596598001,
+              "bm25": 0.04772447379122501,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.9
+        },
+        {
+          "id": "hybrid_community",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0.05
+          },
+          "median_ms": 258.0511000000006,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:30484",
+              "title": "Steins;Gate 0",
+              "score": 0.6485255497631617,
+              "baseline_score": 0.7739416246961243,
+              "bm25": 0.06981570248461351,
+              "community_bonus": 0.015409109509339469
+            },
+            {
+              "key": "mal:11577",
+              "title": "Steins;Gate The Movie – Load Region of Déjà Vu",
+              "score": 0.6320708102624711,
+              "baseline_score": 0.7535027846962472,
+              "bm25": 0.06769277290672712,
+              "community_bonus": 0.015730027924127928
+            },
+            {
+              "key": "mal:32188",
+              "title": "Steins;Gate 0: 23β -Divide by Zero-",
+              "score": 0.6226087999847609,
+              "baseline_score": 0.7417477570528763,
+              "bm25": 0.06640553241778538,
+              "community_bonus": 0.01592948785890275
+            },
+            {
+              "key": "mal:60427",
+              "title": "GNOSIA",
+              "score": 0.5666879495804842,
+              "baseline_score": 0.683151100034636,
+              "bm25": 0.014082805168186214,
+              "community_bonus": 0.017350508519138184
+            },
+            {
+              "key": "mal:52741",
+              "title": "Undead Unluck",
+              "score": 0.5628199155493389,
+              "baseline_score": 0.6819385597054819,
+              "bm25": 0,
+              "community_bonus": 0.017269067784953355
+            },
+            {
+              "key": "mal:37450",
+              "title": "Rascal Does Not Dream of Bunny Girl Senpai",
+              "score": 0.5623762762695235,
+              "baseline_score": 0.6784018314773552,
+              "bm25": 0.0059146973814778675,
+              "community_bonus": 0.018471871611343723
+            },
+            {
+              "key": "mal:9756",
+              "title": "Puella Magi Madoka Magica",
+              "score": 0.5595852939372026,
+              "baseline_score": 0.6732940179541265,
+              "bm25": 0.009407621126648055,
+              "community_bonus": 0.01906855534857182
+            },
+            {
+              "key": "mal:47194",
+              "title": "Summer Time Rendering",
+              "score": 0.5592968728596097,
+              "baseline_score": 0.6698488491261998,
+              "bm25": 0.021683752475950144,
+              "community_bonus": 0.01908104306345978
+            },
+            {
+              "key": "mal:46095",
+              "title": "Vivy -Fluorite Eye's Song-",
+              "score": 0.549557943972271,
+              "baseline_score": 0.661008249174767,
+              "bm25": 0.007468275314857996,
+              "community_bonus": 0.01925768956948581
+            },
+            {
+              "key": "mal:61316",
+              "title": "Re:ZERO -Starting Life in Another World- Season 4",
+              "score": 0.5494732378433376,
+              "baseline_score": 0.6603052851352587,
+              "bm25": 0,
+              "community_bonus": 0.021229009735130693
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        }
+      ]
+    },
+    {
+      "anchor": "Violet Evergarden",
+      "anilist_id": 21827,
+      "systems": [
+        {
+          "id": "vectors",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "vectors",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0,
+            "community_weight": 0
+          },
+          "median_ms": 212.03269999999975,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:37987",
+              "title": "Violet Evergarden: the Movie",
+              "score": 0.9103752113942727,
+              "baseline_score": 0.9103752113942727,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37095",
+              "title": "Violet Evergarden: Special",
+              "score": 0.8790960418567809,
+              "baseline_score": 0.8790960418567809,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:39741",
+              "title": "Violet Evergarden: Eternity and the Auto Memory Doll",
+              "score": 0.825587288348985,
+              "baseline_score": 0.825587288348985,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:15227",
+              "title": "In This Corner of the World",
+              "score": 0.7344834771147224,
+              "baseline_score": 0.7344834771147224,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:34984",
+              "title": "After the Rain",
+              "score": 0.71014797273032,
+              "baseline_score": 0.71014797273032,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:121",
+              "title": "Fullmetal Alchemist",
+              "score": 0.694696200086929,
+              "baseline_score": 0.694696200086929,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40787",
+              "title": "Josee, the Tiger and the Fish",
+              "score": 0.6801383195741358,
+              "baseline_score": 0.6801383195741358,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:7674",
+              "title": "Bakuman.",
+              "score": 0.6801295812046096,
+              "baseline_score": 0.6801295812046096,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:36098",
+              "title": "I Want to Eat Your Pancreas",
+              "score": 0.673510719298775,
+              "baseline_score": 0.673510719298775,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:5114",
+              "title": "Fullmetal Alchemist: Brotherhood",
+              "score": 0.6721715102198804,
+              "baseline_score": 0.6721715102198804,
+              "bm25": 0,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "bm25",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "bm25",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 1,
+            "community_weight": 0
+          },
+          "median_ms": 254.82730000000083,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:37095",
+              "title": "Violet Evergarden: Special",
+              "score": 0.08865549911149202,
+              "baseline_score": 0.8790960418567809,
+              "bm25": 0.08865549911149202,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37987",
+              "title": "Violet Evergarden: the Movie",
+              "score": 0.07346420659156659,
+              "baseline_score": 0.9103752113942727,
+              "bm25": 0.07346420659156659,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:41433",
+              "title": "Akudama Drive",
+              "score": 0.04492534313590278,
+              "baseline_score": 0.5296471575625517,
+              "bm25": 0.04492534313590278,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:144",
+              "title": "Kanon",
+              "score": 0.04468551083817351,
+              "baseline_score": 0.5646286780967049,
+              "bm25": 0.04468551083817351,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:50917",
+              "title": "Prima Doll",
+              "score": 0.04404227730185062,
+              "baseline_score": 0.6252137485415852,
+              "bm25": 0.04404227730185062,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:5",
+              "title": "Cowboy Bebop: The Movie - Knockin' on Heaven's Door",
+              "score": 0.04150103532204274,
+              "baseline_score": 0.5769107910265511,
+              "bm25": 0.04150103532204274,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:46604",
+              "title": "Girls’ Frontline",
+              "score": 0.040238310223195836,
+              "baseline_score": 0.5739846862954933,
+              "bm25": 0.040238310223195836,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:30485",
+              "title": "Chaos;Child",
+              "score": 0.039805601687772134,
+              "baseline_score": 0.4849070280293609,
+              "bm25": 0.039805601687772134,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:710",
+              "title": "Rec",
+              "score": 0.0389776755602004,
+              "baseline_score": 0.575979676509481,
+              "bm25": 0.0389776755602004,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:56538",
+              "title": "Kimi ni Todoke: From Me to You Season 3",
+              "score": 0.03818267674303114,
+              "baseline_score": 0.5727186939346979,
+              "bm25": 0.03818267674303114,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.2
+        },
+        {
+          "id": "hybrid",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0
+          },
+          "median_ms": 226.39590000000135,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:37987",
+              "title": "Violet Evergarden: the Movie",
+              "score": 0.7429930104337314,
+              "baseline_score": 0.9103752113942727,
+              "bm25": 0.07346420659156659,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37095",
+              "title": "Violet Evergarden: Special",
+              "score": 0.7210079333077231,
+              "baseline_score": 0.8790960418567809,
+              "bm25": 0.08865549911149202,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:39741",
+              "title": "Violet Evergarden: Eternity and the Auto Memory Doll",
+              "score": 0.6677827689364765,
+              "baseline_score": 0.825587288348985,
+              "bm25": 0.0365646912864419,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:15227",
+              "title": "In This Corner of the World",
+              "score": 0.592918872470241,
+              "baseline_score": 0.7344834771147224,
+              "bm25": 0.026660453892315163,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:34984",
+              "title": "After the Rain",
+              "score": 0.5694904454117168,
+              "baseline_score": 0.71014797273032,
+              "bm25": 0.006860336137303547,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:121",
+              "title": "Fullmetal Alchemist",
+              "score": 0.5587907711698832,
+              "baseline_score": 0.694696200086929,
+              "bm25": 0.015169055501699771,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40787",
+              "title": "Josee, the Tiger and the Fish",
+              "score": 0.5478995815199732,
+              "baseline_score": 0.6801383195741358,
+              "bm25": 0.018944629303322247,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:7674",
+              "title": "Bakuman.",
+              "score": 0.547700594476468,
+              "baseline_score": 0.6801295812046096,
+              "bm25": 0.017984647563901137,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:36098",
+              "title": "I Want to Eat Your Pancreas",
+              "score": 0.5438913827243214,
+              "baseline_score": 0.673510719298775,
+              "bm25": 0.02541403642650641,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:12365",
+              "title": "Bakuman. 3",
+              "score": 0.5422261010444887,
+              "baseline_score": 0.6718851669388397,
+              "bm25": 0.023589837467084557,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.9
+        },
+        {
+          "id": "hybrid_community",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0.05
+          },
+          "median_ms": 233.31570000000102,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:37987",
+              "title": "Violet Evergarden: the Movie",
+              "score": 0.7541728144798642,
+              "baseline_score": 0.9103752113942727,
+              "bm25": 0.07346420659156659,
+              "community_bonus": 0.011179804046132683
+            },
+            {
+              "key": "mal:37095",
+              "title": "Violet Evergarden: Special",
+              "score": 0.7324466080421064,
+              "baseline_score": 0.8790960418567809,
+              "bm25": 0.08865549911149202,
+              "community_bonus": 0.011438674734383356
+            },
+            {
+              "key": "mal:39741",
+              "title": "Violet Evergarden: Eternity and the Auto Memory Doll",
+              "score": 0.6815697840256127,
+              "baseline_score": 0.825587288348985,
+              "bm25": 0.0365646912864419,
+              "community_bonus": 0.013787015089136228
+            },
+            {
+              "key": "mal:15227",
+              "title": "In This Corner of the World",
+              "score": 0.6094056581351962,
+              "baseline_score": 0.7344834771147224,
+              "bm25": 0.026660453892315163,
+              "community_bonus": 0.016486785664955244
+            },
+            {
+              "key": "mal:34984",
+              "title": "After the Rain",
+              "score": 0.5852040441541891,
+              "baseline_score": 0.71014797273032,
+              "bm25": 0.006860336137303547,
+              "community_bonus": 0.015713598742472336
+            },
+            {
+              "key": "mal:121",
+              "title": "Fullmetal Alchemist",
+              "score": 0.5762185357086728,
+              "baseline_score": 0.694696200086929,
+              "bm25": 0.015169055501699771,
+              "community_bonus": 0.01742776453878962
+            },
+            {
+              "key": "mal:40787",
+              "title": "Josee, the Tiger and the Fish",
+              "score": 0.5664356986776543,
+              "baseline_score": 0.6801383195741358,
+              "bm25": 0.018944629303322247,
+              "community_bonus": 0.0185361171576811
+            },
+            {
+              "key": "mal:7674",
+              "title": "Bakuman.",
+              "score": 0.5655664209946475,
+              "baseline_score": 0.6801295812046096,
+              "bm25": 0.017984647563901137,
+              "community_bonus": 0.017865826518179518
+            },
+            {
+              "key": "mal:36098",
+              "title": "I Want to Eat Your Pancreas",
+              "score": 0.5630479446498998,
+              "baseline_score": 0.673510719298775,
+              "bm25": 0.02541403642650641,
+              "community_bonus": 0.019156561925578505
+            },
+            {
+              "key": "mal:5114",
+              "title": "Fullmetal Alchemist: Brotherhood",
+              "score": 0.5620651608000176,
+              "baseline_score": 0.6721715102198804,
+              "bm25": 0.01846139786402559,
+              "community_bonus": 0.020635673051308076
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        }
+      ]
+    },
+    {
+      "anchor": "Laid-Back Camp",
+      "anilist_id": 98444,
+      "systems": [
+        {
+          "id": "vectors",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "vectors",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0,
+            "community_weight": 0
+          },
+          "median_ms": 194.85809999999947,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:38474",
+              "title": "LAID-BACK CAMP SEASON2",
+              "score": 0.962070141564954,
+              "baseline_score": 0.962070141564954,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:53410",
+              "title": "Laid-Back Camp Season 3",
+              "score": 0.92950549693891,
+              "baseline_score": 0.92950549693891,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38476",
+              "title": "ROOM CAMP",
+              "score": 0.9029442401906342,
+              "baseline_score": 0.9029442401906342,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:58855",
+              "title": "Laid-Back Camp Season 3 OVA",
+              "score": 0.8824612238524364,
+              "baseline_score": 0.8824612238524364,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38475",
+              "title": "Laid-Back Camp The Movie",
+              "score": 0.8709975014052618,
+              "baseline_score": 0.8709975014052618,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:23225",
+              "title": "YuruYuri Nachuyachumi!",
+              "score": 0.836450028802233,
+              "baseline_score": 0.836450028802233,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37341",
+              "title": "Yuru Camp△ OVA",
+              "score": 0.8190027306550152,
+              "baseline_score": 0.8190027306550152,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:39730",
+              "title": "Diary of Our Days at the Breakwater",
+              "score": 0.7825479254203767,
+              "baseline_score": 0.7825479254203767,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:35672",
+              "title": "Encouragement of Climb Season 3",
+              "score": 0.7696424511274902,
+              "baseline_score": 0.7696424511274902,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:60658",
+              "title": "Food for the Soul",
+              "score": 0.7634288133594958,
+              "baseline_score": 0.7634288133594958,
+              "bm25": 0,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "bm25",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "bm25",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 1,
+            "community_weight": 0
+          },
+          "median_ms": 200.09630000000107,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:58855",
+              "title": "Laid-Back Camp Season 3 OVA",
+              "score": 0.15138653753656311,
+              "baseline_score": 0.8824612238524364,
+              "bm25": 0.15138653753656311,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38474",
+              "title": "LAID-BACK CAMP SEASON2",
+              "score": 0.08785702731298235,
+              "baseline_score": 0.962070141564954,
+              "bm25": 0.08785702731298235,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:53410",
+              "title": "Laid-Back Camp Season 3",
+              "score": 0.08528231464572202,
+              "baseline_score": 0.92950549693891,
+              "bm25": 0.08528231464572202,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:8457",
+              "title": "Yozakura Quartet: Hoshi no Umi",
+              "score": 0.06624931965277085,
+              "baseline_score": 0.5144062134631517,
+              "bm25": 0.06624931965277085,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:34338",
+              "title": "LOST SONG",
+              "score": 0.06606886629865356,
+              "baseline_score": 0.4885597344510786,
+              "bm25": 0.06606886629865356,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:23251",
+              "title": "Gugure! Kokkuri-san",
+              "score": 0.061505646404310874,
+              "baseline_score": 0.5294367295540445,
+              "bm25": 0.061505646404310874,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:61072",
+              "title": "Touring After the Apocalypse",
+              "score": 0.059791543714771446,
+              "baseline_score": 0.6241713701378808,
+              "bm25": 0.059791543714771446,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38999",
+              "title": "WATATEN!: an Angel Flew Down to Me: You Never Let Us Down / Always Growing Closer / Let's Change You Into This! / I'm Your Big Sister",
+              "score": 0.058153404857177717,
+              "baseline_score": 0.648029960474139,
+              "bm25": 0.058153404857177717,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:34498",
+              "title": "Fireworks",
+              "score": 0.057010031566774526,
+              "baseline_score": 0.5277488403552143,
+              "bm25": 0.057010031566774526,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:1654",
+              "title": "Kashimashi: Girl Meets Girl OVA",
+              "score": 0.052783212871094325,
+              "baseline_score": 0.5350732295510011,
+              "bm25": 0.052783212871094325,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.3
+        },
+        {
+          "id": "hybrid",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0
+          },
+          "median_ms": 210.4344000000001,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:38474",
+              "title": "LAID-BACK CAMP SEASON2",
+              "score": 0.7872275187145598,
+              "baseline_score": 0.962070141564954,
+              "bm25": 0.08785702731298235,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:53410",
+              "title": "Laid-Back Camp Season 3",
+              "score": 0.7606608604802724,
+              "baseline_score": 0.92950549693891,
+              "bm25": 0.08528231464572202,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:58855",
+              "title": "Laid-Back Camp Season 3 OVA",
+              "score": 0.7362462865892618,
+              "baseline_score": 0.8824612238524364,
+              "bm25": 0.15138653753656311,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38476",
+              "title": "ROOM CAMP",
+              "score": 0.7309052099050183,
+              "baseline_score": 0.9029442401906342,
+              "bm25": 0.04274908876255398,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38475",
+              "title": "Laid-Back Camp The Movie",
+              "score": 0.7066941901255321,
+              "baseline_score": 0.8709975014052618,
+              "bm25": 0.04948094500661284,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:23225",
+              "title": "YuruYuri Nachuyachumi!",
+              "score": 0.6756549078915911,
+              "baseline_score": 0.836450028802233,
+              "bm25": 0.032474424249023436,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37341",
+              "title": "Yuru Camp△ OVA",
+              "score": 0.6552021845240121,
+              "baseline_score": 0.8190027306550152,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:39730",
+              "title": "Diary of Our Days at the Breakwater",
+              "score": 0.6262748021142088,
+              "baseline_score": 0.7825479254203767,
+              "bm25": 0.0011823088895370612,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:35672",
+              "title": "Encouragement of Climb Season 3",
+              "score": 0.6259882591156795,
+              "baseline_score": 0.7696424511274902,
+              "bm25": 0.05137149106843649,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:21435",
+              "title": "Encouragement of Climb Season 2",
+              "score": 0.6152201016996941,
+              "baseline_score": 0.7582833718677724,
+              "bm25": 0.04296702102738014,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.9
+        },
+        {
+          "id": "hybrid_community",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0.05
+          },
+          "median_ms": 206.33239999999932,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:38474",
+              "title": "LAID-BACK CAMP SEASON2",
+              "score": 0.7961639629285483,
+              "baseline_score": 0.962070141564954,
+              "bm25": 0.08785702731298235,
+              "community_bonus": 0.00893644421398849
+            },
+            {
+              "key": "mal:53410",
+              "title": "Laid-Back Camp Season 3",
+              "score": 0.7702344260610615,
+              "baseline_score": 0.92950549693891,
+              "bm25": 0.08528231464572202,
+              "community_bonus": 0.009573565580789107
+            },
+            {
+              "key": "mal:58855",
+              "title": "Laid-Back Camp Season 3 OVA",
+              "score": 0.7461370508421645,
+              "baseline_score": 0.8824612238524364,
+              "bm25": 0.15138653753656311,
+              "community_bonus": 0.009890764252902683
+            },
+            {
+              "key": "mal:38476",
+              "title": "ROOM CAMP",
+              "score": 0.7405926223484376,
+              "baseline_score": 0.9029442401906342,
+              "bm25": 0.04274908876255398,
+              "community_bonus": 0.00968741244341934
+            },
+            {
+              "key": "mal:38475",
+              "title": "Laid-Back Camp The Movie",
+              "score": 0.7188663812353225,
+              "baseline_score": 0.8709975014052618,
+              "bm25": 0.04948094500661284,
+              "community_bonus": 0.012172191109790417
+            },
+            {
+              "key": "mal:23225",
+              "title": "YuruYuri Nachuyachumi!",
+              "score": 0.6881421939377649,
+              "baseline_score": 0.836450028802233,
+              "bm25": 0.032474424249023436,
+              "community_bonus": 0.012487286046173744
+            },
+            {
+              "key": "mal:37341",
+              "title": "Yuru Camp△ OVA",
+              "score": 0.6679597036966237,
+              "baseline_score": 0.8190027306550152,
+              "bm25": 0,
+              "community_bonus": 0.01275751917261155
+            },
+            {
+              "key": "mal:35672",
+              "title": "Encouragement of Climb Season 3",
+              "score": 0.6402007052692836,
+              "baseline_score": 0.7696424511274902,
+              "bm25": 0.05137149106843649,
+              "community_bonus": 0.014212446153604183
+            },
+            {
+              "key": "mal:39730",
+              "title": "Diary of Our Days at the Breakwater",
+              "score": 0.6397289092380973,
+              "baseline_score": 0.7825479254203767,
+              "bm25": 0.0011823088895370612,
+              "community_bonus": 0.013454107123888481
+            },
+            {
+              "key": "mal:21435",
+              "title": "Encouragement of Climb Season 2",
+              "score": 0.6296493478859556,
+              "baseline_score": 0.7582833718677724,
+              "bm25": 0.04296702102738014,
+              "community_bonus": 0.014429246186261473
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.9
+        }
+      ]
+    },
+    {
+      "anchor": "HAIKYU!!",
+      "anilist_id": 20464,
+      "systems": [
+        {
+          "id": "vectors",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "vectors",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0,
+            "community_weight": 0
+          },
+          "median_ms": 158.15830000000278,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:28891",
+              "title": "HAIKYU!! 2nd Season",
+              "score": 0.9609443000187952,
+              "baseline_score": 0.9609443000187952,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32935",
+              "title": "HAIKYU!! 3rd Season",
+              "score": 0.9601802321752118,
+              "baseline_score": 0.9601802321752118,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38883",
+              "title": "HAIKYU!! TO THE TOP",
+              "score": 0.9545077387248071,
+              "baseline_score": 0.9545077387248071,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:52742",
+              "title": "HAIKYU!! The Dumpster Battle",
+              "score": 0.9473821101698583,
+              "baseline_score": 0.9473821101698583,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40776",
+              "title": "HAIKYU!! TO THE TOP Part 2",
+              "score": 0.9396811786735535,
+              "baseline_score": 0.9396811786735535,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40262",
+              "title": "HAIKYU!! LAND VS. AIR",
+              "score": 0.9387972702958252,
+              "baseline_score": 0.9387972702958252,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40679",
+              "title": "2.43: Seiin High School Boys Volleyball Team",
+              "score": 0.7623281476598249,
+              "baseline_score": 0.7623281476598249,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:18507",
+              "title": "Free! -Iwatobi Swim Club-",
+              "score": 0.7559209875229549,
+              "baseline_score": 0.7559209875229549,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:263",
+              "title": "Hajime no Ippo: The Fighting!",
+              "score": 0.7432429997950222,
+              "baseline_score": 0.7432429997950222,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:16894",
+              "title": "Kuroko's Basketball 2",
+              "score": 0.7405009440657828,
+              "baseline_score": 0.7405009440657828,
+              "bm25": 0,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "bm25",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "bm25",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 1,
+            "community_weight": 0
+          },
+          "median_ms": 181.55549999999857,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:28891",
+              "title": "HAIKYU!! 2nd Season",
+              "score": 0.07072366141034037,
+              "baseline_score": 0.9609443000187952,
+              "bm25": 0.07072366141034037,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32935",
+              "title": "HAIKYU!! 3rd Season",
+              "score": 0.06942300557318214,
+              "baseline_score": 0.9601802321752118,
+              "bm25": 0.06942300557318214,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38883",
+              "title": "HAIKYU!! TO THE TOP",
+              "score": 0.05567527063523462,
+              "baseline_score": 0.9545077387248071,
+              "bm25": 0.05567527063523462,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40776",
+              "title": "HAIKYU!! TO THE TOP Part 2",
+              "score": 0.05054716373048593,
+              "baseline_score": 0.9396811786735535,
+              "bm25": 0.05054716373048593,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:52229",
+              "title": "BIRDIE WING -Golf Girls’ Story- Season 2",
+              "score": 0.04814454030869815,
+              "baseline_score": 0.5641677266262677,
+              "bm25": 0.04814454030869815,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:18689",
+              "title": "Ace of the Diamond",
+              "score": 0.044353363128138916,
+              "baseline_score": 0.72569429903583,
+              "bm25": 0.044353363128138916,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:18507",
+              "title": "Free! -Iwatobi Swim Club-",
+              "score": 0.04157062941666819,
+              "baseline_score": 0.7559209875229549,
+              "bm25": 0.04157062941666819,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:52826",
+              "title": "Tsurune - The Linking Shot -",
+              "score": 0.0392757809501316,
+              "baseline_score": 0.6892512004853198,
+              "bm25": 0.0392757809501316,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:11771",
+              "title": "Kuroko's Basketball",
+              "score": 0.03853436078256332,
+              "baseline_score": 0.733351915872676,
+              "bm25": 0.03853436078256332,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:50803",
+              "title": "Bottom-Tier Character Tomozaki 2nd Stage",
+              "score": 0.03843586651685793,
+              "baseline_score": 0.5971216118950723,
+              "bm25": 0.03843586651685793,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.5
+        },
+        {
+          "id": "hybrid",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0
+          },
+          "median_ms": 207.90160000000105,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:28891",
+              "title": "HAIKYU!! 2nd Season",
+              "score": 0.7829001722971042,
+              "baseline_score": 0.9609443000187952,
+              "bm25": 0.07072366141034037,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32935",
+              "title": "HAIKYU!! 3rd Season",
+              "score": 0.7820287868548058,
+              "baseline_score": 0.9601802321752118,
+              "bm25": 0.06942300557318214,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38883",
+              "title": "HAIKYU!! TO THE TOP",
+              "score": 0.7747412451068927,
+              "baseline_score": 0.9545077387248071,
+              "bm25": 0.05567527063523462,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:52742",
+              "title": "HAIKYU!! The Dumpster Battle",
+              "score": 0.7631929293970334,
+              "baseline_score": 0.9473821101698583,
+              "bm25": 0.026436206305733748,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40776",
+              "title": "HAIKYU!! TO THE TOP Part 2",
+              "score": 0.76185437568494,
+              "baseline_score": 0.9396811786735535,
+              "bm25": 0.05054716373048593,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40262",
+              "title": "HAIKYU!! LAND VS. AIR",
+              "score": 0.7586826823298083,
+              "baseline_score": 0.9387972702958252,
+              "bm25": 0.03822433046574053,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40679",
+              "title": "2.43: Seiin High School Boys Volleyball Team",
+              "score": 0.6162698236991175,
+              "baseline_score": 0.7623281476598249,
+              "bm25": 0.032036527856287376,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:18507",
+              "title": "Free! -Iwatobi Swim Club-",
+              "score": 0.6130509159016977,
+              "baseline_score": 0.7559209875229549,
+              "bm25": 0.04157062941666819,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:16894",
+              "title": "Kuroko's Basketball 2",
+              "score": 0.5982202628325312,
+              "baseline_score": 0.7405009440657828,
+              "bm25": 0.029097537899524593,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:263",
+              "title": "Hajime no Ippo: The Fighting!",
+              "score": 0.5955023988709981,
+              "baseline_score": 0.7432429997950222,
+              "bm25": 0.004539995174901596,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "hybrid_community",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0.05
+          },
+          "median_ms": 169.13300000000163,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:28891",
+              "title": "HAIKYU!! 2nd Season",
+              "score": 0.7922354648883287,
+              "baseline_score": 0.9609443000187952,
+              "bm25": 0.07072366141034037,
+              "community_bonus": 0.009335292591224521
+            },
+            {
+              "key": "mal:32935",
+              "title": "HAIKYU!! 3rd Season",
+              "score": 0.7915105346266218,
+              "baseline_score": 0.9601802321752118,
+              "bm25": 0.06942300557318214,
+              "community_bonus": 0.009481747771815948
+            },
+            {
+              "key": "mal:38883",
+              "title": "HAIKYU!! TO THE TOP",
+              "score": 0.7840894834349567,
+              "baseline_score": 0.9545077387248071,
+              "bm25": 0.05567527063523462,
+              "community_bonus": 0.009348238328063955
+            },
+            {
+              "key": "mal:52742",
+              "title": "HAIKYU!! The Dumpster Battle",
+              "score": 0.773375633432961,
+              "baseline_score": 0.9473821101698583,
+              "bm25": 0.026436206305733748,
+              "community_bonus": 0.010182704035927564
+            },
+            {
+              "key": "mal:40776",
+              "title": "HAIKYU!! TO THE TOP Part 2",
+              "score": 0.7719755647183301,
+              "baseline_score": 0.9396811786735535,
+              "bm25": 0.05054716373048593,
+              "community_bonus": 0.010121189033390052
+            },
+            {
+              "key": "mal:40262",
+              "title": "HAIKYU!! LAND VS. AIR",
+              "score": 0.7680940577189458,
+              "baseline_score": 0.9387972702958252,
+              "bm25": 0.03822433046574053,
+              "community_bonus": 0.009411375389137479
+            },
+            {
+              "key": "mal:40679",
+              "title": "2.43: Seiin High School Boys Volleyball Team",
+              "score": 0.6275898638999936,
+              "baseline_score": 0.7623281476598249,
+              "bm25": 0.032036527856287376,
+              "community_bonus": 0.011320040200876033
+            },
+            {
+              "key": "mal:18507",
+              "title": "Free! -Iwatobi Swim Club-",
+              "score": 0.6267876083871874,
+              "baseline_score": 0.7559209875229549,
+              "bm25": 0.04157062941666819,
+              "community_bonus": 0.01373669248548973
+            },
+            {
+              "key": "mal:16894",
+              "title": "Kuroko's Basketball 2",
+              "score": 0.6142914523192299,
+              "baseline_score": 0.7405009440657828,
+              "bm25": 0.029097537899524593,
+              "community_bonus": 0.016071189486698757
+            },
+            {
+              "key": "mal:263",
+              "title": "Hajime no Ippo: The Fighting!",
+              "score": 0.6130980445201096,
+              "baseline_score": 0.7432429997950222,
+              "bm25": 0.004539995174901596,
+              "community_bonus": 0.017595645649111584
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        }
+      ]
+    },
+    {
+      "anchor": "Monster",
+      "anilist_id": 19,
+      "systems": [
+        {
+          "id": "vectors",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "vectors",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0,
+            "community_weight": 0
+          },
+          "median_ms": 258.73449999999866,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:35737",
+              "title": "PLUTO",
+              "score": 0.8071141100527357,
+              "baseline_score": 0.8071141100527357,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:1535",
+              "title": "Death Note",
+              "score": 0.7767242089907478,
+              "baseline_score": 0.7767242089907478,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37525",
+              "title": "BABYLON",
+              "score": 0.7641736870532346,
+              "baseline_score": 0.7641736870532346,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:43325",
+              "title": "Moriarty the Patriot Part 2",
+              "score": 0.7536562486615174,
+              "baseline_score": 0.7536562486615174,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40911",
+              "title": "Moriarty the Patriot",
+              "score": 0.7433276385253073,
+              "baseline_score": 0.7433276385253073,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32827",
+              "title": "B: The Beginning",
+              "score": 0.7407707370870796,
+              "baseline_score": 0.7407707370870796,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:23283",
+              "title": "Terror in Resonance",
+              "score": 0.7407241944517436,
+              "baseline_score": 0.7407241944517436,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:46102",
+              "title": "ODDTAXI",
+              "score": 0.7237139550281771,
+              "baseline_score": 0.7237139550281771,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:49733",
+              "title": "Moriarty the Patriot OVA",
+              "score": 0.7204631030790801,
+              "baseline_score": 0.7204631030790801,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:323",
+              "title": "Paranoia Agent",
+              "score": 0.7159698405651256,
+              "baseline_score": 0.7159698405651256,
+              "bm25": 0,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "bm25",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "bm25",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 1,
+            "community_weight": 0
+          },
+          "median_ms": 255.10729999999967,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:58957",
+              "title": "9-nine- Ruler's Crown",
+              "score": 0.04269856112447601,
+              "baseline_score": 0.516310520993735,
+              "bm25": 0.04269856112447601,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:21557",
+              "title": "When Marnie Was There",
+              "score": 0.04181784024218728,
+              "baseline_score": 0.5589340164319451,
+              "bm25": 0.04181784024218728,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:56038",
+              "title": "LAZARUS",
+              "score": 0.03935781556221184,
+              "baseline_score": 0.628607476220615,
+              "bm25": 0.03935781556221184,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:34445",
+              "title": "Yuki Yuna is a Hero: The Hero Chapter",
+              "score": 0.038400798711994685,
+              "baseline_score": 0.5499435446040517,
+              "bm25": 0.038400798711994685,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:50586",
+              "title": "Migi&Dali",
+              "score": 0.03828129788736621,
+              "baseline_score": 0.6345133794191253,
+              "bm25": 0.03828129788736621,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:58600",
+              "title": "Ameku M.D.: Doctor Detective",
+              "score": 0.03793116731425819,
+              "baseline_score": 0.6712813797332742,
+              "bm25": 0.03793116731425819,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:48414",
+              "title": "Sabikui Bisco",
+              "score": 0.03756041827510091,
+              "baseline_score": 0.5593086182394491,
+              "bm25": 0.03756041827510091,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:36098",
+              "title": "I Want to Eat Your Pancreas",
+              "score": 0.03624137831918776,
+              "baseline_score": 0.543857968708268,
+              "bm25": 0.03624137831918776,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:49782",
+              "title": "SHADOWS HOUSE 2nd Season",
+              "score": 0.034316711214877005,
+              "baseline_score": 0.5939769594316168,
+              "bm25": 0.034316711214877005,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:430",
+              "title": "Fullmetal Alchemist: The Movie - Conqueror of Shamballa",
+              "score": 0.03398278361174436,
+              "baseline_score": 0.5548846342963799,
+              "bm25": 0.03398278361174436,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0
+        },
+        {
+          "id": "hybrid",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0
+          },
+          "median_ms": 250.58070000000225,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:35737",
+              "title": "PLUTO",
+              "score": 0.6479212785074672,
+              "baseline_score": 0.8071141100527357,
+              "bm25": 0.011149952326393117,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:1535",
+              "title": "Death Note",
+              "score": 0.625703043482342,
+              "baseline_score": 0.7767242089907478,
+              "bm25": 0.021618381448718613,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37525",
+              "title": "BABYLON",
+              "score": 0.6128294123465173,
+              "baseline_score": 0.7641736870532346,
+              "bm25": 0.007452313519647799,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:43325",
+              "title": "Moriarty the Patriot Part 2",
+              "score": 0.604414662997519,
+              "baseline_score": 0.7536562486615174,
+              "bm25": 0.007448320341525352,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40911",
+              "title": "Moriarty the Patriot",
+              "score": 0.5960735679305584,
+              "baseline_score": 0.7433276385253073,
+              "bm25": 0.007057285551562574,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:23283",
+              "title": "Terror in Resonance",
+              "score": 0.5951835119553499,
+              "baseline_score": 0.7407241944517436,
+              "bm25": 0.01302078196977448,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32827",
+              "title": "B: The Beginning",
+              "score": 0.5935091762396545,
+              "baseline_score": 0.7407707370870796,
+              "bm25": 0.004462932849953885,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:46102",
+              "title": "ODDTAXI",
+              "score": 0.5838292355130232,
+              "baseline_score": 0.7237139550281771,
+              "bm25": 0.024290357452407436,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:49733",
+              "title": "Moriarty the Patriot OVA",
+              "score": 0.5766450359224561,
+              "baseline_score": 0.7204631030790801,
+              "bm25": 0.0013727672959598057,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:323",
+              "title": "Paranoia Agent",
+              "score": 0.5752213917312629,
+              "baseline_score": 0.7159698405651256,
+              "bm25": 0.012227596395811667,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "hybrid_community",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0.05
+          },
+          "median_ms": 264.6143000000011,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:35737",
+              "title": "PLUTO",
+              "score": 0.6627085848101536,
+              "baseline_score": 0.8071141100527357,
+              "bm25": 0.011149952326393117,
+              "community_bonus": 0.01478730630268638
+            },
+            {
+              "key": "mal:1535",
+              "title": "Death Note",
+              "score": 0.6414235156560836,
+              "baseline_score": 0.7767242089907478,
+              "bm25": 0.021618381448718613,
+              "community_bonus": 0.01572047217374164
+            },
+            {
+              "key": "mal:37525",
+              "title": "BABYLON",
+              "score": 0.6252188711514288,
+              "baseline_score": 0.7641736870532346,
+              "bm25": 0.007452313519647799,
+              "community_bonus": 0.012389458804911446
+            },
+            {
+              "key": "mal:43325",
+              "title": "Moriarty the Patriot Part 2",
+              "score": 0.6206336618146208,
+              "baseline_score": 0.7536562486615174,
+              "bm25": 0.007448320341525352,
+              "community_bonus": 0.01621899881710172
+            },
+            {
+              "key": "mal:40911",
+              "title": "Moriarty the Patriot",
+              "score": 0.612230625213336,
+              "baseline_score": 0.7433276385253073,
+              "bm25": 0.007057285551562574,
+              "community_bonus": 0.016157057282777665
+            },
+            {
+              "key": "mal:23283",
+              "title": "Terror in Resonance",
+              "score": 0.6109713549890913,
+              "baseline_score": 0.7407241944517436,
+              "bm25": 0.01302078196977448,
+              "community_bonus": 0.015787843033741356
+            },
+            {
+              "key": "mal:32827",
+              "title": "B: The Beginning",
+              "score": 0.6075331096593864,
+              "baseline_score": 0.7407707370870796,
+              "bm25": 0.004462932849953885,
+              "community_bonus": 0.014023933419731918
+            },
+            {
+              "key": "mal:46102",
+              "title": "ODDTAXI",
+              "score": 0.6015164930037198,
+              "baseline_score": 0.7237139550281771,
+              "bm25": 0.024290357452407436,
+              "community_bonus": 0.017687257490696513
+            },
+            {
+              "key": "mal:49733",
+              "title": "Moriarty the Patriot OVA",
+              "score": 0.5929442020394415,
+              "baseline_score": 0.7204631030790801,
+              "bm25": 0.0013727672959598057,
+              "community_bonus": 0.016299166116985443
+            },
+            {
+              "key": "mal:52215",
+              "title": "Orb: On the Movements of the Earth",
+              "score": 0.5914687558666828,
+              "baseline_score": 0.7096877097482635,
+              "bm25": 0.02681214881615578,
+              "community_bonus": 0.018356158304840796
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.9
+        }
+      ]
+    },
+    {
+      "anchor": "Spirited Away",
+      "anilist_id": 199,
+      "systems": [
+        {
+          "id": "vectors",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "vectors",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0,
+            "community_weight": 0
+          },
+          "median_ms": 192.67229999999836,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:59169",
+              "title": "Once Upon a Witch's Death",
+              "score": 0.7115434323103118,
+              "baseline_score": 0.7115434323103118,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:20507",
+              "title": "Noragami",
+              "score": 0.7105804675541754,
+              "baseline_score": 0.7105804675541754,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:35241",
+              "title": "KONOHANA KITAN",
+              "score": 0.707121356161931,
+              "baseline_score": 0.707121356161931,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32924",
+              "title": "Urara Meirocho",
+              "score": 0.7067623649769471,
+              "baseline_score": 0.7067623649769471,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:30503",
+              "title": "Noragami Aragoto",
+              "score": 0.6996884632944897,
+              "baseline_score": 0.6996884632944897,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:15813",
+              "title": "Majokko Shimai no Yoyo to Nene",
+              "score": 0.6994925096189895,
+              "baseline_score": 0.6994925096189895,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40748",
+              "title": "JUJUTSU KAISEN",
+              "score": 0.6844067057899377,
+              "baseline_score": 0.6844067057899377,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:60509",
+              "title": "Champignon Witch",
+              "score": 0.6825860292048093,
+              "baseline_score": 0.6825860292048093,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:17909",
+              "title": "The Eccentric Family",
+              "score": 0.6814524146517431,
+              "baseline_score": 0.6814524146517431,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:512",
+              "title": "Kiki's Delivery Service",
+              "score": 0.6809669995895715,
+              "baseline_score": 0.6809669995895715,
+              "bm25": 0,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "bm25",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "bm25",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 1,
+            "community_weight": 0
+          },
+          "median_ms": 213.97089999999662,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:2890",
+              "title": "Ponyo",
+              "score": 0.05428170470969912,
+              "baseline_score": 0.6061486152216197,
+              "bm25": 0.05428170470969912,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:7711",
+              "title": "The Secret World of Arrietty",
+              "score": 0.05100517877149121,
+              "baseline_score": 0.612466949229287,
+              "bm25": 0.05100517877149121,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38474",
+              "title": "LAID-BACK CAMP SEASON2",
+              "score": 0.05076986525237814,
+              "baseline_score": 0.49473296721752424,
+              "bm25": 0.05076986525237814,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:48405",
+              "title": "The Girl from the Other Side",
+              "score": 0.04902386737500997,
+              "baseline_score": 0.5923151068088707,
+              "bm25": 0.04902386737500997,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:36936",
+              "title": "Mirai",
+              "score": 0.04750402384607457,
+              "baseline_score": 0.5766536613493312,
+              "bm25": 0.04750402384607457,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38830",
+              "title": "The 8th Son? Are You Kidding Me?",
+              "score": 0.04715678669306111,
+              "baseline_score": 0.6074282052649042,
+              "bm25": 0.04715678669306111,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:58878",
+              "title": "Goodbye, Lara",
+              "score": 0.04257644000166301,
+              "baseline_score": 0.6445471395903188,
+              "bm25": 0.04257644000166301,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:24655",
+              "title": "Date A Live Mayuri Judgement",
+              "score": 0.042527447433980715,
+              "baseline_score": 0.49023539313844505,
+              "bm25": 0.042527447433980715,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:38000",
+              "title": "Demon Slayer: Kimetsu no Yaiba",
+              "score": 0.042438908864169844,
+              "baseline_score": 0.6226338523907446,
+              "bm25": 0.042438908864169844,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:39071",
+              "title": "The Demon Girl Next Door",
+              "score": 0.0413580876249109,
+              "baseline_score": 0.5363654856316792,
+              "bm25": 0.0413580876249109,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0
+        },
+        {
+          "id": "hybrid",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0
+          },
+          "median_ms": 216.40729999999894,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:20507",
+              "title": "Noragami",
+              "score": 0.5731540924499139,
+              "baseline_score": 0.7105804675541754,
+              "bm25": 0.023448592032867997,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:59169",
+              "title": "Once Upon a Witch's Death",
+              "score": 0.5721937508267942,
+              "baseline_score": 0.7115434323103118,
+              "bm25": 0.014795024892723418,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:35241",
+              "title": "KONOHANA KITAN",
+              "score": 0.5692647164590582,
+              "baseline_score": 0.707121356161931,
+              "bm25": 0.017838157647566532,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:32924",
+              "title": "Urara Meirocho",
+              "score": 0.5672422818447375,
+              "baseline_score": 0.7067623649769471,
+              "bm25": 0.009161949315898185,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:15813",
+              "title": "Majokko Shimai no Yoyo to Nene",
+              "score": 0.5654164251943437,
+              "baseline_score": 0.6994925096189895,
+              "bm25": 0.029112087495760212,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:30503",
+              "title": "Noragami Aragoto",
+              "score": 0.5622861811615891,
+              "baseline_score": 0.6996884632944897,
+              "bm25": 0.012677052629986264,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40748",
+              "title": "JUJUTSU KAISEN",
+              "score": 0.5516875686995883,
+              "baseline_score": 0.6844067057899377,
+              "bm25": 0.0208110203381907,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:17909",
+              "title": "The Eccentric Family",
+              "score": 0.5500536533541059,
+              "baseline_score": 0.6814524146517431,
+              "bm25": 0.02445860816355735,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:861",
+              "title": "xxxHOLiC",
+              "score": 0.5499738121999084,
+              "baseline_score": 0.6807341526144958,
+              "bm25": 0.02693245054155835,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:34019",
+              "title": "Tsugumomo",
+              "score": 0.5489167006322679,
+              "baseline_score": 0.6802263577247829,
+              "bm25": 0.023678072262208007,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.8
+        },
+        {
+          "id": "hybrid_community",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0.05
+          },
+          "median_ms": 207.5085999999974,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:20507",
+              "title": "Noragami",
+              "score": 0.5898010828443673,
+              "baseline_score": 0.7105804675541754,
+              "bm25": 0.023448592032867997,
+              "community_bonus": 0.016646990394453363
+            },
+            {
+              "key": "mal:59169",
+              "title": "Once Upon a Witch's Death",
+              "score": 0.5873808726724431,
+              "baseline_score": 0.7115434323103118,
+              "bm25": 0.014795024892723418,
+              "community_bonus": 0.015187121845648802
+            },
+            {
+              "key": "mal:35241",
+              "title": "KONOHANA KITAN",
+              "score": 0.584771186666532,
+              "baseline_score": 0.707121356161931,
+              "bm25": 0.017838157647566532,
+              "community_bonus": 0.015506470207473904
+            },
+            {
+              "key": "mal:32924",
+              "title": "Urara Meirocho",
+              "score": 0.5819560442620164,
+              "baseline_score": 0.7067623649769471,
+              "bm25": 0.009161949315898185,
+              "community_bonus": 0.014713762417278927
+            },
+            {
+              "key": "mal:15813",
+              "title": "Majokko Shimai no Yoyo to Nene",
+              "score": 0.5808441420999445,
+              "baseline_score": 0.6994925096189895,
+              "bm25": 0.029112087495760212,
+              "community_bonus": 0.015427716905600799
+            },
+            {
+              "key": "mal:30503",
+              "title": "Noragami Aragoto",
+              "score": 0.5797947339151256,
+              "baseline_score": 0.6996884632944897,
+              "bm25": 0.012677052629986264,
+              "community_bonus": 0.017508552753536438
+            },
+            {
+              "key": "mal:40748",
+              "title": "JUJUTSU KAISEN",
+              "score": 0.5705166908142056,
+              "baseline_score": 0.6844067057899377,
+              "bm25": 0.0208110203381907,
+              "community_bonus": 0.01882912211461729
+            },
+            {
+              "key": "mal:861",
+              "title": "xxxHOLiC",
+              "score": 0.5672998204302119,
+              "baseline_score": 0.6807341526144958,
+              "bm25": 0.02693245054155835,
+              "community_bonus": 0.01732600823030353
+            },
+            {
+              "key": "mal:17909",
+              "title": "The Eccentric Family",
+              "score": 0.56715161452665,
+              "baseline_score": 0.6814524146517431,
+              "bm25": 0.02445860816355735,
+              "community_bonus": 0.017097961172543977
+            },
+            {
+              "key": "mal:34019",
+              "title": "Tsugumomo",
+              "score": 0.5640279911610869,
+              "baseline_score": 0.6802263577247829,
+              "bm25": 0.023678072262208007,
+              "community_bonus": 0.015111290528819024
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.8
+        }
+      ]
+    },
+    {
+      "anchor": "MUSHI-SHI",
+      "anilist_id": 457,
+      "systems": [
+        {
+          "id": "vectors",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "vectors",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0,
+            "community_weight": 0
+          },
+          "median_ms": 216.17259999999806,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:21939",
+              "title": "MUSHI-SHI The Next Passage",
+              "score": 0.9028951571806239,
+              "baseline_score": 0.9028951571806239,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:24701",
+              "title": "MUSHI-SHI The Next Passage 2",
+              "score": 0.8453247267850987,
+              "baseline_score": 0.8453247267850987,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:164",
+              "title": "Princess Mononoke",
+              "score": 0.7679161061447287,
+              "baseline_score": 0.7679161061447287,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:5300",
+              "title": "Natsume's Book of Friends Season 2",
+              "score": 0.7161944796052637,
+              "baseline_score": 0.7161944796052637,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:10379",
+              "title": "Natsume's Book of Friends Season 3",
+              "score": 0.7060184359359406,
+              "baseline_score": 0.7060184359359406,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:4081",
+              "title": "Natsume's Book of Friends Season 1",
+              "score": 0.7001118830211858,
+              "baseline_score": 0.7001118830211858,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:59791",
+              "title": "Ruri Rocks",
+              "score": 0.6952780006087198,
+              "baseline_score": 0.6952780006087198,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:34599",
+              "title": "Made in Abyss",
+              "score": 0.6898660920684345,
+              "baseline_score": 0.6898660920684345,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:59978",
+              "title": "Frieren: Beyond Journey’s End Season 2",
+              "score": 0.6863768364771702,
+              "baseline_score": 0.6863768364771702,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:31442",
+              "title": "Myriad Colors Phantom World",
+              "score": 0.6845037903736445,
+              "baseline_score": 0.6845037903736445,
+              "bm25": 0,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "bm25",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "bm25",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 1,
+            "community_weight": 0
+          },
+          "median_ms": 231.51750000000175,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:21939",
+              "title": "MUSHI-SHI The Next Passage",
+              "score": 0.09009715932546228,
+              "baseline_score": 0.9028951571806239,
+              "bm25": 0.09009715932546228,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:24701",
+              "title": "MUSHI-SHI The Next Passage 2",
+              "score": 0.0656185617358175,
+              "baseline_score": 0.8453247267850987,
+              "bm25": 0.0656185617358175,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:6712",
+              "title": "Natsu no Arashi! Season 2",
+              "score": 0.058023983560271296,
+              "baseline_score": 0.4903867104428279,
+              "bm25": 0.058023983560271296,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:36184",
+              "title": "Soulmate Adventure",
+              "score": 0.057401287176719676,
+              "baseline_score": 0.49278055516562086,
+              "bm25": 0.057401287176719676,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:23233",
+              "title": "The Testament of Sister New Devil",
+              "score": 0.05690941133675223,
+              "baseline_score": 0.5160075583883007,
+              "bm25": 0.05690941133675223,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:2246",
+              "title": "Mononoke",
+              "score": 0.051484165464289494,
+              "baseline_score": 0.6434035840078185,
+              "bm25": 0.051484165464289494,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:37435",
+              "title": "Carole & Tuesday",
+              "score": 0.04952387662950427,
+              "baseline_score": 0.48308217132637254,
+              "bm25": 0.04952387662950427,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:20785",
+              "title": "The Irregular at Magic High School",
+              "score": 0.04931012694840841,
+              "baseline_score": 0.4922945350800249,
+              "bm25": 0.04931012694840841,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:49738",
+              "title": "The Heike Story",
+              "score": 0.04897077686258751,
+              "baseline_score": 0.5311297349543255,
+              "bm25": 0.04897077686258751,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:40571",
+              "title": "Wandering Witch: The Journey of Elaina",
+              "score": 0.048717541456885706,
+              "baseline_score": 0.5888587265065048,
+              "bm25": 0.048717541456885706,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 0.2
+        },
+        {
+          "id": "hybrid",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0
+          },
+          "median_ms": 232.45540000000256,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:21939",
+              "title": "MUSHI-SHI The Next Passage",
+              "score": 0.7403355576095916,
+              "baseline_score": 0.9028951571806239,
+              "bm25": 0.09009715932546228,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:24701",
+              "title": "MUSHI-SHI The Next Passage 2",
+              "score": 0.6893834937752426,
+              "baseline_score": 0.8453247267850987,
+              "bm25": 0.0656185617358175,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:164",
+              "title": "Princess Mononoke",
+              "score": 0.614332884915783,
+              "baseline_score": 0.7679161061447287,
+              "bm25": 0,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:5300",
+              "title": "Natsume's Book of Friends Season 2",
+              "score": 0.578070686686342,
+              "baseline_score": 0.7161944796052637,
+              "bm25": 0.025575515010655265,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:10379",
+              "title": "Natsume's Book of Friends Season 3",
+              "score": 0.5682367698024918,
+              "baseline_score": 0.7060184359359406,
+              "bm25": 0.017110105268696895,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:4081",
+              "title": "Natsume's Book of Friends Season 1",
+              "score": 0.5619910935714155,
+              "baseline_score": 0.7001118830211858,
+              "bm25": 0.009507935772334154,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:34599",
+              "title": "Made in Abyss",
+              "score": 0.5585642472402632,
+              "baseline_score": 0.6898660920684345,
+              "bm25": 0.033356867927577465,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:59791",
+              "title": "Ruri Rocks",
+              "score": 0.5579482029440459,
+              "baseline_score": 0.6952780006087198,
+              "bm25": 0.008629012285349864,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:31442",
+              "title": "Myriad Colors Phantom World",
+              "score": 0.5534093078923507,
+              "baseline_score": 0.6845037903736445,
+              "bm25": 0.029031377967175524,
+              "community_bonus": 0
+            },
+            {
+              "key": "mal:59978",
+              "title": "Frieren: Beyond Journey’s End Season 2",
+              "score": 0.551032973797264,
+              "baseline_score": 0.6863768364771702,
+              "bm25": 0.009657523077638867,
+              "community_bonus": 0
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        },
+        {
+          "id": "hybrid_community",
+          "params": {
+            "version": "ir-v7-guided-profile",
+            "model": "Word2Vec Skip-gram text8 100d",
+            "document_words": null,
+            "synopsis_policy": "entire_available_source",
+            "idf_policy": "anilist_catalog_smooth",
+            "base_semantic": 0.5,
+            "base_topics": 0.5,
+            "topic_metric": "idf_weighted_tag_cosine_85_genres_15",
+            "affinity_metric": "positive_coverage_times_one_minus_negative_coverage",
+            "profile_semantic": 0.7,
+            "profile_topics": 0.3,
+            "personal_min_topics": 0.25,
+            "profile_text_policy": "positive_negative_centroid_contrast",
+            "default_personalization": 0.35,
+            "max_personalization": 0.6,
+            "explicit_topic_weight": 1,
+            "max_history_topics": 12,
+            "rating_neutral": "user_observed_midrange",
+            "rating_policy": "signed_user_midrange",
+            "import_limit": null,
+            "profile_metadata_limit": null,
+            "api_cache_seconds": 3600,
+            "retrieval_strategy": "hybrid",
+            "bm25_k1": 1.2,
+            "bm25_b": 0.75,
+            "lexical_weight": 0.2,
+            "community_weight": 0.05
+          },
+          "median_ms": 224.99619999999777,
+          "eligible": 3048,
+          "top10": [
+            {
+              "key": "mal:21939",
+              "title": "MUSHI-SHI The Next Passage",
+              "score": 0.7515011286323792,
+              "baseline_score": 0.9028951571806239,
+              "bm25": 0.09009715932546228,
+              "community_bonus": 0.011165571022787563
+            },
+            {
+              "key": "mal:24701",
+              "title": "MUSHI-SHI The Next Passage 2",
+              "score": 0.7027400035429071,
+              "baseline_score": 0.8453247267850987,
+              "bm25": 0.0656185617358175,
+              "community_bonus": 0.013356509767664572
+            },
+            {
+              "key": "mal:164",
+              "title": "Princess Mononoke",
+              "score": 0.6307237373068622,
+              "baseline_score": 0.7679161061447287,
+              "bm25": 0,
+              "community_bonus": 0.016390852391079225
+            },
+            {
+              "key": "mal:5300",
+              "title": "Natsume's Book of Friends Season 2",
+              "score": 0.5955807531888588,
+              "baseline_score": 0.7161944796052637,
+              "bm25": 0.025575515010655265,
+              "community_bonus": 0.017510066502516807
+            },
+            {
+              "key": "mal:10379",
+              "title": "Natsume's Book of Friends Season 3",
+              "score": 0.5863708254707871,
+              "baseline_score": 0.7060184359359406,
+              "bm25": 0.017110105268696895,
+              "community_bonus": 0.018134055668295346
+            },
+            {
+              "key": "mal:4081",
+              "title": "Natsume's Book of Friends Season 1",
+              "score": 0.579511449828559,
+              "baseline_score": 0.7001118830211858,
+              "bm25": 0.009507935772334154,
+              "community_bonus": 0.017520356257143384
+            },
+            {
+              "key": "mal:34599",
+              "title": "Made in Abyss",
+              "score": 0.5771045488561721,
+              "baseline_score": 0.6898660920684345,
+              "bm25": 0.033356867927577465,
+              "community_bonus": 0.018540301615908947
+            },
+            {
+              "key": "mal:59791",
+              "title": "Ruri Rocks",
+              "score": 0.5754092489277561,
+              "baseline_score": 0.6952780006087198,
+              "bm25": 0.008629012285349864,
+              "community_bonus": 0.01746104598371019
+            },
+            {
+              "key": "mal:59978",
+              "title": "Frieren: Beyond Journey’s End Season 2",
+              "score": 0.5705630394370831,
+              "baseline_score": 0.6863768364771702,
+              "bm25": 0.009657523077638867,
+              "community_bonus": 0.019530065639819016
+            },
+            {
+              "key": "mal:31442",
+              "title": "Myriad Colors Phantom World",
+              "score": 0.5679235053858492,
+              "baseline_score": 0.6845037903736445,
+              "bm25": 0.029031377967175524,
+              "community_bonus": 0.014514197493498604
+            }
+          ],
+          "human_precision": null,
+          "human_ndcg": null,
+          "overlap_at_10": 1
+        }
+      ]
+    }
+  ]
+}

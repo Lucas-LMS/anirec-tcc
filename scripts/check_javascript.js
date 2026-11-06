@@ -1,0 +1,3 @@
+const fs=require('node:fs'),path=require('node:path'),child=require('node:child_process'),root=path.resolve(__dirname,'..');let count=0;
+function check(folder){for(const entry of fs.readdirSync(folder,{withFileTypes:true})){const file=path.join(folder,entry.name);if(entry.isDirectory())check(file);else if(file.endsWith('.js')){const result=child.spawnSync(process.execPath,['--check',file],{encoding:'utf8'});if(result.status!==0){process.stderr.write(result.stderr);process.exit(1);}count++;}}}
+check(path.join(root,'site'));check(path.join(root,'recomendador/shared'));console.log('JavaScript syntax checked:',count,'files');

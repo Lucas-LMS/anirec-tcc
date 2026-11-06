@@ -7,6 +7,16 @@
   const unit = vector => { const length = Math.sqrt(dot(vector, vector)); return length ? vector.map(x => x / length) : vector; };
   const cosine = (a, b) => Math.max(-1, Math.min(1, dot(a, b)));
   const jaccard = (a, b) => { const union = new Set([...a, ...b]); return union.size ? [...new Set(a)].filter(x => b.includes(x)).length / union.size : 0; };
+  const stop=new Set('a an the and or of to in on at by for from with as is are was were be been being it its this that these those he she they his her their who which when where while into out up down about through after before during over under than then there here also very can could would should may might has have had do does did will just some any all each both more most other such only own one two'.split(' '));
+  const tokens=text=>(String(text||'').normalize('NFKC').toLowerCase().match(/\p{L}+/gu)||[]).filter(word=>!stop.has(word));
+  const bmCache=new WeakMap();
+  function bm25(records,text,k1=1.2,b=.75){
+    let index=bmCache.get(records);
+    if(!index){const usable=records.filter(row=>!row.is_adult),df=new Map(),docs=usable.map(row=>{const counts=new Map();for(const word of tokens(row.text))counts.set(word,(counts.get(word)||0)+1);for(const word of counts.keys())df.set(word,(df.get(word)||0)+1);return {counts,length:[...counts.values()].reduce((a,b)=>a+b,0)};});index={df,docs,rows:usable,average:docs.reduce((a,b)=>a+b.length,0)/(docs.length||1)};bmCache.set(records,index);}
+    const query=[...new Set(tokens(text))].filter(word=>(index.df.get(word)||0)>1).sort(),idf=new Map(query.map(word=>[word,Math.log(1+(index.rows.length-index.df.get(word)+.5)/(index.df.get(word)+.5))])),upper=(k1+1)*[...idf.values()].reduce((a,b)=>a+b,0),result=new Map();
+    index.rows.forEach((row,i)=>{const doc=index.docs[i];let raw=0;for(const word of query){const tf=doc.counts.get(word)||0;if(tf)raw+=idf.get(word)*tf*(k1+1)/(tf+k1*(1-b+b*doc.length/(index.average||1)));}result.set(row.key,{raw,score:upper?raw/upper:0,matched_terms:query.filter(word=>doc.counts.has(word)).sort((a,b)=>idf.get(b)-idf.get(a)||(a<b?-1:a>b?1:0)).slice(0,12)});});return result;
+  }
+  function communityQuality(row){for(const field of ['average_score','mean_score'])if(Number.isFinite(row[field])&&row[field]>=0&&row[field]<=100)return {value:row[field]/100,source:field};return {value:null,source:null};}
   function topics(item, spoilers = false) {
     const result = {};
     for (const name of item.genres || []) result[norm(name)] = { name, weight: 1 };
@@ -52,12 +62,14 @@
     const weights = {};
     for (const [key, score] of validRatings) if (half && score !== neutral) weights[key] = (score - neutral) / half;
     for (const key of favorites) if (!(key in ratings)) weights[key] = 2;
-    let positive = Array(100).fill(0), negative = Array(100).fill(0), hasPositive = false, hasNegative = false, total = 0, vectors = 0;
+    const dimensions=records.find(row=>row.vector?.length)?.vector.length||100;
+    let positive = Array(dimensions).fill(0), negative = Array(dimensions).fill(0), hasPositive = false, hasNegative = false, total = 0, vectors = 0;
     const themes = {}, names = {};
     for (const [key, weight] of Object.entries(weights)) {
       const item = byKey.get(key); if (!item) continue;
       total += Math.abs(weight);
       if (item.vector?.some(x => x !== 0)) {
+        if(item.vector.length!==dimensions)throw Error('Vetores de dimensões diferentes no mesmo perfil.');
         vectors++;
         if (weight > 0) { positive = positive.map((x, i) => x + weight * item.vector[i]); hasPositive = true; }
         else { negative = negative.map((x, i) => x + Math.abs(weight) * item.vector[i]); hasNegative = true; }
@@ -82,6 +94,9 @@
     const start = typeof performance !== 'undefined' ? performance.now() : Date.now();
     const p = profile(options.profile_records || records, ratings, favorites, preferred), lambda = p.active ? Math.max(0, Math.min(.6, options.personalization ?? .35)) : 0;
     const threshold = options.personal_min_topics ?? .25, idf = options.topic_idf || topicIdf(records);
+    const strategy=options.strategy||'vectors',beta={vectors:0,hybrid:.2,bm25:1}[strategy],gamma=options.community_weight??0;
+    if(beta===undefined||!Number.isFinite(gamma)||gamma<0||gamma>.1)throw Error('Parâmetros experimentais inválidos.');
+    const lexical=beta?bm25(records,anchor.text):new Map();
     const seen = new Set(seenIds.map(Number)), favoriteSet = new Set(favorites), rejected = new Set(hidden), forbidden = new Set(avoided.map(norm));
     const diagnostics = [], rows = [], audit = {};
     const reject = (item, reason, detail) => { audit[reason] = (audit[reason] || 0) + 1; diagnostics.push({ key: item.key, title: item.title, reason, detail }); };
@@ -99,9 +114,12 @@
       const text = (cosine(anchor.vector, item.vector) + 1) / 2, thematicScore = thematic(anchor, item, idf), details = affinity(p.preferences, features);
       const pos = p.positive ? cosine(p.positive, item.vector) : null, neg = p.negative ? cosine(p.negative, item.vector) : null;
       const profileText = pos !== null && neg !== null ? clamp(.5 + .5 * (pos - neg)) : pos !== null ? (pos + 1) / 2 : neg !== null ? (1 - neg) / 2 : null;
-      const base = .5 * text + .5 * thematicScore.score, personal = profileText !== null ? .7 * profileText + .3 * details.score : details.score;
+      const lex=lexical.get(item.key)||{raw:0,score:0,matched_terms:[]},quality=communityQuality(item),referenceComponents={anchor_text:(1-beta)*.5*text,anchor_topics:(1-beta)*.5*thematicScore.score,lexical:beta*lex.score};
+      const base = Object.values(referenceComponents).reduce((a,b)=>a+b,0), personal = profileText !== null ? .7 * profileText + .3 * details.score : details.score,userScore=(1-lambda)*base+lambda*personal,gb=quality.value===null?0:gamma*quality.value*(1-base),pb=quality.value===null?0:gamma*quality.value*(1-userScore);
       const safe = topics(item), anchorSafe = topics(anchor);
-      rows.push({ ...item, is_seen: known, base_score: base, personalized_score: (1 - lambda) * base + lambda * personal,
+      rows.push({ ...item, is_seen: known, base_score: base+gb, personalized_score: userScore+pb,baseline_reference_score:.5*text+.5*thematicScore.score,
+        bm25_raw:lex.raw,bm25_normalized:lex.score,lexical_matches:lex.matched_terms,community_quality:quality.value,community_source:quality.source,
+        general_components:{...referenceComponents,community:gb},personal_components:{...Object.fromEntries(Object.entries(referenceComponents).map(([key,value])=>[key,(1-lambda)*value])),profile_text:profileText===null?0:lambda*.7*profileText,profile_topics:lambda*(profileText===null?1:.3)*details.score,community:pb},
         anchor_cosine: 2 * text - 1, anchor_topic_overlap: thematicScore.score, anchor_tag_cosine: thematicScore.tag,
         profile_text_score: profileText, preference_affinity: details.score, affinity_details: details,
         common_topics: Object.entries(safe).filter(([t]) => t in anchorSafe).map(([, v]) => v.name).slice(0, 8),
@@ -115,13 +133,18 @@
     general.forEach((r, i) => diagnostics.push({ key: r.key, title: r.title, reason: 'eligible', general_rank: i + 1, personal_rank: personalRank.get(r.key) || null }));
     const end = typeof performance !== 'undefined' ? performance.now() : Date.now(); audit.eligible = general.length;
     return { anchor, general, personalized, diagnostics, filter_audit: audit, profile_active: p.active, profile_info: p.info,
-      personalization: lambda, params, filters: { pure:!!options.pure,personal_min_topics: threshold }, candidate_count: records.length,
+      personalization: lambda, params:{...params,retrieval_strategy:strategy,bm25_k1:1.2,bm25_b:.75,lexical_weight:beta,community_weight:gamma}, filters: { pure:!!options.pure,personal_min_topics: threshold }, candidate_count: records.length,
       eligible_count: general.length, personal_eligible_count: personalized.length, unseen_count: general.filter(r => !r.is_seen).length,
       personal_unseen_count: personalized.filter(r => !r.is_seen).length, ranking_ms: end - start, total_ms: end - start,
       recommendation_sets: { general_all: general.slice(0, 10), general_unseen: general.filter(r => !r.is_seen).slice(0, 10),
         personal_all: personalized.slice(0, 10), personal_unseen: personalized.filter(r => !r.is_seen).slice(0, 10) } };
   }
-  const api = { norm, unit, cosine, topics, affinity, topicIdf, thematic, profile, rank };
+  function study(options){
+    const variants=[['vectors','Vetores + temas','vectors',0],['bm25','Somente BM25','bm25',0],['hybrid','Híbrido BM25 + vetores','hybrid',0],['hybrid_community','Híbrido + comunidade 5%','hybrid',.05]],runs=variants.map(([id,label,strategy,weight])=>({id,label,result:rank({...options,strategy,community_weight:weight})})),pool=new Map();
+    for(const run of runs)for(const mode of ['general','personalized'])for(const row of (mode==='personalized'&&run.result.profile_active?run.result[mode].filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result[mode]).slice(0,10))pool.set(row.key,{key:row.key,title:row.title,text:row.text,genres:row.genres,tags:row.tags,url:row.url});
+    return {format:'anirec-human-study-v1',created_at:new Date().toISOString(),anchor:{key:options.anchor.key,title:options.anchor.title,text:options.anchor.text},profile_active:runs[0].result.profile_active,candidate_count:options.records.length,pure:!!options.pure,systems:runs.map(run=>({id:run.id,label:run.label,params:run.result.params,ranking_ms:run.result.ranking_ms,general:run.result.general.slice(0,10).map(row=>({key:row.key,score:row.base_score})),personalized:(run.result.profile_active?run.result.personalized.filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result.personalized).slice(0,10).map(row=>({key:row.key,score:row.personalized_score}))})),similarity_pool_keys:[...new Set(runs.flatMap(run=>run.result.general.slice(0,10).map(row=>row.key)))],preference_pool_keys:[...new Set(runs.flatMap(run=>(run.result.profile_active?run.result.personalized.filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result.personalized).slice(0,10).map(row=>row.key)))],preference_policy:'when profile active: unseen, not a manual favorite, and no score supplied in profile',pool:[...pool.values()].sort((a,b)=>a.key<b.key?-1:a.key>b.key?1:0)};
+  }
+  const api = { norm, unit, cosine, topics, affinity, topicIdf, thematic, profile, rank,bm25,communityQuality,study };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.AniRecIR = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

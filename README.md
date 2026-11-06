@@ -74,7 +74,7 @@ Os iniciadores `recomendador/iniciar.ps1` e `iniciar.sh` preservam a configuraç
 
 ## Dados e modelos
 
-O snapshot público atual tem **2.495 obras AniList**, **2.492 sinopses não vazias** e quatro vetores por obra no banco de distribuição: **9.980 linhas** em `vectors`. Documento sem texto utilizável tem vetor zero e não entra no ranking semântico. Esses números referem-se ao snapshot público, não ao tamanho de todo o catálogo AniList nem ao banco operacional privado.
+O snapshot público atual tem **3.053 obras AniList**, **3.050 sinopses não vazias** e quatro vetores por obra no banco de distribuição: **12.212 linhas** em `vectors`. Documento sem texto utilizável tem vetor zero e não entra no ranking semântico. Esses números referem-se ao snapshot público, não ao tamanho de todo o catálogo AniList nem ao banco operacional privado.
 
 | Modelo estático | Dimensões | Corpus do treinamento anterior | Papel |
 |---|---:|---|---|
@@ -127,6 +127,12 @@ docs/                        Imagens e manifesto da distribuição
 
 Leia [o guia do laboratório e atlas](recomendador/docs/LABORATORIO_E_ATLAS_V8.md), [o guia de preferências](recomendador/docs/GUIA_PREFERENCIAS_V7.md) e [a arquitetura de dados](recomendador/docs/DATASET_ETL_E_ARQUITETURA.md). Documentos históricos registram o estado daquela data e podem citar versões, limites e caminhos antigos; não substituem este README para executar a versão atual. O laboratório histórico inclui MiniLM e LLMs como comparadores, **não como componentes do aplicativo final**.
 
+## BM25, comunidade e avaliação humana
+
+O catálogo foi ampliado em 558 obras. A interface permite escolher **Vetores + temas**, **Híbrido (40% texto vetorial, 40% temas, 20% BM25)** ou **Somente BM25**. O bônus comunitário é opcional, limitado a 5% ou 10%; utiliza a nota ponderada do AniList, com média simples como alternativa. Popularidade e favoritos são exibidos como contexto. O padrão permanece vetores + temas, sem bônus.
+
+[Experimentos de RI](https://Lucas-LMS.github.io/anirec-tcc/experimentos.html) mostra oito consultas, tempos e mudanças de ranking. **Precisão ainda depende de julgamentos humanos**, que podem ser coletados pelo botão **Avaliar esta busca**. A avaliação separa semelhança e gosto pessoal e calcula Precision@k/nDCG@k somente com respostas suficientes. Com perfil ativo, a avaliação de gosto exclui obras já conhecidas/avaliadas. [Protocolo completo, fórmulas, exemplos de código, coleta e limitações](recomendador/docs/COMUNIDADE_BM25_E_AVALIACAO_V10.md).
+
 ## Testes
 
 Com as dependências Python instaladas e a partir da raiz:
@@ -137,6 +143,9 @@ python -m unittest discover -s recomendador -p "test_*.py" -v
 python recomendador/prepare_parity_fixture.py
 node recomendador/test_ir_core.js tmp/parity-v7.json
 node recomendador/test_pure.js tmp/parity-v7.json
+python recomendador/prepare_experiment_fixtures.py
+node recomendador/test_experiments.js tmp/experiments-fixtures.json
+node scripts/check_javascript.js
 python scripts/validate_distribution.py
 ```
 

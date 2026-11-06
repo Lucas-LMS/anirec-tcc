@@ -4,6 +4,8 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse,parse_qs
 from engine import Engine,PARAMS
+from retrieval_experiments import apply as apply_experiments,study as create_study
+import hashlib,time
 ROOT=Path(__file__).resolve().parent
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--port',type=int,default=8765);args=ap.parse_args()
@@ -21,7 +23,7 @@ def main():
             if not self.allowed():self.send(dict(error='Acesso somente local.'),403);return
             path=urlparse(self.path)
             try:
-                if path.path in {'/laboratorio.html','/dataset.html'} or path.path.startswith('/lab/') or path.path=='/catalog.json':
+                if path.path in {'/laboratorio.html','/dataset.html','/avaliacao.html','/experimentos.html'} or path.path.startswith('/lab/') or path.path=='/catalog.json':
                     rel=Path(path.path.lstrip('/'));target=(ROOT/'online'/rel).resolve()
                     if not target.is_relative_to((ROOT/'online').resolve()) or not target.is_file():self.send(dict(error='Não encontrado.'),404);return
                     body=target.read_bytes();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8' if target.suffix=='.html' else 'application/json' if target.suffix=='.json' else 'text/javascript' if target.suffix=='.js' else 'text/css' if target.suffix=='.css' else 'application/octet-stream');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body);return
@@ -40,7 +42,7 @@ def main():
                     query=parse_qs(path.query);self.send(engine.search(query.get('q',[''])[0],query.get('online',['true'])[0]=='true'));return
                 if path.path.startswith('/assets/'):
                     name=path.path.removeprefix('/assets/')
-                    allowed={'ir-core.js','onboarding.js','app.js','app.css','local-adapter.js'}
+                    allowed={'ir-core.js','onboarding.js','app.js','app.css','local-adapter.js','evaluation-core.js'}
                     if name not in allowed:self.send(dict(error='Asset não encontrado.'),404);return
                     content=(ROOT/'shared'/name).read_bytes();self.send_response(200);self.send_header('Content-Type','text/css; charset=utf-8' if name.endswith('.css') else 'text/javascript; charset=utf-8');self.send_header('Content-Length',str(len(content)));self.send_header('Cache-Control','no-cache');self.end_headers();self.wfile.write(content);return
                 if path.path not in ['/','/index.html']:self.send(dict(error='Não encontrado.'),404);return
@@ -72,7 +74,19 @@ def main():
                 elif path=='/api/profile/favorite':result=engine.favorite(str(data.get('key','')),data.get('add',True) is True)
                 elif path=='/api/profile/reject':result=engine.reject(str(data.get('key','')),data.get('add',True) is True)
                 elif path=='/api/profile/clear-import':result=engine.clear_import()
-                elif path=='/api/recommend':result=engine.recommend(str(data.get('key','')),float(data.get('personalization',.35)),data.get('exclude_seen',False) is True,data.get('online',True) is True,data.get('require_genre',False) is True,data.get('exclude_upcoming',True) is True,data.get('require_tag_metadata',False) is True,float(data.get('personal_min_topics',.25)),pure=data.get('pure',False) is True)
+                elif path in {'/api/recommend','/api/study'}:
+                    result=engine.recommend(str(data.get('key','')),float(data.get('personalization',.35)),data.get('exclude_seen',False) is True,data.get('online',True) is True,data.get('require_genre',False) is True,data.get('exclude_upcoming',True) is True,data.get('require_tag_metadata',False) is True,float(data.get('personal_min_topics',.25)),pure=data.get('pure',False) is True)
+                    start=time.perf_counter()
+                    with engine.lock:
+                        keys={row['key'] for row in result['diagnostics']}
+                        records=[engine.media[key] for key in sorted(keys) if key in engine.media]
+                        if path=='/api/study':
+                            fingerprint=hashlib.sha256(json.dumps(engine.profile,sort_keys=True).encode()).hexdigest() if not data.get('pure') else None
+                            excluded_ratings={engine.key_for(entry['media']) for entry in engine.profile.get('entries',[]) if entry.get('score',0)>0 and entry.get('media')}
+                            result=create_study(result,records,fingerprint,excluded_ratings)
+                        else:
+                            result=apply_experiments(result,records,str(data.get('strategy','vectors')),float(data.get('community_weight',0)))
+                            extra=(time.perf_counter()-start)*1000;result['ranking_ms']+=extra;result['total_ms']+=extra
                 elif path=='/api/shutdown':
                     self.send(dict(ok=True));threading.Thread(target=server.shutdown,daemon=True).start();return
                 else:self.send(dict(error='Não encontrado.'),404);return

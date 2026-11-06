@@ -1,5 +1,7 @@
 # Exibição de tags e estatísticas comunitárias — 06/11/2026
 
+> Atualização posterior nesta mesma data: as estatísticas foram coletadas, o catálogo cresceu para 3.053 obras e há bônus comunitário opcional. Consulte [a implementação atual](COMUNIDADE_BM25_E_AVALIACAO_V10.md). O texto abaixo preserva o registro da primeira etapa.
+
 ## Preferências: ocultação padrão de temas adultos/sexuais
 
 O editor de preferências agora omite, por padrão, tags marcadas `isAdult=true`, categorias contendo `Sexual Content` e uma lista explícita de exceções na interface (por exemplo, Nudity). Não usamos uma busca genérica pela palavra “sex” nas definições: ela ocultaria indevidamente orientações e temas de romance.

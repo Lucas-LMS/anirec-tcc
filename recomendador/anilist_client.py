@@ -7,7 +7,7 @@ import json,time,threading,urllib.request,urllib.error
 URL='https://graphql.anilist.co'
 MEDIA_FIELDS='''id idMal type status format seasonYear countryOfOrigin episodes duration startDate { year month day } title { romaji english } description(asHtml:false)
  genres tags { name rank isGeneralSpoiler isMediaSpoiler }
- coverImage { large } siteUrl averageScore isAdult'''
+ coverImage { large } siteUrl averageScore meanScore popularity favourites stats { scoreDistribution { score amount } } isAdult'''
 class AniListClient:
     def __init__(self):self.lock=threading.Lock();self.last=0.;self.cache={}
     def query(self,query,variables):

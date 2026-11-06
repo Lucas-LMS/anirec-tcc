@@ -15,6 +15,7 @@ window.AniRecAdapter = (() => {
     reject: (key, add = true) => request('/api/profile/reject', { key, add }),
     clearImport: () => request('/api/profile/clear-import', {}),
     recommend: options => request('/api/recommend', options),
+    study: options => request('/api/study',options),
     dataset: () => request('/api/dataset'), exportProfile: () => request('/api/profile/export'),
     importProfile: async (username, progress) => {
       const timer = setInterval(async () => { try { const state = await request('/api/import-status'); if (state.active) progress(state.stage + (state.count ? ` · ${state.count} entradas` : '') + (state.metadata_target ? ` · ${state.metadata_count}/${state.metadata_target} metadados` : '')); } catch {} }, 1500);
