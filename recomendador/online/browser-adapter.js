@@ -34,7 +34,7 @@ window.AniRecAdapter = (() => {
   }
   async function expansion(anchor, progress, pure=false) {
     if (!anchor.anilist_id) return;
-    progress('Consultando sugestões e candidatos ainda não iniciados…');
+    progress(pure?'Consultando obras relacionadas à referência…':'Consultando sugestões e candidatos ainda não iniciados…');
     const related = (await aniQuery('query($id:Int!){Media(id:$id,type:ANIME){recommendations(page:1,perPage:20,sort:RATING_DESC){nodes{mediaRecommendation{' + ANI_FIELDS + '}}}}}', { id: anchor.anilist_id })).Media.recommendations.nodes.map(n => n.mediaRecommendation).filter(Boolean);
     const genres = new Set(records.flatMap(item => item.genres).map(x => x.toLowerCase()));
     const tag = (pure?[]:preferred).find(name => !genres.has(name.toLowerCase())) || null;
