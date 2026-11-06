@@ -21,6 +21,7 @@ O modo puro não apaga seu perfil. Você pode voltar à personalização a qualq
 
 - Busca por título e recomendação automática ao escolher a referência no modo puro.
 - Cadastro opcional em três passos: gêneros, tags e favoritos, sem notas obrigatórias.
+- Tags adultas/sexuais ocultas por padrão, com opção discreta para revelar; Ecchi permanece visível. [Política e estatísticas AniList](recomendador/docs/TAGS_E_ESTATISTICAS_ANILIST.md).
 - Importação completa de lista **pública** do AniList, respeitando paginação e limites da API.
 - Escala individual de notas: ponto neutro entre menor e maior nota observadas.
 - Sinopse inteira em inglês; tags e gêneros com pesos explicáveis.
