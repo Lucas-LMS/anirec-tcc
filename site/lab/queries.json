@@ -1,0 +1,116 @@
+{
+  "queries": [
+    {
+      "label": "Contagem e ausência de sinopses",
+      "sql": "SELECT COUNT(*) AS works, SUM(word_count=0) AS missing_synopsis FROM works;",
+      "results": [
+        {
+          "works": 2495,
+          "missing_synopsis": 3
+        }
+      ]
+    },
+    {
+      "label": "Gêneros mais frequentes",
+      "sql": "SELECT genre,COUNT(*) AS works FROM genres GROUP BY genre ORDER BY works DESC LIMIT 12;",
+      "results": [
+        {
+          "genre": "Comedy",
+          "works": 1266
+        },
+        {
+          "genre": "Action",
+          "works": 888
+        },
+        {
+          "genre": "Slice of Life",
+          "works": 826
+        },
+        {
+          "genre": "Fantasy",
+          "works": 749
+        },
+        {
+          "genre": "Drama",
+          "works": 742
+        },
+        {
+          "genre": "Romance",
+          "works": 686
+        },
+        {
+          "genre": "Supernatural",
+          "works": 444
+        },
+        {
+          "genre": "Adventure",
+          "works": 426
+        },
+        {
+          "genre": "Sci-Fi",
+          "works": 410
+        },
+        {
+          "genre": "Ecchi",
+          "works": 348
+        },
+        {
+          "genre": "Mystery",
+          "works": 262
+        },
+        {
+          "genre": "Psychological",
+          "works": 217
+        }
+      ]
+    },
+    {
+      "label": "Exemplo de busca com gênero",
+      "sql": "SELECT w.anilist_id,w.title,w.word_count FROM works w JOIN genres g USING(anilist_id) WHERE g.genre='Action' AND w.title LIKE '%Lycoris%' ORDER BY w.title;",
+      "results": [
+        {
+          "anilist_id": 143270,
+          "title": "Lycoris Recoil",
+          "word_count": 127
+        }
+      ]
+    },
+    {
+      "label": "Integridade dos vetores",
+      "sql": "SELECT model,dimensions,COUNT(*) AS vectors FROM vectors GROUP BY model,dimensions;",
+      "results": [
+        {
+          "model": "cbow",
+          "dimensions": 100,
+          "vectors": 2495
+        },
+        {
+          "model": "fasttext",
+          "dimensions": 100,
+          "vectors": 2495
+        },
+        {
+          "model": "glove",
+          "dimensions": 50,
+          "vectors": 2495
+        },
+        {
+          "model": "skipgram",
+          "dimensions": 100,
+          "vectors": 2495
+        }
+      ]
+    },
+    {
+      "label": "Chaves órfãs",
+      "sql": "SELECT COUNT(*) AS orphan_genres FROM genres g LEFT JOIN works w USING(anilist_id) WHERE w.anilist_id IS NULL;",
+      "results": [
+        {
+          "orphan_genres": 0
+        }
+      ]
+    }
+  ],
+  "database_sha256": "8777572b8abcc22b9d3fcfcbe4eb96fff3409d1bd915769366c8ab8f31193b5a",
+  "snapshot_sha256": "f25cf7d9f97c71ec53b18fc38fc61bc5a3615107a52cc535865eb8ada91f44a9"
+}

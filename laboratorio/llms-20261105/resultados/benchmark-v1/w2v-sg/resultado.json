@@ -1,0 +1,43 @@
+{
+  "model": "w2v-sg",
+  "environment": "Ubuntu/WSL2 CPU",
+  "threads": 4,
+  "seed": 20261105,
+  "load_seconds": 1.3245939709999988,
+  "imports_and_setup_seconds": 1.9137050709999457,
+  "encode_train_seconds": 0.7622570680000038,
+  "classifier_fit_seconds": 0.028641894999999806,
+  "full_test_batch_seconds": 0.1628208719999975,
+  "peak_rss_kib_self": 208964,
+  "peak_rss_kib_child": 200204,
+  "truncation": null,
+  "coverage": {
+    "in_vocabulary_token_fraction": 0.9398307740520213
+  },
+  "notes": [],
+  "source_path": "/home/lucas/tcc-lab/Word2Vec/models/text8-skipgram-100d.model",
+  "classifier": {
+    "C": 1,
+    "class_weight": "balanced",
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": 0.0,
+    "max_iter": 1000,
+    "n_jobs": null,
+    "penalty": "deprecated",
+    "random_state": 20261105,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "files_sha256": {
+    "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+    "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+    "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+    "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+  },
+  "common_count": 200,
+  "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+}

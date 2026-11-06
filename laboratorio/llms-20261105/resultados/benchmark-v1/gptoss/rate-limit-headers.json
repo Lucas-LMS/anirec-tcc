@@ -1,0 +1,1610 @@
+[
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "998",
+    "x-ratelimit-remaining-tokens": "7662",
+    "x-ratelimit-reset-requests": "2m52.8s",
+    "x-ratelimit-reset-tokens": "2.535s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "997",
+    "x-ratelimit-remaining-tokens": "7641",
+    "x-ratelimit-reset-requests": "4m19.2s",
+    "x-ratelimit-reset-tokens": "2.692s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "996",
+    "x-ratelimit-remaining-tokens": "7806",
+    "x-ratelimit-reset-requests": "5m45.6s",
+    "x-ratelimit-reset-tokens": "1.455s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "995",
+    "x-ratelimit-remaining-tokens": "7828",
+    "x-ratelimit-reset-requests": "7m12s",
+    "x-ratelimit-reset-tokens": "1.289s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "994",
+    "x-ratelimit-remaining-tokens": "7835",
+    "x-ratelimit-reset-requests": "8m38.4s",
+    "x-ratelimit-reset-tokens": "1.237s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "993",
+    "x-ratelimit-remaining-tokens": "7827",
+    "x-ratelimit-reset-requests": "10m4.8s",
+    "x-ratelimit-reset-tokens": "1.297s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "992",
+    "x-ratelimit-remaining-tokens": "7824",
+    "x-ratelimit-reset-requests": "11m31.2s",
+    "x-ratelimit-reset-tokens": "1.319s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "991",
+    "x-ratelimit-remaining-tokens": "7793",
+    "x-ratelimit-reset-requests": "12m57.599s",
+    "x-ratelimit-reset-tokens": "1.552s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "990",
+    "x-ratelimit-remaining-tokens": "7829",
+    "x-ratelimit-reset-requests": "14m24s",
+    "x-ratelimit-reset-tokens": "1.282s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "989",
+    "x-ratelimit-remaining-tokens": "7808",
+    "x-ratelimit-reset-requests": "15m50.4s",
+    "x-ratelimit-reset-tokens": "1.44s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "988",
+    "x-ratelimit-remaining-tokens": "7818",
+    "x-ratelimit-reset-requests": "17m16.8s",
+    "x-ratelimit-reset-tokens": "1.365s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "987",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "18m43.2s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "986",
+    "x-ratelimit-remaining-tokens": "7840",
+    "x-ratelimit-reset-requests": "20m9.6s",
+    "x-ratelimit-reset-tokens": "1.2s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "985",
+    "x-ratelimit-remaining-tokens": "7796",
+    "x-ratelimit-reset-requests": "21m36s",
+    "x-ratelimit-reset-tokens": "1.529s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "984",
+    "x-ratelimit-remaining-tokens": "7825",
+    "x-ratelimit-reset-requests": "23m2.4s",
+    "x-ratelimit-reset-tokens": "1.312s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "983",
+    "x-ratelimit-remaining-tokens": "7828",
+    "x-ratelimit-reset-requests": "24m28.8s",
+    "x-ratelimit-reset-tokens": "1.289s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "982",
+    "x-ratelimit-remaining-tokens": "7820",
+    "x-ratelimit-reset-requests": "25m55.199s",
+    "x-ratelimit-reset-tokens": "1.349s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "981",
+    "x-ratelimit-remaining-tokens": "7815",
+    "x-ratelimit-reset-requests": "27m21.6s",
+    "x-ratelimit-reset-tokens": "1.387s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "980",
+    "x-ratelimit-remaining-tokens": "7800",
+    "x-ratelimit-reset-requests": "28m48s",
+    "x-ratelimit-reset-tokens": "1.5s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "979",
+    "x-ratelimit-remaining-tokens": "7790",
+    "x-ratelimit-reset-requests": "30m14.4s",
+    "x-ratelimit-reset-tokens": "1.575s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "978",
+    "x-ratelimit-remaining-tokens": "7821",
+    "x-ratelimit-reset-requests": "31m40.8s",
+    "x-ratelimit-reset-tokens": "1.342s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "977",
+    "x-ratelimit-remaining-tokens": "7818",
+    "x-ratelimit-reset-requests": "33m7.2s",
+    "x-ratelimit-reset-tokens": "1.365s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "976",
+    "x-ratelimit-remaining-tokens": "7828",
+    "x-ratelimit-reset-requests": "34m33.6s",
+    "x-ratelimit-reset-tokens": "1.289s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "975",
+    "x-ratelimit-remaining-tokens": "7817",
+    "x-ratelimit-reset-requests": "36m0s",
+    "x-ratelimit-reset-tokens": "1.372s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "974",
+    "x-ratelimit-remaining-tokens": "7786",
+    "x-ratelimit-reset-requests": "37m26.4s",
+    "x-ratelimit-reset-tokens": "1.605s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "973",
+    "x-ratelimit-remaining-tokens": "7826",
+    "x-ratelimit-reset-requests": "38m52.8s",
+    "x-ratelimit-reset-tokens": "1.305s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "972",
+    "x-ratelimit-remaining-tokens": "7796",
+    "x-ratelimit-reset-requests": "40m19.2s",
+    "x-ratelimit-reset-tokens": "1.529s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "971",
+    "x-ratelimit-remaining-tokens": "7823",
+    "x-ratelimit-reset-requests": "41m45.6s",
+    "x-ratelimit-reset-tokens": "1.327s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "970",
+    "x-ratelimit-remaining-tokens": "7824",
+    "x-ratelimit-reset-requests": "43m12s",
+    "x-ratelimit-reset-tokens": "1.319s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "969",
+    "x-ratelimit-remaining-tokens": "7821",
+    "x-ratelimit-reset-requests": "44m38.4s",
+    "x-ratelimit-reset-tokens": "1.342s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "968",
+    "x-ratelimit-remaining-tokens": "7824",
+    "x-ratelimit-reset-requests": "46m4.8s",
+    "x-ratelimit-reset-tokens": "1.319s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "967",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "47m31.2s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "966",
+    "x-ratelimit-remaining-tokens": "7823",
+    "x-ratelimit-reset-requests": "48m57.6s",
+    "x-ratelimit-reset-tokens": "1.327s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "965",
+    "x-ratelimit-remaining-tokens": "7822",
+    "x-ratelimit-reset-requests": "50m24s",
+    "x-ratelimit-reset-tokens": "1.335s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "964",
+    "x-ratelimit-remaining-tokens": "7822",
+    "x-ratelimit-reset-requests": "51m50.399s",
+    "x-ratelimit-reset-tokens": "1.335s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "963",
+    "x-ratelimit-remaining-tokens": "7836",
+    "x-ratelimit-reset-requests": "53m16.799s",
+    "x-ratelimit-reset-tokens": "1.23s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "962",
+    "x-ratelimit-remaining-tokens": "7825",
+    "x-ratelimit-reset-requests": "54m43.2s",
+    "x-ratelimit-reset-tokens": "1.312s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "961",
+    "x-ratelimit-remaining-tokens": "7828",
+    "x-ratelimit-reset-requests": "56m9.6s",
+    "x-ratelimit-reset-tokens": "1.289s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "960",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "57m36s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "959",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "59m2.4s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "958",
+    "x-ratelimit-remaining-tokens": "7817",
+    "x-ratelimit-reset-requests": "1h0m28.8s",
+    "x-ratelimit-reset-tokens": "1.372s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "957",
+    "x-ratelimit-remaining-tokens": "7816",
+    "x-ratelimit-reset-requests": "1h1m55.2s",
+    "x-ratelimit-reset-tokens": "1.38s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "956",
+    "x-ratelimit-remaining-tokens": "7805",
+    "x-ratelimit-reset-requests": "1h3m21.6s",
+    "x-ratelimit-reset-tokens": "1.462s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "955",
+    "x-ratelimit-remaining-tokens": "7757",
+    "x-ratelimit-reset-requests": "1h4m48s",
+    "x-ratelimit-reset-tokens": "1.822s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "954",
+    "x-ratelimit-remaining-tokens": "7827",
+    "x-ratelimit-reset-requests": "1h6m14.4s",
+    "x-ratelimit-reset-tokens": "1.297s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "953",
+    "x-ratelimit-remaining-tokens": "7814",
+    "x-ratelimit-reset-requests": "1h7m40.8s",
+    "x-ratelimit-reset-tokens": "1.395s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "952",
+    "x-ratelimit-remaining-tokens": "7810",
+    "x-ratelimit-reset-requests": "1h9m7.2s",
+    "x-ratelimit-reset-tokens": "1.425s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "951",
+    "x-ratelimit-remaining-tokens": "7753",
+    "x-ratelimit-reset-requests": "1h10m33.6s",
+    "x-ratelimit-reset-tokens": "1.852s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "950",
+    "x-ratelimit-remaining-tokens": "7826",
+    "x-ratelimit-reset-requests": "1h12m0s",
+    "x-ratelimit-reset-tokens": "1.305s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "949",
+    "x-ratelimit-remaining-tokens": "7770",
+    "x-ratelimit-reset-requests": "1h13m26.4s",
+    "x-ratelimit-reset-tokens": "1.725s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "948",
+    "x-ratelimit-remaining-tokens": "7802",
+    "x-ratelimit-reset-requests": "1h14m52.8s",
+    "x-ratelimit-reset-tokens": "1.485s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "947",
+    "x-ratelimit-remaining-tokens": "7820",
+    "x-ratelimit-reset-requests": "1h16m19.2s",
+    "x-ratelimit-reset-tokens": "1.349s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "946",
+    "x-ratelimit-remaining-tokens": "7815",
+    "x-ratelimit-reset-requests": "1h17m45.6s",
+    "x-ratelimit-reset-tokens": "1.387s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "945",
+    "x-ratelimit-remaining-tokens": "7818",
+    "x-ratelimit-reset-requests": "1h19m12s",
+    "x-ratelimit-reset-tokens": "1.365s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "944",
+    "x-ratelimit-remaining-tokens": "7821",
+    "x-ratelimit-reset-requests": "1h20m38.4s",
+    "x-ratelimit-reset-tokens": "1.342s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "943",
+    "x-ratelimit-remaining-tokens": "7824",
+    "x-ratelimit-reset-requests": "1h22m4.8s",
+    "x-ratelimit-reset-tokens": "1.319s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "942",
+    "x-ratelimit-remaining-tokens": "7813",
+    "x-ratelimit-reset-requests": "1h23m31.2s",
+    "x-ratelimit-reset-tokens": "1.402s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "941",
+    "x-ratelimit-remaining-tokens": "7820",
+    "x-ratelimit-reset-requests": "1h24m57.599s",
+    "x-ratelimit-reset-tokens": "1.349s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "940",
+    "x-ratelimit-remaining-tokens": "7806",
+    "x-ratelimit-reset-requests": "1h26m24s",
+    "x-ratelimit-reset-tokens": "1.455s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "939",
+    "x-ratelimit-remaining-tokens": "7814",
+    "x-ratelimit-reset-requests": "1h27m50.4s",
+    "x-ratelimit-reset-tokens": "1.395s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "938",
+    "x-ratelimit-remaining-tokens": "7808",
+    "x-ratelimit-reset-requests": "1h29m16.8s",
+    "x-ratelimit-reset-tokens": "1.44s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "937",
+    "x-ratelimit-remaining-tokens": "7808",
+    "x-ratelimit-reset-requests": "1h30m43.2s",
+    "x-ratelimit-reset-tokens": "1.44s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "936",
+    "x-ratelimit-remaining-tokens": "7807",
+    "x-ratelimit-reset-requests": "1h32m9.6s",
+    "x-ratelimit-reset-tokens": "1.447s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "935",
+    "x-ratelimit-remaining-tokens": "7807",
+    "x-ratelimit-reset-requests": "1h33m36s",
+    "x-ratelimit-reset-tokens": "1.447s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "934",
+    "x-ratelimit-remaining-tokens": "7735",
+    "x-ratelimit-reset-requests": "1h35m2.4s",
+    "x-ratelimit-reset-tokens": "1.987s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "933",
+    "x-ratelimit-remaining-tokens": "7806",
+    "x-ratelimit-reset-requests": "1h36m28.8s",
+    "x-ratelimit-reset-tokens": "1.455s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "932",
+    "x-ratelimit-remaining-tokens": "7794",
+    "x-ratelimit-reset-requests": "1h37m55.2s",
+    "x-ratelimit-reset-tokens": "1.545s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "931",
+    "x-ratelimit-remaining-tokens": "7799",
+    "x-ratelimit-reset-requests": "1h39m21.6s",
+    "x-ratelimit-reset-tokens": "1.507s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "930",
+    "x-ratelimit-remaining-tokens": "7807",
+    "x-ratelimit-reset-requests": "1h40m48s",
+    "x-ratelimit-reset-tokens": "1.447s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "929",
+    "x-ratelimit-remaining-tokens": "7815",
+    "x-ratelimit-reset-requests": "1h42m14.4s",
+    "x-ratelimit-reset-tokens": "1.387s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "928",
+    "x-ratelimit-remaining-tokens": "7781",
+    "x-ratelimit-reset-requests": "1h43m40.799s",
+    "x-ratelimit-reset-tokens": "1.642s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "927",
+    "x-ratelimit-remaining-tokens": "7775",
+    "x-ratelimit-reset-requests": "1h45m7.2s",
+    "x-ratelimit-reset-tokens": "1.687s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "926",
+    "x-ratelimit-remaining-tokens": "7820",
+    "x-ratelimit-reset-requests": "1h46m33.599s",
+    "x-ratelimit-reset-tokens": "1.349s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "925",
+    "x-ratelimit-remaining-tokens": "7817",
+    "x-ratelimit-reset-requests": "1h48m0s",
+    "x-ratelimit-reset-tokens": "1.372s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "924",
+    "x-ratelimit-remaining-tokens": "7812",
+    "x-ratelimit-reset-requests": "1h49m26.4s",
+    "x-ratelimit-reset-tokens": "1.41s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "923",
+    "x-ratelimit-remaining-tokens": "7793",
+    "x-ratelimit-reset-requests": "1h50m52.8s",
+    "x-ratelimit-reset-tokens": "1.552s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "922",
+    "x-ratelimit-remaining-tokens": "7810",
+    "x-ratelimit-reset-requests": "1h52m19.2s",
+    "x-ratelimit-reset-tokens": "1.425s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "921",
+    "x-ratelimit-remaining-tokens": "7781",
+    "x-ratelimit-reset-requests": "1h53m45.6s",
+    "x-ratelimit-reset-tokens": "1.642s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "920",
+    "x-ratelimit-remaining-tokens": "7806",
+    "x-ratelimit-reset-requests": "1h55m12s",
+    "x-ratelimit-reset-tokens": "1.455s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "919",
+    "x-ratelimit-remaining-tokens": "7795",
+    "x-ratelimit-reset-requests": "1h56m38.4s",
+    "x-ratelimit-reset-tokens": "1.537s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "918",
+    "x-ratelimit-remaining-tokens": "7820",
+    "x-ratelimit-reset-requests": "1h58m4.8s",
+    "x-ratelimit-reset-tokens": "1.349s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "917",
+    "x-ratelimit-remaining-tokens": "7810",
+    "x-ratelimit-reset-requests": "1h59m31.2s",
+    "x-ratelimit-reset-tokens": "1.425s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "916",
+    "x-ratelimit-remaining-tokens": "7808",
+    "x-ratelimit-reset-requests": "2h0m57.6s",
+    "x-ratelimit-reset-tokens": "1.44s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "915",
+    "x-ratelimit-remaining-tokens": "7808",
+    "x-ratelimit-reset-requests": "2h2m24s",
+    "x-ratelimit-reset-tokens": "1.44s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "914",
+    "x-ratelimit-remaining-tokens": "7808",
+    "x-ratelimit-reset-requests": "2h3m50.4s",
+    "x-ratelimit-reset-tokens": "1.44s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "913",
+    "x-ratelimit-remaining-tokens": "7784",
+    "x-ratelimit-reset-requests": "2h5m16.799s",
+    "x-ratelimit-reset-tokens": "1.62s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "912",
+    "x-ratelimit-remaining-tokens": "7784",
+    "x-ratelimit-reset-requests": "2h6m43.2s",
+    "x-ratelimit-reset-tokens": "1.62s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "911",
+    "x-ratelimit-remaining-tokens": "7781",
+    "x-ratelimit-reset-requests": "2h8m9.599s",
+    "x-ratelimit-reset-tokens": "1.642s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "910",
+    "x-ratelimit-remaining-tokens": "7802",
+    "x-ratelimit-reset-requests": "2h9m36s",
+    "x-ratelimit-reset-tokens": "1.485s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "909",
+    "x-ratelimit-remaining-tokens": "7812",
+    "x-ratelimit-reset-requests": "2h11m2.4s",
+    "x-ratelimit-reset-tokens": "1.41s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "908",
+    "x-ratelimit-remaining-tokens": "7772",
+    "x-ratelimit-reset-requests": "2h12m28.8s",
+    "x-ratelimit-reset-tokens": "1.71s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "907",
+    "x-ratelimit-remaining-tokens": "7792",
+    "x-ratelimit-reset-requests": "2h13m55.2s",
+    "x-ratelimit-reset-tokens": "1.559s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "906",
+    "x-ratelimit-remaining-tokens": "7812",
+    "x-ratelimit-reset-requests": "2h15m21.6s",
+    "x-ratelimit-reset-tokens": "1.41s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "905",
+    "x-ratelimit-remaining-tokens": "7803",
+    "x-ratelimit-reset-requests": "2h16m48s",
+    "x-ratelimit-reset-tokens": "1.477s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "904",
+    "x-ratelimit-remaining-tokens": "7811",
+    "x-ratelimit-reset-requests": "2h18m14.4s",
+    "x-ratelimit-reset-tokens": "1.417s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "903",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "2h19m40.8s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "902",
+    "x-ratelimit-remaining-tokens": "7794",
+    "x-ratelimit-reset-requests": "2h21m7.2s",
+    "x-ratelimit-reset-tokens": "1.545s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "901",
+    "x-ratelimit-remaining-tokens": "7772",
+    "x-ratelimit-reset-requests": "2h22m33.6s",
+    "x-ratelimit-reset-tokens": "1.71s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "900",
+    "x-ratelimit-remaining-tokens": "7804",
+    "x-ratelimit-reset-requests": "2h24m0s",
+    "x-ratelimit-reset-tokens": "1.47s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "899",
+    "x-ratelimit-remaining-tokens": "7801",
+    "x-ratelimit-reset-requests": "2h25m26.4s",
+    "x-ratelimit-reset-tokens": "1.492s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "898",
+    "x-ratelimit-remaining-tokens": "7818",
+    "x-ratelimit-reset-requests": "2h26m52.8s",
+    "x-ratelimit-reset-tokens": "1.365s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "897",
+    "x-ratelimit-remaining-tokens": "7812",
+    "x-ratelimit-reset-requests": "2h28m19.199s",
+    "x-ratelimit-reset-tokens": "1.41s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "896",
+    "x-ratelimit-remaining-tokens": "7792",
+    "x-ratelimit-reset-requests": "2h29m45.6s",
+    "x-ratelimit-reset-tokens": "1.559s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "895",
+    "x-ratelimit-remaining-tokens": "7804",
+    "x-ratelimit-reset-requests": "2h31m12s",
+    "x-ratelimit-reset-tokens": "1.47s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "894",
+    "x-ratelimit-remaining-tokens": "7791",
+    "x-ratelimit-reset-requests": "2h32m38.4s",
+    "x-ratelimit-reset-tokens": "1.567s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "893",
+    "x-ratelimit-remaining-tokens": "7787",
+    "x-ratelimit-reset-requests": "2h34m4.8s",
+    "x-ratelimit-reset-tokens": "1.597s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "892",
+    "x-ratelimit-remaining-tokens": "7805",
+    "x-ratelimit-reset-requests": "2h35m31.2s",
+    "x-ratelimit-reset-tokens": "1.462s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "891",
+    "x-ratelimit-remaining-tokens": "7801",
+    "x-ratelimit-reset-requests": "2h36m57.6s",
+    "x-ratelimit-reset-tokens": "1.492s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "890",
+    "x-ratelimit-remaining-tokens": "7775",
+    "x-ratelimit-reset-requests": "2h38m24s",
+    "x-ratelimit-reset-tokens": "1.687s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "889",
+    "x-ratelimit-remaining-tokens": "7776",
+    "x-ratelimit-reset-requests": "2h39m50.4s",
+    "x-ratelimit-reset-tokens": "1.68s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "888",
+    "x-ratelimit-remaining-tokens": "7803",
+    "x-ratelimit-reset-requests": "2h41m16.8s",
+    "x-ratelimit-reset-tokens": "1.477s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "887",
+    "x-ratelimit-remaining-tokens": "7756",
+    "x-ratelimit-reset-requests": "2h42m43.2s",
+    "x-ratelimit-reset-tokens": "1.83s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "886",
+    "x-ratelimit-remaining-tokens": "7816",
+    "x-ratelimit-reset-requests": "2h44m9.6s",
+    "x-ratelimit-reset-tokens": "1.38s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "885",
+    "x-ratelimit-remaining-tokens": "7785",
+    "x-ratelimit-reset-requests": "2h45m36s",
+    "x-ratelimit-reset-tokens": "1.612s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "884",
+    "x-ratelimit-remaining-tokens": "7771",
+    "x-ratelimit-reset-requests": "2h47m2.4s",
+    "x-ratelimit-reset-tokens": "1.717s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "883",
+    "x-ratelimit-remaining-tokens": "7797",
+    "x-ratelimit-reset-requests": "2h48m28.8s",
+    "x-ratelimit-reset-tokens": "1.522s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "882",
+    "x-ratelimit-remaining-tokens": "7804",
+    "x-ratelimit-reset-requests": "2h49m55.199s",
+    "x-ratelimit-reset-tokens": "1.47s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "881",
+    "x-ratelimit-remaining-tokens": "7807",
+    "x-ratelimit-reset-requests": "2h51m21.6s",
+    "x-ratelimit-reset-tokens": "1.447s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "880",
+    "x-ratelimit-remaining-tokens": "7807",
+    "x-ratelimit-reset-requests": "2h52m48s",
+    "x-ratelimit-reset-tokens": "1.447s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "879",
+    "x-ratelimit-remaining-tokens": "7775",
+    "x-ratelimit-reset-requests": "2h54m14.4s",
+    "x-ratelimit-reset-tokens": "1.687s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "878",
+    "x-ratelimit-remaining-tokens": "7801",
+    "x-ratelimit-reset-requests": "2h55m40.8s",
+    "x-ratelimit-reset-tokens": "1.492s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "877",
+    "x-ratelimit-remaining-tokens": "7784",
+    "x-ratelimit-reset-requests": "2h57m7.2s",
+    "x-ratelimit-reset-tokens": "1.62s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "876",
+    "x-ratelimit-remaining-tokens": "7758",
+    "x-ratelimit-reset-requests": "2h58m33.6s",
+    "x-ratelimit-reset-tokens": "1.815s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "875",
+    "x-ratelimit-remaining-tokens": "7727",
+    "x-ratelimit-reset-requests": "3h0m0s",
+    "x-ratelimit-reset-tokens": "2.047s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "874",
+    "x-ratelimit-remaining-tokens": "7799",
+    "x-ratelimit-reset-requests": "3h1m26.4s",
+    "x-ratelimit-reset-tokens": "1.507s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "873",
+    "x-ratelimit-remaining-tokens": "7771",
+    "x-ratelimit-reset-requests": "3h2m52.8s",
+    "x-ratelimit-reset-tokens": "1.717s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "872",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "3h4m19.2s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "871",
+    "x-ratelimit-remaining-tokens": "7808",
+    "x-ratelimit-reset-requests": "3h5m45.6s",
+    "x-ratelimit-reset-tokens": "1.44s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "870",
+    "x-ratelimit-remaining-tokens": "7807",
+    "x-ratelimit-reset-requests": "3h7m12s",
+    "x-ratelimit-reset-tokens": "1.447s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "869",
+    "x-ratelimit-remaining-tokens": "7782",
+    "x-ratelimit-reset-requests": "3h8m38.4s",
+    "x-ratelimit-reset-tokens": "1.635s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "868",
+    "x-ratelimit-remaining-tokens": "7796",
+    "x-ratelimit-reset-requests": "3h10m4.8s",
+    "x-ratelimit-reset-tokens": "1.529s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "867",
+    "x-ratelimit-remaining-tokens": "7793",
+    "x-ratelimit-reset-requests": "3h11m31.2s",
+    "x-ratelimit-reset-tokens": "1.552s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "866",
+    "x-ratelimit-remaining-tokens": "7772",
+    "x-ratelimit-reset-requests": "3h12m57.6s",
+    "x-ratelimit-reset-tokens": "1.71s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "865",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "3h14m24s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "864",
+    "x-ratelimit-remaining-tokens": "7799",
+    "x-ratelimit-reset-requests": "3h15m50.4s",
+    "x-ratelimit-reset-tokens": "1.507s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "863",
+    "x-ratelimit-remaining-tokens": "7818",
+    "x-ratelimit-reset-requests": "3h17m16.8s",
+    "x-ratelimit-reset-tokens": "1.365s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "862",
+    "x-ratelimit-remaining-tokens": "7815",
+    "x-ratelimit-reset-requests": "3h18m43.2s",
+    "x-ratelimit-reset-tokens": "1.387s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "861",
+    "x-ratelimit-remaining-tokens": "7803",
+    "x-ratelimit-reset-requests": "3h20m9.6s",
+    "x-ratelimit-reset-tokens": "1.477s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "860",
+    "x-ratelimit-remaining-tokens": "7790",
+    "x-ratelimit-reset-requests": "3h21m36s",
+    "x-ratelimit-reset-tokens": "1.575s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "859",
+    "x-ratelimit-remaining-tokens": "7801",
+    "x-ratelimit-reset-requests": "3h23m2.4s",
+    "x-ratelimit-reset-tokens": "1.492s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "858",
+    "x-ratelimit-remaining-tokens": "7808",
+    "x-ratelimit-reset-requests": "3h24m28.8s",
+    "x-ratelimit-reset-tokens": "1.44s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "857",
+    "x-ratelimit-remaining-tokens": "7811",
+    "x-ratelimit-reset-requests": "3h25m55.199s",
+    "x-ratelimit-reset-tokens": "1.417s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "856",
+    "x-ratelimit-remaining-tokens": "7800",
+    "x-ratelimit-reset-requests": "3h27m21.599s",
+    "x-ratelimit-reset-tokens": "1.5s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "855",
+    "x-ratelimit-remaining-tokens": "7805",
+    "x-ratelimit-reset-requests": "3h28m48s",
+    "x-ratelimit-reset-tokens": "1.462s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "854",
+    "x-ratelimit-remaining-tokens": "7798",
+    "x-ratelimit-reset-requests": "3h30m14.4s",
+    "x-ratelimit-reset-tokens": "1.515s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "853",
+    "x-ratelimit-remaining-tokens": "7778",
+    "x-ratelimit-reset-requests": "3h31m40.8s",
+    "x-ratelimit-reset-tokens": "1.665s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "852",
+    "x-ratelimit-remaining-tokens": "7805",
+    "x-ratelimit-reset-requests": "3h33m7.199s",
+    "x-ratelimit-reset-tokens": "1.462s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "851",
+    "x-ratelimit-remaining-tokens": "7807",
+    "x-ratelimit-reset-requests": "3h34m33.599s",
+    "x-ratelimit-reset-tokens": "1.447s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "850",
+    "x-ratelimit-remaining-tokens": "7815",
+    "x-ratelimit-reset-requests": "3h36m0s",
+    "x-ratelimit-reset-tokens": "1.387s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "849",
+    "x-ratelimit-remaining-tokens": "7805",
+    "x-ratelimit-reset-requests": "3h37m26.4s",
+    "x-ratelimit-reset-tokens": "1.462s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "848",
+    "x-ratelimit-remaining-tokens": "7804",
+    "x-ratelimit-reset-requests": "3h38m52.8s",
+    "x-ratelimit-reset-tokens": "1.47s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "847",
+    "x-ratelimit-remaining-tokens": "7817",
+    "x-ratelimit-reset-requests": "3h40m19.199s",
+    "x-ratelimit-reset-tokens": "1.372s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "846",
+    "x-ratelimit-remaining-tokens": "7816",
+    "x-ratelimit-reset-requests": "3h41m45.6s",
+    "x-ratelimit-reset-tokens": "1.38s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "845",
+    "x-ratelimit-remaining-tokens": "7800",
+    "x-ratelimit-reset-requests": "3h43m12s",
+    "x-ratelimit-reset-tokens": "1.5s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "844",
+    "x-ratelimit-remaining-tokens": "7797",
+    "x-ratelimit-reset-requests": "3h44m38.4s",
+    "x-ratelimit-reset-tokens": "1.522s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "843",
+    "x-ratelimit-remaining-tokens": "7816",
+    "x-ratelimit-reset-requests": "3h46m4.8s",
+    "x-ratelimit-reset-tokens": "1.38s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "842",
+    "x-ratelimit-remaining-tokens": "7803",
+    "x-ratelimit-reset-requests": "3h47m31.2s",
+    "x-ratelimit-reset-tokens": "1.477s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "841",
+    "x-ratelimit-remaining-tokens": "7818",
+    "x-ratelimit-reset-requests": "3h48m57.6s",
+    "x-ratelimit-reset-tokens": "1.365s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "840",
+    "x-ratelimit-remaining-tokens": "7807",
+    "x-ratelimit-reset-requests": "3h50m24s",
+    "x-ratelimit-reset-tokens": "1.447s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "839",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "3h51m50.4s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "838",
+    "x-ratelimit-remaining-tokens": "7791",
+    "x-ratelimit-reset-requests": "3h53m16.8s",
+    "x-ratelimit-reset-tokens": "1.567s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "837",
+    "x-ratelimit-remaining-tokens": "7782",
+    "x-ratelimit-reset-requests": "3h54m43.2s",
+    "x-ratelimit-reset-tokens": "1.635s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "836",
+    "x-ratelimit-remaining-tokens": "7815",
+    "x-ratelimit-reset-requests": "3h56m9.6s",
+    "x-ratelimit-reset-tokens": "1.387s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "835",
+    "x-ratelimit-remaining-tokens": "7811",
+    "x-ratelimit-reset-requests": "3h57m36s",
+    "x-ratelimit-reset-tokens": "1.417s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "834",
+    "x-ratelimit-remaining-tokens": "7798",
+    "x-ratelimit-reset-requests": "3h59m2.4s",
+    "x-ratelimit-reset-tokens": "1.515s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "833",
+    "x-ratelimit-remaining-tokens": "7803",
+    "x-ratelimit-reset-requests": "4h0m28.8s",
+    "x-ratelimit-reset-tokens": "1.477s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "832",
+    "x-ratelimit-remaining-tokens": "7763",
+    "x-ratelimit-reset-requests": "4h1m55.2s",
+    "x-ratelimit-reset-tokens": "1.777s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "831",
+    "x-ratelimit-remaining-tokens": "7802",
+    "x-ratelimit-reset-requests": "4h3m21.6s",
+    "x-ratelimit-reset-tokens": "1.485s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "830",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "4h4m48s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "829",
+    "x-ratelimit-remaining-tokens": "7793",
+    "x-ratelimit-reset-requests": "4h6m14.4s",
+    "x-ratelimit-reset-tokens": "1.552s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "828",
+    "x-ratelimit-remaining-tokens": "7814",
+    "x-ratelimit-reset-requests": "4h7m40.8s",
+    "x-ratelimit-reset-tokens": "1.395s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "827",
+    "x-ratelimit-remaining-tokens": "7792",
+    "x-ratelimit-reset-requests": "4h9m7.199s",
+    "x-ratelimit-reset-tokens": "1.559s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "826",
+    "x-ratelimit-remaining-tokens": "7800",
+    "x-ratelimit-reset-requests": "4h10m33.599s",
+    "x-ratelimit-reset-tokens": "1.5s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "825",
+    "x-ratelimit-remaining-tokens": "7801",
+    "x-ratelimit-reset-requests": "4h11m59.999s",
+    "x-ratelimit-reset-tokens": "1.492s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "824",
+    "x-ratelimit-remaining-tokens": "7813",
+    "x-ratelimit-reset-requests": "4h13m26.4s",
+    "x-ratelimit-reset-tokens": "1.402s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "823",
+    "x-ratelimit-remaining-tokens": "7793",
+    "x-ratelimit-reset-requests": "4h14m52.8s",
+    "x-ratelimit-reset-tokens": "1.552s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "822",
+    "x-ratelimit-remaining-tokens": "7802",
+    "x-ratelimit-reset-requests": "4h16m19.199s",
+    "x-ratelimit-reset-tokens": "1.485s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "821",
+    "x-ratelimit-remaining-tokens": "7805",
+    "x-ratelimit-reset-requests": "4h17m45.599s",
+    "x-ratelimit-reset-tokens": "1.462s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "820",
+    "x-ratelimit-remaining-tokens": "7794",
+    "x-ratelimit-reset-requests": "4h19m12s",
+    "x-ratelimit-reset-tokens": "1.545s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "819",
+    "x-ratelimit-remaining-tokens": "7815",
+    "x-ratelimit-reset-requests": "4h20m38.4s",
+    "x-ratelimit-reset-tokens": "1.387s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "818",
+    "x-ratelimit-remaining-tokens": "7802",
+    "x-ratelimit-reset-requests": "4h22m4.8s",
+    "x-ratelimit-reset-tokens": "1.485s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "817",
+    "x-ratelimit-remaining-tokens": "7805",
+    "x-ratelimit-reset-requests": "4h23m31.199s",
+    "x-ratelimit-reset-tokens": "1.462s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "816",
+    "x-ratelimit-remaining-tokens": "7778",
+    "x-ratelimit-reset-requests": "4h24m57.6s",
+    "x-ratelimit-reset-tokens": "1.665s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "815",
+    "x-ratelimit-remaining-tokens": "7818",
+    "x-ratelimit-reset-requests": "4h26m24s",
+    "x-ratelimit-reset-tokens": "1.365s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "814",
+    "x-ratelimit-remaining-tokens": "7806",
+    "x-ratelimit-reset-requests": "4h27m50.4s",
+    "x-ratelimit-reset-tokens": "1.455s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "813",
+    "x-ratelimit-remaining-tokens": "7769",
+    "x-ratelimit-reset-requests": "4h29m16.8s",
+    "x-ratelimit-reset-tokens": "1.732s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "812",
+    "x-ratelimit-remaining-tokens": "7783",
+    "x-ratelimit-reset-requests": "4h30m43.2s",
+    "x-ratelimit-reset-tokens": "1.627s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "811",
+    "x-ratelimit-remaining-tokens": "7761",
+    "x-ratelimit-reset-requests": "4h32m9.6s",
+    "x-ratelimit-reset-tokens": "1.792s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "810",
+    "x-ratelimit-remaining-tokens": "7794",
+    "x-ratelimit-reset-requests": "4h33m36s",
+    "x-ratelimit-reset-tokens": "1.545s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "809",
+    "x-ratelimit-remaining-tokens": "7783",
+    "x-ratelimit-reset-requests": "4h35m2.4s",
+    "x-ratelimit-reset-tokens": "1.627s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "808",
+    "x-ratelimit-remaining-tokens": "7752",
+    "x-ratelimit-reset-requests": "4h36m28.8s",
+    "x-ratelimit-reset-tokens": "1.859s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "807",
+    "x-ratelimit-remaining-tokens": "7803",
+    "x-ratelimit-reset-requests": "4h37m55.2s",
+    "x-ratelimit-reset-tokens": "1.477s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "806",
+    "x-ratelimit-remaining-tokens": "7764",
+    "x-ratelimit-reset-requests": "4h39m21.6s",
+    "x-ratelimit-reset-tokens": "1.77s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "805",
+    "x-ratelimit-remaining-tokens": "7769",
+    "x-ratelimit-reset-requests": "4h40m48s",
+    "x-ratelimit-reset-tokens": "1.732s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "804",
+    "x-ratelimit-remaining-tokens": "7809",
+    "x-ratelimit-reset-requests": "4h42m14.4s",
+    "x-ratelimit-reset-tokens": "1.432s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "803",
+    "x-ratelimit-remaining-tokens": "7800",
+    "x-ratelimit-reset-requests": "4h43m40.8s",
+    "x-ratelimit-reset-tokens": "1.5s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "802",
+    "x-ratelimit-remaining-tokens": "7807",
+    "x-ratelimit-reset-requests": "4h45m7.2s",
+    "x-ratelimit-reset-tokens": "1.447s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "801",
+    "x-ratelimit-remaining-tokens": "7763",
+    "x-ratelimit-reset-requests": "4h46m33.6s",
+    "x-ratelimit-reset-tokens": "1.777s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "800",
+    "x-ratelimit-remaining-tokens": "7802",
+    "x-ratelimit-reset-requests": "4h48m0s",
+    "x-ratelimit-reset-tokens": "1.485s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "799",
+    "x-ratelimit-remaining-tokens": "7768",
+    "x-ratelimit-reset-requests": "4h49m26.4s",
+    "x-ratelimit-reset-tokens": "1.74s"
+  },
+  {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "798",
+    "x-ratelimit-remaining-tokens": "7780",
+    "x-ratelimit-reset-requests": "4h50m52.8s",
+    "x-ratelimit-reset-tokens": "1.65s"
+  }
+]

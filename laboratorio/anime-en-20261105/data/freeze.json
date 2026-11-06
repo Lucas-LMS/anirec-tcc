@@ -1,0 +1,21 @@
+{
+  "seed": 20261105,
+  "raw_rows": 16214,
+  "eligible": 8409,
+  "excluded": {
+    "missing_or_short": 7734,
+    "duplicate_snippet": 63,
+    "language_heuristic": 8
+  },
+  "catalog_size": 1000,
+  "queries": 24,
+  "intent_families": 12,
+  "language": "English (source text; heuristic filtering, not independently certified)",
+  "document_word_limit": 80,
+  "qrels_source": "Publisher genre metadata; proxy relevance, no human preference labels",
+  "files_sha256": {
+    "catalog.json": "7ccd6120105955b4c36cd48518b18bbe086a2953d5cada25e12d94b856cc48d1",
+    "queries.json": "cfb7caad52affddf14029a42eca1eec7d5f4d1035831e301013f7ed387540a77",
+    "qrels.json": "c5b8f26cf549e6f3b3653a19b04a737e17fb0af93dc73f0c7abe594933f4b245"
+  }
+}

@@ -1,0 +1,1316 @@
+{
+  "post_hoc": true,
+  "thresholds_changed": false,
+  "note": "Exploratory operational costs and length cohorts; not independent test replications. Invalid response receives the larger error cost. Cohorts have different label prevalences.",
+  "models": [
+    {
+      "model": "dummy",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.976,
+          "precision_spam": 0.0,
+          "recall_spam": 0.0,
+          "f1_spam": 0.0,
+          "macro_f1": 0.4939271255060729,
+          "balanced_accuracy": 0.5,
+          "invalid": 0,
+          "confusion": [
+            [
+              122,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.6666666666666666,
+          "precision_spam": 0.0,
+          "recall_spam": 0.0,
+          "f1_spam": 0.0,
+          "macro_f1": 0.4,
+          "balanced_accuracy": 0.5,
+          "invalid": 0,
+          "confusion": [
+            [
+              38,
+              0,
+              0
+            ],
+            [
+              19,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 0.8333333333333334,
+          "precision_spam": 0.0,
+          "recall_spam": 0.0,
+          "f1_spam": 0.0,
+          "macro_f1": 0.45454545454545453,
+          "balanced_accuracy": 0.5,
+          "invalid": 0,
+          "confusion": [
+            [
+              15,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 25,
+          "units_per_message": 0.125
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 25,
+          "units_per_message": 0.125
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 125,
+          "units_per_message": 0.625
+        }
+      },
+      "brier_score": 0.125
+    },
+    {
+      "model": "tfidf",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.976,
+          "precision_spam": 0.5,
+          "recall_spam": 1.0,
+          "f1_spam": 0.6666666666666666,
+          "macro_f1": 0.8271092669432918,
+          "balanced_accuracy": 0.9877049180327868,
+          "invalid": 0,
+          "confusion": [
+            [
+              119,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.9473684210526315,
+          "precision_spam": 0.9,
+          "recall_spam": 0.9473684210526315,
+          "f1_spam": 0.9230769230769231,
+          "macro_f1": 0.9415384615384615,
+          "balanced_accuracy": 0.9473684210526315,
+          "invalid": 0,
+          "confusion": [
+            [
+              36,
+              2,
+              0
+            ],
+            [
+              1,
+              18,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 1.0,
+          "precision_spam": 1.0,
+          "recall_spam": 1.0,
+          "f1_spam": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "invalid": 0,
+          "confusion": [
+            [
+              15,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 6,
+          "units_per_message": 0.03
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 26,
+          "units_per_message": 0.13
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 10,
+          "units_per_message": 0.05
+        }
+      },
+      "brier_score": 0.044207397475885646
+    },
+    {
+      "model": "glove",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.92,
+          "precision_spam": 0.23076923076923078,
+          "recall_spam": 1.0,
+          "f1_spam": 0.375,
+          "macro_f1": 0.6661324786324787,
+          "balanced_accuracy": 0.959016393442623,
+          "invalid": 0,
+          "confusion": [
+            [
+              112,
+              10,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.8771929824561403,
+          "precision_spam": 0.8,
+          "recall_spam": 0.8421052631578947,
+          "f1_spam": 0.8205128205128205,
+          "macro_f1": 0.8635897435897435,
+          "balanced_accuracy": 0.868421052631579,
+          "invalid": 0,
+          "confusion": [
+            [
+              34,
+              4,
+              0
+            ],
+            [
+              3,
+              16,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 1.0,
+          "precision_spam": 1.0,
+          "recall_spam": 1.0,
+          "f1_spam": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "invalid": 0,
+          "confusion": [
+            [
+              15,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 17,
+          "units_per_message": 0.085
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 73,
+          "units_per_message": 0.365
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 29,
+          "units_per_message": 0.145
+        }
+      },
+      "brier_score": 0.07968762138840563
+    },
+    {
+      "model": "fasttext",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.912,
+          "precision_spam": 0.21428571428571427,
+          "recall_spam": 1.0,
+          "f1_spam": 0.35294117647058826,
+          "macro_f1": 0.6528654380207018,
+          "balanced_accuracy": 0.9549180327868853,
+          "invalid": 0,
+          "confusion": [
+            [
+              111,
+              11,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.8421052631578947,
+          "precision_spam": 0.75,
+          "recall_spam": 0.7894736842105263,
+          "f1_spam": 0.7692307692307693,
+          "macro_f1": 0.8246153846153846,
+          "balanced_accuracy": 0.8289473684210527,
+          "invalid": 0,
+          "confusion": [
+            [
+              33,
+              5,
+              0
+            ],
+            [
+              4,
+              15,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 1.0,
+          "precision_spam": 1.0,
+          "recall_spam": 1.0,
+          "f1_spam": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "invalid": 0,
+          "confusion": [
+            [
+              15,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 20,
+          "units_per_message": 0.1
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 84,
+          "units_per_message": 0.42
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 36,
+          "units_per_message": 0.18
+        }
+      },
+      "brier_score": 0.09312404859982112
+    },
+    {
+      "model": "w2v-cbow",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.936,
+          "precision_spam": 0.2727272727272727,
+          "recall_spam": 1.0,
+          "f1_spam": 0.42857142857142855,
+          "macro_f1": 0.6973365617433414,
+          "balanced_accuracy": 0.9672131147540983,
+          "invalid": 0,
+          "confusion": [
+            [
+              114,
+              8,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.8421052631578947,
+          "precision_spam": 0.7272727272727273,
+          "recall_spam": 0.8421052631578947,
+          "f1_spam": 0.7804878048780488,
+          "macro_f1": 0.828600066822586,
+          "balanced_accuracy": 0.8421052631578947,
+          "invalid": 0,
+          "confusion": [
+            [
+              32,
+              6,
+              0
+            ],
+            [
+              3,
+              16,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 0.9444444444444444,
+          "precision_spam": 0.75,
+          "recall_spam": 1.0,
+          "f1_spam": 0.8571428571428571,
+          "macro_f1": 0.9113300492610837,
+          "balanced_accuracy": 0.9666666666666667,
+          "invalid": 0,
+          "confusion": [
+            [
+              14,
+              1,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 18,
+          "units_per_message": 0.09
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 78,
+          "units_per_message": 0.39
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 30,
+          "units_per_message": 0.15
+        }
+      },
+      "brier_score": 0.06875165775453813
+    },
+    {
+      "model": "w2v-sg",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.92,
+          "precision_spam": 0.23076923076923078,
+          "recall_spam": 1.0,
+          "f1_spam": 0.375,
+          "macro_f1": 0.6661324786324787,
+          "balanced_accuracy": 0.959016393442623,
+          "invalid": 0,
+          "confusion": [
+            [
+              112,
+              10,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.8421052631578947,
+          "precision_spam": 0.7272727272727273,
+          "recall_spam": 0.8421052631578947,
+          "f1_spam": 0.7804878048780488,
+          "macro_f1": 0.828600066822586,
+          "balanced_accuracy": 0.8421052631578947,
+          "invalid": 0,
+          "confusion": [
+            [
+              32,
+              6,
+              0
+            ],
+            [
+              3,
+              16,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 1.0,
+          "precision_spam": 1.0,
+          "recall_spam": 1.0,
+          "f1_spam": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "invalid": 0,
+          "confusion": [
+            [
+              15,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 19,
+          "units_per_message": 0.095
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 83,
+          "units_per_message": 0.415
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 31,
+          "units_per_message": 0.155
+        }
+      },
+      "brier_score": 0.07674858813951982
+    },
+    {
+      "model": "minilm",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 1.0,
+          "precision_spam": 1.0,
+          "recall_spam": 1.0,
+          "f1_spam": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "invalid": 0,
+          "confusion": [
+            [
+              122,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.9473684210526315,
+          "precision_spam": 0.8636363636363636,
+          "recall_spam": 1.0,
+          "f1_spam": 0.926829268292683,
+          "macro_f1": 0.942866688940862,
+          "balanced_accuracy": 0.9605263157894737,
+          "invalid": 0,
+          "confusion": [
+            [
+              35,
+              3,
+              0
+            ],
+            [
+              0,
+              19,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 1.0,
+          "precision_spam": 1.0,
+          "recall_spam": 1.0,
+          "f1_spam": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "invalid": 0,
+          "confusion": [
+            [
+              15,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 3,
+          "units_per_message": 0.015
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 15,
+          "units_per_message": 0.075
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 3,
+          "units_per_message": 0.015
+        }
+      },
+      "brier_score": 0.0234784542843583
+    },
+    {
+      "model": "w2v-lee-cbow",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.08,
+          "precision_spam": 0.025423728813559324,
+          "recall_spam": 1.0,
+          "f1_spam": 0.049586776859504134,
+          "macro_f1": 0.07905695432122493,
+          "balanced_accuracy": 0.5286885245901639,
+          "invalid": 0,
+          "confusion": [
+            [
+              7,
+              115,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.3333333333333333,
+          "precision_spam": 0.3333333333333333,
+          "recall_spam": 1.0,
+          "f1_spam": 0.5,
+          "macro_f1": 0.25,
+          "balanced_accuracy": 0.5,
+          "invalid": 0,
+          "confusion": [
+            [
+              0,
+              38,
+              0
+            ],
+            [
+              0,
+              19,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 0.16666666666666666,
+          "precision_spam": 0.16666666666666666,
+          "recall_spam": 1.0,
+          "f1_spam": 0.2857142857142857,
+          "macro_f1": 0.14285714285714285,
+          "balanced_accuracy": 0.5,
+          "invalid": 0,
+          "confusion": [
+            [
+              0,
+              15,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 168,
+          "units_per_message": 0.84
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 840,
+          "units_per_message": 4.2
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 168,
+          "units_per_message": 0.84
+        }
+      },
+      "brier_score": 0.25282402876343396
+    },
+    {
+      "model": "w2v-lee-sg",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.592,
+          "precision_spam": 0.02,
+          "recall_spam": 0.3333333333333333,
+          "f1_spam": 0.03773584905660377,
+          "macro_f1": 0.38942630016281965,
+          "balanced_accuracy": 0.46584699453551914,
+          "invalid": 0,
+          "confusion": [
+            [
+              73,
+              49,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.6666666666666666,
+          "precision_spam": 0.5,
+          "recall_spam": 0.8421052631578947,
+          "f1_spam": 0.6274509803921569,
+          "macro_f1": 0.6629318394024276,
+          "balanced_accuracy": 0.7105263157894737,
+          "invalid": 0,
+          "confusion": [
+            [
+              22,
+              16,
+              0
+            ],
+            [
+              3,
+              16,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 0.6111111111111112,
+          "precision_spam": 0.25,
+          "recall_spam": 0.6666666666666666,
+          "f1_spam": 0.36363636363636365,
+          "macro_f1": 0.5418181818181818,
+          "balanced_accuracy": 0.6333333333333333,
+          "invalid": 0,
+          "confusion": [
+            [
+              9,
+              6,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 77,
+          "units_per_message": 0.385
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 361,
+          "units_per_message": 1.805
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 101,
+          "units_per_message": 0.505
+        }
+      },
+      "brier_score": 0.2291172583515596
+    },
+    {
+      "model": "llama",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.872,
+          "precision_spam": 0.08333333333333333,
+          "recall_spam": 0.3333333333333333,
+          "f1_spam": 0.13333333333333333,
+          "macro_f1": 0.532183908045977,
+          "balanced_accuracy": 0.6092896174863388,
+          "invalid": 3,
+          "confusion": [
+            [
+              108,
+              11,
+              3
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.6666666666666666,
+          "precision_spam": 0.5,
+          "recall_spam": 0.47368421052631576,
+          "f1_spam": 0.4864864864864865,
+          "macro_f1": 0.6198666198666198,
+          "balanced_accuracy": 0.618421052631579,
+          "invalid": 0,
+          "confusion": [
+            [
+              29,
+              9,
+              0
+            ],
+            [
+              10,
+              9,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 0.8888888888888888,
+          "precision_spam": 0.6666666666666666,
+          "recall_spam": 0.6666666666666666,
+          "f1_spam": 0.6666666666666666,
+          "macro_f1": 0.8,
+          "balanced_accuracy": 0.8,
+          "invalid": 0,
+          "confusion": [
+            [
+              14,
+              1,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 37,
+          "units_per_message": 0.185
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 133,
+          "units_per_message": 0.665
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 101,
+          "units_per_message": 0.505
+        }
+      }
+    },
+    {
+      "model": "deepseek",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.712,
+          "precision_spam": 0.06666666666666667,
+          "recall_spam": 0.3333333333333333,
+          "f1_spam": 0.1111111111111111,
+          "macro_f1": 0.4706498951781971,
+          "balanced_accuracy": 0.5273224043715847,
+          "invalid": 20,
+          "confusion": [
+            [
+              88,
+              14,
+              20
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.631578947368421,
+          "precision_spam": 0.5714285714285714,
+          "recall_spam": 0.42105263157894735,
+          "f1_spam": 0.48484848484848486,
+          "macro_f1": 0.6208026208026208,
+          "balanced_accuracy": 0.5789473684210527,
+          "invalid": 7,
+          "confusion": [
+            [
+              28,
+              6,
+              4
+            ],
+            [
+              8,
+              8,
+              3
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 0.5,
+          "precision_spam": 0.0,
+          "recall_spam": 0.0,
+          "f1_spam": 0.0,
+          "macro_f1": 0.375,
+          "balanced_accuracy": 0.3,
+          "invalid": 7,
+          "confusion": [
+            [
+              9,
+              2,
+              4
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 66,
+          "units_per_message": 0.33
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 290,
+          "units_per_message": 1.45
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 242,
+          "units_per_message": 1.21
+        }
+      }
+    },
+    {
+      "model": "qwen",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.816,
+          "precision_spam": 0.0,
+          "recall_spam": 0.0,
+          "f1_spam": 0.0,
+          "macro_f1": 0.44933920704845814,
+          "balanced_accuracy": 0.4180327868852459,
+          "invalid": 2,
+          "confusion": [
+            [
+              102,
+              18,
+              2
+            ],
+            [
+              3,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.7017543859649122,
+          "precision_spam": 0.5714285714285714,
+          "recall_spam": 0.631578947368421,
+          "f1_spam": 0.6,
+          "macro_f1": 0.6835616438356165,
+          "balanced_accuracy": 0.6842105263157894,
+          "invalid": 1,
+          "confusion": [
+            [
+              28,
+              9,
+              1
+            ],
+            [
+              7,
+              12,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 0.7777777777777778,
+          "precision_spam": 0.3333333333333333,
+          "recall_spam": 0.3333333333333333,
+          "f1_spam": 0.3333333333333333,
+          "macro_f1": 0.6,
+          "balanced_accuracy": 0.6,
+          "invalid": 0,
+          "confusion": [
+            [
+              13,
+              2,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 44,
+          "units_per_message": 0.22
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 172,
+          "units_per_message": 0.86
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 104,
+          "units_per_message": 0.52
+        }
+      }
+    },
+    {
+      "model": "gptoss",
+      "cohorts": [
+        {
+          "cohort": "short: 1-80 characters",
+          "n": 125,
+          "spam": 3,
+          "accuracy": 0.928,
+          "precision_spam": 0.2,
+          "recall_spam": 0.6666666666666666,
+          "f1_spam": 0.3076923076923077,
+          "macro_f1": 0.634858812074002,
+          "balanced_accuracy": 0.8005464480874317,
+          "invalid": 0,
+          "confusion": [
+            [
+              114,
+              8,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "medium: 81-160 characters",
+          "n": 57,
+          "spam": 19,
+          "accuracy": 0.8771929824561403,
+          "precision_spam": 0.75,
+          "recall_spam": 0.9473684210526315,
+          "f1_spam": 0.8372093023255814,
+          "macro_f1": 0.8693088765149034,
+          "balanced_accuracy": 0.894736842105263,
+          "invalid": 0,
+          "confusion": [
+            [
+              32,
+              6,
+              0
+            ],
+            [
+              1,
+              18,
+              0
+            ]
+          ]
+        },
+        {
+          "cohort": "long: >160 characters",
+          "n": 18,
+          "spam": 3,
+          "accuracy": 0.9444444444444444,
+          "precision_spam": 0.75,
+          "recall_spam": 1.0,
+          "f1_spam": 0.8571428571428571,
+          "macro_f1": 0.9113300492610837,
+          "balanced_accuracy": 0.9666666666666667,
+          "invalid": 0,
+          "confusion": [
+            [
+              14,
+              1,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "costs": {
+        "equal": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 1,
+          "invalid_weight": 1,
+          "total_units": 17,
+          "units_per_message": 0.085
+        },
+        "protect_legitimate_messages": {
+          "false_positive_weight": 5,
+          "false_negative_weight": 1,
+          "invalid_weight": 5,
+          "total_units": 77,
+          "units_per_message": 0.385
+        },
+        "prioritize_spam_detection": {
+          "false_positive_weight": 1,
+          "false_negative_weight": 5,
+          "invalid_weight": 5,
+          "total_units": 25,
+          "units_per_message": 0.125
+        }
+      }
+    }
+  ]
+}

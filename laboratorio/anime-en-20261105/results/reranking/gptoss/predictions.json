@@ -1,0 +1,458 @@
+[
+  {
+    "id": "sports-literal",
+    "prediction": "B,A,E,D,C",
+    "wall_seconds": 0.5276635269999872,
+    "throttle_seconds": 2.1769568940000115,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.318506352,
+      "prompt_tokens": 630,
+      "prompt_time": 0.049102309,
+      "completion_tokens": 88,
+      "completion_time": 0.113882058,
+      "total_tokens": 718,
+      "total_time": 0.162984367,
+      "completion_tokens_details": {
+        "reasoning_tokens": 68
+      }
+    }
+  },
+  {
+    "id": "sports-paraphrase",
+    "prediction": "A,B,C,D,E",
+    "wall_seconds": 0.4530035080000232,
+    "throttle_seconds": 2.198006199999992,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.243190406,
+      "prompt_tokens": 584,
+      "prompt_time": 0.03426841,
+      "completion_tokens": 97,
+      "completion_time": 0.111884001,
+      "total_tokens": 681,
+      "total_time": 0.146152411,
+      "completion_tokens_details": {
+        "reasoning_tokens": 77
+      }
+    }
+  },
+  {
+    "id": "mecha-literal",
+    "prediction": "A,B,E,C,D",
+    "wall_seconds": 0.7210950210000249,
+    "throttle_seconds": 2.198503299000021,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.563948479,
+      "prompt_tokens": 639,
+      "prompt_time": 0.034834438,
+      "completion_tokens": 86,
+      "completion_time": 0.090697862,
+      "total_tokens": 725,
+      "total_time": 0.1255323,
+      "completion_tokens_details": {
+        "reasoning_tokens": 66
+      }
+    }
+  },
+  {
+    "id": "mecha-paraphrase",
+    "prediction": "A,B,C,D,E",
+    "wall_seconds": 0.4694280699999922,
+    "throttle_seconds": 2.1989793009999916,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.311063069,
+      "prompt_tokens": 663,
+      "prompt_time": 0.039631527,
+      "completion_tokens": 81,
+      "completion_time": 0.085926262,
+      "total_tokens": 744,
+      "total_time": 0.125557789,
+      "completion_tokens_details": {
+        "reasoning_tokens": 61
+      }
+    }
+  },
+  {
+    "id": "mystery-literal",
+    "prediction": "B,D,E,C,A",
+    "wall_seconds": 1.1203267500000038,
+    "throttle_seconds": 2.197730001000008,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.934099838,
+      "prompt_tokens": 640,
+      "prompt_time": 0.044888325,
+      "completion_tokens": 90,
+      "completion_time": 0.11154022,
+      "total_tokens": 730,
+      "total_time": 0.156428545,
+      "completion_tokens_details": {
+        "reasoning_tokens": 70
+      }
+    }
+  },
+  {
+    "id": "mystery-paraphrase",
+    "prediction": "E,C,D,B,A",
+    "wall_seconds": 1.3317702589999953,
+    "throttle_seconds": 2.198451500000016,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 1.156524177,
+      "prompt_tokens": 630,
+      "prompt_time": 0.0412898,
+      "completion_tokens": 90,
+      "completion_time": 0.098529907,
+      "total_tokens": 720,
+      "total_time": 0.139819707,
+      "completion_tokens_details": {
+        "reasoning_tokens": 70
+      }
+    }
+  },
+  {
+    "id": "romance-literal",
+    "prediction": "D,B,E,C,A",
+    "wall_seconds": 0.45493858599999726,
+    "throttle_seconds": 2.1989954999999783,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.304490989,
+      "prompt_tokens": 560,
+      "prompt_time": 0.028814382,
+      "completion_tokens": 73,
+      "completion_time": 0.096555417,
+      "total_tokens": 633,
+      "total_time": 0.125369799,
+      "completion_tokens_details": {
+        "reasoning_tokens": 53
+      }
+    }
+  },
+  {
+    "id": "romance-paraphrase",
+    "prediction": "A,E,D,C,B",
+    "wall_seconds": 0.3491752889999873,
+    "throttle_seconds": 2.1986193999999957,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.151205329,
+      "prompt_tokens": 707,
+      "prompt_time": 0.039761915,
+      "completion_tokens": 107,
+      "completion_time": 0.129680094,
+      "total_tokens": 814,
+      "total_time": 0.169442009,
+      "completion_tokens_details": {
+        "reasoning_tokens": 87
+      }
+    }
+  },
+  {
+    "id": "comedy-literal",
+    "prediction": "C,D,E,B,A",
+    "wall_seconds": 0.6616039150000006,
+    "throttle_seconds": 37.17005087600002,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.241552507,
+      "prompt_tokens": 569,
+      "prompt_time": 0.286642557,
+      "completion_tokens": 69,
+      "completion_time": 0.072900333,
+      "total_tokens": 638,
+      "total_time": 0.35954289,
+      "completion_tokens_details": {
+        "reasoning_tokens": 49
+      }
+    }
+  },
+  {
+    "id": "comedy-paraphrase",
+    "prediction": "D,A,B,C,E",
+    "wall_seconds": 1.577409523,
+    "throttle_seconds": 2.1965350990000276,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 1.388260087,
+      "prompt_tokens": 731,
+      "prompt_time": 0.05075286,
+      "completion_tokens": 96,
+      "completion_time": 0.105201117,
+      "total_tokens": 827,
+      "total_time": 0.155953977,
+      "completion_tokens_details": {
+        "reasoning_tokens": 76
+      }
+    }
+  },
+  {
+    "id": "science-fiction-literal",
+    "prediction": "D,A,E,B,C",
+    "wall_seconds": 0.5546896569999831,
+    "throttle_seconds": 2.19812129999998,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.395699804,
+      "prompt_tokens": 686,
+      "prompt_time": 0.036912041,
+      "completion_tokens": 81,
+      "completion_time": 0.088013564,
+      "total_tokens": 767,
+      "total_time": 0.124925605,
+      "completion_tokens_details": {
+        "reasoning_tokens": 61
+      }
+    }
+  },
+  {
+    "id": "science-fiction-paraphrase",
+    "prediction": "B,A,C,D,E",
+    "wall_seconds": 1.1709932219999928,
+    "throttle_seconds": 2.1978814989999877,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 1.005008001,
+      "prompt_tokens": 727,
+      "prompt_time": 0.058752216,
+      "completion_tokens": 62,
+      "completion_time": 0.072932949,
+      "total_tokens": 789,
+      "total_time": 0.131685165,
+      "completion_tokens_details": {
+        "reasoning_tokens": 42
+      }
+    }
+  },
+  {
+    "id": "action-adventure-literal",
+    "prediction": "E,C,D,A,B",
+    "wall_seconds": 0.3052224369999976,
+    "throttle_seconds": 2.1985278999999993,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.149851366,
+      "prompt_tokens": 596,
+      "prompt_time": 0.029722435,
+      "completion_tokens": 81,
+      "completion_time": 0.088017129,
+      "total_tokens": 677,
+      "total_time": 0.117739564,
+      "completion_tokens_details": {
+        "reasoning_tokens": 61
+      }
+    }
+  },
+  {
+    "id": "action-adventure-paraphrase",
+    "prediction": "E,A,B,C,D",
+    "wall_seconds": 0.36574524400000996,
+    "throttle_seconds": 2.197451199000011,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.206283585,
+      "prompt_tokens": 676,
+      "prompt_time": 0.034791219,
+      "completion_tokens": 76,
+      "completion_time": 0.088876544,
+      "total_tokens": 752,
+      "total_time": 0.123667763,
+      "completion_tokens_details": {
+        "reasoning_tokens": 56
+      }
+    }
+  },
+  {
+    "id": "fantasy-romance-literal",
+    "prediction": "C,B,A,E,D",
+    "wall_seconds": 0.636246677999992,
+    "throttle_seconds": 2.198378299999985,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.442962511,
+      "prompt_tokens": 550,
+      "prompt_time": 0.063866313,
+      "completion_tokens": 85,
+      "completion_time": 0.093899685,
+      "total_tokens": 635,
+      "total_time": 0.157765998,
+      "completion_tokens_details": {
+        "reasoning_tokens": 65
+      }
+    }
+  },
+  {
+    "id": "fantasy-romance-paraphrase",
+    "prediction": "D,A,E,C,B",
+    "wall_seconds": 0.9798083539999993,
+    "throttle_seconds": 2.198924100000011,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.716660711,
+      "prompt_tokens": 676,
+      "prompt_time": 0.086762312,
+      "completion_tokens": 120,
+      "completion_time": 0.141076366,
+      "total_tokens": 796,
+      "total_time": 0.227838678,
+      "completion_tokens_details": {
+        "reasoning_tokens": 100
+      }
+    }
+  },
+  {
+    "id": "school-comedy-literal",
+    "prediction": "D,A,C,B,E",
+    "wall_seconds": 1.0640217590000134,
+    "throttle_seconds": 2.1380862970000125,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.802739051,
+      "prompt_tokens": 678,
+      "prompt_time": 0.073159216,
+      "completion_tokens": 96,
+      "completion_time": 0.124871451,
+      "total_tokens": 774,
+      "total_time": 0.198030667,
+      "completion_tokens_details": {
+        "reasoning_tokens": 76
+      }
+    }
+  },
+  {
+    "id": "school-comedy-paraphrase",
+    "prediction": "D,E,B,C,A",
+    "wall_seconds": 0.4792294929999912,
+    "throttle_seconds": 35.85544437600002,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.241835808,
+      "prompt_tokens": 669,
+      "prompt_time": 0.033976942,
+      "completion_tokens": 88,
+      "completion_time": 0.094106585,
+      "total_tokens": 757,
+      "total_time": 0.128083527,
+      "completion_tokens_details": {
+        "reasoning_tokens": 68
+      }
+    }
+  },
+  {
+    "id": "supernatural-mystery-literal",
+    "prediction": "A,E,B,C,D",
+    "wall_seconds": 3.348807140999952,
+    "throttle_seconds": 3.2940937819999903,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 3.18804397,
+      "prompt_tokens": 561,
+      "prompt_time": 0.037257556,
+      "completion_tokens": 89,
+      "completion_time": 0.095861512,
+      "total_tokens": 650,
+      "total_time": 0.133119068,
+      "completion_tokens_details": {
+        "reasoning_tokens": 69
+      }
+    }
+  },
+  {
+    "id": "supernatural-mystery-paraphrase",
+    "prediction": "C,A,B,D,E",
+    "wall_seconds": 0.45341636300003074,
+    "throttle_seconds": 2.7745586239999938,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.28095673,
+      "prompt_tokens": 719,
+      "prompt_time": 0.051115456,
+      "completion_tokens": 71,
+      "completion_time": 0.082093718,
+      "total_tokens": 790,
+      "total_time": 0.133209174,
+      "completion_tokens_details": {
+        "reasoning_tokens": 51
+      }
+    }
+  },
+  {
+    "id": "action-no-mecha-literal",
+    "prediction": "C,E,B,A,D",
+    "wall_seconds": 0.48413166099999216,
+    "throttle_seconds": 2.198531300000025,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.271582676,
+      "prompt_tokens": 582,
+      "prompt_time": 0.034723783,
+      "completion_tokens": 121,
+      "completion_time": 0.149944544,
+      "total_tokens": 703,
+      "total_time": 0.184668327,
+      "completion_tokens_details": {
+        "reasoning_tokens": 101
+      }
+    }
+  },
+  {
+    "id": "action-no-mecha-paraphrase",
+    "prediction": "B,C,D,E,A",
+    "wall_seconds": 0.7808731049999551,
+    "throttle_seconds": 2.1985646009999984,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.482717121,
+      "prompt_tokens": 712,
+      "prompt_time": 0.040881331,
+      "completion_tokens": 140,
+      "completion_time": 0.225983114,
+      "total_tokens": 852,
+      "total_time": 0.266864445,
+      "completion_tokens_details": {
+        "reasoning_tokens": 120
+      }
+    }
+  },
+  {
+    "id": "romance-no-school-literal",
+    "prediction": "invalid",
+    "wall_seconds": 1.035657006000008,
+    "throttle_seconds": 2.1987052999999834,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.88842864,
+      "prompt_tokens": 602,
+      "prompt_time": 0.051695523,
+      "completion_tokens": 52,
+      "completion_time": 0.065282176,
+      "total_tokens": 654,
+      "total_time": 0.116977699,
+      "completion_tokens_details": {
+        "reasoning_tokens": 40
+      }
+    }
+  },
+  {
+    "id": "romance-no-school-paraphrase",
+    "prediction": "A,D,B,C,E",
+    "wall_seconds": 0.793429505000006,
+    "throttle_seconds": 2.198884300000043,
+    "finish_reason": "stop",
+    "usage": {
+      "queue_time": 0.621544944,
+      "prompt_tokens": 703,
+      "prompt_time": 0.041218138,
+      "completion_tokens": 87,
+      "completion_time": 0.098374564,
+      "total_tokens": 790,
+      "total_time": 0.139592702,
+      "completion_tokens_details": {
+        "reasoning_tokens": 67
+      }
+    }
+  }
+]

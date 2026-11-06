@@ -1,0 +1,25 @@
+{
+  "model": "gptoss",
+  "environment": "Groq Free remoto",
+  "api_model": "openai/gpt-oss-20b",
+  "load_seconds": null,
+  "command": null,
+  "threads": null,
+  "max_completion_tokens": 512,
+  "dataset_sha256": {
+    "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+    "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+    "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+    "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+  },
+  "inference_timing": "Uma chamada por SMS; inclui resposta completa e raciocínio. Espera preventiva por cota registrada separadamente.",
+  "comparison_note": "Serviço remoto tem hardware/RAM desconhecidos; não comparar latência como efeito causal só da arquitetura.",
+  "common_count": 200,
+  "total_stage_wall_seconds": 583.549578568,
+  "total_tokens_this_process": 36886,
+  "api_calls_this_process": 201,
+  "peak_rss_kib_server": null,
+  "peak_rss_kib_client": 37436,
+  "remote_memory": null,
+  "cost_policy": "Sem API paga; Groq Free conforme configuração do usuário."
+}

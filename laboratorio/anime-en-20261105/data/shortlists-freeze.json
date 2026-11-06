@@ -1,0 +1,6 @@
+{
+  "seed": 20261105,
+  "selection": "TF-IDF top five; no qrels consulted; score ties by MAL_ID",
+  "sha256": "f6be358ed9172cc1e7337597b7f6d9f84380b113954de3abd2a4fed67a934ec1",
+  "prompt_template_sha256": "638d76b8ec7dd4f446be51511c664a5b340594d0393ccb2e2108065458d167a3"
+}

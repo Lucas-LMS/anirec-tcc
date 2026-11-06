@@ -1,0 +1,362 @@
+[
+  {
+    "id": "sports-literal",
+    "prediction": "B,E,A,D,C",
+    "wall_seconds": 35.96570154699998,
+    "throttle_seconds": 0.0,
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 429,
+      "prompt_tokens": 580,
+      "total_tokens": 1009,
+      "prompt_tokens_details": {
+        "cached_tokens": 82
+      }
+    }
+  },
+  {
+    "id": "sports-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 39.00989403300002,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 532,
+      "total_tokens": 1044,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "mecha-literal",
+    "prediction": "D,A,E,C,B",
+    "wall_seconds": 30.954040460999977,
+    "throttle_seconds": 0.0,
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 393,
+      "prompt_tokens": 582,
+      "total_tokens": 975,
+      "prompt_tokens_details": {
+        "cached_tokens": 82
+      }
+    }
+  },
+  {
+    "id": "mecha-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 39.39028831500002,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 608,
+      "total_tokens": 1120,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "mystery-literal",
+    "prediction": "invalid",
+    "wall_seconds": 39.242179342999975,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 584,
+      "total_tokens": 1096,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "mystery-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 39.71531920699999,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 576,
+      "total_tokens": 1088,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "romance-literal",
+    "prediction": "invalid",
+    "wall_seconds": 30.878798022999945,
+    "throttle_seconds": 0.0,
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 434,
+      "prompt_tokens": 507,
+      "total_tokens": 941,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "romance-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 26.534014057000036,
+    "throttle_seconds": 0.0,
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 282,
+      "prompt_tokens": 652,
+      "total_tokens": 934,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "comedy-literal",
+    "prediction": "invalid",
+    "wall_seconds": 37.59394776199997,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 511,
+      "total_tokens": 1023,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "comedy-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 42.73457026400001,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 689,
+      "total_tokens": 1201,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "science-fiction-literal",
+    "prediction": "A,C,D,E,B",
+    "wall_seconds": 31.15416922899999,
+    "throttle_seconds": 0.0,
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 362,
+      "prompt_tokens": 632,
+      "total_tokens": 994,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "science-fiction-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 36.075301502,
+    "throttle_seconds": 0.0,
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 409,
+      "prompt_tokens": 682,
+      "total_tokens": 1091,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "action-adventure-literal",
+    "prediction": "invalid",
+    "wall_seconds": 36.280285721000155,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 543,
+      "total_tokens": 1055,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "action-adventure-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 41.16355758000009,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 627,
+      "total_tokens": 1139,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "fantasy-romance-literal",
+    "prediction": "B,C,E,D,A",
+    "wall_seconds": 23.981477107000046,
+    "throttle_seconds": 0.0,
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 329,
+      "prompt_tokens": 492,
+      "total_tokens": 821,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "fantasy-romance-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 40.33544310000002,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 634,
+      "total_tokens": 1146,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "school-comedy-literal",
+    "prediction": "invalid",
+    "wall_seconds": 41.20472085799997,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 629,
+      "total_tokens": 1141,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "school-comedy-paraphrase",
+    "prediction": "A,B,D,C,E",
+    "wall_seconds": 35.256904996,
+    "throttle_seconds": 0.0,
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 446,
+      "prompt_tokens": 612,
+      "total_tokens": 1058,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "supernatural-mystery-literal",
+    "prediction": "invalid",
+    "wall_seconds": 36.132620123999914,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 507,
+      "total_tokens": 1019,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "supernatural-mystery-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 41.4991333779999,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 674,
+      "total_tokens": 1186,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "action-no-mecha-literal",
+    "prediction": "invalid",
+    "wall_seconds": 37.04216675900011,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 529,
+      "total_tokens": 1041,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "action-no-mecha-paraphrase",
+    "prediction": "A,B,C,D,E",
+    "wall_seconds": 37.915644752999924,
+    "throttle_seconds": 0.0,
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 445,
+      "prompt_tokens": 664,
+      "total_tokens": 1109,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "romance-no-school-literal",
+    "prediction": "invalid",
+    "wall_seconds": 37.38822447899997,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 544,
+      "total_tokens": 1056,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  },
+  {
+    "id": "romance-no-school-paraphrase",
+    "prediction": "invalid",
+    "wall_seconds": 43.47184981600003,
+    "throttle_seconds": 0.0,
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 512,
+      "prompt_tokens": 664,
+      "total_tokens": 1176,
+      "prompt_tokens_details": {
+        "cached_tokens": 80
+      }
+    }
+  }
+]

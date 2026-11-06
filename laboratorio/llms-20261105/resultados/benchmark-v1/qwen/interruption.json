@@ -1,0 +1,12 @@
+{
+  "model": "qwen",
+  "completed_before_interruption": 185,
+  "affected_id": "47c71810d0e7331c9f25",
+  "exception": "TimeoutError: timed out",
+  "configured_client_timeout_seconds": 180,
+  "failed_attempt_wall_seconds_measured": null,
+  "original_server_log": "server-primeira-execucao.log",
+  "recovery": "Resume only remaining 15 IDs with identical prompt, seed per ID and generation parameters; original failed attempt retained as operational interruption, not replaced evidence.",
+  "recorded_at": "2026-11-05T20:06:19.185408+00:00",
+  "cause": "Not established; no confirmed attribution to model, RAM or power state."
+}

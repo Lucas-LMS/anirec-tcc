@@ -1,0 +1,42 @@
+{
+  "model": "llama",
+  "environment": "Ubuntu WSL2 CPU",
+  "command": [
+    "/home/lucas/tcc-lab/LLMs/runtime-b12110/llama-b12110/llama-server",
+    "-m",
+    "/mnt/c/tcc-lab/LLMs/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+    "-c",
+    "2048",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-ngl",
+    "0",
+    "-np",
+    "1",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "59167",
+    "--reasoning",
+    "off"
+  ],
+  "load_seconds": 15.09200923200001,
+  "total_stage_wall_seconds": 338.13775417600004,
+  "total_tokens_this_process": 15310,
+  "api_calls_this_process": 25,
+  "known_sms_tokens": 0,
+  "peak_rss_kib_server": 1923420,
+  "remote_memory": null,
+  "shortlist_sha256": "f6be358ed9172cc1e7337597b7f6d9f84380b113954de3abd2a4fed67a934ec1",
+  "dataset_sha256": {
+    "catalog.json": "7ccd6120105955b4c36cd48518b18bbe086a2953d5cada25e12d94b856cc48d1",
+    "queries.json": "cfb7caad52affddf14029a42eca1eec7d5f4d1035831e301013f7ed387540a77",
+    "qrels.json": "c5b8f26cf549e6f3b3653a19b04a737e17fb0af93dc73f0c7abe594933f4b245"
+  },
+  "context": 2048,
+  "max_output_tokens": 512,
+  "threads": 4,
+  "ttft_measured": false
+}

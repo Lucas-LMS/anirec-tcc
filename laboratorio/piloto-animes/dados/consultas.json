@@ -1,0 +1,466 @@
+[
+  {
+    "id": "I01-literal",
+    "family": "I01",
+    "theme": "investigacao",
+    "style": "literal",
+    "text_en": "A battle of wits between a killer and a detective about justice.",
+    "text_pt": "Uma disputa de inteligência entre assassino e detetive sobre justiça."
+  },
+  {
+    "id": "I01-paraphrase",
+    "family": "I01",
+    "theme": "investigacao",
+    "style": "paraphrase",
+    "text_en": "A brilliant youth decides who deserves to live while a pursuer tries to expose him.",
+    "text_pt": "Um jovem brilhante decide quem merece viver enquanto um perseguidor tenta desmascará-lo."
+  },
+  {
+    "id": "I02-literal",
+    "family": "I02",
+    "theme": "investigacao",
+    "style": "literal",
+    "text_en": "A doctor pursues a serial killer across Europe.",
+    "text_pt": "Um médico persegue um assassino em série pela Europa."
+  },
+  {
+    "id": "I02-paraphrase",
+    "family": "I02",
+    "theme": "investigacao",
+    "style": "paraphrase",
+    "text_en": "A man tries to undo the consequences of saving a life that later destroys other lives.",
+    "text_pt": "Um homem tenta reparar as consequências de salvar uma vida que depois destrói outras vidas."
+  },
+  {
+    "id": "I03-literal",
+    "family": "I03",
+    "theme": "tempo",
+    "style": "literal",
+    "text_en": "Science experiments send messages into the past and endanger friends.",
+    "text_pt": "Experimentos científicos enviam mensagens ao passado e ameaçam amigos."
+  },
+  {
+    "id": "I03-paraphrase",
+    "family": "I03",
+    "theme": "tempo",
+    "style": "paraphrase",
+    "text_en": "Changing yesterday repeatedly creates new tragedies for the people a researcher wants to protect.",
+    "text_pt": "Mudar o dia de ontem repetidamente cria novas tragédias para quem um pesquisador deseja proteger."
+  },
+  {
+    "id": "I04-literal",
+    "family": "I04",
+    "theme": "tempo",
+    "style": "literal",
+    "text_en": "A visitor in a fantasy world goes back in time whenever he dies.",
+    "text_pt": "Um visitante em um mundo fantástico volta no tempo sempre que morre."
+  },
+  {
+    "id": "I04-paraphrase",
+    "family": "I04",
+    "theme": "tempo",
+    "style": "paraphrase",
+    "text_en": "An outsider must relive fatal mistakes in an unfamiliar kingdom to prevent disaster.",
+    "text_pt": "Um forasteiro precisa reviver erros fatais em um reino desconhecido para impedir uma catástrofe."
+  },
+  {
+    "id": "I05-literal",
+    "family": "I05",
+    "theme": "jogos",
+    "style": "literal",
+    "text_en": "Players trapped inside an online game must survive and organize their lives.",
+    "text_pt": "Jogadores presos dentro de um jogo online precisam sobreviver e organizar a vida."
+  },
+  {
+    "id": "I05-paraphrase",
+    "family": "I05",
+    "theme": "jogos",
+    "style": "paraphrase",
+    "text_en": "People can no longer leave the digital place where they used to play together.",
+    "text_pt": "Pessoas já não conseguem sair do lugar digital onde costumavam se divertir juntas."
+  },
+  {
+    "id": "I06-literal",
+    "family": "I06",
+    "theme": "herois",
+    "style": "literal",
+    "text_en": "A boy without powers trains in a school for superheroes.",
+    "text_pt": "Um garoto sem poderes treina em uma escola de super-heróis."
+  },
+  {
+    "id": "I06-paraphrase",
+    "family": "I06",
+    "theme": "herois",
+    "style": "paraphrase",
+    "text_en": "Someone excluded from a society of gifted people earns a place among its protectors.",
+    "text_pt": "Alguém excluído de uma sociedade de pessoas especiais conquista um lugar entre seus protetores."
+  },
+  {
+    "id": "I07-literal",
+    "family": "I07",
+    "theme": "herois",
+    "style": "literal",
+    "text_en": "Comedy about overwhelming superpowers and wanting a normal life.",
+    "text_pt": "Uma comédia sobre poderes exagerados e o desejo de uma vida normal."
+  },
+  {
+    "id": "I07-paraphrase",
+    "family": "I07",
+    "theme": "herois",
+    "style": "paraphrase",
+    "text_en": "Being stronger than everyone does not solve boredom, awkwardness or the need for friends.",
+    "text_pt": "Ser mais forte que todos não resolve tédio, constrangimento nem a necessidade de amigos."
+  },
+  {
+    "id": "I08-literal",
+    "family": "I08",
+    "theme": "aventura",
+    "style": "literal",
+    "text_en": "A lonely ninja trains with rivals to earn recognition from his village.",
+    "text_pt": "Um ninja solitário treina com rivais para ser reconhecido pela aldeia."
+  },
+  {
+    "id": "I08-paraphrase",
+    "family": "I08",
+    "theme": "aventura",
+    "style": "paraphrase",
+    "text_en": "A rejected orphan wants the community that fears him to finally acknowledge his worth.",
+    "text_pt": "Um órfão rejeitado deseja que a comunidade que o teme finalmente reconheça seu valor."
+  },
+  {
+    "id": "I09-literal",
+    "family": "I09",
+    "theme": "aventura",
+    "style": "literal",
+    "text_en": "Pirates travel by ship in search of treasure and freedom.",
+    "text_pt": "Piratas viajam de navio em busca de tesouro e liberdade."
+  },
+  {
+    "id": "I09-paraphrase",
+    "family": "I09",
+    "theme": "aventura",
+    "style": "paraphrase",
+    "text_en": "An outlaw builds a chosen family aboard a vessel and challenges powerful rulers along a long voyage.",
+    "text_pt": "Um fora da lei constrói uma família escolhida em uma embarcação e desafia governantes durante uma longa viagem."
+  },
+  {
+    "id": "I10-literal",
+    "family": "I10",
+    "theme": "familia",
+    "style": "literal",
+    "text_en": "Two brothers use alchemy to recover their lost bodies.",
+    "text_pt": "Dois irmãos usam alquimia para recuperar seus corpos perdidos."
+  },
+  {
+    "id": "I10-paraphrase",
+    "family": "I10",
+    "theme": "familia",
+    "style": "paraphrase",
+    "text_en": "Siblings pay a terrible physical price for a forbidden act and search for a way to become whole again.",
+    "text_pt": "Irmãos pagam um preço físico terrível por um ato proibido e procuram uma forma de voltar a ser completos."
+  },
+  {
+    "id": "I11-literal",
+    "family": "I11",
+    "theme": "guerra",
+    "style": "literal",
+    "text_en": "Humanity hides behind walls and soldiers fight enormous monsters.",
+    "text_pt": "A humanidade se esconde atrás de muralhas e soldados enfrentam monstros enormes."
+  },
+  {
+    "id": "I11-paraphrase",
+    "family": "I11",
+    "theme": "guerra",
+    "style": "paraphrase",
+    "text_en": "The last protected communities send young recruits beyond their defenses to face an apparently unstoppable enemy.",
+    "text_pt": "As últimas comunidades protegidas enviam jovens recrutas para além das defesas contra um inimigo aparentemente invencível."
+  },
+  {
+    "id": "I12-literal",
+    "family": "I12",
+    "theme": "policia",
+    "style": "literal",
+    "text_en": "Police, surveillance technology and ethical questions about identity or crime.",
+    "text_pt": "Polícia, tecnologia de vigilância e questões éticas sobre identidade ou crime."
+  },
+  {
+    "id": "I12-paraphrase",
+    "family": "I12",
+    "theme": "policia",
+    "style": "paraphrase",
+    "text_en": "Investigators work in a future where machines challenge what it means to be a person or to be guilty.",
+    "text_pt": "Investigadores atuam em um futuro no qual máquinas questionam o que significa ser uma pessoa ou ser culpado."
+  },
+  {
+    "id": "I13-literal",
+    "family": "I13",
+    "theme": "mecha",
+    "style": "literal",
+    "text_en": "Teenage robot pilots struggle with depression and parental conflict.",
+    "text_pt": "Pilotos adolescentes de robôs enfrentam depressão e conflitos familiares."
+  },
+  {
+    "id": "I13-paraphrase",
+    "family": "I13",
+    "theme": "mecha",
+    "style": "paraphrase",
+    "text_en": "Young defenders must carry the emotional burden of saving others while barely understanding their own pain.",
+    "text_pt": "Jovens defensores carregam o peso emocional de salvar outras pessoas enquanto mal compreendem a própria dor."
+  },
+  {
+    "id": "I14-literal",
+    "family": "I14",
+    "theme": "mecha",
+    "style": "literal",
+    "text_en": "A strategist leads a rebellion against an empire using giant machines.",
+    "text_pt": "Um estrategista lidera uma rebelião contra um império usando máquinas gigantes."
+  },
+  {
+    "id": "I14-paraphrase",
+    "family": "I14",
+    "theme": "mecha",
+    "style": "paraphrase",
+    "text_en": "A secret leader sacrifices relationships while trying to overthrow an oppressive political order.",
+    "text_pt": "Um líder secreto sacrifica relacionamentos ao tentar derrubar uma ordem política opressora."
+  },
+  {
+    "id": "I15-literal",
+    "family": "I15",
+    "theme": "viagem",
+    "style": "literal",
+    "text_en": "Bounty hunters and gunfighters wander through science fiction western adventures.",
+    "text_pt": "Caçadores de recompensas e pistoleiros percorrem aventuras de faroeste e ficção científica."
+  },
+  {
+    "id": "I15-paraphrase",
+    "family": "I15",
+    "theme": "viagem",
+    "style": "paraphrase",
+    "text_en": "Drifters with troubled pasts cross strange frontiers where violence and survival collide.",
+    "text_pt": "Viajantes sem rumo com passados difíceis cruzam fronteiras estranhas onde violência e sobrevivência se encontram."
+  },
+  {
+    "id": "I16-literal",
+    "family": "I16",
+    "theme": "viagem",
+    "style": "literal",
+    "text_en": "Wandering swordsmen travel across historical Japan.",
+    "text_pt": "Espadachins viajantes percorrem o Japão histórico."
+  },
+  {
+    "id": "I16-paraphrase",
+    "family": "I16",
+    "theme": "viagem",
+    "style": "paraphrase",
+    "text_en": "Clashing companions follow a personal search through duels and encounters along the road.",
+    "text_pt": "Companheiros de personalidades conflitantes seguem uma busca pessoal entre duelos e encontros na estrada."
+  },
+  {
+    "id": "I17-literal",
+    "family": "I17",
+    "theme": "espiritos",
+    "style": "literal",
+    "text_en": "Quiet stories about spirits, nature and understanding supernatural beings.",
+    "text_pt": "Histórias tranquilas sobre espíritos, natureza e compreensão de seres sobrenaturais."
+  },
+  {
+    "id": "I17-paraphrase",
+    "family": "I17",
+    "theme": "espiritos",
+    "style": "paraphrase",
+    "text_en": "Gentle encounters show that unfamiliar forces deserve empathy rather than automatic destruction.",
+    "text_pt": "Encontros delicados mostram que forças desconhecidas merecem empatia em vez de destruição automática."
+  },
+  {
+    "id": "I18-literal",
+    "family": "I18",
+    "theme": "espiritos",
+    "style": "literal",
+    "text_en": "Students train with teachers to fight dangerous curses.",
+    "text_pt": "Estudantes treinam com professores para combater maldições perigosas."
+  },
+  {
+    "id": "I18-paraphrase",
+    "family": "I18",
+    "theme": "espiritos",
+    "style": "paraphrase",
+    "text_en": "A young person joins specialists who confront deadly manifestations of human negativity.",
+    "text_pt": "Um jovem se une a especialistas que enfrentam manifestações mortais da negatividade humana."
+  },
+  {
+    "id": "I19-literal",
+    "family": "I19",
+    "theme": "esporte",
+    "style": "literal",
+    "text_en": "A high school volleyball team improves through practice and cooperation.",
+    "text_pt": "Um time escolar de vôlei melhora por meio de treino e cooperação."
+  },
+  {
+    "id": "I19-paraphrase",
+    "family": "I19",
+    "theme": "esporte",
+    "style": "paraphrase",
+    "text_en": "An undersized athlete and a talented rival learn to trust each other on the court.",
+    "text_pt": "Um atleta de baixa estatura e um rival talentoso aprendem a confiar um no outro em quadra."
+  },
+  {
+    "id": "I20-literal",
+    "family": "I20",
+    "theme": "esporte",
+    "style": "literal",
+    "text_en": "School basketball players face rivals and learn teamwork.",
+    "text_pt": "Jogadores escolares de basquete enfrentam rivais e aprendem a trabalhar em equipe."
+  },
+  {
+    "id": "I20-paraphrase",
+    "family": "I20",
+    "theme": "esporte",
+    "style": "paraphrase",
+    "text_en": "Young athletes discover that winning on the court requires more than individual talent.",
+    "text_pt": "Jovens atletas descobrem que vencer em quadra exige mais do que talento individual."
+  },
+  {
+    "id": "I21-literal",
+    "family": "I21",
+    "theme": "jogos_tradicionais",
+    "style": "literal",
+    "text_en": "Traditional Japanese games and competition shape personal growth.",
+    "text_pt": "Jogos tradicionais japoneses e competição moldam o amadurecimento pessoal."
+  },
+  {
+    "id": "I21-paraphrase",
+    "family": "I21",
+    "theme": "jogos_tradicionais",
+    "style": "paraphrase",
+    "text_en": "Tournaments based on strategy or poetry become a path toward confidence and connection with other people.",
+    "text_pt": "Torneios baseados em estratégia ou poesia viram um caminho para confiança e ligação com outras pessoas."
+  },
+  {
+    "id": "I22-literal",
+    "family": "I22",
+    "theme": "musica",
+    "style": "literal",
+    "text_en": "A pianist recovers from grief through classical music and a violinist.",
+    "text_pt": "Um pianista se recupera do luto por meio da música clássica e de uma violinista."
+  },
+  {
+    "id": "I22-paraphrase",
+    "family": "I22",
+    "theme": "musica",
+    "style": "paraphrase",
+    "text_en": "A gifted performer who lost the will to play finds a reason to return to the stage.",
+    "text_pt": "Um artista talentoso que perdeu a vontade de tocar encontra uma razão para voltar ao palco."
+  },
+  {
+    "id": "I23-literal",
+    "family": "I23",
+    "theme": "musica",
+    "style": "literal",
+    "text_en": "School friends make a band and overcome shyness through music.",
+    "text_pt": "Amigas da escola formam uma banda e superam a timidez por meio da música."
+  },
+  {
+    "id": "I23-paraphrase",
+    "family": "I23",
+    "theme": "musica",
+    "style": "paraphrase",
+    "text_en": "Rehearsing and performing together helps awkward girls build friendships in everyday life.",
+    "text_pt": "Ensaiar e se apresentar juntas ajuda garotas inseguras a construir amizades no cotidiano."
+  },
+  {
+    "id": "I24-literal",
+    "family": "I24",
+    "theme": "relacoes",
+    "style": "literal",
+    "text_en": "School relationships, isolation and difficulty communicating lead to emotional growth.",
+    "text_pt": "Relacionamentos escolares, isolamento e dificuldades de comunicação levam ao amadurecimento emocional."
+  },
+  {
+    "id": "I24-paraphrase",
+    "family": "I24",
+    "theme": "relacoes",
+    "style": "paraphrase",
+    "text_en": "Misunderstood teenagers must learn to see beyond reputations and repair painful bonds.",
+    "text_pt": "Adolescentes incompreendidos precisam enxergar além das aparências e reconstruir laços dolorosos."
+  },
+  {
+    "id": "I25-literal",
+    "family": "I25",
+    "theme": "emocao",
+    "style": "literal",
+    "text_en": "A former soldier writes letters and learns to understand feelings after war.",
+    "text_pt": "Uma ex-soldado escreve cartas e aprende a entender sentimentos depois da guerra."
+  },
+  {
+    "id": "I25-paraphrase",
+    "family": "I25",
+    "theme": "emocao",
+    "style": "paraphrase",
+    "text_en": "Someone trained only to obey discovers how words can express affection and help people deal with loss.",
+    "text_pt": "Alguém treinado apenas para obedecer descobre como palavras expressam afeto e ajudam pessoas a lidar com perdas."
+  },
+  {
+    "id": "I26-literal",
+    "family": "I26",
+    "theme": "romance_fantastico",
+    "style": "literal",
+    "text_en": "Two teenagers exchange bodies and search for each other across time.",
+    "text_pt": "Dois adolescentes trocam de corpo e procuram um ao outro através do tempo."
+  },
+  {
+    "id": "I26-paraphrase",
+    "family": "I26",
+    "theme": "romance_fantastico",
+    "style": "paraphrase",
+    "text_en": "A mysterious connection links distant lives, growing affection and the chance to prevent a town from disappearing.",
+    "text_pt": "Uma ligação misteriosa une vidas distantes, afeto crescente e a chance de impedir que uma cidade desapareça."
+  },
+  {
+    "id": "I27-literal",
+    "family": "I27",
+    "theme": "fantasia",
+    "style": "literal",
+    "text_en": "A girl works in a spirit world to rescue her transformed parents.",
+    "text_pt": "Uma menina trabalha em um mundo de espíritos para resgatar os pais transformados."
+  },
+  {
+    "id": "I27-paraphrase",
+    "family": "I27",
+    "theme": "fantasia",
+    "style": "paraphrase",
+    "text_en": "A child must keep her identity and navigate strange rules to bring her family home.",
+    "text_pt": "Uma criança precisa preservar sua identidade e lidar com regras estranhas para levar a família de volta para casa."
+  },
+  {
+    "id": "I28-literal",
+    "family": "I28",
+    "theme": "natureza",
+    "style": "literal",
+    "text_en": "Forest spirits clash with humans building an industrial settlement.",
+    "text_pt": "Espíritos da floresta entram em conflito com humanos de um povoado industrial."
+  },
+  {
+    "id": "I28-paraphrase",
+    "family": "I28",
+    "theme": "natureza",
+    "style": "paraphrase",
+    "text_en": "A traveler tries to understand both sides of a struggle between protecting the natural world and human development.",
+    "text_pt": "Um viajante tenta compreender os dois lados de uma disputa entre proteger a natureza e o desenvolvimento humano."
+  },
+  {
+    "id": "I29-literal",
+    "family": "I29",
+    "theme": "comedia",
+    "style": "literal",
+    "text_en": "Samurai odd-job workers live in an alien-occupied city full of parody.",
+    "text_pt": "Samurais fazem serviços diversos em uma cidade ocupada por alienígenas e cheia de paródia."
+  },
+  {
+    "id": "I29-paraphrase",
+    "family": "I29",
+    "theme": "comedia",
+    "style": "paraphrase",
+    "text_en": "A chaotic group takes ridiculous jobs to pay the bills in a world mixing old traditions and visitors from space.",
+    "text_pt": "Um grupo caótico aceita trabalhos absurdos para pagar as contas em um mundo que mistura tradições antigas e visitantes do espaço."
+  }
+]

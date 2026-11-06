@@ -1,0 +1,327 @@
+{
+  "_id": "678e6324cd7c91b3d74e7072",
+  "id": "bartowski/DeepSeek-R1-Distill-Qwen-1.5B-GGUF",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "tags": [
+    "gguf",
+    "text-generation",
+    "base_model:deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "base_model:quantized:deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "endpoints_compatible",
+    "region:us",
+    "imatrix",
+    "conversational"
+  ],
+  "downloads": 39704,
+  "likes": 91,
+  "modelId": "bartowski/DeepSeek-R1-Distill-Qwen-1.5B-GGUF",
+  "author": "bartowski",
+  "sha": "9cc28b17e86fa2415fcb070f8ee5ec27c965aa61",
+  "lastModified": "2025-01-22T15:19:36.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "Hi, what can you help me with?"
+    },
+    {
+      "text": "What is 84 * 3 / 2?"
+    },
+    {
+      "text": "Tell me an interesting fact about the universe!"
+    },
+    {
+      "text": "Explain quantum computing in simple terms."
+    }
+  ],
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "quantized_by": "bartowski",
+    "pipeline_tag": "text-generation",
+    "base_model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+  },
+  "gguf": {
+    "total": 1777088000,
+    "architecture": "qwen2",
+    "context_length": 131072,
+    "quantize_imatrix_file": "/models_out/DeepSeek-R1-Distill-Qwen-1.5B-GGUF/DeepSeek-R1-Distill-Qwen-1.5B.imatrix",
+    "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<｜User｜>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<｜Assistant｜><｜tool▁calls▁begin｜><｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{{'<｜tool▁calls▁end｜><｜end▁of▁sentence｜>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<｜tool▁outputs▁end｜>' + message['content'] + '<｜end▁of▁sentence｜>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<｜Assistant｜>' + content + '<｜end▁of▁sentence｜>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<｜tool▁outputs▁begin｜><｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<｜tool▁outputs▁end｜>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<｜Assistant｜>'}}{% endif %}",
+    "bos_token": "<｜begin▁of▁sentence｜>",
+    "eos_token": "<｜end▁of▁sentence｜>",
+    "totalFileSize": 3560416352
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "6c1e517fb6e543d78e669a07900ca7eff9242787",
+      "size": 3448
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-IQ2_M.gguf",
+      "blobId": "cd0a8677f37445666898c21a5b7fb8d7b7eedf4b",
+      "size": 701332064,
+      "lfs": {
+        "sha256": "7b99832b3040f184ab3929409de0094bd5edcc485d6343f82bc861fd4c0c308a",
+        "size": 701332064,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-IQ3_M.gguf",
+      "blobId": "7a5a98d9bc416fee0fed48acec5f97d90819757d",
+      "size": 876941408,
+      "lfs": {
+        "sha256": "65380a89c4ccf3a2941739fe8fde454c9bfbeccd3548a7a0899324cd66e80f4e",
+        "size": 876941408,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-IQ3_XS.gguf",
+      "blobId": "da466942bbd2a1ebfa14191f142755804ff03eb8",
+      "size": 831976544,
+      "lfs": {
+        "sha256": "57ca6b0a339fddf2cd8043bc24c2251f9f3379dec9b440e7eb0ec0fe07bc070d",
+        "size": 831976544,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-IQ4_NL.gguf",
+      "blobId": "a5a4dd3ee9d27fd351e9e9351d4aed26f2de9f33",
+      "size": 1067603552,
+      "lfs": {
+        "sha256": "a837a26cb7eea2342f6e1762cc8d39531d46e96b0316be518c18af70c80c357c",
+        "size": 1067603552,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-IQ4_XS.gguf",
+      "blobId": "c16e254f0e2d81dec360cdde469d1efcc068f6c0",
+      "size": 1019711072,
+      "lfs": {
+        "sha256": "463c6bc48a2b728fd1811a320031ace1c03e867918067f1eed9a36483f0eadac",
+        "size": 1019711072,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q2_K.gguf",
+      "blobId": "59dbae42f082c05b668e462b51386c3e0e40e39c",
+      "size": 752880224,
+      "lfs": {
+        "sha256": "902a0f3910078db0fdb1cf58686d36160794b96e4698eae577fb18b35f2b0d87",
+        "size": 752880224,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q2_K_L.gguf",
+      "blobId": "e65267be12769e9e8bf651fcb3a0336870ddac9e",
+      "size": 980784224,
+      "lfs": {
+        "sha256": "951621d7d8033c721009d466123e0a45db598be228276ddea262609291040e57",
+        "size": 980784224,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q3_K_L.gguf",
+      "blobId": "c5b7cb7d3c997ee96fd7941eded164b9b735168f",
+      "size": 980440160,
+      "lfs": {
+        "sha256": "94a1204af6bcf2fcfeda851fcfdecbebc15767c4235ede9999adac9f2648f0e5",
+        "size": 980440160,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q3_K_M.gguf",
+      "blobId": "194df9100f249837802c5618227c966e612953b4",
+      "size": 924456032,
+      "lfs": {
+        "sha256": "b1094879ee7e222cba5be013e6de2d0658c64f91aef5d3c9bff0db5cefbfa020",
+        "size": 924456032,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q3_K_S.gguf",
+      "blobId": "07e4cefe4aa1d68b0c714171dd7c679c92eb5036",
+      "size": 861221984,
+      "lfs": {
+        "sha256": "006aa33911fc8b74607e88f09615ffcb8c7e4500a192abfb03a841b945869cd2",
+        "size": 861221984,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q3_K_XL.gguf",
+      "blobId": "f42b352c1aca9623a5ac0165d8f1632ff4b94a83",
+      "size": 1184642144,
+      "lfs": {
+        "sha256": "51c560753ea3d58489b0aaa0d5d17dadd05df19dd98161d8f6498b8f0cfc40e2",
+        "size": 1184642144,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q4_0.gguf",
+      "blobId": "ca19b806294c469a0e9705595d8d08f3674eabe6",
+      "size": 1068807776,
+      "lfs": {
+        "sha256": "b3af887d0a015b39fab2395e4faf682c1a81a6a3fd09a43f0d4292f7d94bf4d0",
+        "size": 1068807776,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q4_1.gguf",
+      "blobId": "4cf9e761f9e72f90cfaba47e97122a66578070d0",
+      "size": 1162700384,
+      "lfs": {
+        "sha256": "70ab8eae63c96946cc17bd8ee5a912ecd2af251bdda4bd3794fc448148ca0588",
+        "size": 1162700384,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_L.gguf",
+      "blobId": "1bb3d7859546816061211c01da7d8cac63e267b8",
+      "size": 1290527840,
+      "lfs": {
+        "sha256": "1512d97de835f40e203ece1cd60933d26c562da9a23fba48612ad0f44c14eb62",
+        "size": 1290527840,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf",
+      "blobId": "3ffbe3dbae0101beb13f254e3c698662f283500e",
+      "size": 1117320800,
+      "lfs": {
+        "sha256": "1741e5b2d062b07acf048bf0d2c514dadf2a48f94e2b4aa0cfe069af3838ee2f",
+        "size": 1117320800,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_S.gguf",
+      "blobId": "f58a8954226c600dde5b512992910c3af5abee90",
+      "size": 1071584864,
+      "lfs": {
+        "sha256": "843e1b28b613872cf9f04e5c6d92493b32cfb6b4b9f4682bea2c57e14dbfec05",
+        "size": 1071584864,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q5_K_L.gguf",
+      "blobId": "812f1bff3b8aefaf69b21a770980c85d69a6368d",
+      "size": 1429529696,
+      "lfs": {
+        "sha256": "5fc782efeab30642496dd86441dc9e5af8ff7f953175048595b8ac069cbacd28",
+        "size": 1429529696,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q5_K_M.gguf",
+      "blobId": "3dd4c0a2d4026404af8caeb25cd87c9ae7ad9d61",
+      "size": 1285494368,
+      "lfs": {
+        "sha256": "4d8f6465e96258cf44303eb02812c391d15f6c77f0d72e47757c98fd14994608",
+        "size": 1285494368,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q5_K_S.gguf",
+      "blobId": "5d257fab4beb4099e105cc67b05eaf94f3a580ba",
+      "size": 1259173472,
+      "lfs": {
+        "sha256": "2b231465c95e9005d8b214b166baaca43618b8453cc0079c4a8ef4dc268230bd",
+        "size": 1259173472,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q6_K.gguf",
+      "blobId": "6db9c666e7e66fe38dbb68ad8a70d918ba632bde",
+      "size": 1464178784,
+      "lfs": {
+        "sha256": "c9c8aff5a84e2e9c1fd6ea57af5ab52cf5d7272d34460403d82880075e611039",
+        "size": 1464178784,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q6_K_L.gguf",
+      "blobId": "c20f363a96cc8b02a6fe3043dbdb974f575802a8",
+      "size": 1577219168,
+      "lfs": {
+        "sha256": "3a19b43e78eba4e4e3e6415f5e1b8e20e6c20ab6df1390fa1e554dd56a172296",
+        "size": 1577219168,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-Q8_0.gguf",
+      "blobId": "0c3720fb69d06b1c5c3b23b4973fe1d2d0c1edef",
+      "size": 1894532192,
+      "lfs": {
+        "sha256": "166baa90e6a963de31a7713ff034f82317ff1fa41602f7c3ce583d3f6b551829",
+        "size": 1894532192,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-f16.gguf",
+      "blobId": "c16467381b39e15b4a42002410f91b2f9859de32",
+      "size": 3560416352,
+      "lfs": {
+        "sha256": "c96782c9c74110d23da375c0194dd0e5d05a10b8dd475d87972b97022b5ac9d4",
+        "size": 3560416352,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B-f32.gguf",
+      "blobId": "cb2b37837e249c1667f0e20871d632a3ca962485",
+      "size": 7114302272,
+      "lfs": {
+        "sha256": "2bba076a57ede3796768f36438c2ebec2d1f8cdd9f210851fe64cc9a87a93c63",
+        "size": 7114302272,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DeepSeek-R1-Distill-Qwen-1.5B.imatrix",
+      "blobId": "1ed896f0259eeac850d8aa0a9d60f4ba8d833f90",
+      "size": 2042214,
+      "lfs": {
+        "sha256": "8de239b3f37d1cac59294f89e4689889bb2ff592cb6edbd7d141281d4764de90",
+        "size": 2042214,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "900dd3d10eb8a0d40e94c6c62152963538aaf2d1",
+      "size": 14268
+    }
+  ],
+  "spaces": [
+    "Deepak7376/DocChatAI",
+    "amarbruhman/ollama-server",
+    "Agents-MCP-Hackathon/Agents_Demo",
+    "redhairedshanks1/DeepSeek",
+    "benzenma123/ai-script-locally",
+    "ainaviksha/naviksha-ai-agent-deepseek"
+  ],
+  "createdAt": "2025-01-20T14:52:20.000Z",
+  "usedStorage": 36404275622
+}

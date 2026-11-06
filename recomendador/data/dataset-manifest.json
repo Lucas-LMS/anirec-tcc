@@ -1,0 +1,11 @@
+{
+  "source": "AniList GraphQL",
+  "url": "https://graphql.anilist.co",
+  "collected_at": "2026-11-06T02:44:10.962131+00:00",
+  "selection": "First four popularity pages (ANIME, non-adult, not upcoming), plus MAL 47/144/387/54 regression anchors",
+  "count": 204,
+  "sha256": "441d3b348a2e1cdc5b21ef17bc678d75ead9c2085d29a3278b1b9a319ef9c9bf",
+  "sampling_bias": "Popularity sample, not representative of all anime",
+  "no_user_data": true,
+  "full_catalog": false
+}

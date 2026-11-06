@@ -1,0 +1,22 @@
+{
+  "frozen_at_utc": "2026-10-29T14:22:41.362389+00:00",
+  "files_sha256": {
+    "catalogo.json": "ab9ad7da419d88c4cf74534df8bb2cd4125bc09d0dde265687deab71b44db465",
+    "consultas.json": "85a612ea050857506875f20a55d6b770809d28864300026e067becfc01d9bb36",
+    "relevancia.csv": "754064a65be8896228f1ecd06cf0fac32615179ace3608f287d4a354fcded80e"
+  },
+  "source_release": "2026-27",
+  "source_last_update": "2026-07-04",
+  "source_license": {
+    "name": "Open Data Commons Open Database License (ODbL) v1.0 + Database Contents License (DbCL) v1.0",
+    "url": "https://github.com/manami-project/anime-offline-database/blob/2026-27/LICENSE"
+  },
+  "source_sha256": "395be786fb2f98f1fca9e963911b9332110098a080e7e2569902bbc5641d1a41",
+  "items": 39,
+  "queries": 58,
+  "families": 29,
+  "qrels": 2262,
+  "all_pairs_judged": true,
+  "annotation": "Descricoes, consultas e julgamentos produzidos com IA; sem validacao humana; piloto curado e nao amostra aleatoria.",
+  "primary_scenario_provisional": "PT_EN"
+}

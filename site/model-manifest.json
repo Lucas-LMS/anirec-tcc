@@ -1,0 +1,44 @@
+{
+  "dimensions": 100,
+  "dtype": "float32-little-endian",
+  "words": 71290,
+  "shards": [
+    {
+      "file": "word-vectors-0.bin",
+      "start": 0,
+      "count": 16000,
+      "sha256": "3d6c2afb747f74c2ef2689c34251fbf6d43b4df3509c37f3288db88415643834",
+      "bytes": 6400000
+    },
+    {
+      "file": "word-vectors-1.bin",
+      "start": 16000,
+      "count": 16000,
+      "sha256": "340261a38ae3ec259e93b1f95c627cb8a05a6ac98d40566b2b1a38169feb3062",
+      "bytes": 6400000
+    },
+    {
+      "file": "word-vectors-2.bin",
+      "start": 32000,
+      "count": 16000,
+      "sha256": "5bc2e3dbc022217e9e7dc41cb34c5cd96ba0e5e2d0667bd12ce00863a5f2ed6b",
+      "bytes": 6400000
+    },
+    {
+      "file": "word-vectors-3.bin",
+      "start": 48000,
+      "count": 16000,
+      "sha256": "2ac84a39b99dd8e3b69d3c24618ba8003f7df9b12a592866041cadc0846dc659",
+      "bytes": 6400000
+    },
+    {
+      "file": "word-vectors-4.bin",
+      "start": 64000,
+      "count": 7290,
+      "sha256": "13e00971be75450aaccd3268dc05fc4b611e087700a668d97ce2ba4d6625764b",
+      "bytes": 2916000
+    }
+  ],
+  "model": "Word2Vec Skip-gram text8 100d",
+  "training_in_browser": false
+}

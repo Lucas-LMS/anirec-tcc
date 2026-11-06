@@ -1,0 +1,7 @@
+{
+  "complete": true,
+  "ranking_rows_checked": 720,
+  "reference": "sklearn ndcg_score, exponential gains supplied explicitly, ties included",
+  "source_hashes_verified": true,
+  "parser_consistency": true
+}

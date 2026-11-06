@@ -1,0 +1,150 @@
+{
+  "model": "deepseek",
+  "command": [
+    "C:\\tcc-lab\\LLMs\\runtime-b12110\\llama-server.exe",
+    "-m",
+    "C:\\tcc-lab\\LLMs\\models\\DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf",
+    "-c",
+    "2048",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-ngl",
+    "0",
+    "-np",
+    "1",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "57780",
+    "--reasoning",
+    "on"
+  ],
+  "pid": 10508,
+  "purpose": "Verificação funcional, não avaliação comparativa.",
+  "external_api_cost": 0,
+  "reasoning_mode": "on",
+  "max_tokens": 512,
+  "reasoning": "Condição funcional registrada; não é avaliação de classificação.",
+  "load_seconds": 2.0689697999623604,
+  "health": {
+    "status": "ok"
+  },
+  "requests": [
+    {
+      "language": "en",
+      "request": {
+        "model": "deepseek",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is two plus two? Reply with just the number."
+          }
+        ],
+        "max_tokens": 512,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 20261105,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "\n\n**Solution:**\n\nWe need to find the sum of 2 and 2.\n\n\\[\n2 + 2 = 4\n\\]\n\nTherefore, the answer is \\(\\boxed{4}\\).",
+              "reasoning_content": "\nI need to solve the arithmetic problem 2 plus 2.\n\nFirst, I recognize that addition involves combining quantities.\n\nAdding 2 and 2 together gives me 4.\n\nTherefore, the sum of 2 and 2 is 4.\n"
+            }
+          }
+        ],
+        "created": 1793898628,
+        "model": "C:\\tcc-lab\\LLMs\\models\\DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 95,
+          "prompt_tokens": 15,
+          "total_tokens": 110,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-NSaAcqL4848K1C1OIsLK8Qy11lQ0wMOQ",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 15,
+          "prompt_ms": 408.15,
+          "prompt_per_token_ms": 27.209999999999997,
+          "prompt_per_second": 36.75119441381845,
+          "predicted_n": 95,
+          "predicted_ms": 4453.963,
+          "predicted_per_token_ms": 47.382585106382976,
+          "predicted_per_second": 21.104800376653333
+        }
+      },
+      "wall_seconds": 4.86671520001255,
+      "expected_number_present": true
+    },
+    {
+      "language": "pt",
+      "request": {
+        "model": "deepseek",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Quanto é dois mais dois? Responda apenas o número."
+          }
+        ],
+        "max_tokens": 512,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 20261105,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "\n\n**Resposta:**\n\nQuando você adiciona dois mais dois, o resultado é:\n\n\\[\n\\boxed{4}\n\\]",
+              "reasoning_content": "\nPrimeiro, identifico que o usuário está perguntando \"Quanto é dois mais dois?\" e está pedindo apenas o número.\n\nEm seguida, reconheço que \"dos\" pode ser uma ordem ou uma expressão de contagem. Portanto, two mais two pode significar 2 mais 2.\n\nRealizing que 2 mais 2 é igual a 4.\n\nAssim, concluo que o número da resposta é 4.\n"
+            }
+          }
+        ],
+        "created": 1793898635,
+        "model": "C:\\tcc-lab\\LLMs\\models\\DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 128,
+          "prompt_tokens": 17,
+          "total_tokens": 145,
+          "prompt_tokens_details": {
+            "cached_tokens": 2
+          }
+        },
+        "id": "chatcmpl-qyWlpd9TE9qEspl8DLUITQ7pFV36CBK6",
+        "timings": {
+          "cache_n": 2,
+          "prompt_n": 15,
+          "prompt_ms": 428.331,
+          "prompt_per_token_ms": 28.555400000000002,
+          "prompt_per_second": 35.01964602141801,
+          "predicted_n": 128,
+          "predicted_ms": 6574.092,
+          "predicted_per_token_ms": 51.76450393700787,
+          "predicted_per_second": 19.318257182893092
+        }
+      },
+      "wall_seconds": 7.0089050999959,
+      "expected_number_present": true
+    }
+  ],
+  "peak_working_set_bytes": 1752465408,
+  "success": true
+}

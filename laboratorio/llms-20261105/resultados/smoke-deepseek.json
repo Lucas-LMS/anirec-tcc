@@ -1,0 +1,92 @@
+{
+  "model": "deepseek",
+  "command": [
+    "C:\\tcc-lab\\LLMs\\runtime-b12110\\llama-server.exe",
+    "-m",
+    "C:\\tcc-lab\\LLMs\\models\\DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf",
+    "-c",
+    "2048",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-ngl",
+    "0",
+    "-np",
+    "1",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "57715",
+    "--reasoning",
+    "off"
+  ],
+  "pid": 15492,
+  "purpose": "Verificação funcional, não avaliação comparativa.",
+  "external_api_cost": 0,
+  "reasoning": "Desligado somente para verificação curta; reavaliar condição adequada no benchmark.",
+  "load_seconds": 2.0810689000063576,
+  "health": {
+    "status": "ok"
+  },
+  "requests": [
+    {
+      "language": "en",
+      "request": {
+        "model": "deepseek",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is two plus two? Reply with just the number."
+          }
+        ],
+        "max_tokens": 64,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 20261105,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "\n\n**Solution:**\n\nWe need to find the sum of",
+              "reasoning_content": "\nI need to solve the arithmetic problem 2 plus 2.\n\nFirst, I recognize that addition involves combining quantities.\n\nAdding 2 and 2 together gives me 4.\n\nTherefore, the sum of 2 and 2 is 4.\n"
+            }
+          }
+        ],
+        "created": 1793898545,
+        "model": "C:\\tcc-lab\\LLMs\\models\\DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 64,
+          "prompt_tokens": 15,
+          "total_tokens": 79,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-ZpBQcFcH8ZwHJcYIfTCwWWIPyYnXHJ9V",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 15,
+          "prompt_ms": 481.994,
+          "prompt_per_token_ms": 32.132933333333334,
+          "prompt_per_second": 31.120719345054088,
+          "predicted_n": 64,
+          "predicted_ms": 3132.537,
+          "predicted_per_token_ms": 49.722809523809524,
+          "predicted_per_second": 20.111494293602917
+        }
+      },
+      "wall_seconds": 3.6191470000194386,
+      "expected_number_present": false
+    }
+  ],
+  "success": false,
+  "error": "AssertionError: Resposta vazia"
+}

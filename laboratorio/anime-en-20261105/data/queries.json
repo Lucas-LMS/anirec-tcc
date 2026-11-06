@@ -1,0 +1,258 @@
+[
+  {
+    "id": "sports-literal",
+    "family": "sports",
+    "variant": "literal",
+    "text": "Recommend a sports anime about competition and practice.",
+    "required": [
+      "Sports"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "sports-paraphrase",
+    "family": "sports",
+    "variant": "paraphrase",
+    "text": "I want athletes working hard to improve and compete.",
+    "required": [
+      "Sports"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "mecha-literal",
+    "family": "mecha",
+    "variant": "literal",
+    "text": "Recommend a mecha anime featuring giant robots.",
+    "required": [
+      "Mecha"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "mecha-paraphrase",
+    "family": "mecha",
+    "variant": "paraphrase",
+    "text": "I want a story where people pilot large machines.",
+    "required": [
+      "Mecha"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "mystery-literal",
+    "family": "mystery",
+    "variant": "literal",
+    "text": "Recommend a mystery anime with secrets to investigate.",
+    "required": [
+      "Mystery"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "mystery-paraphrase",
+    "family": "mystery",
+    "variant": "paraphrase",
+    "text": "I want to follow clues and uncover hidden explanations.",
+    "required": [
+      "Mystery"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "romance-literal",
+    "family": "romance",
+    "variant": "literal",
+    "text": "Recommend an anime centered on romance.",
+    "required": [
+      "Romance"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "romance-paraphrase",
+    "family": "romance",
+    "variant": "paraphrase",
+    "text": "I want characters falling in love and developing a relationship.",
+    "required": [
+      "Romance"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "comedy-literal",
+    "family": "comedy",
+    "variant": "literal",
+    "text": "Recommend a funny comedy anime.",
+    "required": [
+      "Comedy"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "comedy-paraphrase",
+    "family": "comedy",
+    "variant": "paraphrase",
+    "text": "I want an entertaining story that makes me laugh.",
+    "required": [
+      "Comedy"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "science-fiction-literal",
+    "family": "science-fiction",
+    "variant": "literal",
+    "text": "Recommend a science fiction anime.",
+    "required": [
+      "Sci-Fi"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "science-fiction-paraphrase",
+    "family": "science-fiction",
+    "variant": "paraphrase",
+    "text": "I want a story involving futuristic technology or scientific possibilities.",
+    "required": [
+      "Sci-Fi"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "action-adventure-literal",
+    "family": "action-adventure",
+    "variant": "literal",
+    "text": "Recommend an action and adventure anime.",
+    "required": [
+      "Action",
+      "Adventure"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "action-adventure-paraphrase",
+    "family": "action-adventure",
+    "variant": "paraphrase",
+    "text": "I want an exciting journey with danger, fights, and exploration.",
+    "required": [
+      "Action",
+      "Adventure"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "fantasy-romance-literal",
+    "family": "fantasy-romance",
+    "variant": "literal",
+    "text": "Recommend an anime combining fantasy and romance.",
+    "required": [
+      "Fantasy",
+      "Romance"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "fantasy-romance-paraphrase",
+    "family": "fantasy-romance",
+    "variant": "paraphrase",
+    "text": "I want a love story in an imaginative world with fantastic elements.",
+    "required": [
+      "Fantasy",
+      "Romance"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "school-comedy-literal",
+    "family": "school-comedy",
+    "variant": "literal",
+    "text": "Recommend a comedy anime set at school.",
+    "required": [
+      "School",
+      "Comedy"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "school-comedy-paraphrase",
+    "family": "school-comedy",
+    "variant": "paraphrase",
+    "text": "I want funny situations involving students and school life.",
+    "required": [
+      "School",
+      "Comedy"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "supernatural-mystery-literal",
+    "family": "supernatural-mystery",
+    "variant": "literal",
+    "text": "Recommend an anime combining supernatural events and mystery.",
+    "required": [
+      "Supernatural",
+      "Mystery"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "supernatural-mystery-paraphrase",
+    "family": "supernatural-mystery",
+    "variant": "paraphrase",
+    "text": "I want strange otherworldly events investigated through clues and secrets.",
+    "required": [
+      "Supernatural",
+      "Mystery"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "action-no-mecha-literal",
+    "family": "action-no-mecha",
+    "variant": "literal",
+    "text": "Recommend an action anime, but exclude mecha and giant robots.",
+    "required": [
+      "Action"
+    ],
+    "forbidden": [
+      "Mecha"
+    ]
+  },
+  {
+    "id": "action-no-mecha-paraphrase",
+    "family": "action-no-mecha",
+    "variant": "paraphrase",
+    "text": "I want exciting fights without anyone piloting large robotic machines.",
+    "required": [
+      "Action"
+    ],
+    "forbidden": [
+      "Mecha"
+    ]
+  },
+  {
+    "id": "romance-no-school-literal",
+    "family": "romance-no-school",
+    "variant": "literal",
+    "text": "Recommend a romance anime, but exclude school settings.",
+    "required": [
+      "Romance"
+    ],
+    "forbidden": [
+      "School"
+    ]
+  },
+  {
+    "id": "romance-no-school-paraphrase",
+    "family": "romance-no-school",
+    "variant": "paraphrase",
+    "text": "I want a love story that is not about students at school.",
+    "required": [
+      "Romance"
+    ],
+    "forbidden": [
+      "School"
+    ]
+  }
+]

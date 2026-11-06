@@ -1,0 +1,1202 @@
+{
+  "n": 200,
+  "spam": 25,
+  "bootstrap_replicates": 5000,
+  "models": [
+    {
+      "model": "dummy",
+      "name": "Maioria ham",
+      "accuracy": 0.875,
+      "precision_spam": 0.0,
+      "recall_spam": 0.0,
+      "f1_spam": 0.0,
+      "macro_f1": 0.4666666666666667,
+      "balanced_accuracy": 0.5,
+      "invalid": 0,
+      "confusion": [
+        [
+          175,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.0,
+        0.0
+      ],
+      "mean_ms": 0.030254000000020653,
+      "median_ms": 0.0295999999995189,
+      "p95_ms": 0.045470000000058464,
+      "sum_response_seconds": 0.006050800000004131,
+      "throughput_serial_per_second": 33053.480531477406,
+      "throttle_seconds": 0,
+      "peak_rss_mib": 126.90234375,
+      "metadata": {
+        "model": "dummy",
+        "environment": "Ubuntu/WSL2 CPU",
+        "threads": 4,
+        "seed": 20261105,
+        "load_seconds": 4.099999999951365e-06,
+        "imports_and_setup_seconds": 3.3180808999999947,
+        "encode_train_seconds": 1.8000000000739647e-05,
+        "classifier_fit_seconds": 0.07673180000000102,
+        "full_test_batch_seconds": 0.00016369999999987783,
+        "peak_rss_kib_self": 129692,
+        "peak_rss_kib_child": 0,
+        "truncation": null,
+        "coverage": null,
+        "notes": [],
+        "source_path": "None",
+        "classifier": {
+          "constant": null,
+          "random_state": null,
+          "strategy": "most_frequent"
+        },
+        "files_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "common_count": 200,
+        "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+      },
+      "roc_auc": 0.5,
+      "average_precision": 0.125,
+      "full_test_775": {
+        "accuracy": 0.8748387096774194,
+        "precision_spam": 0.0,
+        "recall_spam": 0.0,
+        "f1_spam": 0.0,
+        "macro_f1": 0.4666207845836201,
+        "balanced_accuracy": 0.5,
+        "invalid": 0,
+        "confusion": [
+          [
+            678,
+            0,
+            0
+          ],
+          [
+            97,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "model": "tfidf",
+      "name": "TF-IDF + LR",
+      "accuracy": 0.97,
+      "precision_spam": 0.8275862068965517,
+      "recall_spam": 0.96,
+      "f1_spam": 0.8888888888888888,
+      "macro_f1": 0.9357739242132306,
+      "balanced_accuracy": 0.9657142857142857,
+      "invalid": 0,
+      "confusion": [
+        [
+          170,
+          5,
+          0
+        ],
+        [
+          1,
+          24,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.8070175438596491,
+        0.9615384615384616
+      ],
+      "mean_ms": 1.0720359999999562,
+      "median_ms": 0.9988500000002176,
+      "p95_ms": 1.5460250000002045,
+      "sum_response_seconds": 0.21440719999999125,
+      "throughput_serial_per_second": 932.8044953714623,
+      "throttle_seconds": 0,
+      "peak_rss_mib": 150.453125,
+      "metadata": {
+        "model": "tfidf",
+        "environment": "Ubuntu/WSL2 CPU",
+        "threads": 4,
+        "seed": 20261105,
+        "load_seconds": 3.609999999909519e-05,
+        "imports_and_setup_seconds": 2.2207927000000094,
+        "encode_train_seconds": 0.18993039999999972,
+        "classifier_fit_seconds": 0.10468520000000048,
+        "full_test_batch_seconds": 0.02525379999999977,
+        "peak_rss_kib_self": 154064,
+        "peak_rss_kib_child": 0,
+        "truncation": null,
+        "coverage": null,
+        "notes": [],
+        "source_path": "None",
+        "classifier": {
+          "C": 1,
+          "class_weight": "balanced",
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 20261105,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "files_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "common_count": 200,
+        "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+      },
+      "roc_auc": 0.9739428571428571,
+      "average_precision": 0.9548376281903,
+      "full_test_775": {
+        "accuracy": 0.9793548387096774,
+        "precision_spam": 0.8857142857142857,
+        "recall_spam": 0.9587628865979382,
+        "f1_spam": 0.9207920792079208,
+        "macro_f1": 0.9544613215030702,
+        "balanced_accuracy": 0.9705318857768452,
+        "invalid": 0,
+        "confusion": [
+          [
+            666,
+            12,
+            0
+          ],
+          [
+            4,
+            93,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "model": "glove",
+      "name": "GloVe + LR",
+      "accuracy": 0.915,
+      "precision_spam": 0.6111111111111112,
+      "recall_spam": 0.88,
+      "f1_spam": 0.7213114754098361,
+      "macro_f1": 0.8355819913922337,
+      "balanced_accuracy": 0.9,
+      "invalid": 0,
+      "confusion": [
+        [
+          161,
+          14,
+          0
+        ],
+        [
+          3,
+          22,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.6153846153846154,
+        0.8302672955974831
+      ],
+      "mean_ms": 0.5149019999999283,
+      "median_ms": 0.45509999999993056,
+      "p95_ms": 0.9008600000001366,
+      "sum_response_seconds": 0.10298039999998565,
+      "throughput_serial_per_second": 1942.1171407377312,
+      "throttle_seconds": 0,
+      "peak_rss_mib": 164.1640625,
+      "metadata": {
+        "model": "glove",
+        "environment": "Ubuntu/WSL2 CPU",
+        "threads": 4,
+        "seed": 20261105,
+        "load_seconds": 1.5496263999999975,
+        "imports_and_setup_seconds": 1.6970199000000186,
+        "encode_train_seconds": 0.5768479999999983,
+        "classifier_fit_seconds": 0.024427400000000432,
+        "full_test_batch_seconds": 0.12048000000000059,
+        "peak_rss_kib_self": 167848,
+        "peak_rss_kib_child": 0,
+        "truncation": null,
+        "coverage": {
+          "in_vocabulary_token_fraction": 0.9398307740520213
+        },
+        "notes": [],
+        "source_path": "/home/lucas/tcc-lab/GloVe/vectors.txt",
+        "classifier": {
+          "C": 1,
+          "class_weight": "balanced",
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 20261105,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "files_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "common_count": 200,
+        "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+      },
+      "roc_auc": 0.9362285714285714,
+      "average_precision": 0.8309602399305723,
+      "full_test_775": {
+        "accuracy": 0.9096774193548387,
+        "precision_spam": 0.5918367346938775,
+        "recall_spam": 0.8969072164948454,
+        "f1_spam": 0.7131147540983607,
+        "macro_f1": 0.8297579896066076,
+        "balanced_accuracy": 0.9042058206368032,
+        "invalid": 0,
+        "confusion": [
+          [
+            618,
+            60,
+            0
+          ],
+          [
+            10,
+            87,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "model": "fasttext",
+      "name": "fastText + LR",
+      "accuracy": 0.9,
+      "precision_spam": 0.5675675675675675,
+      "recall_spam": 0.84,
+      "f1_spam": 0.6774193548387096,
+      "macro_f1": 0.8091238786027868,
+      "balanced_accuracy": 0.8742857142857143,
+      "invalid": 0,
+      "confusion": [
+        [
+          159,
+          16,
+          0
+        ],
+        [
+          4,
+          21,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.5671641791044776,
+        0.7931034482758621
+      ],
+      "mean_ms": 3.4178527200000097,
+      "median_ms": 2.9628709999993674,
+      "p95_ms": 6.864397000001787,
+      "sum_response_seconds": 0.683570544000002,
+      "throughput_serial_per_second": 292.5813608492753,
+      "throttle_seconds": 0,
+      "peak_rss_mib": 1065.6875,
+      "metadata": {
+        "model": "fasttext",
+        "environment": "Ubuntu/WSL2 CPU",
+        "threads": 4,
+        "seed": 20261105,
+        "load_seconds": 4.5857682,
+        "imports_and_setup_seconds": 1.8230311809999975,
+        "encode_train_seconds": 0.8549726,
+        "classifier_fit_seconds": 0.02135330300000149,
+        "full_test_batch_seconds": 3.269375901,
+        "peak_rss_kib_self": 160848,
+        "peak_rss_kib_child": 0,
+        "truncation": null,
+        "coverage": {
+          "in_vocabulary_token_fraction": 0.9614540896270761
+        },
+        "notes": [
+          "Consulta lexical fastText pela CLI persistente. Latência inclui IPC por palavra e não mede só o algoritmo interno."
+        ],
+        "source_path": "/home/lucas/tcc-lab/fastText/result/fil9.bin",
+        "classifier": {
+          "C": 1,
+          "class_weight": "balanced",
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 20261105,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "files_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "common_count": 200,
+        "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+      },
+      "roc_auc": 0.9517714285714285,
+      "average_precision": 0.7696807772715373,
+      "full_test_775": {
+        "accuracy": 0.9058064516129032,
+        "precision_spam": 0.5769230769230769,
+        "recall_spam": 0.9278350515463918,
+        "f1_spam": 0.7114624505928854,
+        "macro_f1": 0.8275893594521867,
+        "balanced_accuracy": 0.9152449594015144,
+        "invalid": 0,
+        "confusion": [
+          [
+            612,
+            66,
+            0
+          ],
+          [
+            7,
+            90,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "model": "w2v-cbow",
+      "name": "Word2Vec CBOW + LR",
+      "accuracy": 0.91,
+      "precision_spam": 0.5945945945945946,
+      "recall_spam": 0.88,
+      "f1_spam": 0.7096774193548387,
+      "macro_f1": 0.8282114907425081,
+      "balanced_accuracy": 0.8971428571428571,
+      "invalid": 0,
+      "confusion": [
+        [
+          160,
+          15,
+          0
+        ],
+        [
+          3,
+          22,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.6060606060606061,
+        0.8148148148148148
+      ],
+      "mean_ms": 0.6373433899995007,
+      "median_ms": 0.601349500001902,
+      "p95_ms": 1.0124140500007421,
+      "sum_response_seconds": 0.12746867799990014,
+      "throughput_serial_per_second": 1569.012898997483,
+      "throttle_seconds": 0,
+      "peak_rss_mib": 204.234375,
+      "metadata": {
+        "model": "w2v-cbow",
+        "environment": "Ubuntu/WSL2 CPU",
+        "threads": 4,
+        "seed": 20261105,
+        "load_seconds": 1.2801600000000022,
+        "imports_and_setup_seconds": 2.8051958780000987,
+        "encode_train_seconds": 1.024610023000001,
+        "classifier_fit_seconds": 0.027525496000002647,
+        "full_test_batch_seconds": 0.1768518689999965,
+        "peak_rss_kib_self": 208880,
+        "peak_rss_kib_child": 200164,
+        "truncation": null,
+        "coverage": {
+          "in_vocabulary_token_fraction": 0.9398307740520213
+        },
+        "notes": [],
+        "source_path": "/home/lucas/tcc-lab/Word2Vec/models/text8-cbow-100d.model",
+        "classifier": {
+          "C": 1,
+          "class_weight": "balanced",
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 20261105,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "files_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "common_count": 200,
+        "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+      },
+      "roc_auc": 0.9593142857142858,
+      "average_precision": 0.8366061375333376,
+      "full_test_775": {
+        "accuracy": 0.927741935483871,
+        "precision_spam": 0.6518518518518519,
+        "recall_spam": 0.9072164948453608,
+        "f1_spam": 0.7586206896551724,
+        "macro_f1": 0.8580660352676469,
+        "balanced_accuracy": 0.9189474804610285,
+        "invalid": 0,
+        "confusion": [
+          [
+            631,
+            47,
+            0
+          ],
+          [
+            9,
+            88,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "model": "w2v-sg",
+      "name": "Word2Vec Skip-gram + LR",
+      "accuracy": 0.905,
+      "precision_spam": 0.5789473684210527,
+      "recall_spam": 0.88,
+      "f1_spam": 0.6984126984126984,
+      "macro_f1": 0.8210164382271208,
+      "balanced_accuracy": 0.8942857142857144,
+      "invalid": 0,
+      "confusion": [
+        [
+          159,
+          16,
+          0
+        ],
+        [
+          3,
+          22,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.5970149253731343,
+        0.8
+      ],
+      "mean_ms": 0.5344329050002727,
+      "median_ms": 0.4726500000025169,
+      "p95_ms": 0.8570900000009373,
+      "sum_response_seconds": 0.10688658100005455,
+      "throughput_serial_per_second": 1871.1422718245421,
+      "throttle_seconds": 0,
+      "peak_rss_mib": 204.31640625,
+      "metadata": {
+        "model": "w2v-sg",
+        "environment": "Ubuntu/WSL2 CPU",
+        "threads": 4,
+        "seed": 20261105,
+        "load_seconds": 1.3245939709999988,
+        "imports_and_setup_seconds": 1.9137050709999457,
+        "encode_train_seconds": 0.7622570680000038,
+        "classifier_fit_seconds": 0.028641894999999806,
+        "full_test_batch_seconds": 0.1628208719999975,
+        "peak_rss_kib_self": 208964,
+        "peak_rss_kib_child": 200204,
+        "truncation": null,
+        "coverage": {
+          "in_vocabulary_token_fraction": 0.9398307740520213
+        },
+        "notes": [],
+        "source_path": "/home/lucas/tcc-lab/Word2Vec/models/text8-skipgram-100d.model",
+        "classifier": {
+          "C": 1,
+          "class_weight": "balanced",
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 20261105,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "files_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "common_count": 200,
+        "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+      },
+      "roc_auc": 0.9602285714285714,
+      "average_precision": 0.7830772999975946,
+      "full_test_775": {
+        "accuracy": 0.9135483870967742,
+        "precision_spam": 0.6013513513513513,
+        "recall_spam": 0.9175257731958762,
+        "f1_spam": 0.726530612244898,
+        "macro_f1": 0.8375948080381579,
+        "balanced_accuracy": 0.9152525621141623,
+        "invalid": 0,
+        "confusion": [
+          [
+            619,
+            59,
+            0
+          ],
+          [
+            8,
+            89,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "model": "minilm",
+      "name": "MiniLM + LR",
+      "accuracy": 0.985,
+      "precision_spam": 0.8928571428571429,
+      "recall_spam": 1.0,
+      "f1_spam": 0.9433962264150944,
+      "macro_f1": 0.9673753466369419,
+      "balanced_accuracy": 0.9914285714285714,
+      "invalid": 0,
+      "confusion": [
+        [
+          172,
+          3,
+          0
+        ],
+        [
+          0,
+          25,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.8771929824561403,
+        1.0
+      ],
+      "mean_ms": 44.92972210000019,
+      "median_ms": 41.00475049999375,
+      "p95_ms": 70.0241219000162,
+      "sum_response_seconds": 8.985944420000038,
+      "throughput_serial_per_second": 22.256981642893262,
+      "throttle_seconds": 0,
+      "peak_rss_mib": 1160.08984375,
+      "metadata": {
+        "model": "minilm",
+        "environment": "Ubuntu/WSL2 CPU",
+        "threads": 4,
+        "seed": 20261105,
+        "load_seconds": 12.207807239000005,
+        "imports_and_setup_seconds": 1.9023855209999567,
+        "encode_train_seconds": 87.123846235,
+        "classifier_fit_seconds": 0.04446000100000447,
+        "full_test_batch_seconds": 23.01514123300001,
+        "peak_rss_kib_self": 1187932,
+        "peak_rss_kib_child": 0,
+        "truncation": {
+          "train": {
+            "max_tokens": 278,
+            "over_limit": 7,
+            "limit": 128
+          },
+          "validation": {
+            "max_tokens": 197,
+            "over_limit": 1,
+            "limit": 128
+          },
+          "test": {
+            "max_tokens": 182,
+            "over_limit": 1,
+            "limit": 128
+          },
+          "common": {
+            "max_tokens": 111,
+            "over_limit": 0,
+            "limit": 128
+          }
+        },
+        "coverage": null,
+        "notes": [
+          "Truncamento no limite original de 128 tokens é registrado; o limite não foi aumentado após observar resultados."
+        ],
+        "source_path": "/home/lucas/tcc-lab/SentenceTransformers/models/paraphrase-multilingual-MiniLM-L12-v2",
+        "classifier": {
+          "C": 1,
+          "class_weight": "balanced",
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 20261105,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "files_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "common_count": 200,
+        "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+      },
+      "roc_auc": 0.9986285714285714,
+      "average_precision": 0.990970695970696,
+      "full_test_775": {
+        "accuracy": 0.9729032258064516,
+        "precision_spam": 0.8333333333333334,
+        "recall_spam": 0.979381443298969,
+        "f1_spam": 0.9004739336492891,
+        "macro_f1": 0.942395293934428,
+        "balanced_accuracy": 0.9756789222394551,
+        "invalid": 0,
+        "confusion": [
+          [
+            659,
+            19,
+            0
+          ],
+          [
+            2,
+            95,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "model": "w2v-lee-cbow",
+      "name": "Lee CBOW (diagnóstico)",
+      "accuracy": 0.16,
+      "precision_spam": 0.12953367875647667,
+      "recall_spam": 1.0,
+      "f1_spam": 0.22935779816513763,
+      "macro_f1": 0.15314043754410728,
+      "balanced_accuracy": 0.52,
+      "invalid": 0,
+      "confusion": [
+        [
+          7,
+          168,
+          0
+        ],
+        [
+          0,
+          25,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.22522522522522523,
+        0.2358490566037736
+      ],
+      "mean_ms": 1.1237610099992423,
+      "median_ms": 0.9097500000052605,
+      "p95_ms": 2.1885999999938046,
+      "sum_response_seconds": 0.22475220199984847,
+      "throughput_serial_per_second": 889.8689232870556,
+      "throttle_seconds": 0,
+      "peak_rss_mib": 140.57421875,
+      "metadata": {
+        "model": "w2v-lee-cbow",
+        "environment": "Ubuntu/WSL2 CPU",
+        "threads": 4,
+        "seed": 20261105,
+        "load_seconds": 0.23520400200001745,
+        "imports_and_setup_seconds": 3.7469234170001755,
+        "encode_train_seconds": 1.2629753119999805,
+        "classifier_fit_seconds": 0.03090449999999123,
+        "full_test_batch_seconds": 0.2152852019999898,
+        "peak_rss_kib_self": 143692,
+        "peak_rss_kib_child": 135260,
+        "truncation": null,
+        "coverage": {
+          "in_vocabulary_token_fraction": 0.5769351300532748
+        },
+        "notes": [],
+        "source_path": "/home/lucas/tcc-lab/Word2Vec/models/lee-cbow.model",
+        "classifier": {
+          "C": 1,
+          "class_weight": "balanced",
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 20261105,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "files_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "common_count": 200,
+        "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+      },
+      "roc_auc": 0.7725714285714286,
+      "average_precision": 0.26249460601182395,
+      "full_test_775": {
+        "accuracy": 0.15870967741935485,
+        "precision_spam": 0.1295060080106809,
+        "recall_spam": 1.0,
+        "f1_spam": 0.2293144208037825,
+        "macro_f1": 0.15158902858370943,
+        "balanced_accuracy": 0.5191740412979351,
+        "invalid": 0,
+        "confusion": [
+          [
+            26,
+            652,
+            0
+          ],
+          [
+            0,
+            97,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "model": "w2v-lee-sg",
+      "name": "Lee Skip-gram (diagnóstico)",
+      "accuracy": 0.615,
+      "precision_spam": 0.2111111111111111,
+      "recall_spam": 0.76,
+      "f1_spam": 0.33043478260869563,
+      "macro_f1": 0.5301296720061022,
+      "balanced_accuracy": 0.6771428571428572,
+      "invalid": 0,
+      "confusion": [
+        [
+          104,
+          71,
+          0
+        ],
+        [
+          6,
+          19,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.2592432950191571,
+        0.40350877192982454
+      ],
+      "mean_ms": 3.360494650000021,
+      "median_ms": 1.2612989999922775,
+      "p95_ms": 12.454341950014225,
+      "sum_response_seconds": 0.6720989300000042,
+      "throughput_serial_per_second": 297.57523940708955,
+      "throttle_seconds": 0,
+      "peak_rss_mib": 140.56640625,
+      "metadata": {
+        "model": "w2v-lee-sg",
+        "environment": "Ubuntu/WSL2 CPU",
+        "threads": 4,
+        "seed": 20261105,
+        "load_seconds": 1.5600646319999782,
+        "imports_and_setup_seconds": 2.92521908300003,
+        "encode_train_seconds": 2.542746520999998,
+        "classifier_fit_seconds": 0.2249334420000082,
+        "full_test_batch_seconds": 0.6806011239999918,
+        "peak_rss_kib_self": 143684,
+        "peak_rss_kib_child": 135124,
+        "truncation": null,
+        "coverage": {
+          "in_vocabulary_token_fraction": 0.5769351300532748
+        },
+        "notes": [],
+        "source_path": "/home/lucas/tcc-lab/Word2Vec/models/lee-skipgram.model",
+        "classifier": {
+          "C": 1,
+          "class_weight": "balanced",
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 20261105,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "files_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "common_count": 200,
+        "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+      },
+      "roc_auc": 0.7165714285714285,
+      "average_precision": 0.23244498331605634,
+      "full_test_775": {
+        "accuracy": 0.6309677419354839,
+        "precision_spam": 0.2276657060518732,
+        "recall_spam": 0.8144329896907216,
+        "f1_spam": 0.35585585585585583,
+        "macro_f1": 0.5486331720508936,
+        "balanced_accuracy": 0.7095763768512605,
+        "invalid": 0,
+        "confusion": [
+          [
+            410,
+            268,
+            0
+          ],
+          [
+            18,
+            79,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "model": "llama",
+      "name": "Llama 3.2 1B Q4",
+      "accuracy": 0.815,
+      "precision_spam": 0.36363636363636365,
+      "recall_spam": 0.48,
+      "f1_spam": 0.41379310344827586,
+      "macro_f1": 0.6523242803377073,
+      "balanced_accuracy": 0.6714285714285715,
+      "invalid": 3,
+      "confusion": [
+        [
+          151,
+          21,
+          3
+        ],
+        [
+          13,
+          12,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.25925925925925924,
+        0.5555555555555556
+      ],
+      "mean_ms": 1025.9091532100033,
+      "median_ms": 836.8058375000089,
+      "p95_ms": 2251.5671383999997,
+      "sum_response_seconds": 205.18183064200065,
+      "throughput_serial_per_second": 0.9747451778464641,
+      "throttle_seconds": 0.0,
+      "peak_rss_mib": 1385.4609375,
+      "metadata": {
+        "model": "llama",
+        "environment": "Ubuntu/WSL2 CPU",
+        "api_model": "llama",
+        "load_seconds": 16.000908011999968,
+        "command": [
+          "/home/lucas/tcc-lab/LLMs/runtime-b12110/llama-b12110/llama-server",
+          "-m",
+          "/mnt/c/tcc-lab/LLMs/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+          "-c",
+          "2048",
+          "-t",
+          "4",
+          "-tb",
+          "4",
+          "-ngl",
+          "0",
+          "-np",
+          "1",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "58431",
+          "--reasoning",
+          "off"
+        ],
+        "threads": 4,
+        "max_completion_tokens": 512,
+        "dataset_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "inference_timing": "Uma chamada por SMS; inclui resposta completa e raciocínio. Espera preventiva por cota registrada separadamente.",
+        "comparison_note": "GGUF quantizado, contexto 2048, quatro threads.",
+        "common_count": 200,
+        "total_stage_wall_seconds": 208.26086274699998,
+        "total_tokens_this_process": 24497,
+        "api_calls_this_process": 201,
+        "peak_rss_kib_server": 1419608,
+        "peak_rss_kib_client": 31164,
+        "remote_memory": null,
+        "cost_policy": "Local sem cobrança por token."
+      },
+      "length_finishes": 0
+    },
+    {
+      "model": "deepseek",
+      "name": "DeepSeek distill 1.5B Q4",
+      "accuracy": 0.67,
+      "precision_spam": 0.2903225806451613,
+      "recall_spam": 0.36,
+      "f1_spam": 0.32142857142857145,
+      "macro_f1": 0.5639400921658986,
+      "balanced_accuracy": 0.5371428571428571,
+      "invalid": 34,
+      "confusion": [
+        [
+          125,
+          22,
+          28
+        ],
+        [
+          10,
+          9,
+          6
+        ]
+      ],
+      "f1_ci95": [
+        0.16659836065573772,
+        0.47058823529411764
+      ],
+      "mean_ms": 25390.268296335016,
+      "median_ms": 23402.1141730002,
+      "p95_ms": 40227.43789239993,
+      "sum_response_seconds": 5078.053659267003,
+      "throughput_serial_per_second": 0.03938516869253981,
+      "throttle_seconds": 0.0,
+      "peak_rss_mib": 4081.09375,
+      "metadata": {
+        "model": "deepseek",
+        "environment": "Ubuntu/WSL2 CPU",
+        "api_model": "deepseek",
+        "load_seconds": 16.888947450000046,
+        "command": [
+          "/home/lucas/tcc-lab/LLMs/runtime-b12110/llama-b12110/llama-server",
+          "-m",
+          "/mnt/c/tcc-lab/LLMs/models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf",
+          "-c",
+          "2048",
+          "-t",
+          "4",
+          "-tb",
+          "4",
+          "-ngl",
+          "0",
+          "-np",
+          "1",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "51067",
+          "--reasoning",
+          "on"
+        ],
+        "threads": 4,
+        "max_completion_tokens": 512,
+        "dataset_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "inference_timing": "Uma chamada por SMS; inclui resposta completa e raciocínio. Espera preventiva por cota registrada separadamente.",
+        "comparison_note": "GGUF quantizado, contexto 2048, quatro threads.",
+        "common_count": 200,
+        "total_stage_wall_seconds": 5095.5187402619995,
+        "total_tokens_this_process": 85092,
+        "api_calls_this_process": 201,
+        "peak_rss_kib_server": 4180032,
+        "peak_rss_kib_client": 31560,
+        "remote_memory": null,
+        "cost_policy": "Local sem cobrança por token."
+      },
+      "length_finishes": 15
+    },
+    {
+      "model": "gptoss",
+      "name": "GPT-OSS 20B / Groq",
+      "accuracy": 0.915,
+      "precision_spam": 0.6052631578947368,
+      "recall_spam": 0.92,
+      "f1_spam": 0.7301587301587301,
+      "macro_f1": 0.8398568131505817,
+      "balanced_accuracy": 0.9171428571428571,
+      "invalid": 0,
+      "confusion": [
+        [
+          160,
+          15,
+          0
+        ],
+        [
+          2,
+          23,
+          0
+        ]
+      ],
+      "f1_ci95": [
+        0.6301369863013698,
+        0.8333333333333334
+      ],
+      "mean_ms": 715.3276904299997,
+      "median_ms": 624.7470490000637,
+      "p95_ms": 1583.8273544499684,
+      "sum_response_seconds": 143.06553808599995,
+      "throughput_serial_per_second": 1.3979607016175721,
+      "throttle_seconds": 439.4779597089998,
+      "peak_rss_mib": null,
+      "metadata": {
+        "model": "gptoss",
+        "environment": "Groq Free remoto",
+        "api_model": "openai/gpt-oss-20b",
+        "load_seconds": null,
+        "command": null,
+        "threads": null,
+        "max_completion_tokens": 512,
+        "dataset_sha256": {
+          "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+          "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+          "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+          "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+        },
+        "inference_timing": "Uma chamada por SMS; inclui resposta completa e raciocínio. Espera preventiva por cota registrada separadamente.",
+        "comparison_note": "Serviço remoto tem hardware/RAM desconhecidos; não comparar latência como efeito causal só da arquitetura.",
+        "common_count": 200,
+        "total_stage_wall_seconds": 583.549578568,
+        "total_tokens_this_process": 36886,
+        "api_calls_this_process": 201,
+        "peak_rss_kib_server": null,
+        "peak_rss_kib_client": 37436,
+        "remote_memory": null,
+        "cost_policy": "Sem API paga; Groq Free conforme configuração do usuário."
+      },
+      "length_finishes": 0
+    }
+  ],
+  "paired_glove": [
+    {
+      "first": "glove",
+      "second": "fasttext",
+      "delta_ci95": [
+        -0.03632071318512001,
+        0.12655391211763684
+      ]
+    },
+    {
+      "first": "glove",
+      "second": "w2v-cbow",
+      "delta_ci95": [
+        -0.06571056062581482,
+        0.08541114058355437
+      ]
+    },
+    {
+      "first": "glove",
+      "second": "w2v-sg",
+      "delta_ci95": [
+        -0.046016681046879504,
+        0.09412013958125619
+      ]
+    },
+    {
+      "first": "glove",
+      "second": "minilm",
+      "delta_ci95": [
+        -0.3246544519447123,
+        -0.11947431302270017
+      ]
+    },
+    {
+      "first": "glove",
+      "second": "tfidf",
+      "delta_ci95": [
+        -0.2738104395604395,
+        -0.061625016972766955
+      ]
+    },
+    {
+      "first": "glove",
+      "second": "llama",
+      "delta_ci95": [
+        0.13467281994765115,
+        0.4915464994775337
+      ]
+    },
+    {
+      "first": "glove",
+      "second": "deepseek",
+      "delta_ci95": [
+        0.23333333333333328,
+        0.5790164002664
+      ]
+    },
+    {
+      "first": "glove",
+      "second": "gptoss",
+      "delta_ci95": [
+        -0.14055432202206397,
+        0.1225836898867042
+      ]
+    }
+  ],
+  "complete": false
+}

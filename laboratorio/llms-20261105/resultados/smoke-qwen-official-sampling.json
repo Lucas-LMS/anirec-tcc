@@ -1,0 +1,158 @@
+{
+  "model": "qwen",
+  "command": [
+    "C:\\tcc-lab\\LLMs\\runtime-b12110\\llama-server.exe",
+    "-m",
+    "C:\\tcc-lab\\LLMs\\models\\Qwen3-0.6B-Q8_0.gguf",
+    "-c",
+    "2048",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-ngl",
+    "0",
+    "-np",
+    "1",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "57767",
+    "--reasoning",
+    "off"
+  ],
+  "pid": 26276,
+  "purpose": "Verificação funcional, não avaliação comparativa.",
+  "external_api_cost": 0,
+  "reasoning": "Desligado somente para verificação curta; reavaliar condição adequada no benchmark.",
+  "load_seconds": 1.185870299988892,
+  "health": {
+    "status": "ok"
+  },
+  "requests": [
+    {
+      "language": "en",
+      "request": {
+        "model": "qwen",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is two plus two? Reply with just the number."
+          }
+        ],
+        "max_tokens": 64,
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "seed": 20261105,
+        "stream": false,
+        "top_k": 20,
+        "min_p": 0,
+        "presence_penalty": 1.5,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "2"
+            }
+          }
+        ],
+        "created": 1793898586,
+        "model": "C:\\tcc-lab\\LLMs\\models\\Qwen3-0.6B-Q8_0.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 2,
+          "prompt_tokens": 24,
+          "total_tokens": 26,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-pyQfZQPIOkcN7m1VBJoODHumqJV7BswD",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 24,
+          "prompt_ms": 513.668,
+          "prompt_per_token_ms": 21.402833333333334,
+          "prompt_per_second": 46.72278592398203,
+          "predicted_n": 2,
+          "predicted_ms": 40.138,
+          "predicted_per_token_ms": 40.138,
+          "predicted_per_second": 24.914046539438935
+        }
+      },
+      "wall_seconds": 0.5584641000023112,
+      "expected_number_present": false
+    },
+    {
+      "language": "pt",
+      "request": {
+        "model": "qwen",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Quanto é dois mais dois? Responda apenas o número."
+          }
+        ],
+        "max_tokens": 64,
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "seed": 20261105,
+        "stream": false,
+        "top_k": 20,
+        "min_p": 0,
+        "presence_penalty": 1.5,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "2 + 2 = 4"
+            }
+          }
+        ],
+        "created": 1793898587,
+        "model": "C:\\tcc-lab\\LLMs\\models\\Qwen3-0.6B-Q8_0.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 8,
+          "prompt_tokens": 26,
+          "total_tokens": 34,
+          "prompt_tokens_details": {
+            "cached_tokens": 3
+          }
+        },
+        "id": "chatcmpl-I9hjtDq5ajVaROHJvixaRhSKojS3ODAT",
+        "timings": {
+          "cache_n": 3,
+          "prompt_n": 23,
+          "prompt_ms": 388.109,
+          "prompt_per_token_ms": 16.874304347826087,
+          "prompt_per_second": 59.261702253748304,
+          "predicted_n": 8,
+          "predicted_ms": 215.005,
+          "predicted_per_token_ms": 30.715,
+          "predicted_per_second": 32.557382386456126
+        }
+      },
+      "wall_seconds": 0.6114602999878116,
+      "expected_number_present": true
+    }
+  ],
+  "peak_working_set_bytes": 957353984,
+  "success": true
+}

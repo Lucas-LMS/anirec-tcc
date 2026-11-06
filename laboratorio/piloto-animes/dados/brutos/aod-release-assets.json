@@ -1,0 +1,72 @@
+[
+  {
+    "name": "anidb-minified.json",
+    "size": 37207,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/anidb-minified.json"
+  },
+  {
+    "name": "anidb-minified.json.zst",
+    "size": 5674,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/anidb-minified.json.zst"
+  },
+  {
+    "name": "anilist-minified.json",
+    "size": 1643019,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/anilist-minified.json"
+  },
+  {
+    "name": "anilist-minified.json.zst",
+    "size": 132460,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/anilist-minified.json.zst"
+  },
+  {
+    "name": "anime-offline-database-minified.json",
+    "size": 62331136,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/anime-offline-database-minified.json"
+  },
+  {
+    "name": "anime-offline-database-minified.json.zst",
+    "size": 6033918,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/anime-offline-database-minified.json.zst"
+  },
+  {
+    "name": "anime-offline-database.jsonl",
+    "size": 62331124,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/anime-offline-database.jsonl"
+  },
+  {
+    "name": "anime-offline-database.jsonl.zst",
+    "size": 6034492,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/anime-offline-database.jsonl.zst"
+  },
+  {
+    "name": "animenewsnetwork-minified.json",
+    "size": 461,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/animenewsnetwork-minified.json"
+  },
+  {
+    "name": "animenewsnetwork-minified.json.zst",
+    "size": 252,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/animenewsnetwork-minified.json.zst"
+  },
+  {
+    "name": "kitsu-minified.json",
+    "size": 228754,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/kitsu-minified.json"
+  },
+  {
+    "name": "kitsu-minified.json.zst",
+    "size": 15216,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/kitsu-minified.json.zst"
+  },
+  {
+    "name": "myanimelist-minified.json",
+    "size": 268164,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/myanimelist-minified.json"
+  },
+  {
+    "name": "myanimelist-minified.json.zst",
+    "size": 26010,
+    "browser_download_url": "https://github.com/manami-project/anime-offline-database/releases/download/2026-27/myanimelist-minified.json.zst"
+  }
+]

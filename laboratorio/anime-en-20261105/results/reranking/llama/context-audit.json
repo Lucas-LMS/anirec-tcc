@@ -1,0 +1,103 @@
+{
+  "context": 2048,
+  "output_budget": 512,
+  "extra_margin": 32,
+  "counts": [
+    {
+      "id": "sports-literal",
+      "prompt_tokens": 603
+    },
+    {
+      "id": "sports-paraphrase",
+      "prompt_tokens": 554
+    },
+    {
+      "id": "mecha-literal",
+      "prompt_tokens": 604
+    },
+    {
+      "id": "mecha-paraphrase",
+      "prompt_tokens": 630
+    },
+    {
+      "id": "mystery-literal",
+      "prompt_tokens": 605
+    },
+    {
+      "id": "mystery-paraphrase",
+      "prompt_tokens": 598
+    },
+    {
+      "id": "romance-literal",
+      "prompt_tokens": 529
+    },
+    {
+      "id": "romance-paraphrase",
+      "prompt_tokens": 675
+    },
+    {
+      "id": "comedy-literal",
+      "prompt_tokens": 534
+    },
+    {
+      "id": "comedy-paraphrase",
+      "prompt_tokens": 707
+    },
+    {
+      "id": "science-fiction-literal",
+      "prompt_tokens": 657
+    },
+    {
+      "id": "science-fiction-paraphrase",
+      "prompt_tokens": 702
+    },
+    {
+      "id": "action-adventure-literal",
+      "prompt_tokens": 562
+    },
+    {
+      "id": "action-adventure-paraphrase",
+      "prompt_tokens": 648
+    },
+    {
+      "id": "fantasy-romance-literal",
+      "prompt_tokens": 517
+    },
+    {
+      "id": "fantasy-romance-paraphrase",
+      "prompt_tokens": 653
+    },
+    {
+      "id": "school-comedy-literal",
+      "prompt_tokens": 650
+    },
+    {
+      "id": "school-comedy-paraphrase",
+      "prompt_tokens": 636
+    },
+    {
+      "id": "supernatural-mystery-literal",
+      "prompt_tokens": 529
+    },
+    {
+      "id": "supernatural-mystery-paraphrase",
+      "prompt_tokens": 692
+    },
+    {
+      "id": "action-no-mecha-literal",
+      "prompt_tokens": 548
+    },
+    {
+      "id": "action-no-mecha-paraphrase",
+      "prompt_tokens": 682
+    },
+    {
+      "id": "romance-no-school-literal",
+      "prompt_tokens": 568
+    },
+    {
+      "id": "romance-no-school-paraphrase",
+      "prompt_tokens": 678
+    }
+  ]
+}

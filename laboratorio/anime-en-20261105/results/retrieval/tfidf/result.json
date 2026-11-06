@@ -1,0 +1,16 @@
+{
+  "model": "tfidf",
+  "catalog_size": 1000,
+  "queries": 24,
+  "preparation_seconds": 3.544579800000001,
+  "peak_rss_kib_self": 144748,
+  "source": "None",
+  "query_vocabulary_coverage": null,
+  "truncation": null,
+  "files_sha256": {
+    "catalog.json": "7ccd6120105955b4c36cd48518b18bbe086a2953d5cada25e12d94b856cc48d1",
+    "queries.json": "cfb7caad52affddf14029a42eca1eec7d5f4d1035831e301013f7ed387540a77",
+    "qrels.json": "c5b8f26cf549e6f3b3653a19b04a737e17fb0af93dc73f0c7abe594933f4b245"
+  },
+  "timing": "Fresh individual query encoding plus full catalog scoring after three synthetic warmups; index preparation separate."
+}

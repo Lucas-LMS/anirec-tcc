@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.bin binary
+*.sqlite3 binary
+*.npz binary
+*.npy binary
+*.pdf binary
+*.docx binary
+*.png binary

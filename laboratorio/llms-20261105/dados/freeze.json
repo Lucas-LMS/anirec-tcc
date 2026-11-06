@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-05",
+  "source": "Kaggle uciml/sms-spam-collection-dataset",
+  "source_rows": 5572,
+  "source_counts": {
+    "ham": 4825,
+    "spam": 747
+  },
+  "normalization_for_dedup": "Unicode NFKC + casefold + colapso de whitespace; entrada do modelo preserva texto original.",
+  "unique_normalized_groups": 5157,
+  "conflicting_groups_excluded": 0,
+  "clean_rows": 5157,
+  "seed": 20261105,
+  "splits": {
+    "train": {
+      "rows": 3609,
+      "counts": {
+        "ham": 3160,
+        "spam": 449
+      }
+    },
+    "validation": {
+      "rows": 773,
+      "counts": {
+        "ham": 677,
+        "spam": 96
+      }
+    },
+    "test": {
+      "rows": 775,
+      "counts": {
+        "spam": 97,
+        "ham": 678
+      }
+    },
+    "test-common-200": {
+      "rows": 200,
+      "counts": {
+        "ham": 175,
+        "spam": 25
+      }
+    }
+  },
+  "source_sha256": "440e6ea9fa825578abfdd7b7932ef8393d72ef86c0c33f64676705ce40b1dfc2",
+  "files_sha256": {
+    "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+    "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+    "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+    "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+  },
+  "purpose": "Classificação de SMS; não mede recomendação/busca de animes.",
+  "note": "Rótulos existentes no dataset; não preparados por nós com IA. Dataset público antigo pode constar do pré-treino de LLMs."
+}

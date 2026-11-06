@@ -1,0 +1,150 @@
+{
+  "model": "qwen",
+  "command": [
+    "C:\\tcc-lab\\LLMs\\runtime-b12110\\llama-server.exe",
+    "-m",
+    "C:\\tcc-lab\\LLMs\\models\\Qwen3-0.6B-Q8_0.gguf",
+    "-c",
+    "2048",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-ngl",
+    "0",
+    "-np",
+    "1",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "57794",
+    "--reasoning",
+    "on"
+  ],
+  "pid": 20392,
+  "purpose": "Verificação funcional, não avaliação comparativa.",
+  "external_api_cost": 0,
+  "reasoning_mode": "on",
+  "max_tokens": 256,
+  "reasoning": "Condição funcional registrada; não é avaliação de classificação.",
+  "load_seconds": 1.4832870999816805,
+  "health": {
+    "status": "ok"
+  },
+  "requests": [
+    {
+      "language": "en",
+      "request": {
+        "model": "qwen",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is two plus two? Reply with just the number."
+          }
+        ],
+        "max_tokens": 256,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 20261105,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "4",
+              "reasoning_content": "Okay, so the user is asking, \"What is two plus two?\" and wants the answer to be just the number. Let me think about how to approach this.\n\nFirst, I need to make sure I understand the question correctly. The user is probably testing if I can perform basic arithmetic operations. The expression is straightforward: two plus two. The result should be 4, right?\n\nWait, but maybe there's a trick here. Sometimes people might confuse addition with multiplication or something else. But no, adding two and two is definitely 2 + 2 = 4. So the answer should be 4.\n\nBut just to be thorough, let me verify. If I add two and two, I can think of it as two plus two, which is two times two. That gives four. So yeah, the answer is four. The user just wants the number, so 4 is the correct response.\n"
+            }
+          }
+        ],
+        "created": 1793898644,
+        "model": "C:\\tcc-lab\\LLMs\\models\\Qwen3-0.6B-Q8_0.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 191,
+          "prompt_tokens": 20,
+          "total_tokens": 211,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-sKdNGrNVHoWoZjBffpeNFiJCXagpjRKP",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 20,
+          "prompt_ms": 334.128,
+          "prompt_per_token_ms": 16.7064,
+          "prompt_per_second": 59.85730019633195,
+          "predicted_n": 191,
+          "predicted_ms": 5860.869,
+          "predicted_per_token_ms": 30.84667894736842,
+          "predicted_per_second": 32.4184007525164
+        }
+      },
+      "wall_seconds": 6.202527599991299,
+      "expected_number_present": true
+    },
+    {
+      "language": "pt",
+      "request": {
+        "model": "qwen",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Quanto é dois mais dois? Responda apenas o número."
+          }
+        ],
+        "max_tokens": 256,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 20261105,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "4",
+              "reasoning_content": "Okay, the user is asking \"Quanto é dois mais dois?\" which translates to \"How much is two plus two?\" and wants the answer only in numbers. Let me think.\n\nFirst, I need to confirm the calculation. Two plus two is 4. But wait, maybe they want the answer in words? But the instruction says \"apenas o número\" which means only the number. So I should just state the result as 4.\n\nI should check if there's any trick here. Sometimes math problems can have hidden steps, but in this case, it's straightforward. Addition is commutative, so the order doesn't matter. Two plus two is definitely two times two, which is four. No other operations or factors involved here. So the answer is definitely 4.\n\nI need to make sure there's no confusion with other numbers. For example, if it was \"Quanto é dois vezes dois?\" then it's 4, but the question is \"mais\" which is plus, so it's 4. Yep, that's correct. So the answer is 4.\n"
+            }
+          }
+        ],
+        "created": 1793898652,
+        "model": "C:\\tcc-lab\\LLMs\\models\\Qwen3-0.6B-Q8_0.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 230,
+          "prompt_tokens": 22,
+          "total_tokens": 252,
+          "prompt_tokens_details": {
+            "cached_tokens": 3
+          }
+        },
+        "id": "chatcmpl-X2KiMZfgONsRin7sHJ8fSgq0SjkUPypx",
+        "timings": {
+          "cache_n": 3,
+          "prompt_n": 19,
+          "prompt_ms": 331.154,
+          "prompt_per_token_ms": 17.429157894736843,
+          "prompt_per_second": 57.375118524915905,
+          "predicted_n": 230,
+          "predicted_ms": 7166.569,
+          "predicted_per_token_ms": 31.29506113537118,
+          "predicted_per_second": 31.95392383719462
+        }
+      },
+      "wall_seconds": 7.512856099987403,
+      "expected_number_present": true
+    }
+  ],
+  "peak_working_set_bytes": 967602176,
+  "success": true
+}

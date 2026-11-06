@@ -1,0 +1,353 @@
+[
+  {
+    "id": "1",
+    "title": "Cowboy Bebop",
+    "source_title": "Cowboy Bebop",
+    "description_en": "Space drifters hunt fugitives for reward money aboard a worn spaceship. Their episodic adventures mix crime, jazz, gunfights and memories of a violent past.",
+    "description_pt": "Viajantes espaciais caçam fugitivos por recompensas a bordo de uma nave desgastada. Aventuras episódicas misturam crime, jazz, tiroteios e lembranças de um passado violento.",
+    "source_url": "https://myanimelist.net/anime/1",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "6",
+    "title": "Trigun",
+    "source_title": "Trigun",
+    "description_en": "A pacifist gunman with a huge bounty wanders a desert planet. Encounters with criminals test his refusal to kill and gradually uncover the suffering behind his cheerful behavior.",
+    "description_pt": "Um pistoleiro pacifista com enorme recompensa pela captura percorre um planeta desértico. Encontros com criminosos testam sua recusa em matar e revelam o sofrimento por trás do comportamento alegre.",
+    "source_url": "https://myanimelist.net/anime/6",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "19",
+    "title": "Monster",
+    "source_title": "Monster",
+    "description_en": "A surgeon saves a child who grows into a dangerous murderer. Blamed for crimes, the doctor travels across Europe following a serial killer and confronting guilt, identity and the value of human life.",
+    "description_pt": "Um cirurgião salva uma criança que se torna um assassino perigoso. Acusado de crimes, o médico atravessa a Europa perseguindo um criminoso em série e enfrentando culpa, identidade e o valor da vida humana.",
+    "source_url": "https://myanimelist.net/anime/19",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "20",
+    "title": "Naruto",
+    "source_title": "Naruto",
+    "description_en": "An isolated orphan trains as a ninja and dreams of leading his village. Dangerous missions, rivalry and friendship shape his search for recognition while a powerful creature sealed inside him fuels prejudice.",
+    "description_pt": "Um órfão isolado treina como ninja e sonha em liderar sua aldeia. Missões perigosas, rivalidade e amizade marcam sua busca por reconhecimento, enquanto uma criatura selada nele alimenta o preconceito.",
+    "source_url": "https://myanimelist.net/anime/20",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "21",
+    "title": "One Piece",
+    "source_title": "One Piece",
+    "description_en": "A young pirate gathers an unusual crew and sails toward a legendary treasure. Island adventures challenge oppressive rulers and explore freedom, loyalty and friendship among outlaws aboard their ship.",
+    "description_pt": "Um jovem pirata reúne uma tripulação incomum e navega em busca de um tesouro lendário. Aventuras em ilhas desafiam governantes opressores e exploram liberdade, lealdade e amizade entre fora da lei.",
+    "source_url": "https://myanimelist.net/anime/21",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "30",
+    "title": "Neon Genesis Evangelion",
+    "source_title": "Shinseiki Evangelion",
+    "description_en": "Adolescents pilot giant machines to defend humanity from mysterious attackers. Military battles intertwine with depression, fear of rejection, parental conflict and the emotional burden placed on vulnerable young people.",
+    "description_pt": "Adolescentes pilotam máquinas gigantes para defender a humanidade de invasores misteriosos. Batalhas militares se misturam a depressão, medo de rejeição, conflitos familiares e pressão emocional sobre jovens vulneráveis.",
+    "source_url": "https://myanimelist.net/anime/30",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "5114",
+    "title": "Fullmetal Alchemist: Brotherhood",
+    "source_title": "Fullmetal Alchemist: Brotherhood",
+    "description_en": "Two brothers lose parts of their bodies after a forbidden alchemical experiment. Their journey to restore what was lost uncovers military conspiracies, war crimes and the human cost of seeking unlimited power.",
+    "description_pt": "Dois irmãos perdem partes do corpo após uma experiência proibida de alquimia. A jornada para recuperar o que perderam revela conspirações militares, crimes de guerra e o custo humano da busca por poder.",
+    "source_url": "https://myanimelist.net/anime/5114",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "1535",
+    "title": "Death Note",
+    "source_title": "Death Note",
+    "description_en": "A student obtains a notebook that kills people whose names are written in it. His plan to punish criminals becomes a strategic contest with an eccentric detective and raises questions about justice and power.",
+    "description_pt": "Um estudante encontra um caderno que mata pessoas cujos nomes são escritos nele. Seu plano de punir criminosos vira uma disputa estratégica com um detetive excêntrico e questiona justiça e poder.",
+    "source_url": "https://myanimelist.net/anime/1535",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "9253",
+    "title": "Steins;Gate",
+    "source_title": "Steins;Gate",
+    "description_en": "An amateur science club discovers how to send messages into the past. Experiments alter personal histories and trigger dangerous consequences, forcing repeated attempts to save friends without destroying another possible future.",
+    "description_pt": "Um clube amador de ciência descobre como enviar mensagens ao passado. Experiências alteram histórias pessoais e provocam consequências perigosas, exigindo novas tentativas de salvar amigos sem destruir outro futuro possível.",
+    "source_url": "https://myanimelist.net/anime/9253",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "16498",
+    "title": "Attack on Titan",
+    "source_title": "Shingeki no Kyojin",
+    "description_en": "Survivors live behind enormous walls to escape human-eating giants. Young soldiers join a brutal struggle that expands into political conflict, hidden history and difficult choices about survival, freedom and collective violence.",
+    "description_pt": "Sobreviventes vivem atrás de enormes muralhas para escapar de gigantes devoradores de humanos. Jovens soldados enfrentam uma luta brutal que envolve política, história oculta e escolhas difíceis sobre sobrevivência, liberdade e violência coletiva.",
+    "source_url": "https://myanimelist.net/anime/16498",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "11757",
+    "title": "Sword Art Online",
+    "source_title": "Sword Art Online",
+    "description_en": "Players become trapped inside a virtual reality role-playing game where death can be fatal. Fighters explore dangerous levels, form relationships and seek a way back to their lives outside the game.",
+    "description_pt": "Jogadores ficam presos em um jogo de interpretação de papéis em realidade virtual, onde a morte pode ser fatal. Eles exploram fases perigosas, criam relacionamentos e procuram voltar à vida fora do jogo.",
+    "source_url": "https://myanimelist.net/anime/11757",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "17265",
+    "title": "Log Horizon",
+    "source_title": "Log Horizon",
+    "description_en": "Thousands of online game players wake inside the world they once controlled through screens. A strategist helps establish guild cooperation, public rules and a functioning society while exploring relations with the local inhabitants.",
+    "description_pt": "Milhares de jogadores despertam dentro do mundo virtual que antes controlavam pela tela. Um estrategista ajuda a criar cooperação entre guildas, regras públicas e uma sociedade, explorando relações com os habitantes locais.",
+    "source_url": "https://myanimelist.net/anime/17265",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "31240",
+    "title": "Re:Zero",
+    "source_title": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "description_en": "A young visitor reaches a fantasy kingdom and discovers that death returns him to an earlier moment. Repeated failure, secrecy and traumatic memories complicate his attempts to protect people and change disastrous events.",
+    "description_pt": "Um visitante chega a um reino fantástico e descobre que morrer o faz voltar a um momento anterior. Fracassos repetidos, segredos e lembranças traumáticas dificultam a tentativa de proteger pessoas e mudar desastres.",
+    "source_url": "https://myanimelist.net/anime/31240",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "31964",
+    "title": "My Hero Academia",
+    "source_title": "Boku no Hero Academia",
+    "description_en": "In a society where special abilities are common, a boy born without powers enters a school for professional heroes. Training, teamwork and encounters with villains test his courage and responsibility toward others.",
+    "description_pt": "Em uma sociedade onde habilidades especiais são comuns, um garoto nascido sem poderes entra em uma escola de heróis profissionais. Treinamento, trabalho em equipe e encontros com vilões testam sua coragem e responsabilidade.",
+    "source_url": "https://myanimelist.net/anime/31964",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "30276",
+    "title": "One Punch Man",
+    "source_title": "One Punch Man",
+    "description_en": "A hero defeats opponents with a single punch and struggles with boredom rather than danger. A superhero organization, absurd monsters and public reputation create comedy around overwhelming strength and the desire for recognition.",
+    "description_pt": "Um herói derrota adversários com um único soco e enfrenta mais tédio que perigo. Uma organização de super-heróis, monstros absurdos e reputação pública criam humor sobre força excessiva e desejo de reconhecimento.",
+    "source_url": "https://myanimelist.net/anime/30276",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "32182",
+    "title": "Mob Psycho 100",
+    "source_title": "Mob Psycho 100",
+    "description_en": "A quiet teenager has overwhelming psychic powers but wants an ordinary social life. His work with an unreliable mentor and encounters with spirits expose the tension between emotional repression, friendship and personal growth.",
+    "description_pt": "Um adolescente quieto possui poderes psíquicos imensos, mas deseja uma vida social comum. O trabalho com um mentor pouco confiável e encontros com espíritos exploram repressão emocional, amizade e amadurecimento.",
+    "source_url": "https://myanimelist.net/anime/32182",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "1575",
+    "title": "Code Geass",
+    "source_title": "Code Geass: Hangyaku no Lelouch",
+    "description_en": "A student gains the ability to command others and secretly leads resistance against an occupying empire. Tactical battles, giant machines and conflicts between loyalty and revolutionary goals shape a politically charged rebellion.",
+    "description_pt": "Um estudante ganha a capacidade de comandar pessoas e lidera secretamente a resistência contra um império ocupante. Batalhas táticas, máquinas gigantes e conflitos entre lealdade e objetivos revolucionários marcam a rebelião política.",
+    "source_url": "https://myanimelist.net/anime/1575",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "13601",
+    "title": "Psycho-Pass",
+    "source_title": "Psycho-Pass",
+    "description_en": "Police in a surveillance society use technology to judge a person before a crime is committed. Investigators confront criminals and the moral limits of a system that trades individual freedom for public security.",
+    "description_pt": "Policiais de uma sociedade de vigilância usam tecnologia para julgar pessoas antes de um crime acontecer. Investigadores enfrentam criminosos e os limites morais de um sistema que troca liberdade individual por segurança pública.",
+    "source_url": "https://myanimelist.net/anime/13601",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "43",
+    "title": "Ghost in the Shell",
+    "source_title": "Koukaku Kidoutai",
+    "description_en": "A cybernetic police officer investigates crimes involving networks and artificial intelligence. Questions about memory, personal identity and the boundary between human consciousness and machines unfold within a technologically controlled society.",
+    "description_pt": "Uma policial cibernética investiga crimes ligados a redes e inteligência artificial. Questões sobre memória, identidade e o limite entre consciência humana e máquinas aparecem em uma sociedade tecnologicamente controlada.",
+    "source_url": "https://myanimelist.net/anime/43",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "205",
+    "title": "Samurai Champloo",
+    "source_title": "Samurai Champloo",
+    "description_en": "Two contrasting swordsmen accompany a young woman across historical Japan. Their wandering journey mixes duels, episodic encounters, social outsiders and an unconventional musical style while they search for a mysterious samurai.",
+    "description_pt": "Dois espadachins de personalidades opostas acompanham uma jovem pelo Japão histórico. A viagem mistura duelos, encontros episódicos, marginalizados sociais e um estilo musical incomum na procura de um samurai misterioso.",
+    "source_url": "https://myanimelist.net/anime/205",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "38000",
+    "title": "Demon Slayer",
+    "source_title": "Kimetsu no Yaiba",
+    "description_en": "After demons attack his family, a boy becomes a swordsman to protect his transformed sister. Difficult training and battles against supernatural enemies support a journey driven by compassion, grief and sibling loyalty.",
+    "description_pt": "Após demônios atacarem sua família, um garoto se torna espadachim para proteger a irmã transformada. Treinamento difícil e lutas sobrenaturais sustentam uma jornada guiada por compaixão, luto e lealdade entre irmãos.",
+    "source_url": "https://myanimelist.net/anime/38000",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "40748",
+    "title": "Jujutsu Kaisen",
+    "source_title": "Jujutsu Kaisen",
+    "description_en": "A student becomes involved with a dangerous cursed object and joins a school of supernatural fighters. Teachers and classmates train to confront deadly curses created from human negativity while facing sacrifice and violent threats.",
+    "description_pt": "Um estudante se envolve com um objeto amaldiçoado e entra em uma escola de combatentes sobrenaturais. Professores e colegas treinam para enfrentar maldições geradas pela negatividade humana, entre sacrifícios e ameaças violentas.",
+    "source_url": "https://myanimelist.net/anime/40748",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "457",
+    "title": "Mushishi",
+    "source_title": "Mushishi",
+    "description_en": "A wandering specialist studies mysterious life forms that affect people and natural environments. Quiet, self-contained encounters emphasize understanding strange phenomena, accepting loss and balancing human lives with forces that are not simply evil.",
+    "description_pt": "Um especialista viajante estuda formas de vida misteriosas que afetam pessoas e ambientes naturais. Encontros tranquilos e independentes valorizam compreender fenômenos, aceitar perdas e equilibrar a vida humana com forças que não são apenas malignas.",
+    "source_url": "https://myanimelist.net/anime/457",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "4081",
+    "title": "Natsume Yuujinchou",
+    "source_title": "Natsume Yuujinchou",
+    "description_en": "A lonely boy who can see spirits inherits a book containing their names. Returning those names brings gentle encounters with supernatural beings and helps him build trust, friendship and a sense of belonging.",
+    "description_pt": "Um garoto solitário que enxerga espíritos herda um livro com seus nomes. A devolução desses nomes proporciona encontros delicados com seres sobrenaturais e ajuda a construir confiança, amizade e pertencimento.",
+    "source_url": "https://myanimelist.net/anime/4081",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "20583",
+    "title": "Haikyuu!!",
+    "source_title": "Haikyuu!!",
+    "description_en": "An enthusiastic short player joins a high school volleyball team. Training with a talented rival, overcoming technical limits and trusting teammates become central to competitive matches and the rebuilding of a struggling club.",
+    "description_pt": "Um jogador baixo e entusiasmado entra no time de vôlei do ensino médio. Treinar com um rival talentoso, superar limites técnicos e confiar nos colegas são centrais nas partidas e na reconstrução de um clube.",
+    "source_url": "https://myanimelist.net/anime/20583",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "11771",
+    "title": "Kuroko no Basket",
+    "source_title": "Kuroko no Basket",
+    "description_en": "A nearly invisible basketball player partners with an ambitious teammate to challenge former prodigies. High school tournaments emphasize teamwork, unusual playing styles and the contest between collective cooperation and individual talent.",
+    "description_pt": "Um jogador de basquete quase imperceptível se une a um colega ambicioso para desafiar antigos prodígios. Torneios escolares destacam trabalho em equipe, estilos incomuns e o confronto entre cooperação coletiva e talento individual.",
+    "source_url": "https://myanimelist.net/anime/11771",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "170",
+    "title": "Slam Dunk",
+    "source_title": "Slam Dunk",
+    "description_en": "A rough teenager joins a school basketball team and gradually develops genuine love for the sport. Rivalries, technical learning and difficult matches transform his relationships and demand discipline beyond his initial romantic motivation.",
+    "description_pt": "Um adolescente briguento entra no time escolar de basquete e passa a gostar de verdade do esporte. Rivalidades, aprendizado técnico e partidas difíceis transformam suas relações e exigem disciplina além da motivação romântica inicial.",
+    "source_url": "https://myanimelist.net/anime/170",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "31646",
+    "title": "March Comes in Like a Lion",
+    "source_title": "3-gatsu no Lion",
+    "description_en": "A young professional shogi player faces loneliness, depression and pressure from competition. Connections with a caring family slowly help him confront his past and discover emotional support beyond success in a traditional strategy game.",
+    "description_pt": "Um jovem jogador profissional de shogi enfrenta solidão, depressão e pressão competitiva. A relação com uma família acolhedora ajuda a enfrentar o passado e encontrar apoio emocional além do sucesso em um jogo tradicional de estratégia.",
+    "source_url": "https://myanimelist.net/anime/31646",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "10800",
+    "title": "Chihayafuru",
+    "source_title": "Chihayafuru",
+    "description_en": "A student builds a school team for a traditional card game based on Japanese poetry. Intensive practice, tournaments and friendships connect athletic speed, cultural knowledge and personal ambition in a competitive coming-of-age story.",
+    "description_pt": "Uma estudante cria um time escolar para um jogo tradicional de cartas baseado em poesia japonesa. Treino intenso, torneios e amizade ligam velocidade, conhecimento cultural e ambição pessoal em uma história competitiva de amadurecimento.",
+    "source_url": "https://myanimelist.net/anime/10800",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "23273",
+    "title": "Your Lie in April",
+    "source_title": "Shigatsu wa Kimi no Uso",
+    "description_en": "A gifted pianist stops performing after a painful loss. Meeting an expressive violinist draws him back to classical music, public competition and emotional intimacy while memories of family pressure and grief remain unresolved.",
+    "description_pt": "Um pianista talentoso para de se apresentar após uma perda dolorosa. O encontro com uma violinista expressiva o aproxima da música clássica, das competições e da intimidade afetiva, entre pressão familiar e luto.",
+    "source_url": "https://myanimelist.net/anime/23273",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "5680",
+    "title": "K-On!",
+    "source_title": "K-On!",
+    "description_en": "School friends form a light music club and learn to play together. Rehearsals, tea, performances and everyday conversations focus on warm friendship and the small pleasures of growing up rather than a dramatic quest for fame.",
+    "description_pt": "Amigas da escola formam um clube de música e aprendem a tocar juntas. Ensaios, chá, apresentações e conversas cotidianas valorizam amizade acolhedora e pequenos prazeres do amadurecimento, em vez de uma busca dramática pela fama.",
+    "source_url": "https://myanimelist.net/anime/5680",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "47917",
+    "title": "Bocchi the Rock!",
+    "source_title": "Bocchi the Rock!",
+    "description_en": "An extremely shy guitarist joins a small rock band and struggles to communicate with her new friends. Rehearsals and live performances turn social anxiety, creative ambition and awkward daily encounters into musical comedy.",
+    "description_pt": "Uma guitarrista muito tímida entra em uma pequena banda de rock e tenta se comunicar com novas amigas. Ensaios e shows transformam ansiedade social, ambição criativa e situações constrangedoras em uma comédia musical.",
+    "source_url": "https://myanimelist.net/anime/47917",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "4224",
+    "title": "Toradora!",
+    "source_title": "Toradora!",
+    "description_en": "Two high school students with intimidating reputations agree to help each other pursue romantic interests. Their arrangement gradually reveals vulnerability, family problems and unexpected affection beneath misleading first impressions.",
+    "description_pt": "Dois estudantes com reputações intimidadoras combinam ajudar um ao outro em interesses românticos. O acordo revela vulnerabilidade, problemas familiares e afeto inesperado por trás de primeiras impressões enganosas.",
+    "source_url": "https://myanimelist.net/anime/4224",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "28851",
+    "title": "A Silent Voice",
+    "source_title": "Koe no Katachi",
+    "description_en": "A former school bully tries to reconnect with a deaf classmate he once hurt. Guilt, isolation and difficulty communicating shape a serious story about responsibility, forgiveness and rebuilding relationships after exclusion.",
+    "description_pt": "Um antigo agressor escolar tenta reencontrar uma colega surda que havia magoado. Culpa, isolamento e dificuldades de comunicação marcam uma história sobre responsabilidade, perdão e reconstrução de relações após a exclusão.",
+    "source_url": "https://myanimelist.net/anime/28851",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "32281",
+    "title": "Your Name",
+    "source_title": "Kimi no Na wa.",
+    "description_en": "Two teenagers living far apart unexpectedly exchange bodies. Their search for each other connects daily life, emerging affection and a threat to a small town across a mysterious separation in time.",
+    "description_pt": "Dois adolescentes que vivem distantes trocam de corpo inesperadamente. A busca de um pelo outro conecta cotidiano, afeto crescente e uma ameaça a uma pequena cidade, através de uma separação misteriosa no tempo.",
+    "source_url": "https://myanimelist.net/anime/32281",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "33352",
+    "title": "Violet Evergarden",
+    "source_title": "Violet Evergarden",
+    "description_en": "A former child soldier learns to write letters for other people after a devastating war. Translating feelings into words helps her confront loss, understand affection and build a life beyond military orders.",
+    "description_pt": "Uma ex-criança-soldado aprende a escrever cartas para outras pessoas após uma guerra devastadora. Traduzir sentimentos em palavras ajuda a enfrentar perdas, compreender o afeto e construir uma vida além das ordens militares.",
+    "source_url": "https://myanimelist.net/anime/33352",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "199",
+    "title": "Spirited Away",
+    "source_title": "Sen to Chihiro no Kamikakushi",
+    "description_en": "A girl enters a strange world of spirits after her parents are transformed. Working in a magical bathhouse, she must protect her identity, make uneasy alliances and find the courage to bring her family home.",
+    "description_pt": "Uma menina entra em um mundo de espíritos depois que os pais são transformados. Trabalhando em uma casa de banhos mágica, precisa proteger sua identidade, formar alianças difíceis e encontrar coragem para trazer a família de volta.",
+    "source_url": "https://myanimelist.net/anime/199",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "164",
+    "title": "Princess Mononoke",
+    "source_title": "Mononoke Hime",
+    "description_en": "A young traveler is caught between forest spirits and an industrial settlement. Humans and animal guardians fight over survival and resources, challenging simple divisions between villains and heroes in a conflict about nature and development.",
+    "description_pt": "Um jovem viajante se vê entre espíritos da floresta e um povoado industrial. Humanos e guardiões animais disputam sobrevivência e recursos, questionando a divisão simples entre heróis e vilões em um conflito sobre natureza e desenvolvimento.",
+    "source_url": "https://myanimelist.net/anime/164",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  },
+  {
+    "id": "918",
+    "title": "Gintama",
+    "source_title": "Gintama",
+    "description_en": "Odd-job workers struggle to earn a living in an alternate historical city occupied by aliens. Absurd comedy, parody and unconventional samurai adventures alternate with stories about loyalty, friendship and resistance.",
+    "description_pt": "Trabalhadores de serviços diversos tentam sobreviver em uma cidade histórica alternativa ocupada por alienígenas. Humor absurdo, paródia e aventuras de samurais alternam com histórias de lealdade, amizade e resistência.",
+    "source_url": "https://myanimelist.net/anime/918",
+    "description_origin": "Texto curto original preparado com IA para piloto; nao sinopse oficial"
+  }
+]

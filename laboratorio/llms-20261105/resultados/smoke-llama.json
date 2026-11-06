@@ -1,0 +1,146 @@
+{
+  "model": "llama",
+  "command": [
+    "C:\\tcc-lab\\LLMs\\runtime-b12110\\llama-server.exe",
+    "-m",
+    "C:\\tcc-lab\\LLMs\\models\\Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+    "-c",
+    "2048",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-ngl",
+    "0",
+    "-np",
+    "1",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "57707",
+    "--reasoning",
+    "off"
+  ],
+  "pid": 20808,
+  "purpose": "Verificação funcional, não avaliação comparativa.",
+  "external_api_cost": 0,
+  "reasoning": "Desligado somente para verificação curta; reavaliar condição adequada no benchmark.",
+  "load_seconds": 1.780793400015682,
+  "health": {
+    "status": "ok"
+  },
+  "requests": [
+    {
+      "language": "en",
+      "request": {
+        "model": "llama",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is two plus two? Reply with just the number."
+          }
+        ],
+        "max_tokens": 64,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 20261105,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "4"
+            }
+          }
+        ],
+        "created": 1793898539,
+        "model": "C:\\tcc-lab\\LLMs\\models\\Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 2,
+          "prompt_tokens": 47,
+          "total_tokens": 49,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-pNPac5d3rRmBs4uNhvkE6Jl3pwuyxSDy",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 47,
+          "prompt_ms": 831.979,
+          "prompt_per_token_ms": 17.70168085106383,
+          "prompt_per_second": 56.49181049040901,
+          "predicted_n": 2,
+          "predicted_ms": 35.17,
+          "predicted_per_token_ms": 35.17,
+          "predicted_per_second": 28.433323855558715
+        }
+      },
+      "wall_seconds": 0.8712897000368685,
+      "expected_number_present": true
+    },
+    {
+      "language": "pt",
+      "request": {
+        "model": "llama",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Quanto é dois mais dois? Responda apenas o número."
+          }
+        ],
+        "max_tokens": 64,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 20261105,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "4"
+            }
+          }
+        ],
+        "created": 1793898539,
+        "model": "C:\\tcc-lab\\LLMs\\models\\Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 2,
+          "prompt_tokens": 49,
+          "total_tokens": 51,
+          "prompt_tokens_details": {
+            "cached_tokens": 30
+          }
+        },
+        "id": "chatcmpl-OUxKBSZaUNjsZjVuDPld8CHwWwzFekpP",
+        "timings": {
+          "cache_n": 30,
+          "prompt_n": 19,
+          "prompt_ms": 369.683,
+          "prompt_per_token_ms": 19.457,
+          "prompt_per_second": 51.395384694454435,
+          "predicted_n": 2,
+          "predicted_ms": 39.352,
+          "predicted_per_token_ms": 39.352,
+          "predicted_per_second": 25.411669038422446
+        }
+      },
+      "wall_seconds": 0.4136850999784656,
+      "expected_number_present": true
+    }
+  ],
+  "peak_working_set_bytes": 1431461888,
+  "success": true
+}

@@ -1,0 +1,30 @@
+{
+  "model": "dummy",
+  "environment": "Ubuntu/WSL2 CPU",
+  "threads": 4,
+  "seed": 20261105,
+  "load_seconds": 4.099999999951365e-06,
+  "imports_and_setup_seconds": 3.3180808999999947,
+  "encode_train_seconds": 1.8000000000739647e-05,
+  "classifier_fit_seconds": 0.07673180000000102,
+  "full_test_batch_seconds": 0.00016369999999987783,
+  "peak_rss_kib_self": 129692,
+  "peak_rss_kib_child": 0,
+  "truncation": null,
+  "coverage": null,
+  "notes": [],
+  "source_path": "None",
+  "classifier": {
+    "constant": null,
+    "random_state": null,
+    "strategy": "most_frequent"
+  },
+  "files_sha256": {
+    "train.jsonl": "21fa033e34a60ea7f16cf053ed8168664afb6983ab9a90a42144b283889ab3ef",
+    "validation.jsonl": "db9a71615ad4917bda15299988689ab20960c7a680a53468476c6292773e7d1e",
+    "test.jsonl": "58ac34fc2cea4c620c56c21046fc321c3b0d2020cbe4c46e690880df558ac8e7",
+    "test-common-200.jsonl": "993e6ecbf6864398fee2fc822d515c348fc8d4a4a89ce5aeccac76a6da97c601"
+  },
+  "common_count": 200,
+  "inference_timing": "Uma mensagem por vez, tokenização/encode + predict_proba, após três aquecimentos; sem reutilizar embeddings de teste."
+}

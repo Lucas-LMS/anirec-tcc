@@ -1,0 +1,1979 @@
+{
+  "primary_scenario": "PT_EN",
+  "confirmed_by_user": true,
+  "winner_primary_pilot": "minilm",
+  "main_models": [
+    "tfidf",
+    "glove",
+    "fasttext",
+    "w2v-cbow",
+    "w2v-sg",
+    "minilm"
+  ],
+  "names": {
+    "tfidf": "TF-IDF",
+    "glove": "GloVe text8 50d",
+    "fasttext": "fastText fil9 100d",
+    "w2v-cbow": "Word2Vec CBOW text8",
+    "w2v-sg": "Word2Vec Skip-gram text8",
+    "minilm": "MiniLM multilíngue",
+    "w2v-lee-cbow": "Word2Vec CBOW Lee (diagnóstico)",
+    "w2v-lee-sg": "Word2Vec Skip-gram Lee (diagnóstico)"
+  },
+  "summary": {
+    "tfidf": {
+      "PT_EN": {
+        "ndcg5": 0.1268502517366759,
+        "hit1": 0.10565870910698497,
+        "mrr10": 0.15981422204198972,
+        "recall5": 0.13560677807501764,
+        "precision3": 0.07940580535861841,
+        "ndcg5_ci95": [
+          0.08235948169987493,
+          0.17633102659321412
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.15700993245323303,
+            "hit1": 0.125552608311229,
+            "mrr10": 0.18898597621374386,
+            "recall5": 0.16075918163032502,
+            "precision3": 0.0982526572363233
+          },
+          "paraphrase": {
+            "ndcg5": 0.0966905710201188,
+            "hit1": 0.08576480990274092,
+            "mrr10": 0.13064246787023556,
+            "recall5": 0.11045437451971027,
+            "precision3": 0.06055895348091355
+          }
+        }
+      },
+      "EN_EN": {
+        "ndcg5": 0.6804486181216618,
+        "hit1": 0.7068965517241379,
+        "mrr10": 0.7970032840722495,
+        "recall5": 0.5359195402298851,
+        "precision3": 0.4022988505747126,
+        "ndcg5_ci95": [
+          0.6246830652501617,
+          0.7356878582286192
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.8211405300143753,
+            "hit1": 0.9310344827586207,
+            "mrr10": 0.9655172413793104,
+            "recall5": 0.6206896551724138,
+            "precision3": 0.4827586206896552
+          },
+          "paraphrase": {
+            "ndcg5": 0.5397567062289483,
+            "hit1": 0.4827586206896552,
+            "mrr10": 0.6284893267651888,
+            "recall5": 0.45114942528735635,
+            "precision3": 0.3218390804597702
+          }
+        }
+      },
+      "PT_PT": {
+        "ndcg5": 0.6460186978394186,
+        "hit1": 0.6379310344827587,
+        "mrr10": 0.7500205254515598,
+        "recall5": 0.5545977011494252,
+        "precision3": 0.3908045977011494,
+        "ndcg5_ci95": [
+          0.5935048026494824,
+          0.696322158592653
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.7936282594728657,
+            "hit1": 0.9310344827586207,
+            "mrr10": 0.9597701149425288,
+            "recall5": 0.6178160919540229,
+            "precision3": 0.48275862068965525
+          },
+          "paraphrase": {
+            "ndcg5": 0.49840913620597116,
+            "hit1": 0.3448275862068966,
+            "mrr10": 0.5402709359605912,
+            "recall5": 0.49137931034482757,
+            "precision3": 0.29885057471264365
+          }
+        }
+      }
+    },
+    "glove": {
+      "PT_EN": {
+        "ndcg5": 0.11518005466681748,
+        "hit1": 0.05172413793103448,
+        "mrr10": 0.11184318555008212,
+        "recall5": 0.14942528735632182,
+        "precision3": 0.08620689655172414,
+        "ndcg5_ci95": [
+          0.060354552137960676,
+          0.1802475298232895
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.15990926372586386,
+            "hit1": 0.06896551724137931,
+            "mrr10": 0.14367816091954022,
+            "recall5": 0.18678160919540227,
+            "precision3": 0.10344827586206896
+          },
+          "paraphrase": {
+            "ndcg5": 0.07045084560777112,
+            "hit1": 0.034482758620689655,
+            "mrr10": 0.08000821018062397,
+            "recall5": 0.11206896551724138,
+            "precision3": 0.06896551724137931
+          }
+        }
+      },
+      "EN_EN": {
+        "ndcg5": 0.6060591682587907,
+        "hit1": 0.5689655172413793,
+        "mrr10": 0.68435960591133,
+        "recall5": 0.5488505747126436,
+        "precision3": 0.37931034482758613,
+        "ndcg5_ci95": [
+          0.5364423604752593,
+          0.6759092953938801
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.7858656362045223,
+            "hit1": 0.7586206896551724,
+            "mrr10": 0.8563218390804598,
+            "recall5": 0.7011494252873562,
+            "precision3": 0.5172413793103449
+          },
+          "paraphrase": {
+            "ndcg5": 0.4262527003130588,
+            "hit1": 0.3793103448275862,
+            "mrr10": 0.5123973727422003,
+            "recall5": 0.396551724137931,
+            "precision3": 0.2413793103448275
+          }
+        }
+      },
+      "PT_PT": {
+        "ndcg5": 0.2745697512710852,
+        "hit1": 0.22413793103448276,
+        "mrr10": 0.3084496442255063,
+        "recall5": 0.26293103448275856,
+        "precision3": 0.1724137931034483,
+        "ndcg5_ci95": [
+          0.20075619986678905,
+          0.3533983440164859
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.3436671450079381,
+            "hit1": 0.3103448275862069,
+            "mrr10": 0.4128762999452654,
+            "recall5": 0.30747126436781613,
+            "precision3": 0.19540229885057467
+          },
+          "paraphrase": {
+            "ndcg5": 0.20547235753423237,
+            "hit1": 0.13793103448275862,
+            "mrr10": 0.2040229885057471,
+            "recall5": 0.21839080459770113,
+            "precision3": 0.14942528735632182
+          }
+        }
+      }
+    },
+    "fasttext": {
+      "PT_EN": {
+        "ndcg5": 0.14767043712235572,
+        "hit1": 0.05172413793103448,
+        "mrr10": 0.15964012041598247,
+        "recall5": 0.17097701149425285,
+        "precision3": 0.11494252873563218,
+        "ndcg5_ci95": [
+          0.08028941222165341,
+          0.22181214473808986
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.19870633661100848,
+            "hit1": 0.10344827586206896,
+            "mrr10": 0.22565681444991786,
+            "recall5": 0.19540229885057472,
+            "precision3": 0.16091954022988503
+          },
+          "paraphrase": {
+            "ndcg5": 0.09663453763370296,
+            "hit1": 0.0,
+            "mrr10": 0.09362342638204707,
+            "recall5": 0.14655172413793102,
+            "precision3": 0.06896551724137931
+          }
+        }
+      },
+      "EN_EN": {
+        "ndcg5": 0.7232695781911261,
+        "hit1": 0.6896551724137931,
+        "mrr10": 0.7980569239189929,
+        "recall5": 0.6293103448275862,
+        "precision3": 0.4540229885057472,
+        "ndcg5_ci95": [
+          0.6533259209096622,
+          0.7906973950655471
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.8402982245080566,
+            "hit1": 0.8620689655172413,
+            "mrr10": 0.9310344827586207,
+            "recall5": 0.7097701149425287,
+            "precision3": 0.5172413793103449
+          },
+          "paraphrase": {
+            "ndcg5": 0.6062409318741957,
+            "hit1": 0.5172413793103449,
+            "mrr10": 0.6650793650793652,
+            "recall5": 0.5488505747126436,
+            "precision3": 0.3908045977011494
+          }
+        }
+      },
+      "PT_PT": {
+        "ndcg5": 0.36695834863360705,
+        "hit1": 0.3448275862068966,
+        "mrr10": 0.4622331691297208,
+        "recall5": 0.2945402298850574,
+        "precision3": 0.1896551724137931,
+        "ndcg5_ci95": [
+          0.2749322450613886,
+          0.4589523331589616
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.447670860608837,
+            "hit1": 0.5172413793103449,
+            "mrr10": 0.6111111111111112,
+            "recall5": 0.3017241379310345,
+            "precision3": 0.2183908045977011
+          },
+          "paraphrase": {
+            "ndcg5": 0.2862458366583771,
+            "hit1": 0.1724137931034483,
+            "mrr10": 0.3133552271483306,
+            "recall5": 0.28735632183908044,
+            "precision3": 0.16091954022988503
+          }
+        }
+      }
+    },
+    "w2v-cbow": {
+      "PT_EN": {
+        "ndcg5": 0.08374999101974787,
+        "hit1": 0.034482758620689655,
+        "mrr10": 0.08548166392993978,
+        "recall5": 0.12356321839080459,
+        "precision3": 0.05172413793103448,
+        "ndcg5_ci95": [
+          0.034648689741528335,
+          0.14476800059240738
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.08508352440151432,
+            "hit1": 0.034482758620689655,
+            "mrr10": 0.09304871373836891,
+            "recall5": 0.11781609195402298,
+            "precision3": 0.04597701149425287
+          },
+          "paraphrase": {
+            "ndcg5": 0.08241645763798142,
+            "hit1": 0.034482758620689655,
+            "mrr10": 0.07791461412151067,
+            "recall5": 0.1293103448275862,
+            "precision3": 0.057471264367816084
+          }
+        }
+      },
+      "EN_EN": {
+        "ndcg5": 0.6012354316501025,
+        "hit1": 0.5517241379310345,
+        "mrr10": 0.6738437328954571,
+        "recall5": 0.5330459770114943,
+        "precision3": 0.367816091954023,
+        "ndcg5_ci95": [
+          0.5121930461996753,
+          0.6915455480045225
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.7531966934886731,
+            "hit1": 0.7241379310344828,
+            "mrr10": 0.8279146141215107,
+            "recall5": 0.6408045977011493,
+            "precision3": 0.49425287356321845
+          },
+          "paraphrase": {
+            "ndcg5": 0.44927416981153173,
+            "hit1": 0.3793103448275862,
+            "mrr10": 0.5197728516694033,
+            "recall5": 0.4252873563218391,
+            "precision3": 0.2413793103448275
+          }
+        }
+      },
+      "PT_PT": {
+        "ndcg5": 0.171078468031823,
+        "hit1": 0.08620689655172414,
+        "mrr10": 0.1821223316912972,
+        "recall5": 0.1968390804597701,
+        "precision3": 0.13793103448275862,
+        "ndcg5_ci95": [
+          0.1123897304761972,
+          0.23596010306141543
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.18038130494796703,
+            "hit1": 0.10344827586206896,
+            "mrr10": 0.19983579638752053,
+            "recall5": 0.2155172413793103,
+            "precision3": 0.14942528735632182
+          },
+          "paraphrase": {
+            "ndcg5": 0.16177563111567894,
+            "hit1": 0.06896551724137931,
+            "mrr10": 0.1644088669950739,
+            "recall5": 0.1781609195402299,
+            "precision3": 0.12643678160919541
+          }
+        }
+      }
+    },
+    "w2v-sg": {
+      "PT_EN": {
+        "ndcg5": 0.08435717775892994,
+        "hit1": 0.034482758620689655,
+        "mrr10": 0.08859469074986318,
+        "recall5": 0.1293103448275862,
+        "precision3": 0.0632183908045977,
+        "ndcg5_ci95": [
+          0.03671106864670096,
+          0.14720989319402514
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.09933920127094326,
+            "hit1": 0.034482758620689655,
+            "mrr10": 0.08682266009852216,
+            "recall5": 0.15517241379310343,
+            "precision3": 0.06896551724137931
+          },
+          "paraphrase": {
+            "ndcg5": 0.06937515424691659,
+            "hit1": 0.034482758620689655,
+            "mrr10": 0.09036672140120418,
+            "recall5": 0.10344827586206896,
+            "precision3": 0.057471264367816084
+          }
+        }
+      },
+      "EN_EN": {
+        "ndcg5": 0.7385743116876511,
+        "hit1": 0.7586206896551724,
+        "mrr10": 0.8296661193212918,
+        "recall5": 0.6350574712643678,
+        "precision3": 0.46551724137931033,
+        "ndcg5_ci95": [
+          0.6775704086873686,
+          0.7989612483632195
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.8651478245538904,
+            "hit1": 0.9655172413793104,
+            "mrr10": 0.9827586206896551,
+            "recall5": 0.7212643678160918,
+            "precision3": 0.5632183908045977
+          },
+          "paraphrase": {
+            "ndcg5": 0.6120007988214117,
+            "hit1": 0.5517241379310345,
+            "mrr10": 0.6765736179529281,
+            "recall5": 0.5488505747126438,
+            "precision3": 0.36781609195402304
+          }
+        }
+      },
+      "PT_PT": {
+        "ndcg5": 0.31888242445256576,
+        "hit1": 0.27586206896551724,
+        "mrr10": 0.368336070060208,
+        "recall5": 0.30028735632183906,
+        "precision3": 0.1954022988505747,
+        "ndcg5_ci95": [
+          0.2435692166319996,
+          0.39533949015656455
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.4268473567070414,
+            "hit1": 0.4482758620689655,
+            "mrr10": 0.5208264915161467,
+            "recall5": 0.3706896551724138,
+            "precision3": 0.2183908045977011
+          },
+          "paraphrase": {
+            "ndcg5": 0.2109174921980901,
+            "hit1": 0.10344827586206896,
+            "mrr10": 0.21584564860426927,
+            "recall5": 0.22988505747126434,
+            "precision3": 0.17241379310344823
+          }
+        }
+      }
+    },
+    "minilm": {
+      "PT_EN": {
+        "ndcg5": 0.8053907172948415,
+        "hit1": 0.8103448275862069,
+        "mrr10": 0.8784482758620689,
+        "recall5": 0.7270114942528735,
+        "precision3": 0.5344827586206896,
+        "ndcg5_ci95": [
+          0.7468931946227493,
+          0.857193276634539
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.9035137778591462,
+            "hit1": 1.0,
+            "mrr10": 1.0,
+            "recall5": 0.7816091954022989,
+            "precision3": 0.574712643678161
+          },
+          "paraphrase": {
+            "ndcg5": 0.7072676567305367,
+            "hit1": 0.6206896551724138,
+            "mrr10": 0.7568965517241381,
+            "recall5": 0.6724137931034483,
+            "precision3": 0.49425287356321834
+          }
+        }
+      },
+      "EN_EN": {
+        "ndcg5": 0.8429676258969521,
+        "hit1": 0.896551724137931,
+        "mrr10": 0.9370689655172414,
+        "recall5": 0.7298850574712643,
+        "precision3": 0.5747126436781609,
+        "ndcg5_ci95": [
+          0.7947827711345398,
+          0.8859233216227709
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.8868232191404491,
+            "hit1": 1.0,
+            "mrr10": 1.0,
+            "recall5": 0.7385057471264368,
+            "precision3": 0.574712643678161
+          },
+          "paraphrase": {
+            "ndcg5": 0.7991120326534549,
+            "hit1": 0.7931034482758621,
+            "mrr10": 0.8741379310344828,
+            "recall5": 0.721264367816092,
+            "precision3": 0.5747126436781609
+          }
+        }
+      },
+      "PT_PT": {
+        "ndcg5": 0.7889051294014288,
+        "hit1": 0.7758620689655172,
+        "mrr10": 0.8599137931034483,
+        "recall5": 0.699712643678161,
+        "precision3": 0.5402298850574712,
+        "ndcg5_ci95": [
+          0.7333917348117978,
+          0.8439099699908034
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.8761106585241043,
+            "hit1": 0.9310344827586207,
+            "mrr10": 0.9597701149425288,
+            "recall5": 0.7528735632183909,
+            "precision3": 0.574712643678161
+          },
+          "paraphrase": {
+            "ndcg5": 0.7016996002787532,
+            "hit1": 0.6206896551724138,
+            "mrr10": 0.7600574712643677,
+            "recall5": 0.646551724137931,
+            "precision3": 0.5057471264367815
+          }
+        }
+      }
+    },
+    "w2v-lee-cbow": {
+      "PT_EN": {
+        "ndcg5": 0.09970286780406007,
+        "hit1": 0.02254641909814323,
+        "mrr10": 0.09756128458487806,
+        "recall5": 0.14301503094606544,
+        "precision3": 0.07029177718832891,
+        "ndcg5_ci95": [
+          0.07139943360425077,
+          0.13537230939886724
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.11841680033408078,
+            "hit1": 0.02564102564102564,
+            "mrr10": 0.1141776855932936,
+            "recall5": 0.15473032714412024,
+            "precision3": 0.07515473032714413
+          },
+          "paraphrase": {
+            "ndcg5": 0.08098893527403934,
+            "hit1": 0.01945181255526083,
+            "mrr10": 0.08094488357646253,
+            "recall5": 0.1312997347480106,
+            "precision3": 0.06542882404951371
+          }
+        }
+      },
+      "EN_EN": {
+        "ndcg5": 0.29933179928844317,
+        "hit1": 0.25862068965517243,
+        "mrr10": 0.3540708812260537,
+        "recall5": 0.25862068965517243,
+        "precision3": 0.1839080459770115,
+        "ndcg5_ci95": [
+          0.22615057406334577,
+          0.3777502974241025
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.44097356455502434,
+            "hit1": 0.4482758620689655,
+            "mrr10": 0.5268199233716475,
+            "recall5": 0.3591954022988506,
+            "precision3": 0.264367816091954
+          },
+          "paraphrase": {
+            "ndcg5": 0.15769003402186213,
+            "hit1": 0.06896551724137931,
+            "mrr10": 0.1813218390804598,
+            "recall5": 0.15804597701149425,
+            "precision3": 0.10344827586206896
+          }
+        }
+      },
+      "PT_PT": {
+        "ndcg5": 0.12112289750060011,
+        "hit1": 0.0713969938107869,
+        "mrr10": 0.13592175712638507,
+        "recall5": 0.14588859416445624,
+        "precision3": 0.09040671971706453,
+        "ndcg5_ci95": [
+          0.07611890927000069,
+          0.1770084767614059
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.13507836915533142,
+            "hit1": 0.07736516357206012,
+            "mrr10": 0.14846887333275716,
+            "recall5": 0.15856174476864135,
+            "precision3": 0.10389036251105219
+          },
+          "paraphrase": {
+            "ndcg5": 0.10716742584586882,
+            "hit1": 0.06542882404951368,
+            "mrr10": 0.12337464092001298,
+            "recall5": 0.13321544356027112,
+            "precision3": 0.07692307692307693
+          }
+        }
+      }
+    },
+    "w2v-lee-sg": {
+      "PT_EN": {
+        "ndcg5": 0.08514642627536277,
+        "hit1": 0.02254641909814323,
+        "mrr10": 0.08285821945077844,
+        "recall5": 0.1401414677276746,
+        "precision3": 0.07029177718832891,
+        "ndcg5_ci95": [
+          0.06921518367155531,
+          0.10153043658887197
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.0764757135963835,
+            "hit1": 0.02564102564102564,
+            "mrr10": 0.08783668942471119,
+            "recall5": 0.10875331564986737,
+            "precision3": 0.052166224580017684
+          },
+          "paraphrase": {
+            "ndcg5": 0.09381713895434206,
+            "hit1": 0.01945181255526083,
+            "mrr10": 0.07787974947684567,
+            "recall5": 0.17152961980548187,
+            "precision3": 0.08841732979664013
+          }
+        }
+      },
+      "EN_EN": {
+        "ndcg5": 0.19274833612053346,
+        "hit1": 0.1206896551724138,
+        "mrr10": 0.23794471811713194,
+        "recall5": 0.19971264367816094,
+        "precision3": 0.13793103448275862,
+        "ndcg5_ci95": [
+          0.12719623398423435,
+          0.2598268670519104
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.2199719384617804,
+            "hit1": 0.1724137931034483,
+            "mrr10": 0.29619594964422546,
+            "recall5": 0.21264367816091953,
+            "precision3": 0.12643678160919541
+          },
+          "paraphrase": {
+            "ndcg5": 0.1655247337792865,
+            "hit1": 0.06896551724137931,
+            "mrr10": 0.1796934865900383,
+            "recall5": 0.18678160919540232,
+            "precision3": 0.14942528735632182
+          }
+        }
+      },
+      "PT_PT": {
+        "ndcg5": 0.1255666990074037,
+        "hit1": 0.0713969938107869,
+        "mrr10": 0.13814078650058687,
+        "recall5": 0.14780430297671676,
+        "precision3": 0.09136457412319479,
+        "ndcg5_ci95": [
+          0.0816338148809084,
+          0.18107290006060928
+        ],
+        "by_style": {
+          "literal": {
+            "ndcg5": 0.1330905016235964,
+            "hit1": 0.07736516357206012,
+            "mrr10": 0.15421599976953881,
+            "recall5": 0.1470674918950781,
+            "precision3": 0.09239610963748897
+          },
+          "paraphrase": {
+            "ndcg5": 0.11804289639121104,
+            "hit1": 0.06542882404951368,
+            "mrr10": 0.12206557323163494,
+            "recall5": 0.14854111405835546,
+            "precision3": 0.09033303860890068
+          }
+        }
+      }
+    }
+  },
+  "winner_paired_differences": {
+    "tfidf": {
+      "mean_difference_ndcg5": 0.6785404655581654,
+      "ci95": [
+        0.6049295728351445,
+        0.7491992027421182
+      ]
+    },
+    "glove": {
+      "mean_difference_ndcg5": 0.6902106626280241,
+      "ci95": [
+        0.6022125035504238,
+        0.7699845251019426
+      ]
+    },
+    "fasttext": {
+      "mean_difference_ndcg5": 0.6577202801724858,
+      "ci95": [
+        0.5617902343788257,
+        0.7477069732453882
+      ]
+    },
+    "w2v-cbow": {
+      "mean_difference_ndcg5": 0.7216407262750937,
+      "ci95": [
+        0.6546859711007597,
+        0.7831943187374567
+      ]
+    },
+    "w2v-sg": {
+      "mean_difference_ndcg5": 0.7210335395359114,
+      "ci95": [
+        0.6354865674699486,
+        0.7984718966233173
+      ]
+    }
+  },
+  "uninformed_tie_baseline": {
+    "ndcg5": 0.09074923432188121,
+    "hit1": 0.03359858532272325,
+    "mrr10": 0.09544770783427771,
+    "recall5": 0.12820512820512822,
+    "precision3": 0.0680813439434129
+  },
+  "metadata": {
+    "tfidf": {
+      "model": "tfidf",
+      "scenarios": {
+        "PT_EN": {
+          "query_language": "pt",
+          "catalog_language": "en",
+          "dimension": 1793,
+          "encoding_cached_seconds": 0.04249530200013396,
+          "score_matrix_seconds": 0.009116401000028418,
+          "zero_query_vectors": 33,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.035202086049543675,
+          "in_vocabulary_query_token_fraction": 0.035202086049543675
+        },
+        "EN_EN": {
+          "query_language": "en",
+          "catalog_language": "en",
+          "dimension": 1793,
+          "encoding_cached_seconds": 0.02036910100014211,
+          "score_matrix_seconds": 0.013103299999784213,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.7203856749311295,
+          "in_vocabulary_query_token_fraction": 0.7203856749311295
+        },
+        "PT_PT": {
+          "query_language": "pt",
+          "catalog_language": "pt",
+          "dimension": 1763,
+          "encoding_cached_seconds": 0.021523301000343054,
+          "score_matrix_seconds": 0.006299000000581145,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.7027379400260756,
+          "in_vocabulary_query_token_fraction": 0.7027379400260756
+        }
+      },
+      "catalog_ids": [
+        "1",
+        "6",
+        "19",
+        "20",
+        "21",
+        "30",
+        "5114",
+        "1535",
+        "9253",
+        "16498",
+        "11757",
+        "17265",
+        "31240",
+        "31964",
+        "30276",
+        "32182",
+        "1575",
+        "13601",
+        "43",
+        "205",
+        "38000",
+        "40748",
+        "457",
+        "4081",
+        "20583",
+        "11771",
+        "170",
+        "31646",
+        "10800",
+        "23273",
+        "5680",
+        "47917",
+        "4224",
+        "28851",
+        "32281",
+        "33352",
+        "199",
+        "164",
+        "918"
+      ],
+      "query_ids": [
+        "I01-literal",
+        "I01-paraphrase",
+        "I02-literal",
+        "I02-paraphrase",
+        "I03-literal",
+        "I03-paraphrase",
+        "I04-literal",
+        "I04-paraphrase",
+        "I05-literal",
+        "I05-paraphrase",
+        "I06-literal",
+        "I06-paraphrase",
+        "I07-literal",
+        "I07-paraphrase",
+        "I08-literal",
+        "I08-paraphrase",
+        "I09-literal",
+        "I09-paraphrase",
+        "I10-literal",
+        "I10-paraphrase",
+        "I11-literal",
+        "I11-paraphrase",
+        "I12-literal",
+        "I12-paraphrase",
+        "I13-literal",
+        "I13-paraphrase",
+        "I14-literal",
+        "I14-paraphrase",
+        "I15-literal",
+        "I15-paraphrase",
+        "I16-literal",
+        "I16-paraphrase",
+        "I17-literal",
+        "I17-paraphrase",
+        "I18-literal",
+        "I18-paraphrase",
+        "I19-literal",
+        "I19-paraphrase",
+        "I20-literal",
+        "I20-paraphrase",
+        "I21-literal",
+        "I21-paraphrase",
+        "I22-literal",
+        "I22-paraphrase",
+        "I23-literal",
+        "I23-paraphrase",
+        "I24-literal",
+        "I24-paraphrase",
+        "I25-literal",
+        "I25-paraphrase",
+        "I26-literal",
+        "I26-paraphrase",
+        "I27-literal",
+        "I27-paraphrase",
+        "I28-literal",
+        "I28-paraphrase",
+        "I29-literal",
+        "I29-paraphrase"
+      ],
+      "unique_texts": 194,
+      "tokenizer": "NFKC + casefold + letras Unicode; sem stemming ou stopwords",
+      "data_sha256": {
+        "catalogo.json": "ab9ad7da419d88c4cf74534df8bb2cd4125bc09d0dde265687deab71b44db465",
+        "consultas.json": "85a612ea050857506875f20a55d6b770809d28864300026e067becfc01d9bb36",
+        "relevancia.csv": "754064a65be8896228f1ecd06cf0fac32615179ace3608f287d4a354fcded80e"
+      },
+      "load_seconds": 2.2421150069994837,
+      "lexical_or_text_cache_seconds": 3.1999998100218363e-06,
+      "worker_seconds_before_hash": 2.361546413000724,
+      "source_path": "TF-IDF fitted on catalog only",
+      "timing_note": "Lote completo com cache; nao latencia online por consulta. load inclui imports e leitura; cache inclui termos das consultas.",
+      "max_rss_kib": 123420
+    },
+    "glove": {
+      "model": "glove",
+      "scenarios": {
+        "PT_EN": {
+          "query_language": "pt",
+          "catalog_language": "en",
+          "dimension": 50,
+          "encoding_cached_seconds": 0.022628599999734433,
+          "score_matrix_seconds": 0.00025890000051731477,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.4511082138200782,
+          "in_vocabulary_query_token_fraction": 0.4511082138200782
+        },
+        "EN_EN": {
+          "query_language": "en",
+          "catalog_language": "en",
+          "dimension": 50,
+          "encoding_cached_seconds": 0.03698670099947776,
+          "score_matrix_seconds": 6.709999979648273e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.9931129476584022,
+          "in_vocabulary_query_token_fraction": 0.9931129476584022
+        },
+        "PT_PT": {
+          "query_language": "pt",
+          "catalog_language": "pt",
+          "dimension": 50,
+          "encoding_cached_seconds": 0.032238100000540726,
+          "score_matrix_seconds": 5.2800000048591755e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.4511082138200782,
+          "in_vocabulary_query_token_fraction": 0.4511082138200782
+        }
+      },
+      "catalog_ids": [
+        "1",
+        "6",
+        "19",
+        "20",
+        "21",
+        "30",
+        "5114",
+        "1535",
+        "9253",
+        "16498",
+        "11757",
+        "17265",
+        "31240",
+        "31964",
+        "30276",
+        "32182",
+        "1575",
+        "13601",
+        "43",
+        "205",
+        "38000",
+        "40748",
+        "457",
+        "4081",
+        "20583",
+        "11771",
+        "170",
+        "31646",
+        "10800",
+        "23273",
+        "5680",
+        "47917",
+        "4224",
+        "28851",
+        "32281",
+        "33352",
+        "199",
+        "164",
+        "918"
+      ],
+      "query_ids": [
+        "I01-literal",
+        "I01-paraphrase",
+        "I02-literal",
+        "I02-paraphrase",
+        "I03-literal",
+        "I03-paraphrase",
+        "I04-literal",
+        "I04-paraphrase",
+        "I05-literal",
+        "I05-paraphrase",
+        "I06-literal",
+        "I06-paraphrase",
+        "I07-literal",
+        "I07-paraphrase",
+        "I08-literal",
+        "I08-paraphrase",
+        "I09-literal",
+        "I09-paraphrase",
+        "I10-literal",
+        "I10-paraphrase",
+        "I11-literal",
+        "I11-paraphrase",
+        "I12-literal",
+        "I12-paraphrase",
+        "I13-literal",
+        "I13-paraphrase",
+        "I14-literal",
+        "I14-paraphrase",
+        "I15-literal",
+        "I15-paraphrase",
+        "I16-literal",
+        "I16-paraphrase",
+        "I17-literal",
+        "I17-paraphrase",
+        "I18-literal",
+        "I18-paraphrase",
+        "I19-literal",
+        "I19-paraphrase",
+        "I20-literal",
+        "I20-paraphrase",
+        "I21-literal",
+        "I21-paraphrase",
+        "I22-literal",
+        "I22-paraphrase",
+        "I23-literal",
+        "I23-paraphrase",
+        "I24-literal",
+        "I24-paraphrase",
+        "I25-literal",
+        "I25-paraphrase",
+        "I26-literal",
+        "I26-paraphrase",
+        "I27-literal",
+        "I27-paraphrase",
+        "I28-literal",
+        "I28-paraphrase",
+        "I29-literal",
+        "I29-paraphrase"
+      ],
+      "unique_texts": 194,
+      "tokenizer": "NFKC + casefold + letras Unicode; sem stemming ou stopwords",
+      "data_sha256": {
+        "catalogo.json": "ab9ad7da419d88c4cf74534df8bb2cd4125bc09d0dde265687deab71b44db465",
+        "consultas.json": "85a612ea050857506875f20a55d6b770809d28864300026e067becfc01d9bb36",
+        "relevancia.csv": "754064a65be8896228f1ecd06cf0fac32615179ace3608f287d4a354fcded80e"
+      },
+      "load_seconds": 0.1216623010004696,
+      "lexical_or_text_cache_seconds": 1.600000359758269e-06,
+      "worker_seconds_before_hash": 0.2231395019998672,
+      "source_path": "/home/lucas/tcc-lab/GloVe/vectors.txt",
+      "model_sha256": "d8f402a311d9a7971d837116f707baae88d0c276ff989aa972d3d6b55f944d73",
+      "timing_note": "Lote completo com cache; nao latencia online por consulta. load inclui imports e leitura; cache inclui termos das consultas.",
+      "max_rss_kib": 38524
+    },
+    "fasttext": {
+      "model": "fasttext",
+      "scenarios": {
+        "PT_EN": {
+          "query_language": "pt",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.036748000000443426,
+          "score_matrix_seconds": 0.00032499999997526174,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 1.0,
+          "in_vocabulary_query_token_fraction": 0.5332464146023468
+        },
+        "EN_EN": {
+          "query_language": "en",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.03330430099958903,
+          "score_matrix_seconds": 0.0014897000000928529,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 1.0,
+          "in_vocabulary_query_token_fraction": 1.0
+        },
+        "PT_PT": {
+          "query_language": "pt",
+          "catalog_language": "pt",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.038059599999542115,
+          "score_matrix_seconds": 5.760000021837186e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 1.0,
+          "in_vocabulary_query_token_fraction": 0.5332464146023468
+        }
+      },
+      "catalog_ids": [
+        "1",
+        "6",
+        "19",
+        "20",
+        "21",
+        "30",
+        "5114",
+        "1535",
+        "9253",
+        "16498",
+        "11757",
+        "17265",
+        "31240",
+        "31964",
+        "30276",
+        "32182",
+        "1575",
+        "13601",
+        "43",
+        "205",
+        "38000",
+        "40748",
+        "457",
+        "4081",
+        "20583",
+        "11771",
+        "170",
+        "31646",
+        "10800",
+        "23273",
+        "5680",
+        "47917",
+        "4224",
+        "28851",
+        "32281",
+        "33352",
+        "199",
+        "164",
+        "918"
+      ],
+      "query_ids": [
+        "I01-literal",
+        "I01-paraphrase",
+        "I02-literal",
+        "I02-paraphrase",
+        "I03-literal",
+        "I03-paraphrase",
+        "I04-literal",
+        "I04-paraphrase",
+        "I05-literal",
+        "I05-paraphrase",
+        "I06-literal",
+        "I06-paraphrase",
+        "I07-literal",
+        "I07-paraphrase",
+        "I08-literal",
+        "I08-paraphrase",
+        "I09-literal",
+        "I09-paraphrase",
+        "I10-literal",
+        "I10-paraphrase",
+        "I11-literal",
+        "I11-paraphrase",
+        "I12-literal",
+        "I12-paraphrase",
+        "I13-literal",
+        "I13-paraphrase",
+        "I14-literal",
+        "I14-paraphrase",
+        "I15-literal",
+        "I15-paraphrase",
+        "I16-literal",
+        "I16-paraphrase",
+        "I17-literal",
+        "I17-paraphrase",
+        "I18-literal",
+        "I18-paraphrase",
+        "I19-literal",
+        "I19-paraphrase",
+        "I20-literal",
+        "I20-paraphrase",
+        "I21-literal",
+        "I21-paraphrase",
+        "I22-literal",
+        "I22-paraphrase",
+        "I23-literal",
+        "I23-paraphrase",
+        "I24-literal",
+        "I24-paraphrase",
+        "I25-literal",
+        "I25-paraphrase",
+        "I26-literal",
+        "I26-paraphrase",
+        "I27-literal",
+        "I27-paraphrase",
+        "I28-literal",
+        "I28-paraphrase",
+        "I29-literal",
+        "I29-paraphrase"
+      ],
+      "unique_texts": 194,
+      "tokenizer": "NFKC + casefold + letras Unicode; sem stemming ou stopwords",
+      "data_sha256": {
+        "catalogo.json": "ab9ad7da419d88c4cf74534df8bb2cd4125bc09d0dde265687deab71b44db465",
+        "consultas.json": "85a612ea050857506875f20a55d6b770809d28864300026e067becfc01d9bb36",
+        "relevancia.csv": "754064a65be8896228f1ecd06cf0fac32615179ace3608f287d4a354fcded80e"
+      },
+      "load_seconds": 3.7356654390005133,
+      "lexical_or_text_cache_seconds": 0.32658150299994304,
+      "worker_seconds_before_hash": 4.354269645000386,
+      "source_path": "/home/lucas/tcc-lab/fastText/result/fil9.bin",
+      "model_sha256": "96b25667edd6579223bd0d45fb37e38f95d75813657ef6b1951dab225faebc7e",
+      "timing_note": "Lote completo com cache; nao latencia online por consulta. load inclui imports e leitura; cache inclui termos das consultas.",
+      "max_rss_kib": 1091380
+    },
+    "w2v-cbow": {
+      "model": "w2v-cbow",
+      "scenarios": {
+        "PT_EN": {
+          "query_language": "pt",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.019456699000329536,
+          "score_matrix_seconds": 0.00032760000067355577,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.4511082138200782,
+          "in_vocabulary_query_token_fraction": 0.4511082138200782
+        },
+        "EN_EN": {
+          "query_language": "en",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.030982897000285448,
+          "score_matrix_seconds": 6.42000004518195e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.9931129476584022,
+          "in_vocabulary_query_token_fraction": 0.9931129476584022
+        },
+        "PT_PT": {
+          "query_language": "pt",
+          "catalog_language": "pt",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.017111899000155972,
+          "score_matrix_seconds": 6.490000032499665e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.4511082138200782,
+          "in_vocabulary_query_token_fraction": 0.4511082138200782
+        }
+      },
+      "catalog_ids": [
+        "1",
+        "6",
+        "19",
+        "20",
+        "21",
+        "30",
+        "5114",
+        "1535",
+        "9253",
+        "16498",
+        "11757",
+        "17265",
+        "31240",
+        "31964",
+        "30276",
+        "32182",
+        "1575",
+        "13601",
+        "43",
+        "205",
+        "38000",
+        "40748",
+        "457",
+        "4081",
+        "20583",
+        "11771",
+        "170",
+        "31646",
+        "10800",
+        "23273",
+        "5680",
+        "47917",
+        "4224",
+        "28851",
+        "32281",
+        "33352",
+        "199",
+        "164",
+        "918"
+      ],
+      "query_ids": [
+        "I01-literal",
+        "I01-paraphrase",
+        "I02-literal",
+        "I02-paraphrase",
+        "I03-literal",
+        "I03-paraphrase",
+        "I04-literal",
+        "I04-paraphrase",
+        "I05-literal",
+        "I05-paraphrase",
+        "I06-literal",
+        "I06-paraphrase",
+        "I07-literal",
+        "I07-paraphrase",
+        "I08-literal",
+        "I08-paraphrase",
+        "I09-literal",
+        "I09-paraphrase",
+        "I10-literal",
+        "I10-paraphrase",
+        "I11-literal",
+        "I11-paraphrase",
+        "I12-literal",
+        "I12-paraphrase",
+        "I13-literal",
+        "I13-paraphrase",
+        "I14-literal",
+        "I14-paraphrase",
+        "I15-literal",
+        "I15-paraphrase",
+        "I16-literal",
+        "I16-paraphrase",
+        "I17-literal",
+        "I17-paraphrase",
+        "I18-literal",
+        "I18-paraphrase",
+        "I19-literal",
+        "I19-paraphrase",
+        "I20-literal",
+        "I20-paraphrase",
+        "I21-literal",
+        "I21-paraphrase",
+        "I22-literal",
+        "I22-paraphrase",
+        "I23-literal",
+        "I23-paraphrase",
+        "I24-literal",
+        "I24-paraphrase",
+        "I25-literal",
+        "I25-paraphrase",
+        "I26-literal",
+        "I26-paraphrase",
+        "I27-literal",
+        "I27-paraphrase",
+        "I28-literal",
+        "I28-paraphrase",
+        "I29-literal",
+        "I29-paraphrase"
+      ],
+      "unique_texts": 194,
+      "tokenizer": "NFKC + casefold + letras Unicode; sem stemming ou stopwords",
+      "data_sha256": {
+        "catalogo.json": "ab9ad7da419d88c4cf74534df8bb2cd4125bc09d0dde265687deab71b44db465",
+        "consultas.json": "85a612ea050857506875f20a55d6b770809d28864300026e067becfc01d9bb36",
+        "relevancia.csv": "754064a65be8896228f1ecd06cf0fac32615179ace3608f287d4a354fcded80e"
+      },
+      "load_seconds": 6.057716135999726,
+      "lexical_or_text_cache_seconds": 2.70000055024866e-06,
+      "worker_seconds_before_hash": 6.1353963310002655,
+      "source_path": "/home/lucas/tcc-lab/Word2Vec/models/text8-cbow-100d.model",
+      "model_sha256": "361bb79a35ff5ed3173869833f41d247f02b49aedf101ff4d2dba050c5d0c0ea",
+      "timing_note": "Lote completo com cache; nao latencia online por consulta. load inclui imports e leitura; cache inclui termos das consultas.",
+      "max_rss_kib": 175640
+    },
+    "w2v-sg": {
+      "model": "w2v-sg",
+      "scenarios": {
+        "PT_EN": {
+          "query_language": "pt",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.017242500000065775,
+          "score_matrix_seconds": 0.00023599999985890463,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.4511082138200782,
+          "in_vocabulary_query_token_fraction": 0.4511082138200782
+        },
+        "EN_EN": {
+          "query_language": "en",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.019303099999888218,
+          "score_matrix_seconds": 8.569999954488594e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.9931129476584022,
+          "in_vocabulary_query_token_fraction": 0.9931129476584022
+        },
+        "PT_PT": {
+          "query_language": "pt",
+          "catalog_language": "pt",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.013150701000085974,
+          "score_matrix_seconds": 5.63000003239722e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.4511082138200782,
+          "in_vocabulary_query_token_fraction": 0.4511082138200782
+        }
+      },
+      "catalog_ids": [
+        "1",
+        "6",
+        "19",
+        "20",
+        "21",
+        "30",
+        "5114",
+        "1535",
+        "9253",
+        "16498",
+        "11757",
+        "17265",
+        "31240",
+        "31964",
+        "30276",
+        "32182",
+        "1575",
+        "13601",
+        "43",
+        "205",
+        "38000",
+        "40748",
+        "457",
+        "4081",
+        "20583",
+        "11771",
+        "170",
+        "31646",
+        "10800",
+        "23273",
+        "5680",
+        "47917",
+        "4224",
+        "28851",
+        "32281",
+        "33352",
+        "199",
+        "164",
+        "918"
+      ],
+      "query_ids": [
+        "I01-literal",
+        "I01-paraphrase",
+        "I02-literal",
+        "I02-paraphrase",
+        "I03-literal",
+        "I03-paraphrase",
+        "I04-literal",
+        "I04-paraphrase",
+        "I05-literal",
+        "I05-paraphrase",
+        "I06-literal",
+        "I06-paraphrase",
+        "I07-literal",
+        "I07-paraphrase",
+        "I08-literal",
+        "I08-paraphrase",
+        "I09-literal",
+        "I09-paraphrase",
+        "I10-literal",
+        "I10-paraphrase",
+        "I11-literal",
+        "I11-paraphrase",
+        "I12-literal",
+        "I12-paraphrase",
+        "I13-literal",
+        "I13-paraphrase",
+        "I14-literal",
+        "I14-paraphrase",
+        "I15-literal",
+        "I15-paraphrase",
+        "I16-literal",
+        "I16-paraphrase",
+        "I17-literal",
+        "I17-paraphrase",
+        "I18-literal",
+        "I18-paraphrase",
+        "I19-literal",
+        "I19-paraphrase",
+        "I20-literal",
+        "I20-paraphrase",
+        "I21-literal",
+        "I21-paraphrase",
+        "I22-literal",
+        "I22-paraphrase",
+        "I23-literal",
+        "I23-paraphrase",
+        "I24-literal",
+        "I24-paraphrase",
+        "I25-literal",
+        "I25-paraphrase",
+        "I26-literal",
+        "I26-paraphrase",
+        "I27-literal",
+        "I27-paraphrase",
+        "I28-literal",
+        "I28-paraphrase",
+        "I29-literal",
+        "I29-paraphrase"
+      ],
+      "unique_texts": 194,
+      "tokenizer": "NFKC + casefold + letras Unicode; sem stemming ou stopwords",
+      "data_sha256": {
+        "catalogo.json": "ab9ad7da419d88c4cf74534df8bb2cd4125bc09d0dde265687deab71b44db465",
+        "consultas.json": "85a612ea050857506875f20a55d6b770809d28864300026e067becfc01d9bb36",
+        "relevancia.csv": "754064a65be8896228f1ecd06cf0fac32615179ace3608f287d4a354fcded80e"
+      },
+      "load_seconds": 2.7839056909997453,
+      "lexical_or_text_cache_seconds": 1.5999994502635673e-06,
+      "worker_seconds_before_hash": 2.8413877929997398,
+      "source_path": "/home/lucas/tcc-lab/Word2Vec/models/text8-skipgram-100d.model",
+      "model_sha256": "4d71198c01b74bb0557aa48efaa0a3ff10403a77310791d72d0fc2793f5a230b",
+      "timing_note": "Lote completo com cache; nao latencia online por consulta. load inclui imports e leitura; cache inclui termos das consultas.",
+      "max_rss_kib": 175796
+    },
+    "minilm": {
+      "model": "minilm",
+      "scenarios": {
+        "PT_EN": {
+          "query_language": "pt",
+          "catalog_language": "en",
+          "dimension": 384,
+          "encoding_cached_seconds": 0.00020500000027823262,
+          "score_matrix_seconds": 0.0004590999997162726,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": null,
+          "in_vocabulary_query_token_fraction": null
+        },
+        "EN_EN": {
+          "query_language": "en",
+          "catalog_language": "en",
+          "dimension": 384,
+          "encoding_cached_seconds": 0.00016279999999824213,
+          "score_matrix_seconds": 9.419999969395576e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": null,
+          "in_vocabulary_query_token_fraction": null
+        },
+        "PT_PT": {
+          "query_language": "pt",
+          "catalog_language": "pt",
+          "dimension": 384,
+          "encoding_cached_seconds": 0.00014110000029177172,
+          "score_matrix_seconds": 7.650000043213367e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": null,
+          "in_vocabulary_query_token_fraction": null
+        }
+      },
+      "catalog_ids": [
+        "1",
+        "6",
+        "19",
+        "20",
+        "21",
+        "30",
+        "5114",
+        "1535",
+        "9253",
+        "16498",
+        "11757",
+        "17265",
+        "31240",
+        "31964",
+        "30276",
+        "32182",
+        "1575",
+        "13601",
+        "43",
+        "205",
+        "38000",
+        "40748",
+        "457",
+        "4081",
+        "20583",
+        "11771",
+        "170",
+        "31646",
+        "10800",
+        "23273",
+        "5680",
+        "47917",
+        "4224",
+        "28851",
+        "32281",
+        "33352",
+        "199",
+        "164",
+        "918"
+      ],
+      "query_ids": [
+        "I01-literal",
+        "I01-paraphrase",
+        "I02-literal",
+        "I02-paraphrase",
+        "I03-literal",
+        "I03-paraphrase",
+        "I04-literal",
+        "I04-paraphrase",
+        "I05-literal",
+        "I05-paraphrase",
+        "I06-literal",
+        "I06-paraphrase",
+        "I07-literal",
+        "I07-paraphrase",
+        "I08-literal",
+        "I08-paraphrase",
+        "I09-literal",
+        "I09-paraphrase",
+        "I10-literal",
+        "I10-paraphrase",
+        "I11-literal",
+        "I11-paraphrase",
+        "I12-literal",
+        "I12-paraphrase",
+        "I13-literal",
+        "I13-paraphrase",
+        "I14-literal",
+        "I14-paraphrase",
+        "I15-literal",
+        "I15-paraphrase",
+        "I16-literal",
+        "I16-paraphrase",
+        "I17-literal",
+        "I17-paraphrase",
+        "I18-literal",
+        "I18-paraphrase",
+        "I19-literal",
+        "I19-paraphrase",
+        "I20-literal",
+        "I20-paraphrase",
+        "I21-literal",
+        "I21-paraphrase",
+        "I22-literal",
+        "I22-paraphrase",
+        "I23-literal",
+        "I23-paraphrase",
+        "I24-literal",
+        "I24-paraphrase",
+        "I25-literal",
+        "I25-paraphrase",
+        "I26-literal",
+        "I26-paraphrase",
+        "I27-literal",
+        "I27-paraphrase",
+        "I28-literal",
+        "I28-paraphrase",
+        "I29-literal",
+        "I29-paraphrase"
+      ],
+      "unique_texts": 194,
+      "tokenizer": "NFKC + casefold + letras Unicode; sem stemming ou stopwords",
+      "data_sha256": {
+        "catalogo.json": "ab9ad7da419d88c4cf74534df8bb2cd4125bc09d0dde265687deab71b44db465",
+        "consultas.json": "85a612ea050857506875f20a55d6b770809d28864300026e067becfc01d9bb36",
+        "relevancia.csv": "754064a65be8896228f1ecd06cf0fac32615179ace3608f287d4a354fcded80e"
+      },
+      "token_lengths": {
+        "max": 60,
+        "min": 12,
+        "model_limit": 128,
+        "truncated": 0
+      },
+      "load_seconds": 16.85476549300074,
+      "lexical_or_text_cache_seconds": 6.43692695900063,
+      "worker_seconds_before_hash": 23.295466952000424,
+      "source_path": "/home/lucas/tcc-lab/SentenceTransformers/models/paraphrase-multilingual-MiniLM-L12-v2",
+      "timing_note": "Lote completo com cache; nao latencia online por consulta. load inclui imports e leitura; cache inclui termos das consultas.",
+      "max_rss_kib": 941096
+    },
+    "w2v-lee-cbow": {
+      "model": "w2v-lee-cbow",
+      "scenarios": {
+        "PT_EN": {
+          "query_language": "pt",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.011822401000245009,
+          "score_matrix_seconds": 0.00021190000006754417,
+          "zero_query_vectors": 40,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.02607561929595828,
+          "in_vocabulary_query_token_fraction": 0.02607561929595828
+        },
+        "EN_EN": {
+          "query_language": "en",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.014442200000303274,
+          "score_matrix_seconds": 5.960000089544337e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.5426997245179064,
+          "in_vocabulary_query_token_fraction": 0.5426997245179064
+        },
+        "PT_PT": {
+          "query_language": "pt",
+          "catalog_language": "pt",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.004704700000729645,
+          "score_matrix_seconds": 5.0800000281014945e-05,
+          "zero_query_vectors": 40,
+          "zero_document_vectors": 25,
+          "usable_query_token_fraction": 0.02607561929595828,
+          "in_vocabulary_query_token_fraction": 0.02607561929595828
+        }
+      },
+      "catalog_ids": [
+        "1",
+        "6",
+        "19",
+        "20",
+        "21",
+        "30",
+        "5114",
+        "1535",
+        "9253",
+        "16498",
+        "11757",
+        "17265",
+        "31240",
+        "31964",
+        "30276",
+        "32182",
+        "1575",
+        "13601",
+        "43",
+        "205",
+        "38000",
+        "40748",
+        "457",
+        "4081",
+        "20583",
+        "11771",
+        "170",
+        "31646",
+        "10800",
+        "23273",
+        "5680",
+        "47917",
+        "4224",
+        "28851",
+        "32281",
+        "33352",
+        "199",
+        "164",
+        "918"
+      ],
+      "query_ids": [
+        "I01-literal",
+        "I01-paraphrase",
+        "I02-literal",
+        "I02-paraphrase",
+        "I03-literal",
+        "I03-paraphrase",
+        "I04-literal",
+        "I04-paraphrase",
+        "I05-literal",
+        "I05-paraphrase",
+        "I06-literal",
+        "I06-paraphrase",
+        "I07-literal",
+        "I07-paraphrase",
+        "I08-literal",
+        "I08-paraphrase",
+        "I09-literal",
+        "I09-paraphrase",
+        "I10-literal",
+        "I10-paraphrase",
+        "I11-literal",
+        "I11-paraphrase",
+        "I12-literal",
+        "I12-paraphrase",
+        "I13-literal",
+        "I13-paraphrase",
+        "I14-literal",
+        "I14-paraphrase",
+        "I15-literal",
+        "I15-paraphrase",
+        "I16-literal",
+        "I16-paraphrase",
+        "I17-literal",
+        "I17-paraphrase",
+        "I18-literal",
+        "I18-paraphrase",
+        "I19-literal",
+        "I19-paraphrase",
+        "I20-literal",
+        "I20-paraphrase",
+        "I21-literal",
+        "I21-paraphrase",
+        "I22-literal",
+        "I22-paraphrase",
+        "I23-literal",
+        "I23-paraphrase",
+        "I24-literal",
+        "I24-paraphrase",
+        "I25-literal",
+        "I25-paraphrase",
+        "I26-literal",
+        "I26-paraphrase",
+        "I27-literal",
+        "I27-paraphrase",
+        "I28-literal",
+        "I28-paraphrase",
+        "I29-literal",
+        "I29-paraphrase"
+      ],
+      "unique_texts": 194,
+      "tokenizer": "NFKC + casefold + letras Unicode; sem stemming ou stopwords",
+      "data_sha256": {
+        "catalogo.json": "ab9ad7da419d88c4cf74534df8bb2cd4125bc09d0dde265687deab71b44db465",
+        "consultas.json": "85a612ea050857506875f20a55d6b770809d28864300026e067becfc01d9bb36",
+        "relevancia.csv": "754064a65be8896228f1ecd06cf0fac32615179ace3608f287d4a354fcded80e"
+      },
+      "load_seconds": 1.7814963009996063,
+      "lexical_or_text_cache_seconds": 1.6999993022182025e-06,
+      "worker_seconds_before_hash": 1.8170495029999074,
+      "source_path": "/home/lucas/tcc-lab/Word2Vec/models/lee-cbow.model",
+      "model_sha256": "b6cc8c9598ad82c5624ee54c67d7c3db8b33df6754a5ef8ec47faefd67dbd3a7",
+      "timing_note": "Lote completo com cache; nao latencia online por consulta. load inclui imports e leitura; cache inclui termos das consultas.",
+      "max_rss_kib": 112376
+    },
+    "w2v-lee-sg": {
+      "model": "w2v-lee-sg",
+      "scenarios": {
+        "PT_EN": {
+          "query_language": "pt",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.008556001000215474,
+          "score_matrix_seconds": 0.0002009999998335843,
+          "zero_query_vectors": 40,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.02607561929595828,
+          "in_vocabulary_query_token_fraction": 0.02607561929595828
+        },
+        "EN_EN": {
+          "query_language": "en",
+          "catalog_language": "en",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.015682900999308913,
+          "score_matrix_seconds": 6.0599999414989725e-05,
+          "zero_query_vectors": 0,
+          "zero_document_vectors": 0,
+          "usable_query_token_fraction": 0.5426997245179064,
+          "in_vocabulary_query_token_fraction": 0.5426997245179064
+        },
+        "PT_PT": {
+          "query_language": "pt",
+          "catalog_language": "pt",
+          "dimension": 100,
+          "encoding_cached_seconds": 0.005595799999355222,
+          "score_matrix_seconds": 5.289999990054639e-05,
+          "zero_query_vectors": 40,
+          "zero_document_vectors": 25,
+          "usable_query_token_fraction": 0.02607561929595828,
+          "in_vocabulary_query_token_fraction": 0.02607561929595828
+        }
+      },
+      "catalog_ids": [
+        "1",
+        "6",
+        "19",
+        "20",
+        "21",
+        "30",
+        "5114",
+        "1535",
+        "9253",
+        "16498",
+        "11757",
+        "17265",
+        "31240",
+        "31964",
+        "30276",
+        "32182",
+        "1575",
+        "13601",
+        "43",
+        "205",
+        "38000",
+        "40748",
+        "457",
+        "4081",
+        "20583",
+        "11771",
+        "170",
+        "31646",
+        "10800",
+        "23273",
+        "5680",
+        "47917",
+        "4224",
+        "28851",
+        "32281",
+        "33352",
+        "199",
+        "164",
+        "918"
+      ],
+      "query_ids": [
+        "I01-literal",
+        "I01-paraphrase",
+        "I02-literal",
+        "I02-paraphrase",
+        "I03-literal",
+        "I03-paraphrase",
+        "I04-literal",
+        "I04-paraphrase",
+        "I05-literal",
+        "I05-paraphrase",
+        "I06-literal",
+        "I06-paraphrase",
+        "I07-literal",
+        "I07-paraphrase",
+        "I08-literal",
+        "I08-paraphrase",
+        "I09-literal",
+        "I09-paraphrase",
+        "I10-literal",
+        "I10-paraphrase",
+        "I11-literal",
+        "I11-paraphrase",
+        "I12-literal",
+        "I12-paraphrase",
+        "I13-literal",
+        "I13-paraphrase",
+        "I14-literal",
+        "I14-paraphrase",
+        "I15-literal",
+        "I15-paraphrase",
+        "I16-literal",
+        "I16-paraphrase",
+        "I17-literal",
+        "I17-paraphrase",
+        "I18-literal",
+        "I18-paraphrase",
+        "I19-literal",
+        "I19-paraphrase",
+        "I20-literal",
+        "I20-paraphrase",
+        "I21-literal",
+        "I21-paraphrase",
+        "I22-literal",
+        "I22-paraphrase",
+        "I23-literal",
+        "I23-paraphrase",
+        "I24-literal",
+        "I24-paraphrase",
+        "I25-literal",
+        "I25-paraphrase",
+        "I26-literal",
+        "I26-paraphrase",
+        "I27-literal",
+        "I27-paraphrase",
+        "I28-literal",
+        "I28-paraphrase",
+        "I29-literal",
+        "I29-paraphrase"
+      ],
+      "unique_texts": 194,
+      "tokenizer": "NFKC + casefold + letras Unicode; sem stemming ou stopwords",
+      "data_sha256": {
+        "catalogo.json": "ab9ad7da419d88c4cf74534df8bb2cd4125bc09d0dde265687deab71b44db465",
+        "consultas.json": "85a612ea050857506875f20a55d6b770809d28864300026e067becfc01d9bb36",
+        "relevancia.csv": "754064a65be8896228f1ecd06cf0fac32615179ace3608f287d4a354fcded80e"
+      },
+      "load_seconds": 1.5065104850000353,
+      "lexical_or_text_cache_seconds": 2.600000698294025e-06,
+      "worker_seconds_before_hash": 1.5408633870001722,
+      "source_path": "/home/lucas/tcc-lab/Word2Vec/models/lee-skipgram.model",
+      "model_sha256": "78103a8a6223121a04ccda177950b96a2b3b0d60898e37d44161c74e52373fa9",
+      "timing_note": "Lote completo com cache; nao latencia online por consulta. load inclui imports e leitura; cache inclui termos das consultas.",
+      "max_rss_kib": 112188
+    }
+  },
+  "qa": {
+    "ndcg_crosschecks": 1392,
+    "max_abs_difference_sklearn": 3.3306690738754696e-16,
+    "full_judgments": 2262,
+    "query_families": 29,
+    "bootstrap_repetitions": 5000,
+    "seed": 20261029,
+    "manual_tie_test_passed": true
+  },
+  "limitations": [
+    "AI-authored descriptions and qrels, no human validation",
+    "Convenience sample, curated plots and short descriptions",
+    "Different corpora, dimensions and pretraining budgets",
+    "Repeated paraphrases are paired within family",
+    "Diagnostic batch timings; not online latency or generalization evidence"
+  ]
+}

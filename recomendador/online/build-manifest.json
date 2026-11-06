@@ -1,0 +1,10 @@
+{
+  "count": 2495,
+  "sha256": "f25cf7d9f97c71ec53b18fc38fc61bc5a3615107a52cc535865eb8ada91f44a9",
+  "bytes": 11180791,
+  "private_profile_included": false,
+  "anilist_cache_included": false,
+  "full_synopses": true,
+  "model": "Word2Vec Skip-gram text8 100d",
+  "version": "ir-v7-guided-profile"
+}

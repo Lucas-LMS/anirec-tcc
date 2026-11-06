@@ -1,0 +1,162 @@
+{
+  "model": "qwen",
+  "command": [
+    "C:\\tcc-lab\\LLMs\\runtime-b12110\\llama-server.exe",
+    "-m",
+    "C:\\tcc-lab\\LLMs\\models\\Qwen3-0.6B-Q8_0.gguf",
+    "-c",
+    "2048",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-ngl",
+    "0",
+    "-np",
+    "1",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "57817",
+    "--reasoning",
+    "on"
+  ],
+  "pid": 20792,
+  "purpose": "Verificação funcional, não avaliação comparativa.",
+  "external_api_cost": 0,
+  "reasoning_mode": "on",
+  "max_tokens": 512,
+  "reasoning": "Condição funcional registrada; não é avaliação de classificação.",
+  "load_seconds": 1.1759564999956638,
+  "health": {
+    "status": "ok"
+  },
+  "requests": [
+    {
+      "language": "en",
+      "request": {
+        "model": "qwen",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is two plus two? Reply with just the number."
+          }
+        ],
+        "max_tokens": 512,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 20261105,
+        "stream": false,
+        "top_k": 20,
+        "min_p": 0,
+        "presence_penalty": 1.5,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        }
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "4",
+              "reasoning_content": "Okay, let's see. The question is \"What is two plus two?\" and they want the answer in just the number. Hmm, so I need to add two and two together. Let me think. Two plus two... if you have two apples and another two apples, then you have four apples total. So, mathematically, 2 + 2 equals 4. That makes sense. But wait, maybe there's something else here? Like, could it be a trick question? For example, in some contexts, adding numbers can have different interpretations? But no, I don't think so. The question is straightforward. Just two plus two. So the answer should be four.\n"
+            }
+          }
+        ],
+        "created": 1793898768,
+        "model": "C:\\tcc-lab\\LLMs\\models\\Qwen3-0.6B-Q8_0.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 147,
+          "prompt_tokens": 20,
+          "total_tokens": 167,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-A2utfyFXMHsK0NesjyqkEe2l4fTnkj4X",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 20,
+          "prompt_ms": 309.814,
+          "prompt_per_token_ms": 15.4907,
+          "prompt_per_second": 64.55486194942772,
+          "predicted_n": 147,
+          "predicted_ms": 4600.469,
+          "predicted_per_token_ms": 31.510061643835616,
+          "predicted_per_second": 31.735894753339277
+        }
+      },
+      "wall_seconds": 4.915065800014418,
+      "expected_number_present": true
+    },
+    {
+      "language": "pt",
+      "request": {
+        "model": "qwen",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Quanto é dois mais dois? Responda apenas o número."
+          }
+        ],
+        "max_tokens": 512,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 20261105,
+        "stream": false,
+        "top_k": 20,
+        "min_p": 0,
+        "presence_penalty": 1.5,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        }
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "4",
+              "reasoning_content": "Okay, the user is asking \"Quanto é dois mais dois?\" which translates to \"How much is two plus two?\" and wants only the number answer. Let me break this down.\n\nFirst, I need to confirm the mathematical operation here. Adding 2 and 2 together. The result should be 4. Since the question is straightforward and asking for a number, there's no ambiguity in the calculation. \n\nI should make sure there's no trick or hidden meaning in the question. \"Two plus two\" is a simple addition problem, so the answer is indeed 4. The user might be testing if I can recognize the basic arithmetic here. They want only the numerical value, so I need to present it as 4 without any extra words.\n\nI don't see any other possibilities. If they wanted something else, like \"how much is two plus two dollars?\" that would change the question, but in this case, it's just the number. So my response should be clear and direct.\n"
+            }
+          }
+        ],
+        "created": 1793898776,
+        "model": "C:\\tcc-lab\\LLMs\\models\\Qwen3-0.6B-Q8_0.gguf",
+        "system_fingerprint": "b12110-cd959bae9",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 209,
+          "prompt_tokens": 22,
+          "total_tokens": 231,
+          "prompt_tokens_details": {
+            "cached_tokens": 3
+          }
+        },
+        "id": "chatcmpl-ZE2EA63H1iDrc5iqECT5D5ACkt3fEvQn",
+        "timings": {
+          "cache_n": 3,
+          "prompt_n": 19,
+          "prompt_ms": 317.156,
+          "prompt_per_token_ms": 16.69242105263158,
+          "prompt_per_second": 59.90742725977121,
+          "predicted_n": 209,
+          "predicted_ms": 7455.486,
+          "predicted_per_token_ms": 35.843682692307695,
+          "predicted_per_second": 27.898918997366504
+        }
+      },
+      "wall_seconds": 7.783693799981847,
+      "expected_number_present": true
+    }
+  ],
+  "peak_working_set_bytes": 968990720,
+  "success": true
+}
