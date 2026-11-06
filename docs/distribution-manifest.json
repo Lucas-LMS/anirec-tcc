@@ -1714,8 +1714,8 @@
     },
     {
       "path": "recomendador/online/lab/dashboard.js",
-      "bytes": 5649,
-      "sha256": "7b6a869b05772e2ff5863bcfcb4917323b8f9285094860cc8620364907b46dc9"
+      "bytes": 5895,
+      "sha256": "590adf068762270ef007cd6ee1edd3193b5167647d8747745a3151c67493e663"
     },
     {
       "path": "recomendador/online/lab/dataset.json",
@@ -1999,8 +1999,8 @@
     },
     {
       "path": "site/lab/dashboard.js",
-      "bytes": 5649,
-      "sha256": "7b6a869b05772e2ff5863bcfcb4917323b8f9285094860cc8620364907b46dc9"
+      "bytes": 5895,
+      "sha256": "590adf068762270ef007cd6ee1edd3193b5167647d8747745a3151c67493e663"
     },
     {
       "path": "site/lab/dataset.json",
