@@ -1593,6 +1593,11 @@
       "sha256": "c1bff9ca93f9cc13e2e4a56d938369f29526ad4c2f4867f56f04844e29b682d0"
     },
     {
+      "path": "recomendador/data/community-weight-sensitivity.json",
+      "bytes": 34451,
+      "sha256": "982753025d5890715e74a4738e89871d43e41d95ef313c9829da5dd21f4ac54d"
+    },
+    {
       "path": "recomendador/data/content-facets-development.json",
       "bytes": 13985,
       "sha256": "8dda8396ff42a746a9a3f9b59e0aeb1b057fad88a42a28469a25b214eba579ab"
@@ -1626,6 +1631,11 @@
       "path": "recomendador/demo_ir_estatico.py",
       "bytes": 3555,
       "sha256": "7ea040cc8b6554be3ca7a8506cea077e98c90cac63ec6c7c0caeef99cb5d89e0"
+    },
+    {
+      "path": "recomendador/docs/AMPLIACAO_E_SENSIBILIDADE_COMUNITARIA.md",
+      "bytes": 4280,
+      "sha256": "a9ffa9b1995636c1e7cf1e9f2dad6d0a5ff8b762e18219470d93199abfbe0950"
     },
     {
       "path": "recomendador/docs/COMPARACAO_COMUNIDADE_V13.md",
@@ -2246,6 +2256,11 @@
       "path": "scripts/pilot_local_llm.py",
       "bytes": 7280,
       "sha256": "28f36d2eda56c370699ee06a173e7ace94b685bc370aad91dd64f458d56faebe"
+    },
+    {
+      "path": "scripts/research_community_weights.js",
+      "bytes": 1920,
+      "sha256": "803f67b32fd2b770c134764872fb92739a2910cc70b292422dc9978f1314c424"
     },
     {
       "path": "scripts/research_content_facets.js",
