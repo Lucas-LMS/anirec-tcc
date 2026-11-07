@@ -6,7 +6,7 @@ for page,template in [('index.html','page.html'),('pesquisa.html','research.html
     html=(root/'recomendador/shared'/template).read_text(encoding='utf-8-sig')
     if template=='research.html':
         html=html.replace('class="pure-mode"','class="pure-mode research-mode"').replace('<nav class="row">','<nav class="row"><a href="index.html">← Voltar ao recomendador simples</a>',1)
-    html=html.replace('<script src="assets/ir-core.js"></script>','<script src="assets/user-statistics.js"></script><script src="assets/history-profile.js"></script><script src="assets/franchise-core.js"></script><script src="assets/ir-core.js"></script>')
+    html=html.replace('<script src="assets/ir-core.js"></script>','<script src="assets/community-core.js"></script><script src="assets/user-statistics.js"></script><script src="assets/history-profile.js"></script><script src="assets/franchise-core.js"></script><script src="assets/ir-core.js"></script>')
     (source/page).write_text(html.replace('<!-- ADAPTER -->','<script src="assets/anilist-import.js"></script><script src="assets/browser-adapter.js"></script>'),encoding='utf-8')
     (root/'recomendador/web'/page).write_text(html.replace('<!-- ADAPTER -->','<script src="assets/local-adapter.js"></script>'),encoding='utf-8')
 for p in source.rglob('*'):

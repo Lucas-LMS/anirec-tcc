@@ -1,0 +1,4166 @@
+{
+  "format": "anirec-pairwise-community-v1",
+  "purpose": "Optional ranking evidence, not evaluation judgments. Bounded to these development anchors; absence gives content-only score.",
+  "anchors": {
+    "143270": {
+      "anchor_id": 143270,
+      "source": "AniList GraphQL recommendations.rating",
+      "fetched_at": "2026-11-07T12:26:03.902871+00:00",
+      "status": "available",
+      "complete": true,
+      "max_pages": 6,
+      "page_size": 25,
+      "edges": [
+        {
+          "target_id": 153629,
+          "rating": 322
+        },
+        {
+          "target_id": 98505,
+          "rating": 286
+        },
+        {
+          "target_id": 6213,
+          "rating": 160
+        },
+        {
+          "target_id": 151379,
+          "rating": 125
+        },
+        {
+          "target_id": 101014,
+          "rating": 103
+        },
+        {
+          "target_id": 146323,
+          "rating": 91
+        },
+        {
+          "target_id": 162985,
+          "rating": 73
+        },
+        {
+          "target_id": 158704,
+          "rating": 66
+        },
+        {
+          "target_id": 187260,
+          "rating": 63
+        },
+        {
+          "target_id": 159808,
+          "rating": 59
+        },
+        {
+          "target_id": 139274,
+          "rating": 50
+        },
+        {
+          "target_id": 134,
+          "rating": 48
+        },
+        {
+          "target_id": 13601,
+          "rating": 47
+        },
+        {
+          "target_id": 272,
+          "rating": 35
+        },
+        {
+          "target_id": 155907,
+          "rating": 34
+        },
+        {
+          "target_id": 155158,
+          "rating": 34
+        },
+        {
+          "target_id": 124845,
+          "rating": 31
+        },
+        {
+          "target_id": 9756,
+          "rating": 30
+        },
+        {
+          "target_id": 146625,
+          "rating": 29
+        },
+        {
+          "target_id": 129193,
+          "rating": 28
+        },
+        {
+          "target_id": 201903,
+          "rating": 28
+        },
+        {
+          "target_id": 650,
+          "rating": 27
+        },
+        {
+          "target_id": 11751,
+          "rating": 26
+        },
+        {
+          "target_id": 131565,
+          "rating": 24
+        },
+        {
+          "target_id": 2030,
+          "rating": 23
+        },
+        {
+          "target_id": 112479,
+          "rating": 23
+        },
+        {
+          "target_id": 163542,
+          "rating": 23
+        },
+        {
+          "target_id": 199547,
+          "rating": 23
+        },
+        {
+          "target_id": 128546,
+          "rating": 22
+        },
+        {
+          "target_id": 116287,
+          "rating": 21
+        },
+        {
+          "target_id": 5356,
+          "rating": 20
+        },
+        {
+          "target_id": 100183,
+          "rating": 20
+        },
+        {
+          "target_id": 167141,
+          "rating": 20
+        },
+        {
+          "target_id": 98658,
+          "rating": 18
+        },
+        {
+          "target_id": 21714,
+          "rating": 18
+        },
+        {
+          "target_id": 177709,
+          "rating": 18
+        },
+        {
+          "target_id": 171025,
+          "rating": 17
+        },
+        {
+          "target_id": 144509,
+          "rating": 15
+        },
+        {
+          "target_id": 20661,
+          "rating": 15
+        },
+        {
+          "target_id": 252,
+          "rating": 12
+        },
+        {
+          "target_id": 145740,
+          "rating": 12
+        },
+        {
+          "target_id": 208,
+          "rating": 11
+        },
+        {
+          "target_id": 177120,
+          "rating": 11
+        },
+        {
+          "target_id": 21002,
+          "rating": 10
+        },
+        {
+          "target_id": 157883,
+          "rating": 10
+        },
+        {
+          "target_id": 101573,
+          "rating": 10
+        },
+        {
+          "target_id": 20872,
+          "rating": 9
+        },
+        {
+          "target_id": 100388,
+          "rating": 9
+        },
+        {
+          "target_id": 114888,
+          "rating": 9
+        },
+        {
+          "target_id": 163078,
+          "rating": 9
+        },
+        {
+          "target_id": 101317,
+          "rating": 8
+        },
+        {
+          "target_id": 783,
+          "rating": 8
+        },
+        {
+          "target_id": 3323,
+          "rating": 7
+        },
+        {
+          "target_id": 1577,
+          "rating": 7
+        },
+        {
+          "target_id": 99470,
+          "rating": 7
+        },
+        {
+          "target_id": 20991,
+          "rating": 7
+        },
+        {
+          "target_id": 6547,
+          "rating": 7
+        },
+        {
+          "target_id": 424,
+          "rating": 6
+        },
+        {
+          "target_id": 169375,
+          "rating": 6
+        },
+        {
+          "target_id": 8630,
+          "rating": 5
+        },
+        {
+          "target_id": 98,
+          "rating": 5
+        },
+        {
+          "target_id": 109,
+          "rating": 5
+        },
+        {
+          "target_id": 20800,
+          "rating": 5
+        },
+        {
+          "target_id": 132,
+          "rating": 5
+        },
+        {
+          "target_id": 889,
+          "rating": 5
+        },
+        {
+          "target_id": 21421,
+          "rating": 5
+        },
+        {
+          "target_id": 104462,
+          "rating": 5
+        },
+        {
+          "target_id": 103222,
+          "rating": 4
+        },
+        {
+          "target_id": 21673,
+          "rating": 4
+        },
+        {
+          "target_id": 17729,
+          "rating": 4
+        },
+        {
+          "target_id": 141391,
+          "rating": 4
+        },
+        {
+          "target_id": 1372,
+          "rating": 4
+        },
+        {
+          "target_id": 198113,
+          "rating": 4
+        },
+        {
+          "target_id": 203490,
+          "rating": 4
+        },
+        {
+          "target_id": 20475,
+          "rating": 3
+        },
+        {
+          "target_id": 6,
+          "rating": 3
+        },
+        {
+          "target_id": 3231,
+          "rating": 3
+        },
+        {
+          "target_id": 3574,
+          "rating": 3
+        },
+        {
+          "target_id": 10396,
+          "rating": 3
+        },
+        {
+          "target_id": 12413,
+          "rating": 3
+        },
+        {
+          "target_id": 186716,
+          "rating": 3
+        },
+        {
+          "target_id": 101595,
+          "rating": 3
+        },
+        {
+          "target_id": 143289,
+          "rating": 2
+        },
+        {
+          "target_id": 104253,
+          "rating": 2
+        },
+        {
+          "target_id": 98747,
+          "rating": 2
+        },
+        {
+          "target_id": 110350,
+          "rating": 2
+        },
+        {
+          "target_id": 155419,
+          "rating": 2
+        },
+        {
+          "target_id": 20047,
+          "rating": 2
+        },
+        {
+          "target_id": 151040,
+          "rating": 2
+        },
+        {
+          "target_id": 128712,
+          "rating": 2
+        },
+        {
+          "target_id": 177159,
+          "rating": 2
+        },
+        {
+          "target_id": 129898,
+          "rating": 2
+        },
+        {
+          "target_id": 112444,
+          "rating": 2
+        },
+        {
+          "target_id": 124153,
+          "rating": 2
+        },
+        {
+          "target_id": 155783,
+          "rating": 2
+        },
+        {
+          "target_id": 184034,
+          "rating": 2
+        },
+        {
+          "target_id": 163270,
+          "rating": 2
+        },
+        {
+          "target_id": 1412,
+          "rating": 2
+        },
+        {
+          "target_id": 1470,
+          "rating": 2
+        },
+        {
+          "target_id": 137612,
+          "rating": 2
+        },
+        {
+          "target_id": 129759,
+          "rating": 2
+        },
+        {
+          "target_id": 206949,
+          "rating": 2
+        },
+        {
+          "target_id": 17821,
+          "rating": 1
+        },
+        {
+          "target_id": 21832,
+          "rating": 1
+        },
+        {
+          "target_id": 151606,
+          "rating": 1
+        },
+        {
+          "target_id": 4765,
+          "rating": 1
+        },
+        {
+          "target_id": 99483,
+          "rating": 1
+        },
+        {
+          "target_id": 10793,
+          "rating": 1
+        },
+        {
+          "target_id": 2251,
+          "rating": 1
+        },
+        {
+          "target_id": 20938,
+          "rating": 1
+        },
+        {
+          "target_id": 3349,
+          "rating": 1
+        },
+        {
+          "target_id": 135778,
+          "rating": 1
+        },
+        {
+          "target_id": 10798,
+          "rating": 1
+        },
+        {
+          "target_id": 101281,
+          "rating": 1
+        },
+        {
+          "target_id": 20827,
+          "rating": 1
+        },
+        {
+          "target_id": 181449,
+          "rating": 1
+        },
+        {
+          "target_id": 123785,
+          "rating": 1
+        },
+        {
+          "target_id": 179302,
+          "rating": 1
+        },
+        {
+          "target_id": 184591,
+          "rating": 1
+        },
+        {
+          "target_id": 143202,
+          "rating": 1
+        },
+        {
+          "target_id": 155389,
+          "rating": 1
+        },
+        {
+          "target_id": 116566,
+          "rating": 1
+        },
+        {
+          "target_id": 171457,
+          "rating": 1
+        },
+        {
+          "target_id": 21457,
+          "rating": 1
+        },
+        {
+          "target_id": 98514,
+          "rating": 1
+        },
+        {
+          "target_id": 186742,
+          "rating": 1
+        },
+        {
+          "target_id": 159039,
+          "rating": 0
+        },
+        {
+          "target_id": 1347,
+          "rating": 0
+        },
+        {
+          "target_id": 9941,
+          "rating": 0
+        },
+        {
+          "target_id": 99423,
+          "rating": 0
+        },
+        {
+          "target_id": 4087,
+          "rating": 0
+        },
+        {
+          "target_id": 178701,
+          "rating": 0
+        },
+        {
+          "target_id": 178675,
+          "rating": 0
+        },
+        {
+          "target_id": 183385,
+          "rating": 0
+        },
+        {
+          "target_id": 99425,
+          "rating": 0
+        },
+        {
+          "target_id": 190143,
+          "rating": 0
+        },
+        {
+          "target_id": 184989,
+          "rating": -1
+        },
+        {
+          "target_id": 164212,
+          "rating": -1
+        }
+      ],
+      "anchor_title": "Lycoris Recoil"
+    },
+    "1575": {
+      "anchor_id": 1575,
+      "source": "AniList GraphQL recommendations.rating",
+      "fetched_at": "2026-11-07T12:26:18.260933+00:00",
+      "status": "available",
+      "complete": false,
+      "max_pages": 6,
+      "page_size": 25,
+      "edges": [
+        {
+          "target_id": 1535,
+          "rating": 3587
+        },
+        {
+          "target_id": 116589,
+          "rating": 431
+        },
+        {
+          "target_id": 131586,
+          "rating": 241
+        },
+        {
+          "target_id": 10793,
+          "rating": 139
+        },
+        {
+          "target_id": 114124,
+          "rating": 105
+        },
+        {
+          "target_id": 104578,
+          "rating": 93
+        },
+        {
+          "target_id": 2001,
+          "rating": 87
+        },
+        {
+          "target_id": 162314,
+          "rating": 74
+        },
+        {
+          "target_id": 130298,
+          "rating": 70
+        },
+        {
+          "target_id": 16498,
+          "rating": 61
+        },
+        {
+          "target_id": 21410,
+          "rating": 55
+        },
+        {
+          "target_id": 155158,
+          "rating": 48
+        },
+        {
+          "target_id": 820,
+          "rating": 47
+        },
+        {
+          "target_id": 2581,
+          "rating": 47
+        },
+        {
+          "target_id": 20632,
+          "rating": 45
+        },
+        {
+          "target_id": 20806,
+          "rating": 38
+        },
+        {
+          "target_id": 13601,
+          "rating": 35
+        },
+        {
+          "target_id": 9253,
+          "rating": 34
+        },
+        {
+          "target_id": 20661,
+          "rating": 33
+        },
+        {
+          "target_id": 21613,
+          "rating": 32
+        },
+        {
+          "target_id": 93,
+          "rating": 29
+        },
+        {
+          "target_id": 156,
+          "rating": 29
+        },
+        {
+          "target_id": 71,
+          "rating": 27
+        },
+        {
+          "target_id": 97880,
+          "rating": 26
+        },
+        {
+          "target_id": 5114,
+          "rating": 25
+        },
+        {
+          "target_id": 139274,
+          "rating": 24
+        },
+        {
+          "target_id": 110277,
+          "rating": 23
+        },
+        {
+          "target_id": 98659,
+          "rating": 23
+        },
+        {
+          "target_id": 114307,
+          "rating": 23
+        },
+        {
+          "target_id": 20997,
+          "rating": 22
+        },
+        {
+          "target_id": 17265,
+          "rating": 21
+        },
+        {
+          "target_id": 19815,
+          "rating": 20
+        },
+        {
+          "target_id": 16668,
+          "rating": 20
+        },
+        {
+          "target_id": 129190,
+          "rating": 20
+        },
+        {
+          "target_id": 19,
+          "rating": 19
+        },
+        {
+          "target_id": 80,
+          "rating": 18
+        },
+        {
+          "target_id": 146066,
+          "rating": 17
+        },
+        {
+          "target_id": 14075,
+          "rating": 16
+        },
+        {
+          "target_id": 20853,
+          "rating": 16
+        },
+        {
+          "target_id": 2025,
+          "rating": 16
+        },
+        {
+          "target_id": 21711,
+          "rating": 15
+        },
+        {
+          "target_id": 20628,
+          "rating": 14
+        },
+        {
+          "target_id": 135865,
+          "rating": 14
+        },
+        {
+          "target_id": 16005,
+          "rating": 13
+        },
+        {
+          "target_id": 10937,
+          "rating": 13
+        },
+        {
+          "target_id": 237,
+          "rating": 12
+        },
+        {
+          "target_id": 11061,
+          "rating": 12
+        },
+        {
+          "target_id": 120377,
+          "rating": 12
+        },
+        {
+          "target_id": 117755,
+          "rating": 11
+        },
+        {
+          "target_id": 20829,
+          "rating": 11
+        },
+        {
+          "target_id": 137667,
+          "rating": 11
+        },
+        {
+          "target_id": 168,
+          "rating": 10
+        },
+        {
+          "target_id": 20458,
+          "rating": 10
+        },
+        {
+          "target_id": 131005,
+          "rating": 10
+        },
+        {
+          "target_id": 117408,
+          "rating": 9
+        },
+        {
+          "target_id": 99425,
+          "rating": 9
+        },
+        {
+          "target_id": 8888,
+          "rating": 9
+        },
+        {
+          "target_id": 124858,
+          "rating": 9
+        },
+        {
+          "target_id": 30,
+          "rating": 8
+        },
+        {
+          "target_id": 99147,
+          "rating": 8
+        },
+        {
+          "target_id": 161964,
+          "rating": 8
+        },
+        {
+          "target_id": 206914,
+          "rating": 8
+        },
+        {
+          "target_id": 21516,
+          "rating": 7
+        },
+        {
+          "target_id": 100780,
+          "rating": 7
+        },
+        {
+          "target_id": 124060,
+          "rating": 7
+        },
+        {
+          "target_id": 114943,
+          "rating": 7
+        },
+        {
+          "target_id": 146922,
+          "rating": 7
+        },
+        {
+          "target_id": 20618,
+          "rating": 6
+        },
+        {
+          "target_id": 20623,
+          "rating": 6
+        },
+        {
+          "target_id": 20832,
+          "rating": 5
+        },
+        {
+          "target_id": 411,
+          "rating": 5
+        },
+        {
+          "target_id": 2970,
+          "rating": 5
+        },
+        {
+          "target_id": 98460,
+          "rating": 5
+        },
+        {
+          "target_id": 131565,
+          "rating": 5
+        },
+        {
+          "target_id": 90,
+          "rating": 5
+        },
+        {
+          "target_id": 186794,
+          "rating": 5
+        },
+        {
+          "target_id": 239,
+          "rating": 4
+        },
+        {
+          "target_id": 21823,
+          "rating": 4
+        },
+        {
+          "target_id": 21178,
+          "rating": 4
+        },
+        {
+          "target_id": 8514,
+          "rating": 4
+        },
+        {
+          "target_id": 5307,
+          "rating": 4
+        },
+        {
+          "target_id": 21092,
+          "rating": 4
+        },
+        {
+          "target_id": 1482,
+          "rating": 4
+        },
+        {
+          "target_id": 801,
+          "rating": 4
+        },
+        {
+          "target_id": 3572,
+          "rating": 4
+        },
+        {
+          "target_id": 467,
+          "rating": 3
+        },
+        {
+          "target_id": 21268,
+          "rating": 3
+        },
+        {
+          "target_id": 20534,
+          "rating": 3
+        },
+        {
+          "target_id": 9863,
+          "rating": 3
+        },
+        {
+          "target_id": 1699,
+          "rating": 3
+        },
+        {
+          "target_id": 112716,
+          "rating": 3
+        },
+        {
+          "target_id": 131681,
+          "rating": 3
+        },
+        {
+          "target_id": 8086,
+          "rating": 3
+        },
+        {
+          "target_id": 105595,
+          "rating": 3
+        },
+        {
+          "target_id": 5485,
+          "rating": 3
+        },
+        {
+          "target_id": 440,
+          "rating": 3
+        },
+        {
+          "target_id": 12471,
+          "rating": 3
+        },
+        {
+          "target_id": 121,
+          "rating": 3
+        },
+        {
+          "target_id": 14467,
+          "rating": 3
+        },
+        {
+          "target_id": 155,
+          "rating": 3
+        },
+        {
+          "target_id": 777,
+          "rating": 2
+        },
+        {
+          "target_id": 2158,
+          "rating": 2
+        },
+        {
+          "target_id": 102451,
+          "rating": 2
+        },
+        {
+          "target_id": 101813,
+          "rating": 2
+        },
+        {
+          "target_id": 101812,
+          "rating": 2
+        },
+        {
+          "target_id": 15197,
+          "rating": 2
+        },
+        {
+          "target_id": 15201,
+          "rating": 2
+        },
+        {
+          "target_id": 6746,
+          "rating": 2
+        },
+        {
+          "target_id": 117343,
+          "rating": 2
+        },
+        {
+          "target_id": 148970,
+          "rating": 2
+        },
+        {
+          "target_id": 177,
+          "rating": 2
+        },
+        {
+          "target_id": 21355,
+          "rating": 2
+        },
+        {
+          "target_id": 158926,
+          "rating": 2
+        },
+        {
+          "target_id": 95,
+          "rating": 2
+        },
+        {
+          "target_id": 10447,
+          "rating": 2
+        },
+        {
+          "target_id": 21458,
+          "rating": 2
+        },
+        {
+          "target_id": 6038,
+          "rating": 2
+        },
+        {
+          "target_id": 128712,
+          "rating": 2
+        },
+        {
+          "target_id": 1792,
+          "rating": 2
+        },
+        {
+          "target_id": 116566,
+          "rating": 2
+        },
+        {
+          "target_id": 4981,
+          "rating": 2
+        },
+        {
+          "target_id": 183274,
+          "rating": 2
+        },
+        {
+          "target_id": 3972,
+          "rating": 1
+        },
+        {
+          "target_id": 101911,
+          "rating": 1
+        },
+        {
+          "target_id": 14833,
+          "rating": 1
+        },
+        {
+          "target_id": 20935,
+          "rating": 1
+        },
+        {
+          "target_id": 20613,
+          "rating": 1
+        },
+        {
+          "target_id": 166703,
+          "rating": 1
+        },
+        {
+          "target_id": 33,
+          "rating": 1
+        },
+        {
+          "target_id": 20562,
+          "rating": 1
+        },
+        {
+          "target_id": 182587,
+          "rating": 1
+        },
+        {
+          "target_id": 1103,
+          "rating": 1
+        },
+        {
+          "target_id": 154195,
+          "rating": 1
+        },
+        {
+          "target_id": 18679,
+          "rating": 0
+        },
+        {
+          "target_id": 114087,
+          "rating": 0
+        },
+        {
+          "target_id": 3014,
+          "rating": 0
+        },
+        {
+          "target_id": 15199,
+          "rating": 0
+        },
+        {
+          "target_id": 124032,
+          "rating": 0
+        },
+        {
+          "target_id": 154643,
+          "rating": 0
+        },
+        {
+          "target_id": 969,
+          "rating": 0
+        },
+        {
+          "target_id": 145545,
+          "rating": 0
+        },
+        {
+          "target_id": 1000,
+          "rating": 0
+        },
+        {
+          "target_id": 105989,
+          "rating": 0
+        },
+        {
+          "target_id": 99423,
+          "rating": -1
+        },
+        {
+          "target_id": 141014,
+          "rating": -1
+        },
+        {
+          "target_id": 4066,
+          "rating": -1
+        },
+        {
+          "target_id": 2994,
+          "rating": -1
+        },
+        {
+          "target_id": 98,
+          "rating": -1
+        },
+        {
+          "target_id": 20789,
+          "rating": -1
+        },
+        {
+          "target_id": 185213,
+          "rating": -1
+        }
+      ],
+      "anchor_title": "Code Geass: Lelouch of the Rebellion"
+    },
+    "9253": {
+      "anchor_id": 9253,
+      "source": "AniList GraphQL recommendations.rating",
+      "fetched_at": "2026-11-07T12:26:30.262610+00:00",
+      "status": "available",
+      "complete": true,
+      "max_pages": 6,
+      "page_size": 25,
+      "edges": [
+        {
+          "target_id": 21234,
+          "rating": 1936
+        },
+        {
+          "target_id": 21355,
+          "rating": 1662
+        },
+        {
+          "target_id": 129201,
+          "rating": 617
+        },
+        {
+          "target_id": 9756,
+          "rating": 546
+        },
+        {
+          "target_id": 108632,
+          "rating": 473
+        },
+        {
+          "target_id": 128546,
+          "rating": 379
+        },
+        {
+          "target_id": 126403,
+          "rating": 370
+        },
+        {
+          "target_id": 120120,
+          "rating": 320
+        },
+        {
+          "target_id": 21127,
+          "rating": 309
+        },
+        {
+          "target_id": 119661,
+          "rating": 273
+        },
+        {
+          "target_id": 104157,
+          "rating": 258
+        },
+        {
+          "target_id": 1210,
+          "rating": 222
+        },
+        {
+          "target_id": 189046,
+          "rating": 192
+        },
+        {
+          "target_id": 163134,
+          "rating": 152
+        },
+        {
+          "target_id": 7311,
+          "rating": 112
+        },
+        {
+          "target_id": 1889,
+          "rating": 88
+        },
+        {
+          "target_id": 13599,
+          "rating": 73
+        },
+        {
+          "target_id": 2236,
+          "rating": 63
+        },
+        {
+          "target_id": 21708,
+          "rating": 58
+        },
+        {
+          "target_id": 934,
+          "rating": 51
+        },
+        {
+          "target_id": 4382,
+          "rating": 50
+        },
+        {
+          "target_id": 1535,
+          "rating": 48
+        },
+        {
+          "target_id": 4975,
+          "rating": 44
+        },
+        {
+          "target_id": 849,
+          "rating": 39
+        },
+        {
+          "target_id": 13601,
+          "rating": 34
+        },
+        {
+          "target_id": 1575,
+          "rating": 34
+        },
+        {
+          "target_id": 19,
+          "rating": 33
+        },
+        {
+          "target_id": 97660,
+          "rating": 32
+        },
+        {
+          "target_id": 17074,
+          "rating": 32
+        },
+        {
+          "target_id": 142853,
+          "rating": 31
+        },
+        {
+          "target_id": 7785,
+          "rating": 29
+        },
+        {
+          "target_id": 20661,
+          "rating": 28
+        },
+        {
+          "target_id": 185116,
+          "rating": 28
+        },
+        {
+          "target_id": 20997,
+          "rating": 25
+        },
+        {
+          "target_id": 191832,
+          "rating": 25
+        },
+        {
+          "target_id": 177697,
+          "rating": 24
+        },
+        {
+          "target_id": 97995,
+          "rating": 23
+        },
+        {
+          "target_id": 584,
+          "rating": 23
+        },
+        {
+          "target_id": 137819,
+          "rating": 21
+        },
+        {
+          "target_id": 136484,
+          "rating": 21
+        },
+        {
+          "target_id": 21126,
+          "rating": 19
+        },
+        {
+          "target_id": 131149,
+          "rating": 19
+        },
+        {
+          "target_id": 15335,
+          "rating": 18
+        },
+        {
+          "target_id": 139310,
+          "rating": 18
+        },
+        {
+          "target_id": 21647,
+          "rating": 16
+        },
+        {
+          "target_id": 26,
+          "rating": 15
+        },
+        {
+          "target_id": 185407,
+          "rating": 15
+        },
+        {
+          "target_id": 159559,
+          "rating": 14
+        },
+        {
+          "target_id": 339,
+          "rating": 12
+        },
+        {
+          "target_id": 11981,
+          "rating": 12
+        },
+        {
+          "target_id": 128547,
+          "rating": 11
+        },
+        {
+          "target_id": 107067,
+          "rating": 10
+        },
+        {
+          "target_id": 21519,
+          "rating": 10
+        },
+        {
+          "target_id": 20591,
+          "rating": 10
+        },
+        {
+          "target_id": 21049,
+          "rating": 10
+        },
+        {
+          "target_id": 163329,
+          "rating": 9
+        },
+        {
+          "target_id": 14075,
+          "rating": 8
+        },
+        {
+          "target_id": 13125,
+          "rating": 8
+        },
+        {
+          "target_id": 101291,
+          "rating": 8
+        },
+        {
+          "target_id": 294,
+          "rating": 8
+        },
+        {
+          "target_id": 139311,
+          "rating": 8
+        },
+        {
+          "target_id": 5630,
+          "rating": 8
+        },
+        {
+          "target_id": 15689,
+          "rating": 7
+        },
+        {
+          "target_id": 2167,
+          "rating": 7
+        },
+        {
+          "target_id": 187892,
+          "rating": 7
+        },
+        {
+          "target_id": 21256,
+          "rating": 6
+        },
+        {
+          "target_id": 2164,
+          "rating": 6
+        },
+        {
+          "target_id": 132126,
+          "rating": 6
+        },
+        {
+          "target_id": 6547,
+          "rating": 6
+        },
+        {
+          "target_id": 21006,
+          "rating": 6
+        },
+        {
+          "target_id": 1,
+          "rating": 6
+        },
+        {
+          "target_id": 2924,
+          "rating": 6
+        },
+        {
+          "target_id": 170166,
+          "rating": 6
+        },
+        {
+          "target_id": 182814,
+          "rating": 6
+        },
+        {
+          "target_id": 141953,
+          "rating": 6
+        },
+        {
+          "target_id": 101316,
+          "rating": 5
+        },
+        {
+          "target_id": 2025,
+          "rating": 5
+        },
+        {
+          "target_id": 4789,
+          "rating": 5
+        },
+        {
+          "target_id": 323,
+          "rating": 5
+        },
+        {
+          "target_id": 177761,
+          "rating": 5
+        },
+        {
+          "target_id": 5081,
+          "rating": 4
+        },
+        {
+          "target_id": 17729,
+          "rating": 4
+        },
+        {
+          "target_id": 918,
+          "rating": 4
+        },
+        {
+          "target_id": 2904,
+          "rating": 4
+        },
+        {
+          "target_id": 3115,
+          "rating": 4
+        },
+        {
+          "target_id": 4181,
+          "rating": 4
+        },
+        {
+          "target_id": 100332,
+          "rating": 3
+        },
+        {
+          "target_id": 20623,
+          "rating": 3
+        },
+        {
+          "target_id": 101283,
+          "rating": 3
+        },
+        {
+          "target_id": 154587,
+          "rating": 3
+        },
+        {
+          "target_id": 467,
+          "rating": 3
+        },
+        {
+          "target_id": 98658,
+          "rating": 3
+        },
+        {
+          "target_id": 992,
+          "rating": 3
+        },
+        {
+          "target_id": 145728,
+          "rating": 3
+        },
+        {
+          "target_id": 124786,
+          "rating": 2
+        },
+        {
+          "target_id": 18195,
+          "rating": 2
+        },
+        {
+          "target_id": 13655,
+          "rating": 2
+        },
+        {
+          "target_id": 20954,
+          "rating": 2
+        },
+        {
+          "target_id": 32,
+          "rating": 2
+        },
+        {
+          "target_id": 100643,
+          "rating": 2
+        },
+        {
+          "target_id": 112716,
+          "rating": 2
+        },
+        {
+          "target_id": 142985,
+          "rating": 2
+        },
+        {
+          "target_id": 110350,
+          "rating": 2
+        },
+        {
+          "target_id": 99088,
+          "rating": 2
+        },
+        {
+          "target_id": 182587,
+          "rating": 2
+        },
+        {
+          "target_id": 201903,
+          "rating": 2
+        },
+        {
+          "target_id": 2454,
+          "rating": 2
+        },
+        {
+          "target_id": 114446,
+          "rating": 1
+        },
+        {
+          "target_id": 20557,
+          "rating": 1
+        },
+        {
+          "target_id": 140643,
+          "rating": 1
+        },
+        {
+          "target_id": 105807,
+          "rating": 1
+        },
+        {
+          "target_id": 16498,
+          "rating": 1
+        },
+        {
+          "target_id": 1482,
+          "rating": 1
+        },
+        {
+          "target_id": 20754,
+          "rating": 1
+        },
+        {
+          "target_id": 1284,
+          "rating": 0
+        },
+        {
+          "target_id": 355,
+          "rating": 0
+        },
+        {
+          "target_id": 14813,
+          "rating": -1
+        },
+        {
+          "target_id": 6773,
+          "rating": -1
+        },
+        {
+          "target_id": 5530,
+          "rating": -1
+        },
+        {
+          "target_id": 1923,
+          "rating": -1
+        },
+        {
+          "target_id": 21018,
+          "rating": -2
+        },
+        {
+          "target_id": 1087,
+          "rating": -2
+        },
+        {
+          "target_id": 99699,
+          "rating": -3
+        }
+      ],
+      "anchor_title": "Steins;Gate"
+    },
+    "21827": {
+      "anchor_id": 21827,
+      "source": "AniList GraphQL recommendations.rating",
+      "fetched_at": "2026-11-07T12:26:42.286640+00:00",
+      "status": "available",
+      "complete": true,
+      "max_pages": 6,
+      "page_size": 25,
+      "edges": [
+        {
+          "target_id": 20954,
+          "rating": 1318
+        },
+        {
+          "target_id": 154587,
+          "rating": 1213
+        },
+        {
+          "target_id": 128546,
+          "rating": 733
+        },
+        {
+          "target_id": 99750,
+          "rating": 432
+        },
+        {
+          "target_id": 20665,
+          "rating": 418
+        },
+        {
+          "target_id": 99457,
+          "rating": 341
+        },
+        {
+          "target_id": 112609,
+          "rating": 193
+        },
+        {
+          "target_id": 21519,
+          "rating": 183
+        },
+        {
+          "target_id": 98436,
+          "rating": 145
+        },
+        {
+          "target_id": 113596,
+          "rating": 128
+        },
+        {
+          "target_id": 190143,
+          "rating": 113
+        },
+        {
+          "target_id": 147103,
+          "rating": 101
+        },
+        {
+          "target_id": 182255,
+          "rating": 100
+        },
+        {
+          "target_id": 4181,
+          "rating": 92
+        },
+        {
+          "target_id": 116589,
+          "rating": 85
+        },
+        {
+          "target_id": 114535,
+          "rating": 82
+        },
+        {
+          "target_id": 202955,
+          "rating": 56
+        },
+        {
+          "target_id": 110547,
+          "rating": 55
+        },
+        {
+          "target_id": 20872,
+          "rating": 53
+        },
+        {
+          "target_id": 172190,
+          "rating": 50
+        },
+        {
+          "target_id": 144509,
+          "rating": 47
+        },
+        {
+          "target_id": 431,
+          "rating": 32
+        },
+        {
+          "target_id": 100178,
+          "rating": 31
+        },
+        {
+          "target_id": 16782,
+          "rating": 29
+        },
+        {
+          "target_id": 457,
+          "rating": 27
+        },
+        {
+          "target_id": 20770,
+          "rating": 27
+        },
+        {
+          "target_id": 123802,
+          "rating": 27
+        },
+        {
+          "target_id": 142770,
+          "rating": 27
+        },
+        {
+          "target_id": 9989,
+          "rating": 26
+        },
+        {
+          "target_id": 21860,
+          "rating": 26
+        },
+        {
+          "target_id": 3420,
+          "rating": 25
+        },
+        {
+          "target_id": 6444,
+          "rating": 25
+        },
+        {
+          "target_id": 4081,
+          "rating": 23
+        },
+        {
+          "target_id": 136430,
+          "rating": 23
+        },
+        {
+          "target_id": 131586,
+          "rating": 22
+        },
+        {
+          "target_id": 8425,
+          "rating": 21
+        },
+        {
+          "target_id": 105334,
+          "rating": 21
+        },
+        {
+          "target_id": 512,
+          "rating": 20
+        },
+        {
+          "target_id": 98448,
+          "rating": 19
+        },
+        {
+          "target_id": 101316,
+          "rating": 18
+        },
+        {
+          "target_id": 98385,
+          "rating": 17
+        },
+        {
+          "target_id": 9000,
+          "rating": 17
+        },
+        {
+          "target_id": 21647,
+          "rating": 17
+        },
+        {
+          "target_id": 486,
+          "rating": 16
+        },
+        {
+          "target_id": 5678,
+          "rating": 16
+        },
+        {
+          "target_id": 124194,
+          "rating": 16
+        },
+        {
+          "target_id": 12189,
+          "rating": 14
+        },
+        {
+          "target_id": 138345,
+          "rating": 13
+        },
+        {
+          "target_id": 103303,
+          "rating": 13
+        },
+        {
+          "target_id": 99088,
+          "rating": 12
+        },
+        {
+          "target_id": 178701,
+          "rating": 12
+        },
+        {
+          "target_id": 179966,
+          "rating": 12
+        },
+        {
+          "target_id": 10029,
+          "rating": 11
+        },
+        {
+          "target_id": 19117,
+          "rating": 10
+        },
+        {
+          "target_id": 99426,
+          "rating": 10
+        },
+        {
+          "target_id": 142701,
+          "rating": 10
+        },
+        {
+          "target_id": 16067,
+          "rating": 9
+        },
+        {
+          "target_id": 154164,
+          "rating": 9
+        },
+        {
+          "target_id": 183275,
+          "rating": 9
+        },
+        {
+          "target_id": 16417,
+          "rating": 8
+        },
+        {
+          "target_id": 21703,
+          "rating": 8
+        },
+        {
+          "target_id": 145665,
+          "rating": 8
+        },
+        {
+          "target_id": 151514,
+          "rating": 8
+        },
+        {
+          "target_id": 20698,
+          "rating": 7
+        },
+        {
+          "target_id": 21732,
+          "rating": 7
+        },
+        {
+          "target_id": 16528,
+          "rating": 7
+        },
+        {
+          "target_id": 111762,
+          "rating": 7
+        },
+        {
+          "target_id": 59,
+          "rating": 6
+        },
+        {
+          "target_id": 122052,
+          "rating": 6
+        },
+        {
+          "target_id": 1946,
+          "rating": 6
+        },
+        {
+          "target_id": 99420,
+          "rating": 6
+        },
+        {
+          "target_id": 184639,
+          "rating": 6
+        },
+        {
+          "target_id": 111951,
+          "rating": 5
+        },
+        {
+          "target_id": 9938,
+          "rating": 5
+        },
+        {
+          "target_id": 153629,
+          "rating": 5
+        },
+        {
+          "target_id": 139821,
+          "rating": 5
+        },
+        {
+          "target_id": 2966,
+          "rating": 5
+        },
+        {
+          "target_id": 101348,
+          "rating": 5
+        },
+        {
+          "target_id": 104990,
+          "rating": 5
+        },
+        {
+          "target_id": 134,
+          "rating": 4
+        },
+        {
+          "target_id": 8311,
+          "rating": 4
+        },
+        {
+          "target_id": 345,
+          "rating": 4
+        },
+        {
+          "target_id": 154214,
+          "rating": 4
+        },
+        {
+          "target_id": 1,
+          "rating": 4
+        },
+        {
+          "target_id": 11061,
+          "rating": 4
+        },
+        {
+          "target_id": 185514,
+          "rating": 4
+        },
+        {
+          "target_id": 147105,
+          "rating": 4
+        },
+        {
+          "target_id": 137337,
+          "rating": 4
+        },
+        {
+          "target_id": 194116,
+          "rating": 4
+        },
+        {
+          "target_id": 20931,
+          "rating": 3
+        },
+        {
+          "target_id": 127412,
+          "rating": 3
+        },
+        {
+          "target_id": 1689,
+          "rating": 3
+        },
+        {
+          "target_id": 12355,
+          "rating": 3
+        },
+        {
+          "target_id": 95,
+          "rating": 3
+        },
+        {
+          "target_id": 9289,
+          "rating": 3
+        },
+        {
+          "target_id": 180675,
+          "rating": 3
+        },
+        {
+          "target_id": 190569,
+          "rating": 3
+        },
+        {
+          "target_id": 13585,
+          "rating": 2
+        },
+        {
+          "target_id": 30,
+          "rating": 2
+        },
+        {
+          "target_id": 2167,
+          "rating": 2
+        },
+        {
+          "target_id": 799,
+          "rating": 2
+        },
+        {
+          "target_id": 109403,
+          "rating": 2
+        },
+        {
+          "target_id": 754,
+          "rating": 1
+        },
+        {
+          "target_id": 131565,
+          "rating": 1
+        },
+        {
+          "target_id": 167486,
+          "rating": 1
+        },
+        {
+          "target_id": 129193,
+          "rating": 1
+        },
+        {
+          "target_id": 161474,
+          "rating": 1
+        },
+        {
+          "target_id": 186559,
+          "rating": 1
+        },
+        {
+          "target_id": 721,
+          "rating": 1
+        },
+        {
+          "target_id": 1457,
+          "rating": 1
+        },
+        {
+          "target_id": 182469,
+          "rating": 1
+        },
+        {
+          "target_id": 124223,
+          "rating": 0
+        },
+        {
+          "target_id": 99699,
+          "rating": 0
+        },
+        {
+          "target_id": 98707,
+          "rating": 0
+        },
+        {
+          "target_id": 166873,
+          "rating": -1
+        },
+        {
+          "target_id": 179992,
+          "rating": -1
+        },
+        {
+          "target_id": 133844,
+          "rating": -1
+        },
+        {
+          "target_id": 187260,
+          "rating": -2
+        }
+      ],
+      "anchor_title": "Violet Evergarden"
+    },
+    "98444": {
+      "anchor_id": 98444,
+      "source": "AniList GraphQL recommendations.rating",
+      "fetched_at": "2026-11-07T12:26:54.232190+00:00",
+      "status": "available",
+      "complete": true,
+      "max_pages": 6,
+      "page_size": 25,
+      "edges": [
+        {
+          "target_id": 99426,
+          "rating": 598
+        },
+        {
+          "target_id": 17549,
+          "rating": 454
+        },
+        {
+          "target_id": 5680,
+          "rating": 282
+        },
+        {
+          "target_id": 130003,
+          "rating": 243
+        },
+        {
+          "target_id": 113418,
+          "rating": 241
+        },
+        {
+          "target_id": 14355,
+          "rating": 204
+        },
+        {
+          "target_id": 131516,
+          "rating": 182
+        },
+        {
+          "target_id": 176246,
+          "rating": 179
+        },
+        {
+          "target_id": 109019,
+          "rating": 178
+        },
+        {
+          "target_id": 99420,
+          "rating": 177
+        },
+        {
+          "target_id": 127549,
+          "rating": 162
+        },
+        {
+          "target_id": 7791,
+          "rating": 160
+        },
+        {
+          "target_id": 108092,
+          "rating": 145
+        },
+        {
+          "target_id": 21284,
+          "rating": 108
+        },
+        {
+          "target_id": 477,
+          "rating": 89
+        },
+        {
+          "target_id": 109403,
+          "rating": 84
+        },
+        {
+          "target_id": 165445,
+          "rating": 78
+        },
+        {
+          "target_id": 131548,
+          "rating": 72
+        },
+        {
+          "target_id": 185939,
+          "rating": 69
+        },
+        {
+          "target_id": 180929,
+          "rating": 69
+        },
+        {
+          "target_id": 187869,
+          "rating": 67
+        },
+        {
+          "target_id": 21495,
+          "rating": 61
+        },
+        {
+          "target_id": 122148,
+          "rating": 58
+        },
+        {
+          "target_id": 20485,
+          "rating": 51
+        },
+        {
+          "target_id": 111428,
+          "rating": 45
+        },
+        {
+          "target_id": 107717,
+          "rating": 42
+        },
+        {
+          "target_id": 105914,
+          "rating": 36
+        },
+        {
+          "target_id": 185965,
+          "rating": 36
+        },
+        {
+          "target_id": 975,
+          "rating": 33
+        },
+        {
+          "target_id": 131182,
+          "rating": 32
+        },
+        {
+          "target_id": 153518,
+          "rating": 31
+        },
+        {
+          "target_id": 155908,
+          "rating": 30
+        },
+        {
+          "target_id": 143653,
+          "rating": 28
+        },
+        {
+          "target_id": 20694,
+          "rating": 27
+        },
+        {
+          "target_id": 117067,
+          "rating": 23
+        },
+        {
+          "target_id": 20722,
+          "rating": 22
+        },
+        {
+          "target_id": 1852,
+          "rating": 21
+        },
+        {
+          "target_id": 98779,
+          "rating": 21
+        },
+        {
+          "target_id": 174596,
+          "rating": 20
+        },
+        {
+          "target_id": 21406,
+          "rating": 19
+        },
+        {
+          "target_id": 112608,
+          "rating": 18
+        },
+        {
+          "target_id": 98866,
+          "rating": 17
+        },
+        {
+          "target_id": 20625,
+          "rating": 17
+        },
+        {
+          "target_id": 21171,
+          "rating": 17
+        },
+        {
+          "target_id": 99748,
+          "rating": 15
+        },
+        {
+          "target_id": 976,
+          "rating": 14
+        },
+        {
+          "target_id": 197868,
+          "rating": 13
+        },
+        {
+          "target_id": 15731,
+          "rating": 12
+        },
+        {
+          "target_id": 156067,
+          "rating": 12
+        },
+        {
+          "target_id": 101910,
+          "rating": 11
+        },
+        {
+          "target_id": 16417,
+          "rating": 11
+        },
+        {
+          "target_id": 9055,
+          "rating": 10
+        },
+        {
+          "target_id": 155419,
+          "rating": 10
+        },
+        {
+          "target_id": 10232,
+          "rating": 9
+        },
+        {
+          "target_id": 97994,
+          "rating": 9
+        },
+        {
+          "target_id": 99468,
+          "rating": 8
+        },
+        {
+          "target_id": 108713,
+          "rating": 7
+        },
+        {
+          "target_id": 100727,
+          "rating": 7
+        },
+        {
+          "target_id": 6802,
+          "rating": 7
+        },
+        {
+          "target_id": 21776,
+          "rating": 7
+        },
+        {
+          "target_id": 199594,
+          "rating": 7
+        },
+        {
+          "target_id": 109298,
+          "rating": 6
+        },
+        {
+          "target_id": 140700,
+          "rating": 6
+        },
+        {
+          "target_id": 154587,
+          "rating": 6
+        },
+        {
+          "target_id": 1887,
+          "rating": 5
+        },
+        {
+          "target_id": 117556,
+          "rating": 5
+        },
+        {
+          "target_id": 3604,
+          "rating": 5
+        },
+        {
+          "target_id": 147885,
+          "rating": 5
+        },
+        {
+          "target_id": 180425,
+          "rating": 5
+        },
+        {
+          "target_id": 20575,
+          "rating": 4
+        },
+        {
+          "target_id": 134226,
+          "rating": 4
+        },
+        {
+          "target_id": 165314,
+          "rating": 4
+        },
+        {
+          "target_id": 177007,
+          "rating": 4
+        },
+        {
+          "target_id": 177159,
+          "rating": 4
+        },
+        {
+          "target_id": 457,
+          "rating": 4
+        },
+        {
+          "target_id": 9617,
+          "rating": 3
+        },
+        {
+          "target_id": 179919,
+          "rating": 3
+        },
+        {
+          "target_id": 165070,
+          "rating": 3
+        },
+        {
+          "target_id": 137337,
+          "rating": 3
+        },
+        {
+          "target_id": 21455,
+          "rating": 3
+        },
+        {
+          "target_id": 98868,
+          "rating": 2
+        },
+        {
+          "target_id": 103301,
+          "rating": 2
+        },
+        {
+          "target_id": 21597,
+          "rating": 2
+        },
+        {
+          "target_id": 104115,
+          "rating": 2
+        },
+        {
+          "target_id": 100532,
+          "rating": 2
+        },
+        {
+          "target_id": 21398,
+          "rating": 2
+        },
+        {
+          "target_id": 1888,
+          "rating": 2
+        },
+        {
+          "target_id": 170891,
+          "rating": 2
+        },
+        {
+          "target_id": 194028,
+          "rating": 2
+        },
+        {
+          "target_id": 97873,
+          "rating": 1
+        },
+        {
+          "target_id": 21334,
+          "rating": 1
+        },
+        {
+          "target_id": 121536,
+          "rating": 1
+        },
+        {
+          "target_id": 107226,
+          "rating": 1
+        },
+        {
+          "target_id": 114535,
+          "rating": 1
+        },
+        {
+          "target_id": 99699,
+          "rating": 1
+        },
+        {
+          "target_id": 138379,
+          "rating": 0
+        },
+        {
+          "target_id": 154969,
+          "rating": 0
+        },
+        {
+          "target_id": 489,
+          "rating": 0
+        },
+        {
+          "target_id": 13283,
+          "rating": 0
+        },
+        {
+          "target_id": 177581,
+          "rating": 0
+        },
+        {
+          "target_id": 104937,
+          "rating": -2
+        }
+      ],
+      "anchor_title": "Laid-Back Camp"
+    },
+    "20464": {
+      "anchor_id": 20464,
+      "source": "AniList GraphQL recommendations.rating",
+      "fetched_at": "2026-11-07T12:27:03.784283+00:00",
+      "status": "available",
+      "complete": true,
+      "max_pages": 6,
+      "page_size": 25,
+      "edges": [
+        {
+          "target_id": 101903,
+          "rating": 360
+        },
+        {
+          "target_id": 134732,
+          "rating": 284
+        },
+        {
+          "target_id": 11771,
+          "rating": 218
+        },
+        {
+          "target_id": 137822,
+          "rating": 144
+        },
+        {
+          "target_id": 101239,
+          "rating": 92
+        },
+        {
+          "target_id": 18507,
+          "rating": 85
+        },
+        {
+          "target_id": 125839,
+          "rating": 85
+        },
+        {
+          "target_id": 113231,
+          "rating": 67
+        },
+        {
+          "target_id": 10800,
+          "rating": 62
+        },
+        {
+          "target_id": 98005,
+          "rating": 61
+        },
+        {
+          "target_id": 18689,
+          "rating": 59
+        },
+        {
+          "target_id": 104052,
+          "rating": 52
+        },
+        {
+          "target_id": 100402,
+          "rating": 43
+        },
+        {
+          "target_id": 140502,
+          "rating": 34
+        },
+        {
+          "target_id": 128207,
+          "rating": 34
+        },
+        {
+          "target_id": 130549,
+          "rating": 29
+        },
+        {
+          "target_id": 16894,
+          "rating": 23
+        },
+        {
+          "target_id": 20614,
+          "rating": 22
+        },
+        {
+          "target_id": 153841,
+          "rating": 22
+        },
+        {
+          "target_id": 18179,
+          "rating": 21
+        },
+        {
+          "target_id": 124153,
+          "rating": 19
+        },
+        {
+          "target_id": 189275,
+          "rating": 19
+        },
+        {
+          "target_id": 2159,
+          "rating": 18
+        },
+        {
+          "target_id": 101117,
+          "rating": 18
+        },
+        {
+          "target_id": 263,
+          "rating": 17
+        },
+        {
+          "target_id": 103302,
+          "rating": 17
+        },
+        {
+          "target_id": 21377,
+          "rating": 16
+        },
+        {
+          "target_id": 153658,
+          "rating": 15
+        },
+        {
+          "target_id": 167927,
+          "rating": 15
+        },
+        {
+          "target_id": 163146,
+          "rating": 15
+        },
+        {
+          "target_id": 20912,
+          "rating": 14
+        },
+        {
+          "target_id": 111137,
+          "rating": 14
+        },
+        {
+          "target_id": 21348,
+          "rating": 14
+        },
+        {
+          "target_id": 14397,
+          "rating": 14
+        },
+        {
+          "target_id": 120859,
+          "rating": 13
+        },
+        {
+          "target_id": 1550,
+          "rating": 12
+        },
+        {
+          "target_id": 21330,
+          "rating": 12
+        },
+        {
+          "target_id": 130402,
+          "rating": 12
+        },
+        {
+          "target_id": 16916,
+          "rating": 11
+        },
+        {
+          "target_id": 101215,
+          "rating": 11
+        },
+        {
+          "target_id": 165171,
+          "rating": 11
+        },
+        {
+          "target_id": 98497,
+          "rating": 10
+        },
+        {
+          "target_id": 170942,
+          "rating": 10
+        },
+        {
+          "target_id": 20723,
+          "rating": 9
+        },
+        {
+          "target_id": 178680,
+          "rating": 9
+        },
+        {
+          "target_id": 177687,
+          "rating": 9
+        },
+        {
+          "target_id": 15,
+          "rating": 8
+        },
+        {
+          "target_id": 20923,
+          "rating": 8
+        },
+        {
+          "target_id": 20607,
+          "rating": 8
+        },
+        {
+          "target_id": 21709,
+          "rating": 8
+        },
+        {
+          "target_id": 112719,
+          "rating": 8
+        },
+        {
+          "target_id": 180516,
+          "rating": 8
+        },
+        {
+          "target_id": 170,
+          "rating": 7
+        },
+        {
+          "target_id": 20725,
+          "rating": 7
+        },
+        {
+          "target_id": 627,
+          "rating": 7
+        },
+        {
+          "target_id": 7720,
+          "rating": 7
+        },
+        {
+          "target_id": 5231,
+          "rating": 7
+        },
+        {
+          "target_id": 99586,
+          "rating": 7
+        },
+        {
+          "target_id": 102167,
+          "rating": 7
+        },
+        {
+          "target_id": 137633,
+          "rating": 7
+        },
+        {
+          "target_id": 177634,
+          "rating": 7
+        },
+        {
+          "target_id": 191788,
+          "rating": 7
+        },
+        {
+          "target_id": 131485,
+          "rating": 6
+        },
+        {
+          "target_id": 101045,
+          "rating": 5
+        },
+        {
+          "target_id": 107203,
+          "rating": 5
+        },
+        {
+          "target_id": 105749,
+          "rating": 5
+        },
+        {
+          "target_id": 21407,
+          "rating": 5
+        },
+        {
+          "target_id": 136064,
+          "rating": 5
+        },
+        {
+          "target_id": 187225,
+          "rating": 5
+        },
+        {
+          "target_id": 163270,
+          "rating": 5
+        },
+        {
+          "target_id": 22,
+          "rating": 4
+        },
+        {
+          "target_id": 100990,
+          "rating": 4
+        },
+        {
+          "target_id": 97921,
+          "rating": 4
+        },
+        {
+          "target_id": 132171,
+          "rating": 4
+        },
+        {
+          "target_id": 98514,
+          "rating": 4
+        },
+        {
+          "target_id": 1327,
+          "rating": 4
+        },
+        {
+          "target_id": 136381,
+          "rating": 4
+        },
+        {
+          "target_id": 21578,
+          "rating": 3
+        },
+        {
+          "target_id": 103555,
+          "rating": 3
+        },
+        {
+          "target_id": 108628,
+          "rating": 3
+        },
+        {
+          "target_id": 117757,
+          "rating": 3
+        },
+        {
+          "target_id": 138452,
+          "rating": 3
+        },
+        {
+          "target_id": 5941,
+          "rating": 2
+        },
+        {
+          "target_id": 11371,
+          "rating": 2
+        },
+        {
+          "target_id": 123494,
+          "rating": 2
+        },
+        {
+          "target_id": 122807,
+          "rating": 2
+        },
+        {
+          "target_id": 21879,
+          "rating": 2
+        },
+        {
+          "target_id": 136435,
+          "rating": 2
+        },
+        {
+          "target_id": 109731,
+          "rating": 2
+        },
+        {
+          "target_id": 20510,
+          "rating": 1
+        },
+        {
+          "target_id": 21715,
+          "rating": 1
+        },
+        {
+          "target_id": 7092,
+          "rating": 1
+        },
+        {
+          "target_id": 995,
+          "rating": 1
+        },
+        {
+          "target_id": 3081,
+          "rating": 0
+        },
+        {
+          "target_id": 9032,
+          "rating": 0
+        },
+        {
+          "target_id": 160515,
+          "rating": 0
+        },
+        {
+          "target_id": 188941,
+          "rating": 0
+        },
+        {
+          "target_id": 196935,
+          "rating": -1
+        },
+        {
+          "target_id": 1252,
+          "rating": -2
+        }
+      ],
+      "anchor_title": "HAIKYU!!"
+    },
+    "19": {
+      "anchor_id": 19,
+      "source": "AniList GraphQL recommendations.rating",
+      "fetched_at": "2026-11-07T12:27:13.321478+00:00",
+      "status": "available",
+      "complete": true,
+      "max_pages": 6,
+      "page_size": 25,
+      "edges": [
+        {
+          "target_id": 1535,
+          "rating": 1187
+        },
+        {
+          "target_id": 99088,
+          "rating": 380
+        },
+        {
+          "target_id": 13601,
+          "rating": 322
+        },
+        {
+          "target_id": 128547,
+          "rating": 141
+        },
+        {
+          "target_id": 6114,
+          "rating": 124
+        },
+        {
+          "target_id": 100388,
+          "rating": 108
+        },
+        {
+          "target_id": 101349,
+          "rating": 96
+        },
+        {
+          "target_id": 21711,
+          "rating": 94
+        },
+        {
+          "target_id": 437,
+          "rating": 87
+        },
+        {
+          "target_id": 33,
+          "rating": 76
+        },
+        {
+          "target_id": 114124,
+          "rating": 72
+        },
+        {
+          "target_id": 151514,
+          "rating": 72
+        },
+        {
+          "target_id": 820,
+          "rating": 61
+        },
+        {
+          "target_id": 151189,
+          "rating": 50
+        },
+        {
+          "target_id": 239,
+          "rating": 49
+        },
+        {
+          "target_id": 323,
+          "rating": 49
+        },
+        {
+          "target_id": 20661,
+          "rating": 48
+        },
+        {
+          "target_id": 20623,
+          "rating": 48
+        },
+        {
+          "target_id": 1483,
+          "rating": 48
+        },
+        {
+          "target_id": 2025,
+          "rating": 39
+        },
+        {
+          "target_id": 26,
+          "rating": 36
+        },
+        {
+          "target_id": 889,
+          "rating": 33
+        },
+        {
+          "target_id": 9253,
+          "rating": 33
+        },
+        {
+          "target_id": 21234,
+          "rating": 31
+        },
+        {
+          "target_id": 790,
+          "rating": 30
+        },
+        {
+          "target_id": 1520,
+          "rating": 24
+        },
+        {
+          "target_id": 137667,
+          "rating": 22
+        },
+        {
+          "target_id": 467,
+          "rating": 21
+        },
+        {
+          "target_id": 7724,
+          "rating": 20
+        },
+        {
+          "target_id": 1575,
+          "rating": 19
+        },
+        {
+          "target_id": 202717,
+          "rating": 19
+        },
+        {
+          "target_id": 107663,
+          "rating": 18
+        },
+        {
+          "target_id": 235,
+          "rating": 17
+        },
+        {
+          "target_id": 7,
+          "rating": 15
+        },
+        {
+          "target_id": 455,
+          "rating": 15
+        },
+        {
+          "target_id": 21341,
+          "rating": 14
+        },
+        {
+          "target_id": 101348,
+          "rating": 14
+        },
+        {
+          "target_id": 272,
+          "rating": 13
+        },
+        {
+          "target_id": 4879,
+          "rating": 12
+        },
+        {
+          "target_id": 21187,
+          "rating": 12
+        },
+        {
+          "target_id": 369,
+          "rating": 11
+        },
+        {
+          "target_id": 2593,
+          "rating": 11
+        },
+        {
+          "target_id": 1910,
+          "rating": 11
+        },
+        {
+          "target_id": 97922,
+          "rating": 10
+        },
+        {
+          "target_id": 13125,
+          "rating": 10
+        },
+        {
+          "target_id": 43,
+          "rating": 10
+        },
+        {
+          "target_id": 155011,
+          "rating": 8
+        },
+        {
+          "target_id": 1145,
+          "rating": 8
+        },
+        {
+          "target_id": 30,
+          "rating": 8
+        },
+        {
+          "target_id": 1695,
+          "rating": 7
+        },
+        {
+          "target_id": 1508,
+          "rating": 7
+        },
+        {
+          "target_id": 153687,
+          "rating": 7
+        },
+        {
+          "target_id": 4039,
+          "rating": 7
+        },
+        {
+          "target_id": 861,
+          "rating": 7
+        },
+        {
+          "target_id": 570,
+          "rating": 6
+        },
+        {
+          "target_id": 3342,
+          "rating": 6
+        },
+        {
+          "target_id": 2213,
+          "rating": 6
+        },
+        {
+          "target_id": 177689,
+          "rating": 6
+        },
+        {
+          "target_id": 2161,
+          "rating": 5
+        },
+        {
+          "target_id": 457,
+          "rating": 5
+        },
+        {
+          "target_id": 21170,
+          "rating": 5
+        },
+        {
+          "target_id": 2251,
+          "rating": 4
+        },
+        {
+          "target_id": 6573,
+          "rating": 4
+        },
+        {
+          "target_id": 5682,
+          "rating": 3
+        },
+        {
+          "target_id": 11111,
+          "rating": 3
+        },
+        {
+          "target_id": 10798,
+          "rating": 2
+        },
+        {
+          "target_id": 919,
+          "rating": 2
+        },
+        {
+          "target_id": 142666,
+          "rating": 2
+        },
+        {
+          "target_id": 176642,
+          "rating": 2
+        },
+        {
+          "target_id": 98239,
+          "rating": 2
+        },
+        {
+          "target_id": 151040,
+          "rating": 1
+        },
+        {
+          "target_id": 2994,
+          "rating": 1
+        },
+        {
+          "target_id": 4282,
+          "rating": 1
+        },
+        {
+          "target_id": 117798,
+          "rating": 1
+        },
+        {
+          "target_id": 20513,
+          "rating": 1
+        },
+        {
+          "target_id": 136430,
+          "rating": 1
+        },
+        {
+          "target_id": 6746,
+          "rating": 1
+        },
+        {
+          "target_id": 7662,
+          "rating": 1
+        },
+        {
+          "target_id": 107660,
+          "rating": 1
+        },
+        {
+          "target_id": 486,
+          "rating": 1
+        },
+        {
+          "target_id": 177679,
+          "rating": 1
+        },
+        {
+          "target_id": 20958,
+          "rating": 0
+        },
+        {
+          "target_id": 102498,
+          "rating": 0
+        },
+        {
+          "target_id": 169375,
+          "rating": 0
+        },
+        {
+          "target_id": 154587,
+          "rating": 0
+        },
+        {
+          "target_id": 113108,
+          "rating": 0
+        },
+        {
+          "target_id": 134,
+          "rating": -1
+        },
+        {
+          "target_id": 150,
+          "rating": -1
+        },
+        {
+          "target_id": 21360,
+          "rating": -1
+        },
+        {
+          "target_id": 3989,
+          "rating": -1
+        },
+        {
+          "target_id": 10165,
+          "rating": -3
+        }
+      ],
+      "anchor_title": "Monster"
+    },
+    "199": {
+      "anchor_id": 199,
+      "source": "AniList GraphQL recommendations.rating",
+      "fetched_at": "2026-11-07T12:27:20.471192+00:00",
+      "status": "available",
+      "complete": true,
+      "max_pages": 6,
+      "page_size": 25,
+      "edges": [
+        {
+          "target_id": 431,
+          "rating": 809
+        },
+        {
+          "target_id": 523,
+          "rating": 397
+        },
+        {
+          "target_id": 512,
+          "rating": 285
+        },
+        {
+          "target_id": 2890,
+          "rating": 210
+        },
+        {
+          "target_id": 164,
+          "rating": 191
+        },
+        {
+          "target_id": 114963,
+          "rating": 143
+        },
+        {
+          "target_id": 109979,
+          "rating": 119
+        },
+        {
+          "target_id": 7711,
+          "rating": 100
+        },
+        {
+          "target_id": 572,
+          "rating": 81
+        },
+        {
+          "target_id": 20981,
+          "rating": 43
+        },
+        {
+          "target_id": 416,
+          "rating": 40
+        },
+        {
+          "target_id": 21519,
+          "rating": 36
+        },
+        {
+          "target_id": 10408,
+          "rating": 33
+        },
+        {
+          "target_id": 142770,
+          "rating": 32
+        },
+        {
+          "target_id": 513,
+          "rating": 28
+        },
+        {
+          "target_id": 97986,
+          "rating": 26
+        },
+        {
+          "target_id": 4081,
+          "rating": 25
+        },
+        {
+          "target_id": 10389,
+          "rating": 23
+        },
+        {
+          "target_id": 98436,
+          "rating": 23
+        },
+        {
+          "target_id": 101478,
+          "rating": 20
+        },
+        {
+          "target_id": 20954,
+          "rating": 20
+        },
+        {
+          "target_id": 97981,
+          "rating": 19
+        },
+        {
+          "target_id": 20555,
+          "rating": 18
+        },
+        {
+          "target_id": 107012,
+          "rating": 14
+        },
+        {
+          "target_id": 20751,
+          "rating": 14
+        },
+        {
+          "target_id": 98249,
+          "rating": 13
+        },
+        {
+          "target_id": 158641,
+          "rating": 13
+        },
+        {
+          "target_id": 10259,
+          "rating": 12
+        },
+        {
+          "target_id": 21688,
+          "rating": 12
+        },
+        {
+          "target_id": 1943,
+          "rating": 12
+        },
+        {
+          "target_id": 16664,
+          "rating": 11
+        },
+        {
+          "target_id": 437,
+          "rating": 10
+        },
+        {
+          "target_id": 2246,
+          "rating": 10
+        },
+        {
+          "target_id": 116226,
+          "rating": 8
+        },
+        {
+          "target_id": 20595,
+          "rating": 8
+        },
+        {
+          "target_id": 157062,
+          "rating": 8
+        },
+        {
+          "target_id": 9756,
+          "rating": 8
+        },
+        {
+          "target_id": 136149,
+          "rating": 7
+        },
+        {
+          "target_id": 14175,
+          "rating": 7
+        },
+        {
+          "target_id": 585,
+          "rating": 7
+        },
+        {
+          "target_id": 147105,
+          "rating": 7
+        },
+        {
+          "target_id": 21234,
+          "rating": 6
+        },
+        {
+          "target_id": 10029,
+          "rating": 6
+        },
+        {
+          "target_id": 87539,
+          "rating": 6
+        },
+        {
+          "target_id": 5998,
+          "rating": 5
+        },
+        {
+          "target_id": 8598,
+          "rating": 5
+        },
+        {
+          "target_id": 1430,
+          "rating": 4
+        },
+        {
+          "target_id": 9760,
+          "rating": 4
+        },
+        {
+          "target_id": 21284,
+          "rating": 3
+        },
+        {
+          "target_id": 125838,
+          "rating": 3
+        },
+        {
+          "target_id": 100749,
+          "rating": 3
+        },
+        {
+          "target_id": 1441,
+          "rating": 3
+        },
+        {
+          "target_id": 177271,
+          "rating": 3
+        },
+        {
+          "target_id": 457,
+          "rating": 3
+        },
+        {
+          "target_id": 1829,
+          "rating": 2
+        },
+        {
+          "target_id": 11061,
+          "rating": 2
+        },
+        {
+          "target_id": 126289,
+          "rating": 2
+        },
+        {
+          "target_id": 146867,
+          "rating": 2
+        },
+        {
+          "target_id": 578,
+          "rating": 2
+        },
+        {
+          "target_id": 11981,
+          "rating": 1
+        },
+        {
+          "target_id": 146669,
+          "rating": 1
+        },
+        {
+          "target_id": 2286,
+          "rating": 1
+        },
+        {
+          "target_id": 489,
+          "rating": 1
+        },
+        {
+          "target_id": 177637,
+          "rating": 1
+        },
+        {
+          "target_id": 131083,
+          "rating": 0
+        },
+        {
+          "target_id": 21577,
+          "rating": 0
+        },
+        {
+          "target_id": 100500,
+          "rating": 0
+        },
+        {
+          "target_id": 109298,
+          "rating": -1
+        }
+      ],
+      "anchor_title": "Spirited Away"
+    },
+    "457": {
+      "anchor_id": 457,
+      "source": "AniList GraphQL recommendations.rating",
+      "fetched_at": "2026-11-07T12:27:34.769029+00:00",
+      "status": "available",
+      "complete": true,
+      "max_pages": 6,
+      "page_size": 25,
+      "edges": [
+        {
+          "target_id": 4081,
+          "rating": 366
+        },
+        {
+          "target_id": 486,
+          "rating": 300
+        },
+        {
+          "target_id": 154587,
+          "rating": 298
+        },
+        {
+          "target_id": 2246,
+          "rating": 263
+        },
+        {
+          "target_id": 114535,
+          "rating": 142
+        },
+        {
+          "target_id": 99420,
+          "rating": 97
+        },
+        {
+          "target_id": 477,
+          "rating": 74
+        },
+        {
+          "target_id": 387,
+          "rating": 65
+        },
+        {
+          "target_id": 10408,
+          "rating": 50
+        },
+        {
+          "target_id": 861,
+          "rating": 49
+        },
+        {
+          "target_id": 130550,
+          "rating": 46
+        },
+        {
+          "target_id": 572,
+          "rating": 35
+        },
+        {
+          "target_id": 177689,
+          "rating": 35
+        },
+        {
+          "target_id": 11665,
+          "rating": 33
+        },
+        {
+          "target_id": 10379,
+          "rating": 29
+        },
+        {
+          "target_id": 101347,
+          "rating": 28
+        },
+        {
+          "target_id": 21827,
+          "rating": 27
+        },
+        {
+          "target_id": 20751,
+          "rating": 27
+        },
+        {
+          "target_id": 142701,
+          "rating": 27
+        },
+        {
+          "target_id": 99748,
+          "rating": 26
+        },
+        {
+          "target_id": 97983,
+          "rating": 26
+        },
+        {
+          "target_id": 164,
+          "rating": 24
+        },
+        {
+          "target_id": 97986,
+          "rating": 21
+        },
+        {
+          "target_id": 112609,
+          "rating": 21
+        },
+        {
+          "target_id": 98436,
+          "rating": 21
+        },
+        {
+          "target_id": 21710,
+          "rating": 20
+        },
+        {
+          "target_id": 1520,
+          "rating": 20
+        },
+        {
+          "target_id": 7588,
+          "rating": 20
+        },
+        {
+          "target_id": 5341,
+          "rating": 19
+        },
+        {
+          "target_id": 21733,
+          "rating": 19
+        },
+        {
+          "target_id": 1589,
+          "rating": 18
+        },
+        {
+          "target_id": 5300,
+          "rating": 17
+        },
+        {
+          "target_id": 153518,
+          "rating": 17
+        },
+        {
+          "target_id": 182255,
+          "rating": 17
+        },
+        {
+          "target_id": 147105,
+          "rating": 16
+        },
+        {
+          "target_id": 98448,
+          "rating": 15
+        },
+        {
+          "target_id": 976,
+          "rating": 15
+        },
+        {
+          "target_id": 885,
+          "rating": 15
+        },
+        {
+          "target_id": 5081,
+          "rating": 13
+        },
+        {
+          "target_id": 138565,
+          "rating": 13
+        },
+        {
+          "target_id": 145728,
+          "rating": 13
+        },
+        {
+          "target_id": 161645,
+          "rating": 12
+        },
+        {
+          "target_id": 1205,
+          "rating": 11
+        },
+        {
+          "target_id": 962,
+          "rating": 11
+        },
+        {
+          "target_id": 103221,
+          "rating": 11
+        },
+        {
+          "target_id": 146867,
+          "rating": 11
+        },
+        {
+          "target_id": 100283,
+          "rating": 10
+        },
+        {
+          "target_id": 2931,
+          "rating": 10
+        },
+        {
+          "target_id": 114136,
+          "rating": 10
+        },
+        {
+          "target_id": 155890,
+          "rating": 10
+        },
+        {
+          "target_id": 3091,
+          "rating": 9
+        },
+        {
+          "target_id": 138714,
+          "rating": 9
+        },
+        {
+          "target_id": 184574,
+          "rating": 9
+        },
+        {
+          "target_id": 4981,
+          "rating": 7
+        },
+        {
+          "target_id": 21643,
+          "rating": 7
+        },
+        {
+          "target_id": 123779,
+          "rating": 7
+        },
+        {
+          "target_id": 620,
+          "rating": 7
+        },
+        {
+          "target_id": 98506,
+          "rating": 7
+        },
+        {
+          "target_id": 2150,
+          "rating": 7
+        },
+        {
+          "target_id": 130622,
+          "rating": 7
+        },
+        {
+          "target_id": 143598,
+          "rating": 7
+        },
+        {
+          "target_id": 100978,
+          "rating": 6
+        },
+        {
+          "target_id": 3466,
+          "rating": 6
+        },
+        {
+          "target_id": 5420,
+          "rating": 6
+        },
+        {
+          "target_id": 98707,
+          "rating": 6
+        },
+        {
+          "target_id": 184997,
+          "rating": 6
+        },
+        {
+          "target_id": 205,
+          "rating": 6
+        },
+        {
+          "target_id": 18153,
+          "rating": 5
+        },
+        {
+          "target_id": 10500,
+          "rating": 5
+        },
+        {
+          "target_id": 721,
+          "rating": 5
+        },
+        {
+          "target_id": 3420,
+          "rating": 5
+        },
+        {
+          "target_id": 126529,
+          "rating": 5
+        },
+        {
+          "target_id": 109215,
+          "rating": 5
+        },
+        {
+          "target_id": 19,
+          "rating": 5
+        },
+        {
+          "target_id": 107201,
+          "rating": 4
+        },
+        {
+          "target_id": 6864,
+          "rating": 4
+        },
+        {
+          "target_id": 21688,
+          "rating": 4
+        },
+        {
+          "target_id": 1571,
+          "rating": 4
+        },
+        {
+          "target_id": 109979,
+          "rating": 4
+        },
+        {
+          "target_id": 155783,
+          "rating": 4
+        },
+        {
+          "target_id": 2751,
+          "rating": 4
+        },
+        {
+          "target_id": 166611,
+          "rating": 4
+        },
+        {
+          "target_id": 1827,
+          "rating": 4
+        },
+        {
+          "target_id": 12355,
+          "rating": 4
+        },
+        {
+          "target_id": 98444,
+          "rating": 4
+        },
+        {
+          "target_id": 179874,
+          "rating": 4
+        },
+        {
+          "target_id": 793,
+          "rating": 3
+        },
+        {
+          "target_id": 308,
+          "rating": 3
+        },
+        {
+          "target_id": 167146,
+          "rating": 3
+        },
+        {
+          "target_id": 20595,
+          "rating": 3
+        },
+        {
+          "target_id": 114085,
+          "rating": 3
+        },
+        {
+          "target_id": 141866,
+          "rating": 3
+        },
+        {
+          "target_id": 199,
+          "rating": 3
+        },
+        {
+          "target_id": 6117,
+          "rating": 3
+        },
+        {
+          "target_id": 108354,
+          "rating": 3
+        },
+        {
+          "target_id": 228,
+          "rating": 2
+        },
+        {
+          "target_id": 18411,
+          "rating": 2
+        },
+        {
+          "target_id": 14353,
+          "rating": 2
+        },
+        {
+          "target_id": 6277,
+          "rating": 2
+        },
+        {
+          "target_id": 106918,
+          "rating": 2
+        },
+        {
+          "target_id": 108617,
+          "rating": 2
+        },
+        {
+          "target_id": 190143,
+          "rating": 2
+        },
+        {
+          "target_id": 207675,
+          "rating": 2
+        },
+        {
+          "target_id": 16201,
+          "rating": 1
+        },
+        {
+          "target_id": 12815,
+          "rating": 1
+        },
+        {
+          "target_id": 1521,
+          "rating": 1
+        },
+        {
+          "target_id": 19157,
+          "rating": 1
+        },
+        {
+          "target_id": 107,
+          "rating": 1
+        },
+        {
+          "target_id": 185614,
+          "rating": 1
+        },
+        {
+          "target_id": 158641,
+          "rating": 1
+        },
+        {
+          "target_id": 100500,
+          "rating": 1
+        },
+        {
+          "target_id": 21284,
+          "rating": 1
+        },
+        {
+          "target_id": 185514,
+          "rating": 1
+        },
+        {
+          "target_id": 203880,
+          "rating": 1
+        },
+        {
+          "target_id": 184351,
+          "rating": 1
+        },
+        {
+          "target_id": 6954,
+          "rating": 1
+        },
+        {
+          "target_id": 21398,
+          "rating": 0
+        },
+        {
+          "target_id": 100532,
+          "rating": 0
+        },
+        {
+          "target_id": 7662,
+          "rating": 0
+        },
+        {
+          "target_id": 20709,
+          "rating": 0
+        },
+        {
+          "target_id": 1200,
+          "rating": 0
+        },
+        {
+          "target_id": 21423,
+          "rating": 0
+        },
+        {
+          "target_id": 208352,
+          "rating": 0
+        },
+        {
+          "target_id": 21778,
+          "rating": 0
+        },
+        {
+          "target_id": 21366,
+          "rating": 0
+        }
+      ],
+      "anchor_title": "MUSHI-SHI"
+    }
+  }
+}

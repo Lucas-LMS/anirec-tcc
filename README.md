@@ -184,3 +184,6 @@ Perfis, listas pessoais importadas, notas individuais, julgamentos de usuários,
 O dataset pode crescer com extração autorizada, atualização incremental, deduplicação por ID e versões auditadas. O tamanho atual não é um teto do SQLite. Para um catálogo muito maior, o frontend estático poderá ser substituído por consulta paginada a um índice/backend, mantendo a lógica de RI. A autorização para ambição de catálogo completo do AniList permanece pendente; não há espelhamento integral nem coleta massiva automática neste aplicativo.
 
 Projeto independente, sem afiliação ao AniList. Créditos e condições de terceiros em [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Uma licença geral para o código autoral ainda não foi definida.
+
+
+Comparação experimental opcional: [conteúdo e recomendações votadas da comunidade](recomendador/docs/COMPARACAO_COMUNIDADE_V13.md). O ranking padrão continua por conteúdo; o botão compara as duas variantes no mesmo conjunto elegível, incluindo obras sem votos.

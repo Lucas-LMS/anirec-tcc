@@ -49,6 +49,28 @@ class AniListClient:
         query='''query($id:Int!){ Media(id:$id,type:ANIME){ recommendations(page:1,perPage:20,sort:RATING_DESC){ nodes { mediaRecommendation { '''+MEDIA_FIELDS+''' } } } } }'''
         data=self.query(query,dict(id=int(media_id)))['Media']['recommendations']['nodes']
         return [r['mediaRecommendation'] for r in data if r.get('mediaRecommendation') and r['mediaRecommendation'].get('type')=='ANIME' and not r['mediaRecommendation'].get('isAdult')]
+    def recommendation_evidence(self,media_id,online=True,refresh=False):
+        from pathlib import Path
+        import datetime
+        identity=str(int(media_id));cache=getattr(self,'recommendation_cache',{})
+        if identity in cache and not refresh:return cache[identity]
+        path=Path(__file__).parent/'online/community-recommendations.json'
+        bundled=json.loads(path.read_text(encoding='utf-8')).get('anchors',{}).get(identity) if path.exists() else None
+        if bundled and not refresh:return bundled
+        if not online:return dict(anchor_id=int(media_id),source='AniList GraphQL',status='not_available_offline',complete=False,edges=[])
+        edges={};complete=False
+        for page in range(1,7):
+            query='query($id:Int!,$page:Int!){Media(id:$id,type:ANIME){recommendations(page:$page,perPage:25,sort:RATING_DESC){pageInfo{hasNextPage perPage} nodes{rating mediaRecommendation{id}}}}}'
+            media=self.query(query,dict(id=int(media_id),page=page)).get('Media')
+            if not media:break
+            connection=media['recommendations']
+            for node in connection.get('nodes') or []:
+                target=node.get('mediaRecommendation')
+                if target and node.get('rating') is not None:edges[target['id']]=dict(target_id=target['id'],rating=node['rating'])
+            if not connection['pageInfo']['hasNextPage']:complete=True;break
+        value=dict(anchor_id=int(media_id),source='AniList GraphQL recommendations.rating',fetched_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='available',complete=complete,max_pages=6,page_size=25,edges=list(edges.values()))
+        cache[identity]=value;self.recommendation_cache=cache;return value
+
     def discover(self,genre,excluded_ids,tag=None):
         query='''query($genre:String,$excluded:[Int],$tag:String){ Page(page:1,perPage:50){ media(type:ANIME,genre:$genre,tag:$tag,id_not_in:$excluded,status_not:NOT_YET_RELEASED,isAdult:false,sort:POPULARITY_DESC){ '''+MEDIA_FIELDS+''' } } }'''
         return self.query(query,dict(genre=genre,excluded=sorted(set(excluded_ids))[:10000],tag=tag))['Page']['media']

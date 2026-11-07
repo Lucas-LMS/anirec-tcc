@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import urlparse,parse_qs
 from engine import Engine,PARAMS
 from retrieval_experiments import apply as apply_experiments,study as create_study
+from community_recommendations import apply as apply_pairwise
 import hashlib,time
 ROOT=Path(__file__).resolve().parent
 def main():
@@ -43,7 +44,7 @@ def main():
                     query=parse_qs(path.query);self.send(engine.search(query.get('q',[''])[0],query.get('online',['true'])[0]=='true'));return
                 if path.path.startswith('/assets/'):
                     name=path.path.removeprefix('/assets/')
-                    allowed={'ir-core.js','onboarding.js','app.js','app.css','local-adapter.js','evaluation-core.js','history-profile.js','franchise-core.js','user-statistics.js'}
+                    allowed={'ir-core.js','onboarding.js','app.js','app.css','local-adapter.js','evaluation-core.js','history-profile.js','franchise-core.js','user-statistics.js','community-core.js'}
                     if name not in allowed:self.send(dict(error='Asset não encontrado.'),404);return
                     content=(ROOT/'shared'/name).read_bytes();self.send_response(200);self.send_header('Content-Type','text/css; charset=utf-8' if name.endswith('.css') else 'text/javascript; charset=utf-8');self.send_header('Content-Length',str(len(content)));self.send_header('Cache-Control','no-cache');self.end_headers();self.wfile.write(content);return
                 if path.path not in ['/','/index.html','/pesquisa.html','/perfil.html']:self.send(dict(error='Não encontrado.'),404);return
@@ -87,7 +88,15 @@ def main():
                             result=create_study(result,records,fingerprint,excluded_ratings)
                         else:
                             result=apply_experiments(result,records,str(data.get('strategy','vectors')),float(data.get('community_weight',0)))
-                            extra=(time.perf_counter()-start)*1000;result['ranking_ms']+=extra;result['total_ms']+=extra
+                            fetch_ms=0
+                            if data.get('use_community_recommendations') is True:
+                                fetch_start=time.perf_counter()
+                                try:evidence=engine.client.recommendation_evidence(result['anchor']['anilist_id'],online=data.get('online',True) is True)
+                                except (RuntimeError,OSError,ValueError) as error:evidence=dict(anchor_id=result['anchor']['anilist_id'],status='unavailable',warning=str(error),edges=[])
+                                fetch_ms=(time.perf_counter()-fetch_start)*1000
+                                result=apply_pairwise(result,evidence)
+                                result['community_fetch_ms']=fetch_ms
+                            extra=(time.perf_counter()-start)*1000;result['ranking_ms']+=extra-fetch_ms;result['total_ms']+=extra
                 elif path=='/api/shutdown':
                     self.send(dict(ok=True));threading.Thread(target=server.shutdown,daemon=True).start();return
                 else:self.send(dict(error='Não encontrado.'),404);return

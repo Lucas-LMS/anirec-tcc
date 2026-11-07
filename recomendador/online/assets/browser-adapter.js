@@ -12,6 +12,21 @@ window.AniRecAdapter = (() => {
     }
     records = [...byKey.values()]; idf = idf || data.topic_idf || window.AniRecIR.topicIdf(records.filter(item => !item.is_adult));
   }
+  let communitySnapshot;
+  async function recommendationEvidence(id, online) {
+    if (!communitySnapshot) { const response=await fetch('community-recommendations.json'); if(!response.ok)throw Error('Snapshot comunitário indisponível.'); communitySnapshot=await response.json(); }
+    if(communitySnapshot.anchors[String(id)])return communitySnapshot.anchors[String(id)];
+    if(!online)return {anchor_id:id,status:'not_available_offline',edges:[],complete:false};
+    const edges=[];let complete=false;
+    for(let page=1;page<=6;page++) {
+      const response=await aniQuery('query($id:Int!,$page:Int!){Media(id:$id,type:ANIME){recommendations(page:$page,perPage:25,sort:RATING_DESC){pageInfo{hasNextPage} nodes{rating mediaRecommendation{id}}}}}',{id,page});
+      const connection=response.Media?.recommendations;if(!connection)break;
+      for(const node of connection.nodes||[])if(node.mediaRecommendation&&Number.isFinite(node.rating))edges.push({target_id:node.mediaRecommendation.id,rating:node.rating});
+      if(!connection.pageInfo.hasNextPage){complete=true;break;}
+    }
+    const evidence={anchor_id:id,source:'AniList GraphQL recommendations.rating',fetched_at:new Date().toISOString(),status:'available',complete,max_pages:6,page_size:25,edges};
+    communitySnapshot.anchors[String(id)]=evidence;return evidence;
+  }
   function persist() {
     localStorage.setItem('anirec-demo-notes', JSON.stringify(notes));
     localStorage.setItem('anirec-demo-preferences', JSON.stringify({ preferred: preferred.join(', '), avoided: avoided.join(', ') }));
@@ -111,7 +126,14 @@ window.AniRecAdapter = (() => {
       if(!options.pure)await ensureProfileEncoding(progress);
       const anchor = byKey.get(options.key); if (!anchor) throw Error('Pesquise novamente a obra.'); let warning;
       if (options.online) try { await expansion(anchor, progress,options.pure); } catch (e) { warning = 'A ampliação AniList falhou; usando o catálogo disponível. ' + e.message; }
-      const result = window.AniRecIR.rank({ ...options, records:options.pure?records.filter(row=>neutralKeys.has(row.key)):records,profile_records:options.pure?[]:referenceRecords(), anchor, ratings: notes, favorites:allFavorites(), preferred, avoided, seenIds: seenIds(), statistics:metadata.listEntries?window.AniRecUserStats.compute(statisticsRecords(),metadata.listEntries,'STARTED'):metadata.statistics||{}, hidden, params: data.params, topic_idf: idf });
+      let result = window.AniRecIR.rank({ ...options, records:options.pure?records.filter(row=>neutralKeys.has(row.key)):records,profile_records:options.pure?[]:referenceRecords(), anchor, ratings: notes, favorites:allFavorites(), preferred, avoided, seenIds: seenIds(), statistics:metadata.listEntries?window.AniRecUserStats.compute(statisticsRecords(),metadata.listEntries,'STARTED'):metadata.statistics||{}, hidden, params: data.params, topic_idf: idf });
+      if(options.use_community_recommendations) {
+        const started=performance.now();let evidence;
+        try { evidence=await recommendationEvidence(anchor.anilist_id,options.online); }
+        catch(error){ evidence={anchor_id:anchor.anilist_id,status:'unavailable',warning:error.message,edges:[],complete:false}; }
+        const fetched=performance.now();result=window.AniRecCommunity.apply(result,evidence);
+        result.community_fetch_ms=fetched-started;result.ranking_ms+=performance.now()-fetched;result.total_ms+=performance.now()-started;
+      }
       if (warning) result.warning = warning; return result;
     },
     async dataset() { const response = await fetch('build-manifest.json'); const manifest = await response.json(); return { version: data.params.version, description: 'Metadados públicos AniList e vetores do mesmo snapshot da versão local. Seu perfil continua apenas neste navegador.', quality: { public_catalog: manifest.count, current_browser_catalog: records.length, works_with_notes: Object.keys(notes).length, known_started_ids: seenIds().length } }; }
