@@ -1593,6 +1593,11 @@
       "sha256": "c1bff9ca93f9cc13e2e4a56d938369f29526ad4c2f4867f56f04844e29b682d0"
     },
     {
+      "path": "recomendador/data/content-facets-development.json",
+      "bytes": 13985,
+      "sha256": "8dda8396ff42a746a9a3f9b59e0aeb1b057fad88a42a28469a25b214eba579ab"
+    },
+    {
       "path": "recomendador/data/dataset-manifest.json",
       "bytes": 466,
       "sha256": "9915670873c00f9180416017fc5b1465b64ca770d5c7a027a3f430007a530a29"
@@ -1666,6 +1671,11 @@
       "path": "recomendador/docs/MODO_PURO_E_GITHUB.md",
       "bytes": 4169,
       "sha256": "f0691b370075d0c5ec8912098e80161bd596cc0d74f8ec5576707e517990c2fd"
+    },
+    {
+      "path": "recomendador/docs/PESQUISA_CONTEUDO_POR_ASPECTOS.md",
+      "bytes": 3839,
+      "sha256": "fa92a5be125f97224198b0c8c6a44dc78a1301c1de1d0d028fc103915473614c"
     },
     {
       "path": "recomendador/docs/SERIES_E_FREQUENCIA_V12.md",
@@ -2038,6 +2048,11 @@
       "sha256": "97e053166140259fd2c2bb777bbff7b2a390b3f3c11963a82bae810f9a8cfe58"
     },
     {
+      "path": "recomendador/research/facet-content.js",
+      "bytes": 1331,
+      "sha256": "9063b9e1db73fa3d048047ed08cd604e6514e24b528e80ccd68b1aab8ec23be0"
+    },
+    {
       "path": "recomendador/retrieval_experiments.py",
       "bytes": 5965,
       "sha256": "072967914dd20b904dbf645221d69558003098b5c9081b6eb24b50ba1f16d359"
@@ -2231,6 +2246,11 @@
       "path": "scripts/pilot_local_llm.py",
       "bytes": 7280,
       "sha256": "28f36d2eda56c370699ee06a173e7ace94b685bc370aad91dd64f458d56faebe"
+    },
+    {
+      "path": "scripts/research_content_facets.js",
+      "bytes": 2383,
+      "sha256": "5925558667d972fb6bd1cd9e7c481c2522c70afbaae81d155b2a337fd35a86c4"
     },
     {
       "path": "scripts/update_manifest.py",
