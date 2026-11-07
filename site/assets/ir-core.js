@@ -54,7 +54,8 @@
     const genre = jaccard(a.genres || [], b.genres || []);
     return { score: .85 * tag + .15 * genre, tag, genre };
   }
-  function profile(records, ratings = {}, favorites = [], preferred = []) {
+  const history=typeof module!=='undefined'&&module.exports?require('./history-profile.js'):root.AniRecHistory;
+  function profile(records, ratings = {}, favorites = [], preferred = [], signals={}) {
     const byKey = new Map(records.map(item => [item.key, item]));
     const validRatings = Object.entries(ratings).filter(([, s]) => Number.isFinite(s) && s > 0 && s <= 10);
     const values = validRatings.map(([, s]) => s), minimum = values.length ? Math.min(...values) : null, maximum = values.length ? Math.max(...values) : null;
@@ -76,9 +77,7 @@
       }
       for (const [term, meta] of Object.entries(topics(item))) { themes[term] = (themes[term] || 0) + weight * meta.weight; names[term] = meta.name; }
     }
-    const preferences = {};
-    for (const [key, weight] of Object.entries(themes).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]) || a[0].localeCompare(b[0])).slice(0, 12))
-      preferences[key] = { name: names[key], weight: weight / (total || 1), source: weight > 0 ? 'histórico: aproximação' : 'histórico: afastamento' };
+    const preferences=history.compute({records,ratings,favorites,seenIds:signals.seenIds||[],statistics:signals.statistics||{},neutral,half});
     const inferred = Object.values(preferences).map(x => ({ ...x }));
     for (const name of preferred) preferences[norm(name)] = { name, weight: 1, source: 'preferência explícita' };
     return { positive: hasPositive ? unit(positive) : null, negative: hasNegative ? unit(negative) : null, preferences,
@@ -94,8 +93,8 @@
     if(!anchor?.vector?.some(x=>x!==0))throw Error('A sinopse não forneceu termos com vetores utilizáveis. Escolha outro anime.');
     if(!anchor.vector.every(Number.isFinite))throw Error('Vetor da referência inválido.');
     const start = typeof performance !== 'undefined' ? performance.now() : Date.now();
-    const p = profile(options.profile_records || records, ratings, favorites, preferred), lambda = p.active ? Math.max(0, Math.min(.6, options.personalization ?? .35)) : 0;
-    const threshold = options.personal_min_topics ?? .25, idf = options.topic_idf || topicIdf(records);
+    const p = profile(options.profile_records || records, ratings, favorites, preferred,{seenIds:options.pure?[]:seenIds,statistics:options.pure?{}:options.statistics}), lambda = p.active ? Math.max(0, Math.min(.6, options.personalization ?? .35)) : 0;
+    const threshold = options.personal_min_topics ?? .15, idf = options.topic_idf || topicIdf(records);
     const strategy=options.strategy||'vectors',beta={vectors:0,hybrid:.2,bm25:1}[strategy],gamma=options.community_weight??0;
     if(beta===undefined||!Number.isFinite(gamma)||gamma<0||gamma>.1)throw Error('Parâmetros experimentais inválidos.');
     const lexical=beta?bm25(records,anchor.text):new Map();
@@ -136,7 +135,7 @@
     general.forEach((r, i) => diagnostics.push({ key: r.key, title: r.title, reason: 'eligible', general_rank: i + 1, personal_rank: personalRank.get(r.key) || null }));
     const end = typeof performance !== 'undefined' ? performance.now() : Date.now(); audit.eligible = general.length;
     return { anchor, general, personalized, diagnostics, filter_audit: audit, profile_active: p.active, profile_info: p.info,
-      personalization: lambda, params:{...params,retrieval_strategy:strategy,bm25_k1:1.2,bm25_b:.75,lexical_weight:beta,community_weight:gamma}, filters: { pure:!!options.pure,personal_min_topics: threshold,exclude_upcoming:options.exclude_upcoming!==false,require_genre:!!options.require_genre,require_tag_metadata:!!options.require_tag_metadata,exclude_seen:!!options.exclude_seen }, candidate_count: records.length,
+      personalization: lambda, known_anilist_ids:options.pure?[]:[...new Set([...seen,...records.filter(r=>favoriteSet.has(r.key)).map(r=>r.anilist_id).filter(Boolean)])], params:{...params,retrieval_strategy:strategy,bm25_k1:1.2,bm25_b:.75,lexical_weight:beta,community_weight:gamma}, filters: { pure:!!options.pure,personal_min_topics: threshold,exclude_upcoming:options.exclude_upcoming!==false,require_genre:!!options.require_genre,require_tag_metadata:!!options.require_tag_metadata,exclude_seen:!!options.exclude_seen }, candidate_count: records.length,
       eligible_count: general.length, personal_eligible_count: personalized.length, unseen_count: general.filter(r => !r.is_seen).length,
       personal_unseen_count: personalized.filter(r => !r.is_seen).length, ranking_ms: end - start, total_ms: end - start,
       recommendation_sets: { general_all: general.slice(0, 10), general_unseen: general.filter(r => !r.is_seen).slice(0, 10),

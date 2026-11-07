@@ -21,8 +21,10 @@ window.AniRecAdapter = (() => {
     return metadata.seenIds || Object.keys(notes).map(key => byKey.get(key)?.anilist_id).filter(Boolean);
   }
   function referenceRecords(){return [...new Map([...data.records,...profileSnapshots,...favoriteSnapshots].map(row=>{const frozen=frozenByAni.get(row.anilist_id),key=frozen?.key||byAni.get(row.anilist_id)?.key||row.key;return [key,frozen||{...row,key}];})).values()];}
+  function allFavorites(){return [...new Set([...favorites,...(metadata.favoriteIds||[]).map(id=>byAni.get(id)?.key).filter(Boolean)])];}
+  function statisticsRecords(){return [...new Map([...data.records,...profileSnapshots,...favoriteSnapshots].map(r=>[r.anilist_id,r])).values()];}
   function summary() {
-    const state = window.AniRecIR.profile(referenceRecords(), notes, favorites, preferred);
+    const state = window.AniRecIR.profile(referenceRecords(), notes, allFavorites(), preferred,{seenIds:seenIds(),statistics:metadata.listEntries?window.AniRecUserStats.compute(statisticsRecords(),metadata.listEntries,'STARTED'):metadata.statistics||{}});
     return { ...state.info, username: metadata.username || null, import_count: metadata.entries || Object.keys(notes).length,
       preferred, avoided, manual_favorites: favorites.map(key => byKey.get(key)).filter(Boolean),
       seen_count: new Set([...seenIds(), ...favorites.map(key => byKey.get(key)?.anilist_id)]).size,
@@ -56,8 +58,8 @@ window.AniRecAdapter = (() => {
       if(!options.pure)await ensureProfileEncoding(()=>{});
       const anchor=byKey.get(options.key);if(!anchor)throw Error('Escolha a referência novamente.');
       const rows=options.pure?records.filter(row=>neutralKeys.has(row.key)):records;
-      const value=window.AniRecIR.study({...options,records:rows,profile_records:options.pure?[]:referenceRecords(),anchor,ratings:notes,favorites,preferred,avoided,seenIds:seenIds(),hidden,params:data.params,topic_idf:idf});
-      if(!options.pure){const bytes=new TextEncoder().encode(JSON.stringify({notes,favorites,preferred,avoided}));value.profile_fingerprint=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');}
+      const value=window.AniRecIR.study({...options,records:rows,profile_records:options.pure?[]:referenceRecords(),anchor,ratings:notes,favorites:allFavorites(),preferred,avoided,seenIds:seenIds(),statistics:metadata.listEntries?window.AniRecUserStats.compute(statisticsRecords(),metadata.listEntries,'STARTED'):metadata.statistics||{},hidden,params:data.params,topic_idf:idf});
+      if(!options.pure){const bytes=new TextEncoder().encode(JSON.stringify({notes,favorites:allFavorites(),preferred,avoided,seen:seenIds(),statistics:metadata.listEntries||metadata.statistics||null}));value.profile_fingerprint=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');}
       value.encoding_id=data.encoding_id;return value;
     },
     async moreDiscoveries(anchor, progress) {
@@ -76,7 +78,7 @@ window.AniRecAdapter = (() => {
       merge(data.records); for (const item of data.records){publicKeys.add(item.key);neutralKeys.add(item.key);frozenByAni.set(item.anilist_id,item);}
       try { metadata = await readBrowserValue('profile-meta') || {}; profileSnapshots=await restoreImportedWorks();favoriteSnapshots=await readBrowserValue('favorite-works') || [];merge(profileSnapshots,true);merge(favoriteSnapshots,true);profileSnapshots=profileSnapshots.map(row=>publicKeys.has(byAni.get(row.anilist_id)?.key)?byAni.get(row.anilist_id):row); } catch { metadata.storageWarning = true; }
     },
-    async config() { return { mode: 'browser', profile: summary(), params: data.params, catalog_size: records.length }; },
+    async config() { if(metadata.username&&(!metadata.statistics_fetched_at||Date.now()-Date.parse(metadata.statistics_fetched_at)>86400000)){try{const user=(await aniQuery('query($name:String!){User(name:$name){statistics{anime{count meanScore minutesWatched tags(limit:1000,sort:COUNT_DESC){count meanScore minutesWatched tag{id name}} genres(limit:100,sort:COUNT_DESC){genre count meanScore minutesWatched}}}}}',{name:metadata.username})).User;if(user?.statistics?.anime){metadata.statistics=user.statistics.anime;metadata.statistics_fetched_at=new Date().toISOString();await writeBrowserValue('profile-meta',metadata);}}catch{ /* Cached metadata still supports local history inference. */ }}return { mode: 'browser', profile: summary(), params: data.params, catalog_size: records.length }; },
     async taxonomy() { const response = await fetch('taxonomy.json'); if (!response.ok) throw Error('Taxonomia indisponível.'); return response.json(); },
     async popular() { const response = await fetch('popular.json'); return response.json(); },
     async search(query, online = true) {
@@ -96,19 +98,20 @@ window.AniRecAdapter = (() => {
     async importProfile(username, progress) {
       if (!/^[A-Za-z0-9_-]{1,50}$/.test(username)) throw Error('Informe um usuário AniList válido.');
       const imported = await importAniListProfile(username, records, progress);
-      const meta = { username: imported.username, seenIds: imported.seenIds, entries: imported.entries, updated_at: new Date().toISOString() };
+      const meta = { username: imported.username, statistics:imported.statistics, favoriteIds:imported.favoriteIds, listEntries:imported.listEntries, statistics_fetched_at:new Date().toISOString(), seenIds: imported.seenIds, entries: imported.entries, updated_at: new Date().toISOString() };
       await saveImportedWorks(imported.records); await writeBrowserValue('profile-meta', meta);
       merge(imported.records);profileSnapshots=imported.records.map(row=>({...row})); metadata = meta; notes = imported.notes; persist();
       progress(`${imported.entries} entradas · ${Object.keys(notes).length} obras com nota · ${imported.seenIds.length} vistas/iniciadas · ${imported.missing} registros indisponíveis.`);
       return summary();
     },
     async clearImport() { await saveImportedWorks([]); await writeBrowserValue('profile-meta', {}); notes = {}; metadata = {};profileSnapshots=[];persist(); return summary(); },
+    async statistics(scope='COMPLETED'){return metadata.listEntries?window.AniRecUserStats.compute(statisticsRecords(),metadata.listEntries,scope):{needs_refresh:true,total_entries:metadata.entries||0,tags:[],genres:[]};},
     async exportProfile() { return { format: 'anirec-browser-profile-v2', notes, favorites, preferred, avoided, metadata }; },
     async recommend(options, progress) {
       if(!options.pure)await ensureProfileEncoding(progress);
       const anchor = byKey.get(options.key); if (!anchor) throw Error('Pesquise novamente a obra.'); let warning;
       if (options.online) try { await expansion(anchor, progress,options.pure); } catch (e) { warning = 'A ampliação AniList falhou; usando o catálogo disponível. ' + e.message; }
-      const result = window.AniRecIR.rank({ ...options, records:options.pure?records.filter(row=>neutralKeys.has(row.key)):records,profile_records:options.pure?[]:referenceRecords(), anchor, ratings: notes, favorites, preferred, avoided, seenIds: seenIds(), hidden, params: data.params, topic_idf: idf });
+      const result = window.AniRecIR.rank({ ...options, records:options.pure?records.filter(row=>neutralKeys.has(row.key)):records,profile_records:options.pure?[]:referenceRecords(), anchor, ratings: notes, favorites:allFavorites(), preferred, avoided, seenIds: seenIds(), statistics:metadata.listEntries?window.AniRecUserStats.compute(statisticsRecords(),metadata.listEntries,'STARTED'):metadata.statistics||{}, hidden, params: data.params, topic_idf: idf });
       if (warning) result.warning = warning; return result;
     },
     async dataset() { const response = await fetch('build-manifest.json'); const manifest = await response.json(); return { version: data.params.version, description: 'Metadados públicos AniList e vetores do mesmo snapshot da versão local. Seu perfil continua apenas neste navegador.', quality: { public_catalog: manifest.count, current_browser_catalog: records.length, works_with_notes: Object.keys(notes).length, known_started_ids: seenIds().length } }; }

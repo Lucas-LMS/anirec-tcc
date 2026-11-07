@@ -1,0 +1,73 @@
+{
+  "protocol": "independent-representation-audit-v11",
+  "created_at": "2026-11-07T04:24:19.011Z",
+  "count": 3413,
+  "corpus_sha256": "705bc48d5fe2a279fbd5d590deb99f552af26f3ebda2b3c566b643699476adc0",
+  "full_synopses_reencoded": 3413,
+  "maximum_document_vector_difference": 0,
+  "maximum_word_idf_difference": 8.881784197001252e-16,
+  "token_coverage": 0.9430039361384274,
+  "zero_documents": [
+    {
+      "key": "mal:10116",
+      "title": "Crayon Shin-chan: Arashi wo Yobu Ougon no Spy Daisakusen"
+    },
+    {
+      "key": "mal:52006",
+      "title": "Jashin-chan Dropkick X Mame Anime"
+    },
+    {
+      "key": "mal:55692",
+      "title": "Soulmate Adventure S2"
+    },
+    {
+      "key": "mal:59391",
+      "title": "Feng Ling Yu Xiu 2nd Season: Tebie Pian"
+    }
+  ],
+  "models": [
+    {
+      "model": "skipgram",
+      "dimensions": 100,
+      "rows": 3413,
+      "zero_documents": 4,
+      "maximum_norm_error": 1.6448523432188722e-8
+    },
+    {
+      "model": "cbow",
+      "dimensions": 100,
+      "rows": 3413,
+      "zero_documents": 4,
+      "maximum_norm_error": 1.483652856126838e-8
+    },
+    {
+      "model": "glove",
+      "dimensions": 50,
+      "rows": 3413,
+      "zero_documents": 4,
+      "maximum_norm_error": 2.8003090957184895e-8
+    },
+    {
+      "model": "fasttext",
+      "dimensions": 100,
+      "rows": 3413,
+      "zero_documents": 4,
+      "maximum_norm_error": 1.630991564027795e-8
+    }
+  ],
+  "sparse_topic_pair_checks": 3000,
+  "maximum_tag_cosine_difference": 1.1102230246251565e-16,
+  "maximum_binary_genre_jaccard_difference": 0,
+  "random_synopsis_cosine": {
+    "pairs": 2996,
+    "p05": 0.6916377960712016,
+    "median": 0.9048791000678158,
+    "p95": 0.9524889510787562
+  },
+  "notes": [
+    "Tag vector dimensions are tag identities; weights are rank/100 times topic IDF; threshold rank >= 50.",
+    "Genres are binary features compared with Jaccard; not word embeddings.",
+    "Synopses use complete text, IDF-weighted mean of static word vectors, L2-normalized.",
+    "High baseline cosine between unrelated documents indicates directional concentration, not probability or proof of narrative understanding."
+  ]
+}

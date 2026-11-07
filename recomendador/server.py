@@ -23,11 +23,12 @@ def main():
             if not self.allowed():self.send(dict(error='Acesso somente local.'),403);return
             path=urlparse(self.path)
             try:
-                if path.path in {'/laboratorio.html','/dataset.html','/avaliacao.html','/experimentos.html'} or path.path.startswith('/lab/') or path.path=='/catalog.json':
+                if path.path in {'/laboratorio.html','/dataset.html','/avaliacao.html','/experimentos.html'} or path.path.startswith('/lab/') or path.path in {'/catalog.json','/franchises.json'}:
                     rel=Path(path.path.lstrip('/'));target=(ROOT/'online'/rel).resolve()
                     if not target.is_relative_to((ROOT/'online').resolve()) or not target.is_file():self.send(dict(error='Não encontrado.'),404);return
                     body=target.read_bytes();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8' if target.suffix=='.html' else 'application/json' if target.suffix=='.json' else 'text/javascript' if target.suffix=='.js' else 'text/css' if target.suffix=='.css' else 'application/octet-stream');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body);return
                 if path.path=='/api/health':self.send(dict(ok=True,version=PARAMS['version']));return
+                if path.path=='/api/profile/statistics':self.send(engine.statistics(parse_qs(path.query).get('scope',['COMPLETED'])[0]));return
                 if path.path=='/api/config':self.send(dict(profile=engine.summary(),params=PARAMS,catalog_size=len(engine.base_keys)));return
                 if path.path=='/api/import-status':self.send(engine.import_status);return
                 if path.path=='/api/database':self.send(engine.repository.stats());return
@@ -42,11 +43,11 @@ def main():
                     query=parse_qs(path.query);self.send(engine.search(query.get('q',[''])[0],query.get('online',['true'])[0]=='true'));return
                 if path.path.startswith('/assets/'):
                     name=path.path.removeprefix('/assets/')
-                    allowed={'ir-core.js','onboarding.js','app.js','app.css','local-adapter.js','evaluation-core.js'}
+                    allowed={'ir-core.js','onboarding.js','app.js','app.css','local-adapter.js','evaluation-core.js','history-profile.js','franchise-core.js','user-statistics.js'}
                     if name not in allowed:self.send(dict(error='Asset não encontrado.'),404);return
                     content=(ROOT/'shared'/name).read_bytes();self.send_response(200);self.send_header('Content-Type','text/css; charset=utf-8' if name.endswith('.css') else 'text/javascript; charset=utf-8');self.send_header('Content-Length',str(len(content)));self.send_header('Cache-Control','no-cache');self.end_headers();self.wfile.write(content);return
-                if path.path not in ['/','/index.html','/pesquisa.html']:self.send(dict(error='Não encontrado.'),404);return
-                content=(ROOT/'web'/('pesquisa.html' if path.path=='/pesquisa.html' else 'index.html')).read_bytes();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(content)));self.send_header('X-Content-Type-Options','nosniff');self.send_header('Referrer-Policy','no-referrer');self.end_headers();self.wfile.write(content)
+                if path.path not in ['/','/index.html','/pesquisa.html','/perfil.html']:self.send(dict(error='Não encontrado.'),404);return
+                content=(ROOT/'web'/(path.path.lstrip('/') if path.path in ['/pesquisa.html','/perfil.html'] else 'index.html')).read_bytes();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(content)));self.send_header('X-Content-Type-Options','nosniff');self.send_header('Referrer-Policy','no-referrer');self.end_headers();self.wfile.write(content)
             except (ValueError,RuntimeError,OSError) as error:self.send(dict(error=str(error)),400)
             except Exception:traceback.print_exc();self.send(dict(error='Erro interno. Consulte o log local, sem dados de perfil.'),500)
         def do_POST(self):

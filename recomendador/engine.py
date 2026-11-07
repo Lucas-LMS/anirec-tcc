@@ -8,10 +8,12 @@ import numpy as np
 from anilist_client import AniListClient
 from repository import Repository
 from affinity import theme_affinity
+from history_profile import history_preferences
+from user_statistics import compute_statistics
 
 WORK=Path(__file__).resolve().parents[1]
 DATA=Path(os.environ.get('ANIREC_DATA_DIR',str(Path.home()/'tcc-lab/recomendador-private')))
-PARAMS=dict(version='ir-v7-guided-profile',model='Word2Vec Skip-gram text8 100d',document_words=None,synopsis_policy='entire_available_source',idf_policy='anilist_catalog_smooth',base_semantic=.5,base_topics=.5,topic_metric='idf_weighted_tag_cosine_85_genres_15',affinity_metric='positive_coverage_times_one_minus_negative_coverage',profile_semantic=.7,profile_topics=.3,personal_min_topics=.25,profile_text_policy='positive_negative_centroid_contrast',default_personalization=.35,max_personalization=.6,explicit_topic_weight=1.,max_history_topics=12,rating_neutral='user_observed_midrange',rating_policy='signed_user_midrange',import_limit=None,profile_metadata_limit=None,api_cache_seconds=3600)
+PARAMS=dict(version='ir-v12-series-frequency-profile',model='Word2Vec Skip-gram text8 100d',document_words=None,synopsis_policy='entire_available_source',idf_policy='anilist_catalog_smooth',base_semantic=.5,base_topics=.5,topic_metric='idf_weighted_tag_cosine_85_genres_15',affinity_metric='positive_coverage_times_one_minus_negative_coverage',profile_semantic=.7,profile_topics=.3,personal_min_topics=.15,profile_text_policy='positive_negative_centroid_contrast',default_personalization=.35,max_personalization=.6,explicit_topic_weight=1.,max_history_topics=None,rating_neutral='user_observed_midrange',rating_policy='signed_user_midrange',import_limit=None,profile_metadata_limit=None,api_cache_seconds=3600)
 
 def norm(text):return unicodedata.normalize('NFKC',str(text)).lower().strip()
 def clean(text):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>',' ',text or ''))).strip()
@@ -27,7 +29,7 @@ def topics(media,include_spoilers=False):
     return result
 def jaccard(a,b):return len(set(a)&set(b))/len(set(a)|set(b)) if a and b else 0.
 def public(media):
-    return {k:media.get(k) for k in ['key','title','romaji','text','genres','tags','cover','url','source','anilist_id','mal_id','status','synopsis_source','synopsis_complete','average_score','mean_score','popularity','community_favourites','rating_count','statistics_fetched_at']}
+    return {k:media.get(k) for k in ['key','title','romaji','text','genres','tags','cover','url','source','anilist_id','mal_id','status','synopsis_source','synopsis_complete','average_score','mean_score','popularity','community_favourites','rating_count','statistics_fetched_at','episodes','duration']}
 
 class Engine:
     def __init__(self,client=None,data_dir=None):
@@ -96,7 +98,7 @@ class Engine:
         key=self.key_for(row)
         previous=self.base_media.get(key,{})
         item=dict(key=key,mal_id=row.get('idMal'),anilist_id=row['id'],title=title.get('english') or title.get('romaji') or str(row['id']),romaji=title.get('romaji') or '',text=text or previous.get('text',''),synopsis_source='AniList description' if text else previous.get('synopsis_source'),synopsis_complete=True if text else previous.get('synopsis_complete',False),genres=row.get('genres') or [],tags=row.get('tags') or [],cover=(row.get('coverImage') or {}).get('large'),url=row.get('siteUrl'),source='AniList (consulta sob demanda)',status=row.get('status'),media_type=row.get('type','ANIME'))
-        item.update(is_adult=bool(row.get('isAdult',previous.get('is_adult',False))),average_score=row.get('averageScore',previous.get('average_score')),mean_score=row.get('meanScore',previous.get('mean_score')),popularity=row.get('popularity',previous.get('popularity')),community_favourites=row.get('favourites',previous.get('community_favourites')),rating_count=sum(v.get('amount',0) for v in (row.get('stats') or {}).get('scoreDistribution',[])) if (row.get('stats') or {}).get('scoreDistribution') is not None else previous.get('rating_count'),statistics_fetched_at=row.get('statisticsFetchedAt',previous.get('statistics_fetched_at')))
+        item.update(episodes=row.get('episodes',previous.get('episodes')),duration=row.get('duration',previous.get('duration')),is_adult=bool(row.get('isAdult',previous.get('is_adult',False))),average_score=row.get('averageScore',previous.get('average_score')),mean_score=row.get('meanScore',previous.get('mean_score')),popularity=row.get('popularity',previous.get('popularity')),community_favourites=row.get('favourites',previous.get('community_favourites')),rating_count=sum(v.get('amount',0) for v in (row.get('stats') or {}).get('scoreDistribution',[])) if (row.get('stats') or {}).get('scoreDistribution') is not None else previous.get('rating_count'),statistics_fetched_at=row.get('statisticsFetchedAt',previous.get('statistics_fetched_at')))
         return item
 
     def add_anilist(self,row):
@@ -170,7 +172,7 @@ class Engine:
             if not imported['entries']:raise ValueError('Nenhum item público visível. O perfil anterior foi mantido.')
             rich={r['media']['id']:r['media'] for r in imported['entries'] if (r.get('media') or {}).get('title')}
             rich.update({r['id']:r for r in imported['favorite_media']})
-            self.repository.put_many('AniList',[(r['id'],r.get('idMal'),self.materialize(r)['title'],r,self.materialize(r)['text']) for r in rich.values()])
+            self.repository.put_many('AniList',[(r['id'],r.get('idMal'),self.materialize(r)['title'],r,self.materialize(r)['text']) for r in rich.values() if r!=known.get(r['id'])])
             with self.lock:
                 self.profile.update(username=imported['user']['name'],user=imported['user'],entries=imported['entries'],favorite_media=imported['favorite_media'],metadata_count=imported['metadata_count'],truncated=imported['truncated'])
                 self.restore_profile_media();self.save();result=self.summary()
@@ -213,13 +215,20 @@ class Engine:
             if np.linalg.norm(v):positives.append(v);weights.append(weight)
             for topic,meta in topics(item).items():theme_weights[topic]+=weight*meta['weight'];theme_names[topic]=meta['name']
         total=sum(abs(weight) for key,weight in weighted.items() if key in self.profile_media or key in self.base_media) or 1
-        inferred={t:dict(name=theme_names[t],weight=float(w/total),source='histórico: aproximação' if w>0 else 'histórico: afastamento') for t,w in sorted(theme_weights.items(),key=lambda x:(-abs(x[1]),x[0]))[:12]}
+        stats=compute_statistics(list({**self.base_media,**self.profile_media}.values()),self.profile.get('entries',[]),'STARTED')
+        rating_values={self.key_for(e['media']):float(e['score']) for e in self.profile.get('entries',[]) if e.get('score',0)>0 and e.get('media')}
+        known_ids=[e.get('mediaId',(e.get('media') or {}).get('id')) for e in self.profile.get('entries',[]) if e.get('status') in ['COMPLETED','CURRENT','REPEATING','DROPPED','PAUSED']]
+        favorite_keys=[self.key_for(r) for r in self.profile.get('favorite_media',[])]+[m['key'] for m in self.profile.get('manual_favorites',[])]
+        inferred=history_preferences(list({**self.base_media,**self.profile_media}.values()),rating_values,favorite_keys,known_ids,stats,neutral,half_range)
         combined={t:meta.copy() for t,meta in inferred.items()}
         for t in self.profile.get('preferred',[]):combined[norm(t)]=dict(name=t,weight=1.,source='preferência explícita')
         self.profile_centroids=dict(positive=unit(sum((v*w for v,w in zip(positives,weights) if w>0),np.zeros(100))) if any(w>0 for w in weights) else None,negative=unit(sum((v*abs(w) for v,w in zip(positives,weights) if w<0),np.zeros(100))) if any(w<0 for w in weights) else None)
         profile_vector=unit(np.sum(np.asarray(positives)*np.asarray(weights)[:,None],axis=0)) if positives else None
         if profile_vector is not None and not np.linalg.norm(profile_vector):profile_vector=None
         return profile_vector,combined,seen,dict(rating_min=minimum,rating_max=maximum,rating_neutral=neutral,rating_scale_informative=bool(half_range),positive_count=sum(w>0 for w in weighted.values()),negative_count=sum(w<0 for w in weighted.values()),rated_count=rated_count,neutral_count=neutral_count,missing_rated_metadata=missing_rated,vector_count=len(positives),inferred=list(inferred.values()))
+
+    def statistics(self,scope='COMPLETED'):
+        with self.lock:return compute_statistics(list({**self.base_media,**self.profile_media}.values()),self.profile.get('entries',[]),scope)
 
     def summary(self):
         with self.lock:
@@ -265,7 +274,7 @@ class Engine:
         with self.lock:
             self.profile.update(username=None,user=None,entries=[],favorite_media=[],metadata_count=0,truncated=False);self.restore_profile_media();self.save();return self.summary()
 
-    def recommend(self,key,personalization=.35,exclude_seen=False,online=True,require_genre=False,exclude_upcoming=True,require_tag_metadata=False,personal_min_topics=.25,pure=False):
+    def recommend(self,key,personalization=.35,exclude_seen=False,online=True,require_genre=False,exclude_upcoming=True,require_tag_metadata=False,personal_min_topics=.15,pure=False):
         if pure:personalization=0.;exclude_seen=False
         if not math.isfinite(float(personalization)):raise ValueError('Peso de personalização inválido.')
         if not math.isfinite(float(personal_min_topics)) or not 0<=float(personal_min_topics)<=1:raise ValueError('Proximidade temática deve estar entre 0 e 1.')
@@ -282,13 +291,13 @@ class Engine:
         if online and anchor.get('genres') and hasattr(self.client,'discover'):
             excluded=[anchor['anilist_id']] if anchor.get('anilist_id') else []
             if exclude_seen:
-                excluded.extend(e['mediaId'] for e in self.profile.get('entries',[]) if e.get('status') in ['COMPLETED','CURRENT','REPEATING','DROPPED','PAUSED'])
+                excluded.extend(e.get('mediaId',(e.get('media') or {}).get('id')) for e in self.profile.get('entries',[]) if e.get('status') in ['COMPLETED','CURRENT','REPEATING','DROPPED','PAUSED'])
                 excluded.extend(m['anilist_id'] for m in self.profile.get('manual_favorites',[]) if m.get('anilist_id'))
             try:discovered=self.client.discover(anchor['genres'][0],excluded)
             except (RuntimeError,OSError,ValueError) as error:warning=str(error)
         # A dedicated discovery query does not discard seen works from the general list.
         if online and not pure and hasattr(self.client,'discover'):
-            known_ids=[e['mediaId'] for e in self.profile.get('entries',[]) if e.get('status') in ['COMPLETED','CURRENT','REPEATING','DROPPED','PAUSED']]
+            known_ids=[e.get('mediaId',(e.get('media') or {}).get('id')) for e in self.profile.get('entries',[]) if e.get('status') in ['COMPLETED','CURRENT','REPEATING','DROPPED','PAUSED']]
             known_ids.extend(m['anilist_id'] for m in self.profile.get('manual_favorites',[]) if m.get('anilist_id'))
             if known_ids and not exclude_seen:
                 known_genres={norm(g) for item in self.base_media.values() for g in item.get('genres',[])}
@@ -356,4 +365,4 @@ class Engine:
             diagnostics.extend(dict(key=r['key'],title=r['title'],reason='eligible',general_rank=general_rank[r['key']],personal_rank=personal_rank.get(r['key']),personal_exclusion=None if r['key'] in personal_rank else 'below_personal_anchor_theme_threshold') for r in rows)
             audit['eligible']=len(rows)
             coverage=dict(total=len(candidate_keys),with_text=sum(bool(self.media[k].get('text')) for k in candidate_keys),with_tags=sum(bool(self.media[k].get('tags')) for k in candidate_keys),with_genres=sum(bool(self.media[k].get('genres')) for k in candidate_keys),with_status=sum(bool(self.media[k].get('status')) for k in candidate_keys))
-            return dict(recommendation_sets=recommendation_sets,unseen_count=sum(not r['is_seen'] for r in general),personal_unseen_count=sum(not r['is_seen'] for r in personal),filter_audit=dict(audit),diagnostics=diagnostics,anchor=public(anchor),anchor_quality=self.text_quality(anchor),metadata_coverage=coverage,general=general,personalized=personal,profile_active=active,personalization=lam,candidate_count=len(candidate_keys),eligible_count=len(rows),personal_eligible_count=len(personal_candidates),related_count=len(related_items),discovery_count=len(discovery_items),base_count=len(self.base_keys),skipped_no_vector=skipped,ranking_ms=(time.perf_counter()-local_start)*1000,scoring_ms=(time.perf_counter()-semantic_start)*1000,total_ms=(time.perf_counter()-start)*1000,warning=warning,profile_info=info,params=PARAMS,filters=dict(pure=pure,exclude_seen=exclude_seen,require_genre=require_genre,exclude_upcoming=exclude_upcoming,require_tag_metadata=require_tag_metadata,personal_min_topics=personal_min_topics),excluded_by_topic=excluded_by_topic,excluded_unknown_tags=excluded_unknown,limitations=['Metadados ausentes não comprovam ausência de um tema ou lançamento.','AniList amplia o pool com até 20 sugestões comunitárias e 50 itens do primeiro gênero da âncora; nosso motor calcula a ordem.','Score é relativo, não probabilidade de gostar.'])
+            return dict(recommendation_sets=recommendation_sets,unseen_count=sum(not r['is_seen'] for r in general),personal_unseen_count=sum(not r['is_seen'] for r in personal),filter_audit=dict(audit),diagnostics=diagnostics,anchor=public(anchor),anchor_quality=self.text_quality(anchor),metadata_coverage=coverage,general=general,personalized=personal,profile_active=active,personalization=lam,known_anilist_ids=[] if pure else sorted({e.get('mediaId',(e.get('media') or {}).get('id')) for e in self.profile.get('entries',[]) if e.get('status') in ['COMPLETED','CURRENT','REPEATING','DROPPED','PAUSED']}|{m['anilist_id'] for m in self.profile.get('manual_favorites',[]) if m.get('anilist_id')}|{m['id'] for m in self.profile.get('favorite_media',[]) if m.get('id')}),candidate_count=len(candidate_keys),eligible_count=len(rows),personal_eligible_count=len(personal_candidates),related_count=len(related_items),discovery_count=len(discovery_items),base_count=len(self.base_keys),skipped_no_vector=skipped,ranking_ms=(time.perf_counter()-local_start)*1000,scoring_ms=(time.perf_counter()-semantic_start)*1000,total_ms=(time.perf_counter()-start)*1000,warning=warning,profile_info=info,params=PARAMS,filters=dict(pure=pure,exclude_seen=exclude_seen,require_genre=require_genre,exclude_upcoming=exclude_upcoming,require_tag_metadata=require_tag_metadata,personal_min_topics=personal_min_topics),excluded_by_topic=excluded_by_topic,excluded_unknown_tags=excluded_unknown,limitations=['Metadados ausentes não comprovam ausência de um tema ou lançamento.','AniList amplia o pool com até 20 sugestões comunitárias e 50 itens do primeiro gênero da âncora; nosso motor calcula a ordem.','Score é relativo, não probabilidade de gostar.'])

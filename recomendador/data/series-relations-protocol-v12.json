@@ -1,0 +1,12 @@
+{
+  "format": "anirec-official-relations-v1",
+  "source": "AniList GraphQL Media.relations",
+  "fetched_at": "2026-11-07T03:40:50.183323+00:00",
+  "queried_count": 3413,
+  "missing_ids": [],
+  "catalog_sha256": "86f228ba5952759bafcf671066c9e16bbc83cb2bd3ffec82a2a5d6dc68c56212",
+  "recursive_fetch": false,
+  "elapsed_seconds": 181.09305653600313,
+  "auxiliary_node_count": 5602,
+  "edge_count": 6647
+}

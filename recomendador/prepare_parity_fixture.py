@@ -17,7 +17,7 @@ def main():
             engine.restore_profile_media()
             result=engine.recommend(keys[0],online=False,exclude_seen=False,personal_min_topics=0)
             expected={r['key']:{field:r[field] for field in ['base_score','personalized_score','anchor_topic_overlap','preference_affinity','profile_text_score','is_seen']} for r in result['general'] if r['key'] in keys}
-            cohorts.append(dict(name=name,input=dict(records=records,anchor=records[0],ratings=ratings,favorites=favorites,preferred=preferred,seenIds=[engine.base_media[k]['anilist_id'] for k in ratings]+([engine.base_media[keys[4]]['anilist_id']] if name=='unrated_seen' else []),topic_idf=engine.topic_idf,personal_min_topics=0),expected=expected))
+            cohorts.append(dict(name=name,input=dict(records=records,anchor=records[0],ratings=ratings,favorites=favorites,preferred=preferred,statistics=engine.statistics('STARTED'),seenIds=[engine.base_media[k]['anilist_id'] for k in ratings]+([engine.base_media[keys[4]]['anilist_id']] if name=='unrated_seen' else []),topic_idf=engine.topic_idf,personal_min_topics=0),expected=expected))
         target=Path(__file__).parents[1]/'tmp/parity-v7.json'
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_text(json.dumps(cohorts,ensure_ascii=False,allow_nan=False),encoding='utf-8')

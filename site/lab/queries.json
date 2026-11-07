@@ -114,6 +114,17 @@
       ]
     },
     {
+      "label": "Relações oficiais de SPY x FAMILY",
+      "sql": "SELECT r.relation_type,n.anilist_id,n.title FROM series_relations r JOIN series_nodes n ON n.anilist_id=r.target_anilist_id WHERE r.source_anilist_id=140960 ORDER BY r.relation_type,n.title;",
+      "results": [
+        {
+          "relation_type": "SEQUEL",
+          "anilist_id": 142838,
+          "title": "SPY x FAMILY Cour 2"
+        }
+      ]
+    },
+    {
       "label": "Chaves órfãs",
       "sql": "SELECT COUNT(*) AS orphan_genres FROM genres g LEFT JOIN works w USING(anilist_id) WHERE w.anilist_id IS NULL;",
       "results": [
@@ -123,6 +134,6 @@
       ]
     }
   ],
-  "database_sha256": "2e8b721b7ea7bc6244fb5ec6cbba50a76867c17b3855dd7e2713e8f8b263c5f1",
-  "snapshot_sha256": "86f228ba5952759bafcf671066c9e16bbc83cb2bd3ffec82a2a5d6dc68c56212"
+  "database_sha256": "0733ed61e9ca9adfb7f8e759b5872973d8566ffe9d0c5c2f182a51f71662f513",
+  "snapshot_sha256": "705bc48d5fe2a279fbd5d590deb99f552af26f3ebda2b3c566b643699476adc0"
 }

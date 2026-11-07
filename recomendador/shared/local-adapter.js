@@ -15,6 +15,7 @@ window.AniRecAdapter = (() => {
     reject: (key, add = true) => request('/api/profile/reject', { key, add }),
     clearImport: () => request('/api/profile/clear-import', {}),
     recommend: options => request('/api/recommend', options),
+    statistics: scope => request('/api/profile/statistics?scope='+encodeURIComponent(scope)),
     study: options => request('/api/study',options),
     dataset: () => request('/api/dataset'), exportProfile: () => request('/api/profile/export'),
     importProfile: async (username, progress) => {

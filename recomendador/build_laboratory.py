@@ -39,7 +39,7 @@ def main():
     raw=json.loads((Path.home()/'tcc-lab/recomendador-private/catalog-snapshot.json').read_text());byid={r['id']:r for r in raw}
     enriched=[]
     for r in records:
-        src=byid[r['anilist_id']];enriched.append({k:r.get(k) for k in ['key','title','anilist_id','source','metadata_fetched_at','average_score','mean_score','popularity','community_favourites','rating_count','statistics_fetched_at']}|{'format':src.get('format'),'year':src.get('seasonYear'),'status':src.get('status'),'genres':r['genres'],'tags':len(r['tags']),'words':len(tokenize(r['text'])),'synopsis':r['text'],'vector_nonzero':any(r['vector'])})
+        src=byid[r['anilist_id']];enriched.append({k:r.get(k) for k in ['key','title','anilist_id','source','metadata_fetched_at','average_score','mean_score','popularity','community_favourites','rating_count','statistics_fetched_at']}|{'format':src.get('format'),'episodes':src.get('episodes'),'duration':src.get('duration'),'year':src.get('seasonYear'),'status':src.get('status'),'genres':r['genres'],'tags':len(r['tags']),'words':len(tokenize(r['text'])),'synopsis':r['text'],'vector_nonzero':any(r['vector'])})
     (lab/'dataset.json').write_text(json.dumps({'snapshot_total':len(raw),'public_total':len(records),'excluded_adult':sum(bool(r.get('isAdult')) for r in raw),'rows':enriched,'selection':'Application usage, popularity sample and queries; user/popularity bias. Not a complete or representative catalogue.','built_at':manifest['built_at'],'sha256':manifest['corpus_sha256']},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 
 if __name__=='__main__':main()

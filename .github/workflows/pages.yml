@@ -29,6 +29,9 @@ jobs:
       - run: node recomendador/test_pure.js tmp/parity-v7.json
       - run: python recomendador/prepare_experiment_fixtures.py
       - run: node recomendador/test_experiments.js tmp/experiments-fixtures.json
+      - run: python recomendador/prepare_statistics_fixture.py
+      - run: node recomendador/test_user_statistics.js tmp/statistics-fixtures.json
+      - run: node recomendador/test_series_history.js
       - run: node scripts/check_javascript.js
       - run: node scripts/audit_representations.js tmp/audit-ci.json
       - run: python scripts/validate_distribution.py

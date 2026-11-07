@@ -25,7 +25,9 @@ O modo puro não apaga seu perfil. Você pode voltar à personalização a qualq
 - Importação completa de lista **pública** do AniList, respeitando paginação e limites da API.
 - Escala individual de notas: ponto neutro entre menor e maior nota observadas.
 - Sinopse inteira em inglês; tags e gêneros com pesos explicáveis.
-- Funil de candidatos, motivos de exclusão, parcelas do score e movimento Geral → Para mim.
+- Uma entrada por série, com temporadas/filmes relacionados agrupados e carregamento de mais resultados.
+- Perfil temático por recorrência (65%) e avaliação relativa (35%), com todas as tags disponíveis do histórico.
+- Na pesquisa: funil de candidatos, exclusões, parcelas do score e movimento Geral → Para mim.
 - Ampliação de descobertas sob demanda e diversificação heurística por nomes, opcional.
 - Na área de pesquisa: julgamentos de relevância exportáveis; sem treinamento ou alteração automática do ranking.
 - Atlas com filtros, gráficos, sinopses, consultas SQL auditadas e download do banco público.
@@ -137,6 +139,16 @@ O catálogo cresceu em mais 360 obras, para 3.413. Uma auditoria independente re
 
 O [experimento BM25 anterior](https://Lucas-LMS.github.io/anirec-tcc/experimentos.html) conserva seu snapshot de 3.053 obras e seus parâmetros; seus resultados não devem ser atribuídos automaticamente ao catálogo ampliado. [Protocolo anterior](recomendador/docs/COMUNIDADE_BM25_E_AVALIACAO_V10.md).
 
+## Séries, recorrência e descobertas
+
+SPY x FAMILY e suas continuações/filme relacionados deixam de ocupar várias vagas. O agrupamento usa relações oficiais, com regras conservadoras para manter universos alternativos separados. **Carregar mais** acrescenta dez grupos já calculados, até esgotar os elegíveis. A lista de descobertas evita séries que você já iniciou.
+
+A inferência de tags/gêneros usa frequência com maior peso que a avaliação relativa, sem corte top 12/top 30. Estatísticas públicas parciais são complementadas pelos metadados importados. Notas continuam usadas no canal textual e como sinal temático separado. Nenhuma frequência cria uma exclusão automática; restrições declaradas pelo usuário permanecem respeitadas.
+
+O SQLite inclui agora seis tabelas públicas e sete consultas auditadas, incluindo relações oficiais. [Regras, fórmulas, diagnóstico de Release the Spyce e limitações narrativas](recomendador/docs/SERIES_E_FREQUENCIA_V12.md). As listas comunitárias coletadas para diagnóstico não entram no ranking nem são tratadas como gabarito incontestável.
+
+A página **[Minha lista em números](https://Lucas-LMS.github.io/anirec-tcc/perfil.html)** calcula todos os gêneros e tags do próprio perfil, com recortes por estado, obras únicas, revisitas, notas pessoais e tempos estimados. São dados privados do navegador/instalação; nenhum perfil fica embutido no site. [Método e limites](recomendador/docs/MINHA_LISTA_EM_NUMEROS_V12.md).
+
 ## Testes
 
 Com as dependências Python instaladas e a partir da raiz:
@@ -149,6 +161,9 @@ node recomendador/test_ir_core.js tmp/parity-v7.json
 node recomendador/test_pure.js tmp/parity-v7.json
 python recomendador/prepare_experiment_fixtures.py
 node recomendador/test_experiments.js tmp/experiments-fixtures.json
+python recomendador/prepare_statistics_fixture.py
+node recomendador/test_user_statistics.js tmp/statistics-fixtures.json
+node recomendador/test_series_history.js
 node scripts/check_javascript.js
 node scripts/audit_representations.js tmp/audit-ci.json
 python scripts/validate_distribution.py

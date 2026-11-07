@@ -1,10 +1,10 @@
 {
   "count": 3413,
-  "sha256": "86f228ba5952759bafcf671066c9e16bbc83cb2bd3ffec82a2a5d6dc68c56212",
-  "bytes": 15922039,
+  "sha256": "705bc48d5fe2a279fbd5d590deb99f552af26f3ebda2b3c566b643699476adc0",
+  "bytes": 16016492,
   "private_profile_included": false,
   "anilist_cache_included": false,
   "full_synopses": true,
   "model": "Word2Vec Skip-gram text8 100d",
-  "version": "ir-v7-guided-profile"
+  "version": "ir-v12-series-frequency-profile"
 }

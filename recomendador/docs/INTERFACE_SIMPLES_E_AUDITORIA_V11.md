@@ -1,5 +1,7 @@
 # Interface simples e auditoria das representações — 06/11/2026
 
+> Evolução posterior: [agrupamento oficial, carregar mais e perfil por recorrência](SERIES_E_FREQUENCIA_V12.md). Os detalhes desta página registram a etapa anterior.
+
 ## Decisão de produto
 
 A página inicial passou a atender duas tarefas: **encontrar animes parecidos sem informar preferências** e **recomendar considerando os gostos do usuário**. Na segunda, é possível importar a lista pública do AniList ou escolher gêneros, temas e favoritos, sem notas obrigatórias. As recomendações gerais continuam acessíveis; a lista de descobertas distingue obras ainda não iniciadas, inclusive planejadas.

@@ -10,14 +10,15 @@ def main():
     import tempfile
     # Export only whitelisted public work metadata. Never copy the profile or scores.
     source_rows=json.loads((DATA/'catalog-snapshot.json').read_text(encoding='utf-8'))
-    fields={'id','idMal','type','status','format','seasonYear','countryOfOrigin','title','description','genres','tags','coverImage','siteUrl','isAdult','averageScore','meanScore','popularity','favourites','stats','statisticsFetchedAt'}
+    fields={'id','idMal','type','status','format','seasonYear','countryOfOrigin','title','description','genres','tags','coverImage','siteUrl','isAdult','averageScore','meanScore','popularity','favourites','stats','statisticsFetchedAt','episodes','duration','startDate'}
     safe_rows=[{key:value for key,value in row.items() if key in fields} for row in source_rows]
     with tempfile.TemporaryDirectory() as directory:
         (Path(directory)/'catalog-snapshot.json').write_text(json.dumps(safe_rows),encoding='utf-8')
         engine=Engine(data_dir=directory)
         with sqlite3.connect(DATA/'anirec.sqlite3') as db: dates=dict(db.execute("SELECT CAST(source_id AS INTEGER),fetched_at FROM media WHERE source='AniList'"))
+        frozen_dates={r['id']:r.get('statisticsFetchedAt') or dates.get(r['id']) for r in safe_rows}
         encoding_id=hashlib.sha256(json.dumps(dict(idf=engine.idf,unseen=engine.unseen),sort_keys=True).encode()).hexdigest()
-        records=[dict(encoding_id=encoding_id,**{**public(engine.base_media[k]),'statistics_fetched_at':dates.get(engine.base_media[k].get('anilist_id'))},vector=engine.vector(engine.base_media[k]).tolist(),metadata_fetched_at=dates.get(engine.base_media[k].get('anilist_id')),is_adult=False) for k in sorted(engine.base_keys)]
+        records=[dict(encoding_id=encoding_id,**{**public(engine.base_media[k]),'statistics_fetched_at':frozen_dates.get(engine.base_media[k].get('anilist_id'))},vector=engine.vector(engine.base_media[k]).tolist(),metadata_fetched_at=frozen_dates.get(engine.base_media[k].get('anilist_id')),is_adult=False) for k in sorted(engine.base_keys)]
         target=Path(__file__).parent/'online'
         target.mkdir(exist_ok=True)
         raw=json.dumps(dict(encoding_id=encoding_id,params=PARAMS,topic_idf=engine.topic_idf,records=records,source='AniList GraphQL; public work metadata only; selection protocol in source-manifest.json'),ensure_ascii=False,separators=(',',':')).encode()

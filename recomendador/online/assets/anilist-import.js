@@ -1,7 +1,7 @@
 'use strict';
 let frozenEncoder = null, apiLast = 0, apiQueue = Promise.resolve();
 const apiCache = new Map(), wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-const ANI_FIELDS = 'id idMal type status format seasonYear countryOfOrigin title{english romaji} description(asHtml:false) genres tags{name rank isGeneralSpoiler isMediaSpoiler} coverImage{large} siteUrl averageScore meanScore popularity favourites stats{scoreDistribution{score amount}} isAdult';
+const ANI_FIELDS = 'id idMal type status format seasonYear countryOfOrigin episodes duration title{english romaji} description(asHtml:false) genres tags{name rank isGeneralSpoiler isMediaSpoiler} coverImage{large} siteUrl averageScore meanScore popularity favourites stats{scoreDistribution{score amount}} isAdult';
 function aniQuery(query, variables) {
   const cacheKey = JSON.stringify([query, variables]), cached = apiCache.get(cacheKey);
   if (cached && Date.now() - cached.at < 3600000) return Promise.resolve(cached.data);
@@ -40,24 +40,26 @@ async function materializeAniRows(raws, existing, progress) {
     if (!sameText && !encoder) encoder = await loadFrozenEncoder(progress);
     records.push({ key: old?.key || 'anilist:' + raw.id, anilist_id: raw.id, mal_id: raw.idMal, title: raw.title.english || raw.title.romaji,
       romaji: raw.title.romaji, text, genres: raw.genres || [], tags: raw.tags || [], cover: raw.coverImage?.large, url: raw.siteUrl,
-      statistics_fetched_at: new Date().toISOString(), average_score: raw.averageScore ?? null, mean_score: raw.meanScore ?? null, popularity: raw.popularity ?? null, community_favourites: raw.favourites ?? null, rating_count: raw.stats?.scoreDistribution?.reduce((sum,row)=>sum+row.amount,0) ?? null, status: raw.status, is_adult: !!raw.isAdult, source: 'AniList · consulta pública', synopsis_source: 'AniList description', synopsis_complete: true,
+      episodes:raw.episodes??null,duration:raw.duration??null,statistics_fetched_at: new Date().toISOString(), average_score: raw.averageScore ?? null, mean_score: raw.meanScore ?? null, popularity: raw.popularity ?? null, community_favourites: raw.favourites ?? null, rating_count: raw.stats?.scoreDistribution?.reduce((sum,row)=>sum+row.amount,0) ?? null, status: raw.status, is_adult: !!raw.isAdult, source: 'AniList · consulta pública', synopsis_source: 'AniList description', synopsis_complete: true,
       encoding_id: window.AniRecEncodingId, metadata_fetched_at: new Date().toISOString(), vector: sameText ? old.vector : encodeFullSynopsis(text, encoder) });
   }
   return records;
 }
 async function importAniListProfile(username, existing, progress) {
-  const user = (await aniQuery('query($name:String!){User(name:$name){id name}}', { name: username })).User;
+  const user = (await aniQuery('query($name:String!){User(name:$name){id name favourites{anime(page:1,perPage:50){nodes{id}}} statistics{anime{count meanScore minutesWatched tags(limit:1000,sort:COUNT_DESC){count meanScore minutesWatched tag{id name}} genres(limit:100,sort:COUNT_DESC){genre count meanScore minutesWatched}}}}}', { name: username })).User;
+  const favoriteIds=[];let nodes=user?.favourites?.anime?.nodes||[],page=1;while(nodes.length){favoriteIds.push(...nodes.map(n=>n.id));if(nodes.length<50)break;page++;nodes=(await aniQuery('query($id:Int!,$page:Int!){User(id:$id){favourites{anime(page:$page,perPage:50){nodes{id}}}}}',{id:user.id,page})).User.favourites.anime.nodes;if(nodes.length&&nodes.every(n=>favoriteIds.includes(n.id)))throw Error('Paginação de favoritos sem progresso.');}
   if (!user) throw Error('Usuário não encontrado.'); const entries = new Map(); let chunk = 0;
-  while (true) { chunk++; progress(`Lendo lista pública: bloco ${chunk}, ${entries.size} itens…`); const result = (await aniQuery('query($id:Int!,$chunk:Int!){MediaListCollection(userId:$id,type:ANIME,chunk:$chunk,perChunk:500){hasNextChunk lists{entries{mediaId score(format:POINT_100) status}}}}', { id: user.id, chunk })).MediaListCollection; if (!result) throw Error('Lista não disponível publicamente.'); const before = entries.size; for (const group of result.lists || []) for (const entry of group.entries || []) entries.set(entry.mediaId, entry); if (!result.hasNextChunk) break; if (before === entries.size) throw Error('Paginação sem progresso.'); }
-  const rated = [...entries.values()].filter(e => e.score > 0), metadata = new Map(), byAni = new Map(existing.map(item => [item.anilist_id, item]));
-  for (const entry of rated) { const cached = byAni.get(entry.mediaId); if (cached?.encoding_id === window.AniRecEncodingId && cached?.metadata_fetched_at && Date.now() - Date.parse(cached.metadata_fetched_at) < 7 * 86400000) metadata.set(entry.mediaId, cached); }
-  const missingIds = rated.map(e => e.mediaId).filter(id => !metadata.has(id)), fresh = [];
-  for (let start = 0; start < missingIds.length; start += 50) { progress(`Atualizando metadados: ${metadata.size + Math.min(start + 50, missingIds.length)}/${rated.length} obras com nota…`); const data = await aniQuery('query($ids:[Int]){Page(page:1,perPage:50){media(type:ANIME,id_in:$ids){' + ANI_FIELDS + '}}}', { ids: missingIds.slice(start, start + 50) }); fresh.push(...data.Page.media); }
+  while (true) { chunk++; progress(`Lendo lista pública: bloco ${chunk}, ${entries.size} itens…`); const result = (await aniQuery('query($id:Int!,$chunk:Int!){MediaListCollection(userId:$id,type:ANIME,chunk:$chunk,perChunk:500){hasNextChunk lists{entries{mediaId score(format:POINT_100) progress repeat status}}}}', { id: user.id, chunk })).MediaListCollection; if (!result) throw Error('Lista não disponível publicamente.'); const before = entries.size; for (const group of result.lists || []) for (const entry of group.entries || []) entries.set(entry.mediaId, entry); if (!result.hasNextChunk) break; if (before === entries.size) throw Error('Paginação sem progresso.'); }
+  const rated = [...entries.values()], metadata = new Map(), byAni = new Map(existing.map(item => [item.anilist_id, item]));
+  for (const entry of rated) { const cached = byAni.get(entry.mediaId); if (cached && 'episodes' in cached && 'duration' in cached && cached.encoding_id === window.AniRecEncodingId && cached?.metadata_fetched_at && Date.now() - Date.parse(cached.metadata_fetched_at) < 7 * 86400000) metadata.set(entry.mediaId, cached); }
+  const targetIds=[...new Set([...rated.map(e => e.mediaId),...favoriteIds])],targetCount=targetIds.length,missingIds=targetIds.filter(id=>!metadata.has(id)),fresh=[];
+  for (let start = 0; start < missingIds.length; start += 50) { progress(`Atualizando metadados: ${metadata.size + Math.min(start + 50, missingIds.length)}/${targetCount} obras da lista…`); const data = await aniQuery('query($ids:[Int]){Page(page:1,perPage:50){media(type:ANIME,id_in:$ids){' + ANI_FIELDS + '}}}', { ids: missingIds.slice(start, start + 50) }); fresh.push(...data.Page.media); }
   for (const row of await materializeAniRows(fresh, existing, progress)) metadata.set(row.anilist_id, row);
   const records = [], notes = {}; let missing = 0;
-  for (const entry of rated) { const row = metadata.get(entry.mediaId); if (!row) { missing++; continue; } records.push(row); notes[row.key] = entry.score / 10; }
+  for (const entry of rated) { const row = metadata.get(entry.mediaId); if (!row) { missing++; continue; } records.push(row); if(entry.score>0)notes[row.key] = entry.score / 10; }
+  for(const id of favoriteIds){const row=metadata.get(id);if(row&&!records.some(r=>r.anilist_id===id))records.push(row);}
   const seenIds = [...entries.values()].filter(e => ['COMPLETED', 'CURRENT', 'REPEATING', 'DROPPED', 'PAUSED'].includes(e.status)).map(e => e.mediaId);
-  return { records, notes, missing, entries: entries.size, seenIds, username: user.name };
+  return { records, notes, missing, entries: entries.size, seenIds, favoriteIds, listEntries:[...entries.values()], statistics:user.statistics?.anime||{}, username: user.name };
 }
 async function browserDatabase() { return new Promise((resolve, reject) => { const request = indexedDB.open('anirec-private-browser', 1); request.onupgradeneeded = () => request.result.createObjectStore('imports'); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); }); }
 async function writeBrowserValue(key, value) { const db = await browserDatabase(); return new Promise((resolve, reject) => { const tx = db.transaction('imports', 'readwrite'); tx.objectStore('imports').put(value, key); tx.oncomplete = () => { db.close(); resolve(); }; tx.onerror = () => { db.close(); reject(tx.error); }; }); }

@@ -13,7 +13,9 @@ class LaboratoryTests(unittest.TestCase):
     def test_sqlite_matches_public_snapshot_without_user_tables(self):
         root=Path(__file__).parent/'online';catalog=json.loads((root/'catalog.json').read_text(encoding='utf-8'))
         with sqlite3.connect(root/'lab/corpus.sqlite3') as db:
-            self.assertEqual(db.execute('PRAGMA integrity_check').fetchone()[0],'ok');self.assertEqual(db.execute('SELECT COUNT(*) FROM works').fetchone()[0],len(catalog['records']));self.assertEqual(set(r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")),{'works','genres','tags','vectors'});self.assertEqual(db.execute('SELECT COUNT(*) FROM vectors').fetchone()[0],4*len(catalog['records']))
+            self.assertEqual(db.execute('PRAGMA integrity_check').fetchone()[0],'ok');self.assertEqual(db.execute('SELECT COUNT(*) FROM works').fetchone()[0],len(catalog['records']));self.assertEqual(set(r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")),{'works','genres','tags','vectors','series_nodes','series_relations'});self.assertEqual(db.execute('SELECT COUNT(*) FROM vectors').fetchone()[0],4*len(catalog['records']))
+            self.assertEqual(db.execute('PRAGMA foreign_key_check').fetchall(),[])
+            self.assertGreater(db.execute('SELECT COUNT(*) FROM series_relations').fetchone()[0],0)
             counts=db.execute('SELECT COUNT(average_score),COUNT(mean_score),COUNT(popularity),COUNT(community_favourites) FROM works').fetchone()
             self.assertEqual(counts,tuple(sum(r.get(key) is not None for r in catalog['records']) for key in ['average_score','mean_score','popularity','community_favourites']))
             self.assertEqual(db.execute('SELECT COUNT(*) FROM works WHERE average_score<0 OR average_score>100 OR mean_score<0 OR mean_score>100 OR popularity<0 OR community_favourites<0').fetchone()[0],0)

@@ -36,7 +36,7 @@ class AniListClient:
         if len(self.cache)>=200:self.cache.clear()
         self.cache[cache_key]=(time.monotonic(),result['data']);return result['data']
     def user(self,username):
-        return self.query('''query($name:String!){ User(name:$name){ id name siteUrl favourites { anime(page:1,perPage:50){ nodes { id } } } } }''',dict(name=username))['User']
+        return self.query('''query($name:String!){ User(name:$name){ id name siteUrl statistics{anime{count meanScore minutesWatched tags(limit:1000,sort:COUNT_DESC){count meanScore minutesWatched tag{id name}} genres(limit:100,sort:COUNT_DESC){genre count meanScore minutesWatched}}} favourites { anime(page:1,perPage:50){ nodes { id } } } } }''',dict(name=username))['User']
     def taxonomy(self):
         data=self.query('''query { MediaTagCollection { id name description category isAdult } GenreCollection }''',{})
         return dict(tags=sorted(data['MediaTagCollection'],key=lambda t:t['name'].casefold()),genres=sorted(data['GenreCollection']),source=URL)
@@ -63,7 +63,7 @@ class AniListClient:
         user=self.user(username);entries={};known_media=known_media or {}
         if not user:raise ValueError('User not found or not publicly accessible.')
         query='''query($id:Int!,$chunk:Int!){ MediaListCollection(userId:$id,type:ANIME,chunk:$chunk,perChunk:500){ hasNextChunk
- lists { entries { mediaId status score(format:POINT_100) repeat updatedAt media { id idMal } } } } }'''
+ lists { entries { mediaId status score(format:POINT_100) progress repeat updatedAt media { id idMal } } } } }'''
         truncated=True
         chunk=0
         while True:
@@ -84,16 +84,16 @@ class AniListClient:
             if nodes and all(n['id'] in known_ids for n in nodes):raise RuntimeError('Paginação de favoritos sem progresso.')
             user['favourites']['anime']['nodes'].extend(nodes)
         favorite_ids={x['id'] for x in ((user.get('favourites') or {}).get('anime') or {}).get('nodes',[])}
-        eligible=[row for row in entries.values() if row['mediaId'] in favorite_ids or float(row.get('score') or 0)>0]
+        eligible=list(entries.values())
         eligible.sort(key=lambda r:(r['mediaId'] in favorite_ids,float(r.get('score') or 0),r.get('updatedAt') or 0,r['mediaId']),reverse=True)
         selected=list(dict.fromkeys(sorted(favorite_ids)+[r['mediaId'] for r in eligible]))
-        metadata={i:known_media[i] for i in selected if i in known_media and 'format' in known_media[i] and 'seasonYear' in known_media[i]}
+        metadata={i:known_media[i] for i in selected if i in known_media and 'format' in known_media[i] and 'seasonYear' in known_media[i] and 'episodes' in known_media[i] and 'duration' in known_media[i]}
         missing=[i for i in selected if i not in metadata]
         for offset in range(0,len(missing),50):
             batch=missing[offset:offset+50]
             result=self.query('query($ids:[Int]){ Page(page:1,perPage:50){ media(type:ANIME,id_in:$ids){ '+MEDIA_FIELDS+' } } }',dict(ids=batch))['Page']['media']
             for row in result:metadata[row['id']]=row
-            report(stage='Obtendo sinopses e temas de todas as obras avaliadas',count=len(entries),metadata_count=len(metadata),metadata_target=len(selected))
+            report(stage='Obtendo sinopses e temas de todas as obras da lista',count=len(entries),metadata_count=len(metadata),metadata_target=len(selected))
         for row in entries.values():
             if row['mediaId'] in metadata:row['media']=metadata[row['mediaId']]
         favorite_media=[metadata[i] for i in favorite_ids if i in metadata]
