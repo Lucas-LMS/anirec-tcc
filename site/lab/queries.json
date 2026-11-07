@@ -5,8 +5,8 @@
       "sql": "SELECT COUNT(*) AS works, SUM(word_count=0) AS missing_synopsis FROM works;",
       "results": [
         {
-          "works": 3053,
-          "missing_synopsis": 3
+          "works": 3413,
+          "missing_synopsis": 4
         }
       ]
     },
@@ -16,51 +16,51 @@
       "results": [
         {
           "genre": "Comedy",
-          "works": 1527
+          "works": 1681
         },
         {
           "genre": "Action",
-          "works": 1195
+          "works": 1329
         },
         {
           "genre": "Drama",
-          "works": 1001
+          "works": 1109
         },
         {
           "genre": "Fantasy",
-          "works": 962
+          "works": 1076
         },
         {
           "genre": "Slice of Life",
-          "works": 936
+          "works": 1035
         },
         {
           "genre": "Romance",
-          "works": 855
+          "works": 962
         },
         {
           "genre": "Adventure",
-          "works": 652
+          "works": 749
         },
         {
           "genre": "Supernatural",
-          "works": 570
+          "works": 625
         },
         {
           "genre": "Sci-Fi",
-          "works": 510
+          "works": 596
         },
         {
           "genre": "Ecchi",
-          "works": 409
+          "works": 428
         },
         {
           "genre": "Mystery",
-          "works": 323
+          "works": 361
         },
         {
           "genre": "Psychological",
-          "works": 259
+          "works": 285
         }
       ]
     },
@@ -82,22 +82,22 @@
         {
           "model": "cbow",
           "dimensions": 100,
-          "vectors": 3053
+          "vectors": 3413
         },
         {
           "model": "fasttext",
           "dimensions": 100,
-          "vectors": 3053
+          "vectors": 3413
         },
         {
           "model": "glove",
           "dimensions": 50,
-          "vectors": 3053
+          "vectors": 3413
         },
         {
           "model": "skipgram",
           "dimensions": 100,
-          "vectors": 3053
+          "vectors": 3413
         }
       ]
     },
@@ -106,10 +106,10 @@
       "sql": "SELECT COUNT(average_score) AS weighted_scores,COUNT(mean_score) AS mean_scores,COUNT(popularity) AS popularity,COUNT(community_favourites) AS favourites FROM works;",
       "results": [
         {
-          "weighted_scores": 3052,
-          "mean_scores": 3052,
-          "popularity": 3053,
-          "favourites": 3053
+          "weighted_scores": 3412,
+          "mean_scores": 3412,
+          "popularity": 3413,
+          "favourites": 3413
         }
       ]
     },
@@ -123,6 +123,6 @@
       ]
     }
   ],
-  "database_sha256": "a217136edf812f10cd8a09c32b5e8eeb11b62bf7e9bcb8559e4bd5d233213256",
-  "snapshot_sha256": "c409cb0926b73af4ac367265561eed6ab882412e647ac6e32b0a4c010e0d3b06"
+  "database_sha256": "2e8b721b7ea7bc6244fb5ec6cbba50a76867c17b3855dd7e2713e8f8b263c5f1",
+  "snapshot_sha256": "86f228ba5952759bafcf671066c9e16bbc83cb2bd3ffec82a2a5d6dc68c56212"
 }

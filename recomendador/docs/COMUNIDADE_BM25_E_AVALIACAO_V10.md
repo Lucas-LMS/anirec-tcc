@@ -1,5 +1,7 @@
 # Comunidade, BM25 e avaliação humana — versão de 06/11/2026
 
+> Registro histórico desta etapa. A interface foi simplificada e o catálogo ampliado para 3.413 obras: [estado atual e auditoria](INTERFACE_SIMPLES_E_AUDITORIA_V11.md). Os controles experimentais ficam agora em `pesquisa.html`.
+
 Este documento registra uma nova experiência de Recuperação da Informação. Não há treinamento, ajuste automático de pesos ou chamadas a LLMs. A representação principal continua sendo Word2Vec Skip-gram, 100 dimensões, com média dos vetores das palavras ponderada por IDF. As sinopses completas em inglês continuam sendo usadas. BM25 é uma alternativa lexical adicional, não outro modelo de linguagem.
 
 ## 1. Dataset ampliado e rastreável

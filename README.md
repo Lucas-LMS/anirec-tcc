@@ -27,7 +27,7 @@ O modo puro não apaga seu perfil. Você pode voltar à personalização a qualq
 - Sinopse inteira em inglês; tags e gêneros com pesos explicáveis.
 - Funil de candidatos, motivos de exclusão, parcelas do score e movimento Geral → Para mim.
 - Ampliação de descobertas sob demanda e diversificação heurística por nomes, opcional.
-- Julgamentos de relevância exportáveis; sem treinamento ou alteração automática do ranking.
+- Na área de pesquisa: julgamentos de relevância exportáveis; sem treinamento ou alteração automática do ranking.
 - Atlas com filtros, gráficos, sinopses, consultas SQL auditadas e download do banco público.
 - Laboratório que alterna entre quatro representações estáticas no mesmo catálogo congelado.
 
@@ -74,7 +74,7 @@ Os iniciadores `recomendador/iniciar.ps1` e `iniciar.sh` preservam a configuraç
 
 ## Dados e modelos
 
-O snapshot público atual tem **3.053 obras AniList**, **3.050 sinopses não vazias** e quatro vetores por obra no banco de distribuição: **12.212 linhas** em `vectors`. Documento sem texto utilizável tem vetor zero e não entra no ranking semântico. Esses números referem-se ao snapshot público, não ao tamanho de todo o catálogo AniList nem ao banco operacional privado.
+O snapshot público atual tem **3.413 obras AniList**, **3.409 sinopses não vazias** e quatro vetores por obra no banco de distribuição: **13.652 linhas** em `vectors`. Documento sem texto utilizável tem vetor zero e não entra no ranking semântico. Esses números referem-se ao snapshot público, não ao tamanho de todo o catálogo AniList nem ao banco operacional privado.
 
 | Modelo estático | Dimensões | Corpus do treinamento anterior | Papel |
 |---|---:|---|---|
@@ -127,11 +127,15 @@ docs/                        Imagens e manifesto da distribuição
 
 Leia [o guia do laboratório e atlas](recomendador/docs/LABORATORIO_E_ATLAS_V8.md), [o guia de preferências](recomendador/docs/GUIA_PREFERENCIAS_V7.md) e [a arquitetura de dados](recomendador/docs/DATASET_ETL_E_ARQUITETURA.md). Documentos históricos registram o estado daquela data e podem citar versões, limites e caminhos antigos; não substituem este README para executar a versão atual. O laboratório histórico inclui MiniLM e LLMs como comparadores, **não como componentes do aplicativo final**.
 
-## BM25, comunidade e avaliação humana
+## Interface simples e área de pesquisa
 
-O catálogo foi ampliado em 558 obras. A interface permite escolher **Vetores + temas**, **Híbrido (40% texto vetorial, 40% temas, 20% BM25)** ou **Somente BM25**. O bônus comunitário é opcional, limitado a 5% ou 10%; utiliza a nota ponderada do AniList, com média simples como alternativa. Popularidade e favoritos são exibidos como contexto. O padrão permanece vetores + temas, sem bônus.
+A página inicial fixa **Word2Vec Skip-gram + temas**, sem bônus comunitário experimental. O visitante escolhe apenas buscar obras parecidas ou considerar suas preferências. Pode importar a lista pública do AniList ou escolher interesses; scores, pesos e seletores de algoritmo ficam fora desse fluxo.
 
-[Experimentos de RI](https://Lucas-LMS.github.io/anirec-tcc/experimentos.html) mostra oito consultas, tempos e mudanças de ranking. **Precisão ainda depende de julgamentos humanos**, que podem ser coletados pelo botão **Avaliar esta busca**. A avaliação separa semelhança e gosto pessoal e calcula Precision@k/nDCG@k somente com respostas suficientes. Com perfil ativo, a avaliação de gosto exclui obras já conhecidas/avaliadas. [Protocolo completo, fórmulas, exemplos de código, coleta e limitações](recomendador/docs/COMUNIDADE_BM25_E_AVALIACAO_V10.md).
+A [Área de pesquisa](https://Lucas-LMS.github.io/anirec-tcc/pesquisa.html) preserva escolhas de recuperação e bônus, auditorias, exportações e avaliação humana. O laboratório continua comparando quatro modelos estáticos. LLMs locais são ensaios isolados por scripts e não são dependências do aplicativo.
+
+O catálogo cresceu em mais 360 obras, para 3.413. Uma auditoria independente recodificou todas as sinopses e verificou IDF, quatro matrizes e 3.000 pares de temas. **Contas corretas não garantem compreensão narrativa:** a concentração de cossenos da média estática é uma limitação explicitamente medida. [Interface, dataset, auditoria, limitações e próximos passos](recomendador/docs/INTERFACE_SIMPLES_E_AUDITORIA_V11.md). [Auditoria numérica](output/auditoria-v11/representacoes.json).
+
+O [experimento BM25 anterior](https://Lucas-LMS.github.io/anirec-tcc/experimentos.html) conserva seu snapshot de 3.053 obras e seus parâmetros; seus resultados não devem ser atribuídos automaticamente ao catálogo ampliado. [Protocolo anterior](recomendador/docs/COMUNIDADE_BM25_E_AVALIACAO_V10.md).
 
 ## Testes
 
@@ -146,6 +150,7 @@ node recomendador/test_pure.js tmp/parity-v7.json
 python recomendador/prepare_experiment_fixtures.py
 node recomendador/test_experiments.js tmp/experiments-fixtures.json
 node scripts/check_javascript.js
+node scripts/audit_representations.js tmp/audit-ci.json
 python scripts/validate_distribution.py
 ```
 

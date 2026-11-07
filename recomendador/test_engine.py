@@ -24,6 +24,13 @@ class IRTests(unittest.TestCase):
         result=self.e.recommend('mal:47',online=False)
         self.assertEqual(result['candidate_count'],len(self.e.base_keys)+1)
         self.assertIn(item['key'],[row['key'] for row in result['general']])
+    def test_adult_live_candidate_cannot_bypass_catalog_filter(self):
+        item=self.e.add_anilist(dict(id=999999998,title={'english':'Adult fixture'},description='Action mystery adventure.',genres=['Action'],tags=[],type='ANIME',isAdult=True,status='FINISHED'))
+        self.e.discovery_extra['mal:47']=[item['key']]
+        result=self.e.recommend('mal:47',online=False)
+        self.assertNotIn(item['key'],[r['key'] for r in result['general']])
+        self.assertTrue(any(r['key']==item['key'] and r['reason']=='adult' for r in result['diagnostics']))
+
     def test_pure_mode_ignores_saved_profile_and_preserves_it(self):
         before=self.e.recommend('mal:47',online=False,pure=True)
         self.e.onboarding(['Yuri'],['Action'],['mal:144'])

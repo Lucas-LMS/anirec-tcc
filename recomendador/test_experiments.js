@@ -8,3 +8,6 @@ const zero=evaluation.metrics(['a'],{a:0},['a']);assert.equal(zero.precision,0);
 console.log(JSON.stringify({experimental_numeric_comparisons:comparisons,maximum_difference:maximum,glove_50d_profile:'passed',human_metrics_missing_ideal_zero_cases:'passed'}));
 
 const tiny=['anchor','rated','favorite','unseen'].map(key=>({key,title:key,text:'police city investigation',vector:[1,0],genres:['Action'],tags:[]}));const holdout=core.study({records:tiny,anchor:tiny[0],ratings:{rated:8},favorites:['favorite'],preferred:['Action'],personal_min_topics:0});assert.deepEqual(holdout.preference_pool_keys,['unseen']);assert.ok(holdout.similarity_pool_keys.includes('rated'));console.log('Human preference holdout excludes supplied ratings and favorites: PASS');
+
+// Missing or incompatible vectors must not produce convincing-looking rankings.
+{ const anchor={key:'a',vector:[0,0],text:'empty',genres:[],tags:[]};assert.throws(()=>core.rank({records:[],anchor}),/sinopse/);anchor.vector=[1,0];assert.throws(()=>core.rank({records:[{key:'b',vector:[1,0,0],genres:[],tags:[]}],anchor}),/incompat/); }

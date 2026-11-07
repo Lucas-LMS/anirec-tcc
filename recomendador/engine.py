@@ -13,9 +13,9 @@ WORK=Path(__file__).resolve().parents[1]
 DATA=Path(os.environ.get('ANIREC_DATA_DIR',str(Path.home()/'tcc-lab/recomendador-private')))
 PARAMS=dict(version='ir-v7-guided-profile',model='Word2Vec Skip-gram text8 100d',document_words=None,synopsis_policy='entire_available_source',idf_policy='anilist_catalog_smooth',base_semantic=.5,base_topics=.5,topic_metric='idf_weighted_tag_cosine_85_genres_15',affinity_metric='positive_coverage_times_one_minus_negative_coverage',profile_semantic=.7,profile_topics=.3,personal_min_topics=.25,profile_text_policy='positive_negative_centroid_contrast',default_personalization=.35,max_personalization=.6,explicit_topic_weight=1.,max_history_topics=12,rating_neutral='user_observed_midrange',rating_policy='signed_user_midrange',import_limit=None,profile_metadata_limit=None,api_cache_seconds=3600)
 
-def norm(text):return unicodedata.normalize('NFKC',str(text)).casefold().strip()
+def norm(text):return unicodedata.normalize('NFKC',str(text)).lower().strip()
 def clean(text):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]*>',' ',text or ''))).strip()
-def tokenize(text):return re.findall(r'[^\W\d_]+',unicodedata.normalize('NFKC',text).casefold())
+def tokenize(text):return re.findall(r'[^\W\d_]+',unicodedata.normalize('NFKC',text).lower())
 def unit(vector):
     length=np.linalg.norm(vector)
     return vector/length if length else vector
@@ -96,7 +96,7 @@ class Engine:
         key=self.key_for(row)
         previous=self.base_media.get(key,{})
         item=dict(key=key,mal_id=row.get('idMal'),anilist_id=row['id'],title=title.get('english') or title.get('romaji') or str(row['id']),romaji=title.get('romaji') or '',text=text or previous.get('text',''),synopsis_source='AniList description' if text else previous.get('synopsis_source'),synopsis_complete=True if text else previous.get('synopsis_complete',False),genres=row.get('genres') or [],tags=row.get('tags') or [],cover=(row.get('coverImage') or {}).get('large'),url=row.get('siteUrl'),source='AniList (consulta sob demanda)',status=row.get('status'),media_type=row.get('type','ANIME'))
-        item.update(average_score=row.get('averageScore',previous.get('average_score')),mean_score=row.get('meanScore',previous.get('mean_score')),popularity=row.get('popularity',previous.get('popularity')),community_favourites=row.get('favourites',previous.get('community_favourites')),rating_count=sum(v.get('amount',0) for v in (row.get('stats') or {}).get('scoreDistribution',[])) if (row.get('stats') or {}).get('scoreDistribution') is not None else previous.get('rating_count'),statistics_fetched_at=row.get('statisticsFetchedAt',previous.get('statistics_fetched_at')))
+        item.update(is_adult=bool(row.get('isAdult',previous.get('is_adult',False))),average_score=row.get('averageScore',previous.get('average_score')),mean_score=row.get('meanScore',previous.get('mean_score')),popularity=row.get('popularity',previous.get('popularity')),community_favourites=row.get('favourites',previous.get('community_favourites')),rating_count=sum(v.get('amount',0) for v in (row.get('stats') or {}).get('scoreDistribution',[])) if (row.get('stats') or {}).get('scoreDistribution') is not None else previous.get('rating_count'),statistics_fetched_at=row.get('statisticsFetchedAt',previous.get('statistics_fetched_at')))
         return item
 
     def add_anilist(self,row):
@@ -322,6 +322,7 @@ class Engine:
                 if candidate_key in excluded:
                     reject(item,'anchor' if candidate_key==key else 'hidden' if candidate_key in self.profile.get('rejected',[]) else 'seen');continue
                 if item.get('media_type','ANIME')!='ANIME':reject(item,'not_anime');continue
+                if item.get('is_adult'):reject(item,'adult');continue
                 if exclude_upcoming and item.get('status')=='NOT_YET_RELEASED':reject(item,'upcoming');continue
                 if require_genre and anchor.get('genres') and not set(anchor['genres'])&set(item['genres']):reject(item,'genre');continue
                 # Explicit exclusions must also match spoiler-marked metadata;

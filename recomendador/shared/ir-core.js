@@ -91,6 +91,8 @@
   function rank(options) {
     if(options.pure)options={...options,ratings:{},favorites:[],preferred:[],avoided:[],hidden:[],seenIds:[],personalization:0,exclude_seen:false};
     const { records, anchor, ratings = {}, favorites = [], preferred = [], avoided = [], seenIds = [], hidden = [], params = {} } = options;
+    if(!anchor?.vector?.some(x=>x!==0))throw Error('A sinopse não forneceu termos com vetores utilizáveis. Escolha outro anime.');
+    if(!anchor.vector.every(Number.isFinite))throw Error('Vetor da referência inválido.');
     const start = typeof performance !== 'undefined' ? performance.now() : Date.now();
     const p = profile(options.profile_records || records, ratings, favorites, preferred), lambda = p.active ? Math.max(0, Math.min(.6, options.personalization ?? .35)) : 0;
     const threshold = options.personal_min_topics ?? .25, idf = options.topic_idf || topicIdf(records);
@@ -111,6 +113,7 @@
       if (exclusions.length) { reject(item, 'avoided_topic', exclusions); continue; }
       if (forbidden.size && options.require_tag_metadata && !item.tags?.length) { reject(item, 'missing_tags'); continue; }
       if (!item.vector?.some(x => x !== 0)) { reject(item, 'missing_vector'); continue; }
+      if(item.vector.length!==anchor.vector.length||!item.vector.every(Number.isFinite))throw Error('Vetores incompatíveis no catálogo.');
       const text = (cosine(anchor.vector, item.vector) + 1) / 2, thematicScore = thematic(anchor, item, idf), details = affinity(p.preferences, features);
       const pos = p.positive ? cosine(p.positive, item.vector) : null, neg = p.negative ? cosine(p.negative, item.vector) : null;
       const profileText = pos !== null && neg !== null ? clamp(.5 + .5 * (pos - neg)) : pos !== null ? (pos + 1) / 2 : neg !== null ? (1 - neg) / 2 : null;
@@ -133,7 +136,7 @@
     general.forEach((r, i) => diagnostics.push({ key: r.key, title: r.title, reason: 'eligible', general_rank: i + 1, personal_rank: personalRank.get(r.key) || null }));
     const end = typeof performance !== 'undefined' ? performance.now() : Date.now(); audit.eligible = general.length;
     return { anchor, general, personalized, diagnostics, filter_audit: audit, profile_active: p.active, profile_info: p.info,
-      personalization: lambda, params:{...params,retrieval_strategy:strategy,bm25_k1:1.2,bm25_b:.75,lexical_weight:beta,community_weight:gamma}, filters: { pure:!!options.pure,personal_min_topics: threshold }, candidate_count: records.length,
+      personalization: lambda, params:{...params,retrieval_strategy:strategy,bm25_k1:1.2,bm25_b:.75,lexical_weight:beta,community_weight:gamma}, filters: { pure:!!options.pure,personal_min_topics: threshold,exclude_upcoming:options.exclude_upcoming!==false,require_genre:!!options.require_genre,require_tag_metadata:!!options.require_tag_metadata,exclude_seen:!!options.exclude_seen }, candidate_count: records.length,
       eligible_count: general.length, personal_eligible_count: personalized.length, unseen_count: general.filter(r => !r.is_seen).length,
       personal_unseen_count: personalized.filter(r => !r.is_seen).length, ranking_ms: end - start, total_ms: end - start,
       recommendation_sets: { general_all: general.slice(0, 10), general_unseen: general.filter(r => !r.is_seen).slice(0, 10),
@@ -142,7 +145,7 @@
   function study(options){
     const variants=[['vectors','Vetores + temas','vectors',0],['bm25','Somente BM25','bm25',0],['hybrid','Híbrido BM25 + vetores','hybrid',0],['hybrid_community','Híbrido + comunidade 5%','hybrid',.05]],runs=variants.map(([id,label,strategy,weight])=>({id,label,result:rank({...options,strategy,community_weight:weight})})),pool=new Map();
     for(const run of runs)for(const mode of ['general','personalized'])for(const row of (mode==='personalized'&&run.result.profile_active?run.result[mode].filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result[mode]).slice(0,10))pool.set(row.key,{key:row.key,title:row.title,text:row.text,genres:row.genres,tags:row.tags,url:row.url});
-    return {format:'anirec-human-study-v1',created_at:new Date().toISOString(),anchor:{key:options.anchor.key,title:options.anchor.title,text:options.anchor.text},profile_active:runs[0].result.profile_active,candidate_count:options.records.length,pure:!!options.pure,systems:runs.map(run=>({id:run.id,label:run.label,params:run.result.params,ranking_ms:run.result.ranking_ms,general:run.result.general.slice(0,10).map(row=>({key:row.key,score:row.base_score})),personalized:(run.result.profile_active?run.result.personalized.filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result.personalized).slice(0,10).map(row=>({key:row.key,score:row.personalized_score}))})),similarity_pool_keys:[...new Set(runs.flatMap(run=>run.result.general.slice(0,10).map(row=>row.key)))],preference_pool_keys:[...new Set(runs.flatMap(run=>(run.result.profile_active?run.result.personalized.filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result.personalized).slice(0,10).map(row=>row.key)))],preference_policy:'when profile active: unseen, not a manual favorite, and no score supplied in profile',pool:[...pool.values()].sort((a,b)=>a.key<b.key?-1:a.key>b.key?1:0)};
+    return {format:'anirec-human-study-v1',created_at:new Date().toISOString(),anchor:{key:options.anchor.key,title:options.anchor.title,text:options.anchor.text},profile_active:runs[0].result.profile_active,filters:runs[0].result.filters,personalization:runs[0].result.personalization,candidate_count:options.records.length,pure:!!options.pure,systems:runs.map(run=>({id:run.id,label:run.label,params:run.result.params,ranking_ms:run.result.ranking_ms,general:run.result.general.slice(0,10).map(row=>({key:row.key,score:row.base_score})),personalized:(run.result.profile_active?run.result.personalized.filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result.personalized).slice(0,10).map(row=>({key:row.key,score:row.personalized_score}))})),similarity_pool_keys:[...new Set(runs.flatMap(run=>run.result.general.slice(0,10).map(row=>row.key)))],preference_pool_keys:[...new Set(runs.flatMap(run=>(run.result.profile_active?run.result.personalized.filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result.personalized).slice(0,10).map(row=>row.key)))],preference_policy:'when profile active: unseen, not a manual favorite, and no score supplied in profile',pool:[...pool.values()].sort((a,b)=>a.key<b.key?-1:a.key>b.key?1:0)};
   }
   const api = { norm, unit, cosine, topics, affinity, topicIdf, thematic, profile, rank,bm25,communityQuality,study };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;

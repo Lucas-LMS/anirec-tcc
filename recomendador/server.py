@@ -45,8 +45,8 @@ def main():
                     allowed={'ir-core.js','onboarding.js','app.js','app.css','local-adapter.js','evaluation-core.js'}
                     if name not in allowed:self.send(dict(error='Asset não encontrado.'),404);return
                     content=(ROOT/'shared'/name).read_bytes();self.send_response(200);self.send_header('Content-Type','text/css; charset=utf-8' if name.endswith('.css') else 'text/javascript; charset=utf-8');self.send_header('Content-Length',str(len(content)));self.send_header('Cache-Control','no-cache');self.end_headers();self.wfile.write(content);return
-                if path.path not in ['/','/index.html']:self.send(dict(error='Não encontrado.'),404);return
-                content=(ROOT/'web/index.html').read_bytes();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(content)));self.send_header('X-Content-Type-Options','nosniff');self.send_header('Referrer-Policy','no-referrer');self.end_headers();self.wfile.write(content)
+                if path.path not in ['/','/index.html','/pesquisa.html']:self.send(dict(error='Não encontrado.'),404);return
+                content=(ROOT/'web'/('pesquisa.html' if path.path=='/pesquisa.html' else 'index.html')).read_bytes();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(content)));self.send_header('X-Content-Type-Options','nosniff');self.send_header('Referrer-Policy','no-referrer');self.end_headers();self.wfile.write(content)
             except (ValueError,RuntimeError,OSError) as error:self.send(dict(error=str(error)),400)
             except Exception:traceback.print_exc();self.send(dict(error='Erro interno. Consulte o log local, sem dados de perfil.'),500)
         def do_POST(self):
