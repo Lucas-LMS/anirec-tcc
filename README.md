@@ -187,3 +187,5 @@ Projeto independente, sem afiliação ao AniList. Créditos e condições de ter
 
 
 Comparação experimental opcional: [conteúdo e recomendações votadas da comunidade](recomendador/docs/COMPARACAO_COMUNIDADE_V13.md). O ranking padrão continua por conteúdo; o botão compara as duas variantes no mesmo conjunto elegível, incluindo obras sem votos.
+
+Atualização: [comunidade com liga/desliga e maior influência pessoal](recomendador/docs/COMUNIDADE_E_PERSONALIZACAO_V14.md). A comunidade começa ligada e pode ser desativada.

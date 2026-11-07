@@ -1,0 +1,23 @@
+# Comunidade na geração normal e intensidade do perfil — 7/11/2026
+
+## Comportamento
+
+A marcação “Incluir recomendações da comunidade” aparece na tela principal e começa ligada. O usuário pode desligá-la; a escolha é guardada no localStorage desse navegador ou origem. Ao alterar a marcação depois de escolher uma referência, as recomendações são recalculadas. A opção vale tanto sem perfil como com perfil. Sem perfil significa que histórico, notas, interesses e exclusões pessoais não participam; não significa necessariamente que os votos comunitários estejam desligados. A tela informa explicitamente o estado. Com a marcação desligada, os scores e filtros anteriores de conteúdo continuam valendo.
+
+A API recebe `use_community_recommendations: true/false`. O backend local e o adaptador do navegador já possuem a mesma fórmula: S + 0,35 × v/(v+20) × (1−S), com v=max(0,saldo). Obras sem evidência positiva não recebem bônus. O botão de comparação permanece disponível. O texto da comparação agora explica que a lista principal acompanha a marcação, em vez de afirmar que sempre utiliza somente conteúdo. A explicação de cada recomendação informa o saldo da relação que trouxe a série para o ranking; se o agrupamento usa uma temporada diferente como melhor correspondência, a evidência mostrada vem dessa melhor correspondência.
+
+## Perfil mais influente sem treinamento
+
+Na interface simples, “Priorizar meus gostos” é o padrão (lambda=0,50); “Equilibrar referência e meus gostos” mantém lambda=0,35. Na área de pesquisa, o controle numérico anterior continua determinando lambda. A escolha simples persiste por origem no navegador. Não modificamos os vetores, o histórico, a fórmula de afinidade, nem usamos LLMs. O perfil continua composto por 70% da componente textual e 30% da afinidade de temas; o conteúdo continua 50% sinopse e 50% temas. Antes do bônus comunitário, o score pessoal é (1−lambda)×referência + lambda×perfil. O peso maior muda a mistura, não garante listas diferentes ou melhores.
+
+Aumentar o tamanho do histórico aumenta a informação disponível, não significa que devamos multiplicar sua influência por 2.500: temporadas e gêneros muito comuns poderiam dominar tudo. O histórico já considera recorrência, notas relativas e favoritos. O diagnóstico permanece: vetores médios positivos e negativos se parecem; a diferença textual tem pouca dispersão. A afinidade temática é uma cobertura do conjunto completo de interesses, que fica pequena num perfil muito diverso. Nenhuma divisão aritmética por zero ou erro de soma foi identificado nessa etapa. Há limitação da representação e da agregação; parâmetros maiores não a resolvem sozinhos.
+
+## Resultados e limites
+
+No catálogo congelado e no perfil privado de desenvolvimento, Lycoris Recoil com comunidade apresenta Release the Spyce em 8º com lambda=0,35 e 7º com lambda=0,50. Sem perfil continua em 12º. Geral e pessoal compartilham nove das dez séries tanto com 0,35 como com 0,50, embora a ordem mude. Portanto não afirmamos que a interseção do top 10 caiu nesse caso. Perfil personalizado não é uma obrigação de escolher obras distintas: pode reordenar obras que já são fortes para ambos os critérios. A recuperação sem comunidade continua sendo uma hipótese a aprimorar e não foi artificialmente corrigida por título.
+
+Os testes de sensibilidade locais usam nove referências, o mesmo snapshot, mesmos filtros, mesma regra de agrupamento, lambda de 0,35 e 0,50 e comunidade com os mesmos parâmetros. O relatório detalhado fica fora do repositório pois deriva do perfil privado. A interseção média entre Geral e pessoal caiu de 8,89 para 8,44 séries por top 10 nesse conjunto de nove referências. Quatro referências perderam uma série em comum; cinco mantiveram a mesma contagem. Interseção do top 10 e movimento de posições medem diversidade/estabilidade, não relevância. Não usamos votos de entrada como gabarito para provar precisão. O padrão 0,50 é uma escolha de produto solicitada para priorizar os gostos, não um resultado de otimização com dados independentes.
+
+## Arquivos alterados
+
+`shared/page.html` e `shared/research.html`: controles com rótulos e ajuda; `shared/app.js`: leitura das opções, persistência local, envio da configuração, recálculo e estado da comunidade nas explicações. `scripts/build_site.py` gera as cópias local e online a partir desses arquivos. Backend e fórmula do embedding permanecem iguais aos da etapa anterior. A validação inclui sintaxe JavaScript, integridade da distribuição e teste da interação real no navegador. Consulte COMPARACAO_COMUNIDADE_V13.md para a fórmula, limites da coleta e testes de paridade entre Python e JavaScript.
