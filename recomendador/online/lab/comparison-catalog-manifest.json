@@ -1,0 +1,9 @@
+{
+  "file": "lab/comparison-catalog.json.gz",
+  "count": 20857,
+  "sha256": "965f9d3ce17d7eab4578b389bfccc8c7f9ac926f1af41f262763e418134c3ff3",
+  "compressed_sha256": "7e301a359aae53400198f46431aae7666e2f4fc9bc17a200bcbe17ac28c65a06",
+  "compressed_bytes": 6835539,
+  "source_catalog_sha256": "57129e365809d4d0a8ef53cc690c775254b5fe81a2f1f63fc897675baafe1f95",
+  "purpose": "Metadata and synopsis payload for the full-catalog static model comparator; per-model document vectors are loaded separately."
+}

@@ -2,7 +2,7 @@
 from pathlib import Path
 import sqlite3,json,hashlib
 def main():
-    lab=Path(__file__).parent/'online/lab';data=json.loads((lab/'dataset.json').read_text(encoding='utf-8'));catalog=json.loads((lab.parent/'catalog.json').read_text(encoding='utf-8'));models=json.loads((lab/'models.json').read_text(encoding='utf-8'))
+    lab=Path(__file__).parent/'online/lab';data=json.loads((lab/'dataset.json').read_text(encoding='utf-8'));catalog=json.loads((lab.parent/'catalog.json').read_text(encoding='utf-8'));models=json.loads((lab/'models-legacy-3413.json').read_text(encoding='utf-8'))
     target=lab/'corpus.sqlite3'
     with sqlite3.connect(target) as db:
         db.executescript('DROP TABLE IF EXISTS works; DROP TABLE IF EXISTS genres; DROP TABLE IF EXISTS tags; DROP TABLE IF EXISTS vectors; CREATE TABLE works(anilist_id INTEGER PRIMARY KEY,title TEXT,year INTEGER,format TEXT,status TEXT,synopsis TEXT,word_count INTEGER,source TEXT,fetched_at TEXT,average_score INTEGER,mean_score INTEGER,popularity INTEGER,community_favourites INTEGER,rating_count INTEGER,statistics_fetched_at TEXT,episodes INTEGER,duration INTEGER); CREATE TABLE genres(anilist_id INTEGER,genre TEXT,PRIMARY KEY(anilist_id,genre)); CREATE TABLE tags(anilist_id INTEGER,name TEXT,rank INTEGER,spoiler INTEGER,PRIMARY KEY(anilist_id,name)); CREATE TABLE vectors(anilist_id INTEGER,model TEXT,dimensions INTEGER,vector_f32 BLOB,PRIMARY KEY(anilist_id,model));')

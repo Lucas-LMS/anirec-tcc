@@ -35,7 +35,7 @@ def main():
         models.append(spec);print(json.dumps(spec),flush=True)
         del kv
     manifest={'built_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'corpus_sha256':hashlib.sha256((out/'catalog.json').read_bytes()).hexdigest(),'row_keys':[r['key'] for r in records],'models':models,'policy':'Frozen identical public AniList corpus; full synopsis; same IDF and rank parameters. No training. fastText corpus differs (fil9 vs text8), so this is artifact comparison, not controlled algorithm-only comparison.'}
-    (lab/'models.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+    (lab/'models-legacy-3413.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
     raw=json.loads((Path.home()/'tcc-lab/recomendador-private/catalog-snapshot.json').read_text());byid={r['id']:r for r in raw}
     enriched=[]
     for r in records:
