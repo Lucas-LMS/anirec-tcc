@@ -1,8 +1,1 @@
-{
-  "source": "AniList GraphQL",
-  "selection": "Frozen research work-metadata snapshot from application usage, popularity sample and queries; selection bias, not the full catalogue",
-  "count": 3413,
-  "personal_ratings_included": false,
-  "usernames_included": false,
-  "source_metadata_sha256": "abba446488b7139fe738d58eff379da6de8c8e2b5d42efac13de870682b1037e"
-}
+{"source":"AniList GraphQL","selection":"Complete source snapshot; adult titles excluded by AniRec catalog policy.","count":20857,"source_total_count":22597,"adult_records_excluded":1740,"personal_ratings_included":false,"usernames_included":false,"snapshot_utc":"2026-11-13T04:09:22.701253+00:00","source_jsonl_sha256":"8d6277a25f690b7fd48c49d9cf515d0fba29e4cb427952f7d1cd2b544b5eebd7"}

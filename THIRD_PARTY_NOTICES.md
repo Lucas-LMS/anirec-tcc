@@ -1,6 +1,6 @@
 # Fontes e componentes de terceiros
 
-- **AniList**: metadados públicos de obras e sinopses, obtidos por consultas de leitura da API GraphQL. As condições da fonte continuam aplicáveis; não atribuímos licença própria a esses textos. https://docs.anilist.co/
+- **AniList**: metadados públicos de obras e sinopses, obtidos por consultas de leitura da API GraphQL. O snapshot completo de 13/11/2026 foi fornecido e autorizado pelo responsável do projeto para uso no AniRec. Os dados e imagens continuam atribuídos ao AniList; não atribuímos licença própria a esses conteúdos. https://docs.anilist.co/
 - **Word2Vec/Gensim**: implementação e exemplos oficiais em https://radimrehurek.com/gensim/auto_examples/tutorials/run_word2vec.html. Artefatos do projeto foram preparados anteriormente sobre text8; hashes e parâmetros em `site/lab/models.json`.
 - **GloVe**, Stanford NLP: https://nlp.stanford.edu/projects/glove/ e https://github.com/stanfordnlp/GloVe. O corpus text8 deriva de Wikipedia; os dados e o código possuem suas próprias condições.
 - **fastText**: https://fasttext.cc/docs/en/unsupervised-tutorial.html e https://github.com/facebookresearch/fastText. Artefato fil9 do exercício anterior; subpalavras preservadas na exportação documental.

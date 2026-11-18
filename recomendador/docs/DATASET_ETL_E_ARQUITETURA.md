@@ -171,3 +171,11 @@ O ZIP de código/documentação inclui o esquema, consultas SQL, ETL, exportador
 
 ## Atualização v7
 A publicação atual usa 2.495 obras públicas do snapshot, sem perfil ou notas. O recorte inicial de 204 descrito acima é histórico. Consulte GUIA_PREFERENCIAS_V7.md para fórmula, parâmetros, privacidade e testes atuais.
+
+## Atualização do catálogo completo — 18/11/2026
+
+O catálogo principal agora usa o pacote completo recebido em `Anilist_Manus`, snapshot de 13/11/2026: **22.597** registros de anime na origem. A política vigente do AniRec exclui os **1.740** registros adultos, deixando **20.857** obras candidatas. O snapshot público inclui as sinopses e metadados disponíveis, os vetores Word2Vec derivados com a mesma implementação do motor e **155.478** arestas de recomendação comunitária em **22.597** âncoras. **1.344** obras não têm sinopse utilizável e ficam sem vetor semântico. Âncoras sem recomendações e ligações sem alvo resolvido permanecem sem aresta.
+
+`recomendador/import_complete_anilist.mjs` reconstrói o catálogo a partir do JSONL e o grafo a partir das tabelas `recommendation_status` e `recommendations` do SQLite. O script usa somente módulos nativos do Node.js e os blocos de vetores já mantidos no repositório; não treina nem altera o modelo. Ele grava o catálogo comprimido em `recomendador/online/catalog.json.gz`, atualiza o manifesto e a evidência comunitária, e não lê o perfil/banco privado do usuário. `scripts/build_site.py` sincroniza os ativos para `site/`; o navegador usa o arquivo indicado por `build-manifest.json` e o descompacta antes de iniciar o motor.
+
+O catálogo do laboratório em `site/lab/` permanece congelado em 3.413 obras, pois os quatro modelos e seus julgamentos/relatórios pertencem àquela versão experimental. Portanto, os números do laboratório não representam o novo catálogo de produção.

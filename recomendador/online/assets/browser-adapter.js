@@ -86,7 +86,16 @@ window.AniRecAdapter = (() => {
       }
     },
     async init() {
-      const response = await fetch('catalog.json',{cache:'no-cache'}); if (!response.ok) throw Error('Catálogo indisponível.'); data = await response.json(); window.AniRecEncodingId = data.encoding_id;
+      const manifestResponse = await fetch('build-manifest.json',{cache:'no-cache'});
+      if (!manifestResponse.ok) throw Error('Manifesto do catálogo indisponível.');
+      const manifest = await manifestResponse.json();
+      const file = manifest.catalog_file || 'catalog.json';
+      const response = await fetch(file,{cache:'no-cache'}); if (!response.ok) throw Error('Catálogo indisponível.');
+      if (file.endsWith('.gz')) {
+        if (!('DecompressionStream' in window)) throw Error('Este navegador não oferece suporte à leitura do catálogo compactado.');
+        data = await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).json();
+      } else data = await response.json();
+      window.AniRecEncodingId = data.encoding_id;
       notes = readJSON('anirec-demo-notes', {}); const prefs = readJSON('anirec-demo-preferences', {});
       preferred = (prefs.preferred || '').split(',').map(x => x.trim()).filter(Boolean); avoided = (prefs.avoided || '').split(',').map(x => x.trim()).filter(Boolean);
       favorites = readJSON('anirec-demo-favorites', []); hidden = readJSON('anirec-hidden', []);

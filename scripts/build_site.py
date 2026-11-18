@@ -1,5 +1,6 @@
 """Synchronize the static deployment from maintained source; no network or secrets."""
 from pathlib import Path
+import json
 import shutil
 root=Path(__file__).resolve().parents[1];source=root/'recomendador/online';target=root/'site';target.mkdir(exist_ok=True)
 for page,template in [('index.html','page.html'),('pesquisa.html','research.html'),('perfil.html','profile-page.html')]:
@@ -12,6 +13,11 @@ for page,template in [('index.html','page.html'),('pesquisa.html','research.html
 for p in source.rglob('*'):
     if not p.is_file() or 'assets' in p.relative_to(source).parts or p.name in {'app.js','browser-adapter.js','anilist-import.js'}:continue
     dest=target/p.relative_to(source);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dest)
+manifest_path=source/'build-manifest.json'
+if manifest_path.exists():
+    catalog_file=json.loads(manifest_path.read_text(encoding='utf-8')).get('catalog_file','')
+    stale_catalog=target/('catalog.json' if catalog_file.endswith('.gz') else 'catalog.json.gz')
+    if stale_catalog.exists():stale_catalog.unlink()
 for folder in [target/'assets',source/'assets']:
     folder.mkdir(exist_ok=True)
     for p in list((root/'recomendador/shared').glob('*.js'))+list((root/'recomendador/shared').glob('*.css'))+[source/'browser-adapter.js',source/'anilist-import.js']:

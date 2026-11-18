@@ -76,7 +76,9 @@ Os iniciadores `recomendador/iniciar.ps1` e `iniciar.sh` preservam a configuraç
 
 ## Dados e modelos
 
-O snapshot público atual tem **3.413 obras AniList**, **3.409 sinopses não vazias** e quatro vetores por obra no banco de distribuição: **13.652 linhas** em `vectors`. Documento sem texto utilizável tem vetor zero e não entra no ranking semântico. Esses números referem-se ao snapshot público, não ao tamanho de todo o catálogo AniList nem ao banco operacional privado.
+O catálogo principal foi ampliado para **20.857 obras não adultas** a partir do snapshot completo AniList de 13/11/2026. O arquivo implantado é `site/catalog.json.gz` (27,2 MiB) e contém sinopses disponíveis, metadados e vetores Word2Vec fixos. **1.344 obras não têm sinopse utilizável** e, por isso, não possuem vetor semântico. O snapshot de origem tinha 22.597 animes; AniRec mantém sua política de excluir 1.740 registros adultos dos candidatos. O grafo comunitário inclui **22.597 âncoras e 155.478 arestas**. O laboratório multi-modelo em `site/lab/` continua usando o corpus experimental congelado de 3.413 obras para preservar a comparação anterior.
+
+Para reconstruir o catálogo ampliado com o pacote recebido, execute `node recomendador/import_complete_anilist.mjs --jsonl <caminho>/anilist_anime_complete.jsonl --sqlite <caminho>/anilist_anime_complete.sqlite` e depois `python scripts/build_site.py`. O importador usa os vetores fixos existentes e não inclui listas, notas ou perfis pessoais. O catálogo é compactado para publicação; o manifesto orienta o app a descompactá-lo no navegador.
 
 | Modelo estático | Dimensões | Corpus do treinamento anterior | Papel |
 |---|---:|---|---|
@@ -87,7 +89,7 @@ O snapshot público atual tem **3.413 obras AniList**, **3.409 sinopses não vaz
 
 Esses artefatos foram preparados anteriormente nos exercícios documentados; o aplicativo não os treina. O laboratório troca os vetores de todas as obras simultaneamente, sem misturar espaços. Seus resultados não isolam apenas o algoritmo: também diferem corpus e dimensão. Itens do histórico fora do catálogo experimental são explicitamente informados e não usados somente nesse experimento.
 
-Catálogo de obras: **AniList GraphQL**. Kaggle aparece exclusivamente nos experimentos históricos. Fonte das palavras e fonte das sinopses são coisas diferentes. O dataset de obras tem viés de uso e popularidade, não é amostra aleatória nem catálogo completo.
+Catálogo de obras: **AniList GraphQL**. Kaggle aparece exclusivamente nos experimentos históricos. Fonte das palavras e fonte das sinopses são coisas diferentes. O laboratório é um corpus experimental selecionado; o catálogo principal usa o snapshot ampliado identificado no manifesto.
 
 ### Como o score é calculado
 
