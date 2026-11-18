@@ -1,12 +1,16 @@
 """Initialize a new local dataset from public work metadata; never overwrites a profile."""
-import json,os
+import gzip,json,os
 from pathlib import Path
 def main():
     root=Path(__file__).parent
     target=Path(os.environ.get('ANIREC_DATA_DIR',str(Path.home()/'tcc-lab/recomendador-private')));target.mkdir(parents=True,exist_ok=True)
     snapshot=target/'catalog-snapshot.json'
     if snapshot.exists():print('Snapshot existente preservado:',snapshot);return
-    public=json.loads((root/'online/catalog.json').read_text(encoding='utf-8'))
+    build_manifest=json.loads((root/'online/build-manifest.json').read_text(encoding='utf-8'))
+    catalog_path=root/'online'/build_manifest.get('catalog_file','catalog.json')
+    catalog_bytes=catalog_path.read_bytes()
+    if catalog_path.suffix=='.gz':catalog_bytes=gzip.decompress(catalog_bytes)
+    public=json.loads(catalog_bytes.decode('utf-8'))
     rows=[{'id':r['anilist_id'],'idMal':r.get('mal_id'),'type':'ANIME','isAdult':False,'status':r.get('status'),'averageScore':r.get('average_score'),'meanScore':r.get('mean_score'),'popularity':r.get('popularity'),'favourites':r.get('community_favourites'),'statisticsFetchedAt':r.get('statistics_fetched_at'),'title':{'english':r['title'],'romaji':r.get('romaji')},'description':r['text'],'genres':r['genres'],'tags':r['tags'],'coverImage':{'large':r.get('cover')},'siteUrl':r.get('url')} for r in public['records']]
     for raw, record in zip(rows, public['records']):
         raw['episodes'] = record.get('episodes')

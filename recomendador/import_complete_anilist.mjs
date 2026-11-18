@@ -40,7 +40,7 @@ const decodeEntities = text => text
     (entity, name) => ({ amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', rsquo: '’',
       lsquo: '‘', rdquo: '”', ldquo: '“', mdash: '—', ndash: '–', hellip: '…', trade: '™', copy: '©', reg: '®' })[name.toLowerCase()] || entity);
 const clean = value => decodeEntities(String(value || '').replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();
-const tokens = text => clean(text).normalize('NFKC').toLowerCase().match(/\p{L}+/gu) || [];
+const tokens = text => String(text || '').normalize('NFKC').toLowerCase().match(/\p{L}+/gu) || [];
 const norm = text => String(text).normalize('NFKC').toLowerCase().trim();
 const json = (file, value) => writeFileSync(file, JSON.stringify(value));
 const hashFile = async file => {
