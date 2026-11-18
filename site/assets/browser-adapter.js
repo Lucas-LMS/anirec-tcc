@@ -135,7 +135,7 @@ window.AniRecAdapter = (() => {
       if(!options.pure)await ensureProfileEncoding(progress);
       const anchor = byKey.get(options.key); if (!anchor) throw Error('Pesquise novamente a obra.'); let warning;
       if (options.online) try { await expansion(anchor, progress,options.pure); } catch (e) { warning = 'A ampliação AniList falhou; usando o catálogo disponível. ' + e.message; }
-      let result = window.AniRecIR.rank({ ...options, records:options.pure?records.filter(row=>neutralKeys.has(row.key)):records,profile_records:options.pure?[]:referenceRecords(), anchor, ratings: notes, favorites:allFavorites(), preferred, avoided, seenIds: seenIds(), statistics:metadata.listEntries?window.AniRecUserStats.compute(statisticsRecords(),metadata.listEntries,'STARTED'):metadata.statistics||{}, hidden, params: data.params, topic_idf: idf });
+      const rankingRecords=options.pure?records.filter(row=>neutralKeys.has(row.key)):records;progress(`Calculando recomendações em ${rankingRecords.length.toLocaleString('pt-BR')} obras…`);await new Promise(resolve=>requestAnimationFrame(()=>setTimeout(resolve,0)));let result = window.AniRecIR.rank({ ...options, records:rankingRecords,profile_records:options.pure?[]:referenceRecords(), anchor, ratings: notes, favorites:allFavorites(), preferred, avoided, seenIds: seenIds(), statistics:metadata.listEntries?window.AniRecUserStats.compute(statisticsRecords(),metadata.listEntries,'STARTED'):metadata.statistics||{}, hidden, params: data.params, topic_idf: idf });
       if(options.use_community_recommendations) {
         const started=performance.now();let evidence;
         try { evidence=await recommendationEvidence(anchor.anilist_id,options.online); }

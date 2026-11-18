@@ -9,6 +9,7 @@
   const jaccard = (a, b) => { const union = new Set([...a, ...b]); return union.size ? [...new Set(a)].filter(x => b.includes(x)).length / union.size : 0; };
   const stop=new Set('a an the and or of to in on at by for from with as is are was were be been being it its this that these those he she they his her their who which when where while into out up down about through after before during over under than then there here also very can could would should may might has have had do does did will just some any all each both more most other such only own one two'.split(' '));
   const tokens=text=>(String(text||'').normalize('NFKC').toLowerCase().match(/\p{L}+/gu)||[]).filter(word=>!stop.has(word));
+  const topicCache=new WeakMap(),thematicCache=new WeakMap();
   const bmCache=new WeakMap();
   const tfidfCache=new WeakMap();
   function bm25(records,text,k1=1.2,b=.75){
@@ -25,13 +26,14 @@
   }
   function communityQuality(row){for(const field of ['average_score','mean_score'])if(Number.isFinite(row[field])&&row[field]>=0&&row[field]<=100)return {value:row[field]/100,source:field};return {value:null,source:null};}
   function topics(item, spoilers = false) {
+    let cache=topicCache.get(item);if(!cache){cache={};topicCache.set(item,cache);}if(cache[spoilers])return cache[spoilers];
     const result = {};
     for (const name of item.genres || []) result[norm(name)] = { name, weight: 1 };
     for (const tag of item.tags || []) {
       if (!spoilers && (tag.isGeneralSpoiler || tag.isMediaSpoiler)) continue;
       result[norm(tag.name)] = { name: tag.name, weight: clamp((tag.rank || 0) / 100) };
     }
-    return result;
+    cache[spoilers]=result;return result;
   }
   function affinity(preferences, itemTopics) {
     let positive = 0, negative = 0, positiveHit = 0, negativeHit = 0;
@@ -54,11 +56,10 @@
     return Object.fromEntries(Object.entries(counts).map(([key, count]) => [key, Math.log((records.length + 1) / (count + 1)) + 1]));
   }
   function thematic(a, b, idf) {
-    const features = item => Object.fromEntries((item.tags || []).filter(t => t.rank >= 50).map(t => [norm(t.name), t.rank / 100 * (idf[norm(t.name)] || 1)]));
-    const av = features(a), bv = features(b);
-    const denominator = Math.sqrt(Object.values(av).reduce((s, x) => s + x * x, 0) * Object.values(bv).reduce((s, x) => s + x * x, 0));
-    const tag = denominator ? Object.entries(av).reduce((s, [key, value]) => s + value * (bv[key] || 0), 0) / denominator : 0;
-    const genre = jaccard(a.genres || [], b.genres || []);
+    const features=item=>{let cache=thematicCache.get(item);if(!cache){cache=new Map();thematicCache.set(item,cache);}if(cache.has(idf))return cache.get(idf);const weights=new Map((item.tags||[]).filter(t=>t.rank>=50).map(t=>{const key=norm(t.name);return [key,t.rank/100*(idf[key]||1)];})),normValue=Math.sqrt([...weights.values()].reduce((s,x)=>s+x*x,0)),value={weights,norm:normValue,genres:new Set(item.genres||[])};cache.set(idf,value);return value;};
+    const av=features(a),bv=features(b),denominator=av.norm*bv.norm;
+    let product=0;for(const [key,value] of av.weights)product+=value*(bv.weights.get(key)||0);
+    const tag=denominator?product/denominator:0,intersection=[...av.genres].filter(g=>bv.genres.has(g)).length,genre=av.genres.size||bv.genres.size?intersection/(new Set([...av.genres,...bv.genres])).size:0;
     return { score: .85 * tag + .15 * genre, tag, genre };
   }
   const history=typeof module!=='undefined'&&module.exports?require('./history-profile.js'):root.AniRecHistory;
@@ -100,14 +101,14 @@
     if(!anchor?.vector?.some(x=>x!==0))throw Error('A sinopse não forneceu termos com vetores utilizáveis. Escolha outro anime.');
     if(!anchor.vector.every(Number.isFinite))throw Error('Vetor da referência inválido.');
     const start = typeof performance !== 'undefined' ? performance.now() : Date.now();
-    const p = profile(options.profile_records || records, ratings, favorites, preferred,{seenIds:options.pure?[]:seenIds,statistics:options.pure?{}:options.statistics}), lambda = p.active ? Math.max(0, Math.min(.6, options.personalization ?? .35)) : 0;
+    const p = options.pure?{positive:null,negative:null,preferences:{},active:false,info:{rated_count:0,neutral_count:0,positive_count:0,negative_count:0,vector_count:0,inferred:[]}}:profile(options.profile_records || records, ratings, favorites, preferred,{seenIds,statistics:options.statistics}), lambda = p.active ? Math.max(0, Math.min(.6, options.personalization ?? .35)) : 0;
     const threshold = options.personal_min_topics ?? .15, idf = options.topic_idf || topicIdf(records);
     const strategy=options.strategy||'vectors',beta={vectors:0,hybrid:.2,bm25:1,hybrid_tfidf:.2,tfidf:1}[strategy],lexicalMethod=strategy==='tfidf'||strategy==='hybrid_tfidf'?'tfidf':'bm25',gamma=options.community_weight??0;
     if(beta===undefined||!Number.isFinite(gamma)||gamma<0||gamma>.1)throw Error('Parâmetros experimentais inválidos.');
     const lexical=beta?(lexicalMethod==='tfidf'?tfidf(records,anchor.text):bm25(records,anchor.text)):new Map();
     const seen = new Set(seenIds.map(Number)), favoriteSet = new Set(favorites), rejected = new Set(hidden), forbidden = new Set(avoided.map(norm));
-    const diagnostics = [], rows = [], audit = {};
-    const reject = (item, reason, detail) => { audit[reason] = (audit[reason] || 0) + 1; diagnostics.push({ key: item.key, title: item.title, reason, detail }); };
+    const wantDiagnostics=options.diagnostics!==false,diagnostics = [], rows = [], audit = {};
+    const reject = (item, reason, detail) => { audit[reason] = (audit[reason] || 0) + 1; if(wantDiagnostics)diagnostics.push({ key: item.key, title: item.title, reason, detail }); };
     for (const item of records) {
       const known = seen.has(Number(item.anilist_id)) || favoriteSet.has(item.key);
       if (item.key === anchor.key) { reject(item, 'anchor'); continue; }
@@ -139,7 +140,7 @@
     const order = field => (a, b) => b[field] - a[field] || a.key.localeCompare(b.key);
     const general = [...rows].sort(order('base_score')), personalized = rows.filter(r => !p.active || !lambda || r.anchor_topic_overlap >= threshold).sort(order('personalized_score'));
     const personalRank = new Map(personalized.map((r, i) => [r.key, i + 1]));
-    general.forEach((r, i) => diagnostics.push({ key: r.key, title: r.title, reason: 'eligible', general_rank: i + 1, personal_rank: personalRank.get(r.key) || null }));
+    if(wantDiagnostics)general.forEach((r, i) => diagnostics.push({ key: r.key, title: r.title, reason: 'eligible', general_rank: i + 1, personal_rank: personalRank.get(r.key) || null }));
     const end = typeof performance !== 'undefined' ? performance.now() : Date.now(); audit.eligible = general.length;
     return { anchor, general, personalized, diagnostics, filter_audit: audit, profile_active: p.active, profile_info: p.info,
       personalization: lambda, known_anilist_ids:options.pure?[]:[...new Set([...seen,...records.filter(r=>favoriteSet.has(r.key)).map(r=>r.anilist_id).filter(Boolean)])], params:{...params,retrieval_strategy:strategy,lexical_method:beta?lexicalMethod:null,bm25_k1:lexicalMethod==='bm25'?1.2:null,bm25_b:lexicalMethod==='bm25'?.75:null,lexical_weight:beta,community_weight:gamma}, filters: { pure:!!options.pure,personal_min_topics: threshold,exclude_upcoming:options.exclude_upcoming!==false,require_genre:!!options.require_genre,require_tag_metadata:!!options.require_tag_metadata,exclude_seen:!!options.exclude_seen }, candidate_count: records.length,
