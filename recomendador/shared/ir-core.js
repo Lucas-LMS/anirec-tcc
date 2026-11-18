@@ -10,11 +10,18 @@
   const stop=new Set('a an the and or of to in on at by for from with as is are was were be been being it its this that these those he she they his her their who which when where while into out up down about through after before during over under than then there here also very can could would should may might has have had do does did will just some any all each both more most other such only own one two'.split(' '));
   const tokens=text=>(String(text||'').normalize('NFKC').toLowerCase().match(/\p{L}+/gu)||[]).filter(word=>!stop.has(word));
   const bmCache=new WeakMap();
+  const tfidfCache=new WeakMap();
   function bm25(records,text,k1=1.2,b=.75){
     let index=bmCache.get(records);
     if(!index){const usable=records.filter(row=>!row.is_adult),df=new Map(),docs=usable.map(row=>{const counts=new Map();for(const word of tokens(row.text))counts.set(word,(counts.get(word)||0)+1);for(const word of counts.keys())df.set(word,(df.get(word)||0)+1);return {counts,length:[...counts.values()].reduce((a,b)=>a+b,0)};});index={df,docs,rows:usable,average:docs.reduce((a,b)=>a+b.length,0)/(docs.length||1)};bmCache.set(records,index);}
     const query=[...new Set(tokens(text))].filter(word=>(index.df.get(word)||0)>1).sort(),idf=new Map(query.map(word=>[word,Math.log(1+(index.rows.length-index.df.get(word)+.5)/(index.df.get(word)+.5))])),upper=(k1+1)*[...idf.values()].reduce((a,b)=>a+b,0),result=new Map();
     index.rows.forEach((row,i)=>{const doc=index.docs[i];let raw=0;for(const word of query){const tf=doc.counts.get(word)||0;if(tf)raw+=idf.get(word)*tf*(k1+1)/(tf+k1*(1-b+b*doc.length/(index.average||1)));}result.set(row.key,{raw,score:upper?raw/upper:0,matched_terms:query.filter(word=>doc.counts.has(word)).sort((a,b)=>idf.get(b)-idf.get(a)||(a<b?-1:a>b?1:0)).slice(0,12)});});return result;
+  }
+  function tfidf(records,text){
+    let index=tfidfCache.get(records);
+    if(!index){const rows=records.filter(row=>!row.is_adult),df=new Map(),rawDocs=rows.map(row=>{const counts=new Map();for(const word of tokens(row.text))counts.set(word,(counts.get(word)||0)+1);for(const word of counts.keys())df.set(word,(df.get(word)||0)+1);return counts;}),idf=new Map([...df].map(([word,count])=>[word,Math.log((rows.length+1)/(count+1))+1])),docs=rawDocs.map(counts=>{const weights=new Map();let normSquared=0;for(const [word,count] of counts){const weight=(1+Math.log(count))*(idf.get(word)||0);weights.set(word,weight);normSquared+=weight*weight;}return {weights,norm:Math.sqrt(normSquared)};});index={rows,df,idf,docs};tfidfCache.set(records,index);}
+    const counts=new Map();for(const word of tokens(text))counts.set(word,(counts.get(word)||0)+1);const query=new Map([...counts].filter(([word])=>(index.df.get(word)||0)>1).map(([word,count])=>[word,(1+Math.log(count))*(index.idf.get(word)||0)]));let queryNorm=Math.sqrt([...query.values()].reduce((sum,value)=>sum+value*value,0));const terms=[...query.keys()],result=new Map();
+    index.rows.forEach((row,i)=>{const doc=index.docs[i];let raw=0;if(queryNorm&&doc.norm)for(const [word,weight] of query){raw+=weight*(doc.weights.get(word)||0);}const score=queryNorm&&doc.norm?raw/(queryNorm*doc.norm):0;result.set(row.key,{raw,score,matched_terms:terms.filter(word=>doc.weights.has(word)).sort((a,b)=>query.get(b)-query.get(a)||(a<b?-1:a>b?1:0)).slice(0,12)});});return result;
   }
   function communityQuality(row){for(const field of ['average_score','mean_score'])if(Number.isFinite(row[field])&&row[field]>=0&&row[field]<=100)return {value:row[field]/100,source:field};return {value:null,source:null};}
   function topics(item, spoilers = false) {
@@ -95,9 +102,9 @@
     const start = typeof performance !== 'undefined' ? performance.now() : Date.now();
     const p = profile(options.profile_records || records, ratings, favorites, preferred,{seenIds:options.pure?[]:seenIds,statistics:options.pure?{}:options.statistics}), lambda = p.active ? Math.max(0, Math.min(.6, options.personalization ?? .35)) : 0;
     const threshold = options.personal_min_topics ?? .15, idf = options.topic_idf || topicIdf(records);
-    const strategy=options.strategy||'vectors',beta={vectors:0,hybrid:.2,bm25:1}[strategy],gamma=options.community_weight??0;
+    const strategy=options.strategy||'vectors',beta={vectors:0,hybrid:.2,bm25:1,hybrid_tfidf:.2,tfidf:1}[strategy],lexicalMethod=strategy==='tfidf'||strategy==='hybrid_tfidf'?'tfidf':'bm25',gamma=options.community_weight??0;
     if(beta===undefined||!Number.isFinite(gamma)||gamma<0||gamma>.1)throw Error('Parâmetros experimentais inválidos.');
-    const lexical=beta?bm25(records,anchor.text):new Map();
+    const lexical=beta?(lexicalMethod==='tfidf'?tfidf(records,anchor.text):bm25(records,anchor.text)):new Map();
     const seen = new Set(seenIds.map(Number)), favoriteSet = new Set(favorites), rejected = new Set(hidden), forbidden = new Set(avoided.map(norm));
     const diagnostics = [], rows = [], audit = {};
     const reject = (item, reason, detail) => { audit[reason] = (audit[reason] || 0) + 1; diagnostics.push({ key: item.key, title: item.title, reason, detail }); };
@@ -120,7 +127,7 @@
       const base = Object.values(referenceComponents).reduce((a,b)=>a+b,0), personal = profileText !== null ? .7 * profileText + .3 * details.score : details.score,userScore=(1-lambda)*base+lambda*personal,gb=quality.value===null?0:gamma*quality.value*(1-base),pb=quality.value===null?0:gamma*quality.value*(1-userScore);
       const safe = topics(item), anchorSafe = topics(anchor);
       rows.push({ ...item, is_seen: known, base_score: base+gb, personalized_score: userScore+pb,baseline_reference_score:.5*text+.5*thematicScore.score,
-        bm25_raw:lex.raw,bm25_normalized:lex.score,lexical_matches:lex.matched_terms,community_quality:quality.value,community_source:quality.source,
+      bm25_raw:lex.raw,bm25_normalized:lex.score,lexical_matches:lex.matched_terms,community_quality:quality.value,community_source:quality.source,
         general_components:{...referenceComponents,community:gb},personal_components:{...Object.fromEntries(Object.entries(referenceComponents).map(([key,value])=>[key,(1-lambda)*value])),profile_text:profileText===null?0:lambda*.7*profileText,profile_topics:lambda*(profileText===null?1:.3)*details.score,community:pb},
         anchor_cosine: 2 * text - 1, anchor_topic_overlap: thematicScore.score, anchor_tag_cosine: thematicScore.tag,
         profile_text_score: profileText, preference_affinity: details.score, affinity_details: details,
@@ -135,7 +142,7 @@
     general.forEach((r, i) => diagnostics.push({ key: r.key, title: r.title, reason: 'eligible', general_rank: i + 1, personal_rank: personalRank.get(r.key) || null }));
     const end = typeof performance !== 'undefined' ? performance.now() : Date.now(); audit.eligible = general.length;
     return { anchor, general, personalized, diagnostics, filter_audit: audit, profile_active: p.active, profile_info: p.info,
-      personalization: lambda, known_anilist_ids:options.pure?[]:[...new Set([...seen,...records.filter(r=>favoriteSet.has(r.key)).map(r=>r.anilist_id).filter(Boolean)])], params:{...params,retrieval_strategy:strategy,bm25_k1:1.2,bm25_b:.75,lexical_weight:beta,community_weight:gamma}, filters: { pure:!!options.pure,personal_min_topics: threshold,exclude_upcoming:options.exclude_upcoming!==false,require_genre:!!options.require_genre,require_tag_metadata:!!options.require_tag_metadata,exclude_seen:!!options.exclude_seen }, candidate_count: records.length,
+      personalization: lambda, known_anilist_ids:options.pure?[]:[...new Set([...seen,...records.filter(r=>favoriteSet.has(r.key)).map(r=>r.anilist_id).filter(Boolean)])], params:{...params,retrieval_strategy:strategy,lexical_method:beta?lexicalMethod:null,bm25_k1:lexicalMethod==='bm25'?1.2:null,bm25_b:lexicalMethod==='bm25'?.75:null,lexical_weight:beta,community_weight:gamma}, filters: { pure:!!options.pure,personal_min_topics: threshold,exclude_upcoming:options.exclude_upcoming!==false,require_genre:!!options.require_genre,require_tag_metadata:!!options.require_tag_metadata,exclude_seen:!!options.exclude_seen }, candidate_count: records.length,
       eligible_count: general.length, personal_eligible_count: personalized.length, unseen_count: general.filter(r => !r.is_seen).length,
       personal_unseen_count: personalized.filter(r => !r.is_seen).length, ranking_ms: end - start, total_ms: end - start,
       recommendation_sets: { general_all: general.slice(0, 10), general_unseen: general.filter(r => !r.is_seen).slice(0, 10),
@@ -146,7 +153,7 @@
     for(const run of runs)for(const mode of ['general','personalized'])for(const row of (mode==='personalized'&&run.result.profile_active?run.result[mode].filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result[mode]).slice(0,10))pool.set(row.key,{key:row.key,title:row.title,text:row.text,genres:row.genres,tags:row.tags,url:row.url});
     return {format:'anirec-human-study-v1',created_at:new Date().toISOString(),anchor:{key:options.anchor.key,title:options.anchor.title,text:options.anchor.text},profile_active:runs[0].result.profile_active,filters:runs[0].result.filters,personalization:runs[0].result.personalization,candidate_count:options.records.length,pure:!!options.pure,systems:runs.map(run=>({id:run.id,label:run.label,params:run.result.params,ranking_ms:run.result.ranking_ms,general:run.result.general.slice(0,10).map(row=>({key:row.key,score:row.base_score})),personalized:(run.result.profile_active?run.result.personalized.filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result.personalized).slice(0,10).map(row=>({key:row.key,score:row.personalized_score}))})),similarity_pool_keys:[...new Set(runs.flatMap(run=>run.result.general.slice(0,10).map(row=>row.key)))],preference_pool_keys:[...new Set(runs.flatMap(run=>(run.result.profile_active?run.result.personalized.filter(row=>!row.is_seen&&!(options.ratings?.[row.key]>0)):run.result.personalized).slice(0,10).map(row=>row.key)))],preference_policy:'when profile active: unseen, not a manual favorite, and no score supplied in profile',pool:[...pool.values()].sort((a,b)=>a.key<b.key?-1:a.key>b.key?1:0)};
   }
-  const api = { norm, unit, cosine, topics, affinity, topicIdf, thematic, profile, rank,bm25,communityQuality,study };
+  const api = { norm, unit, cosine, topics, affinity, topicIdf, thematic, profile, rank,bm25,tfidf,communityQuality,study };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.AniRecIR = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

@@ -12,6 +12,8 @@ for page,template in [('index.html','page.html'),('pesquisa.html','research.html
     (root/'recomendador/web'/page).write_text(html.replace('<!-- ADAPTER -->','<script src="assets/local-adapter.js"></script>'),encoding='utf-8')
 for p in source.rglob('*'):
     if not p.is_file() or 'assets' in p.relative_to(source).parts or p.name in {'app.js','browser-adapter.js','anilist-import.js'}:continue
+    if p == source/'catalog.json':
+        dest=target/'lab'/'catalog.json';dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dest);continue
     dest=target/p.relative_to(source);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dest)
 manifest_path=source/'build-manifest.json'
 if manifest_path.exists():

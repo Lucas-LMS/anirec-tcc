@@ -27,7 +27,7 @@ const params = {
 };
 const snapshotUtc = '2026-11-13T04:09:22.701253+00:00';
 const fields = new Set([
-  'id', 'idMal', 'type', 'format', 'status', 'title', 'description', 'genres', 'tags',
+  'id', 'idMal', 'type', 'format', 'seasonYear', 'status', 'title', 'description', 'genres', 'tags',
   'coverImage', 'siteUrl', 'isAdult', 'averageScore', 'meanScore', 'popularity', 'favourites',
   'stats', 'updatedAt', 'episodes', 'duration',
 ]);
@@ -124,7 +124,7 @@ const outputRows = records.map((row, index) => {
     encoding_id: '', key, title: title.english || title.romaji || String(row.id), romaji: title.romaji || '',
     text: row.text, genres: row.genres || [], tags: row.tags || [], cover: row.coverImage?.large || null,
     url: row.siteUrl || null, source: 'AniList (consulta sob demanda)', anilist_id: row.id, mal_id: malId,
-    status: row.status || null, synopsis_source: row.text ? 'AniList description' : null,
+    status: row.status || null, format: row.format || null, year: row.seasonYear ?? null, synopsis_source: row.text ? 'AniList description' : null,
     synopsis_complete: true, average_score: row.averageScore ?? null, mean_score: row.meanScore ?? null,
     popularity: row.popularity ?? null, community_favourites: row.favourites ?? null, rating_count: ratingCount,
     statistics_fetched_at: snapshotUtc, metadata_fetched_at: snapshotUtc,
